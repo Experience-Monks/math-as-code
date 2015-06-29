@@ -1,0 +1,42 @@
+{
+  "name": "math-as-code",
+  "version": "1.0.0",
+  "description": "a reference for mathematical notation in code form",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Matt DesLauriers",
+    "email": "dave.des@gmail.com",
+    "url": "https://github.com/mattdesl"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "learning",
+    "math",
+    "mathematical",
+    "notation",
+    "symbol",
+    "symbols",
+    "cheat",
+    "sheet",
+    "cheatsheet",
+    "help",
+    "guide",
+    "walkthrough",
+    "tutorial",
+    "mathematics",
+    "language"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Jam3/math-as-code.git"
+  },
+  "homepage": "https://github.com/Jam3/math-as-code",
+  "bugs": {
+    "url": "https://github.com/Jam3/math-as-code/issues"
+  }
+}
