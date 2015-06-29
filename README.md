@@ -31,7 +31,7 @@ The big Greek "E" (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summa
 
 ![sigma](img/sigma1.png)
 
-Here, `i=1` says to start at `1` (lower bound) and end at the number above the Sigma, `100` (upper bound). The `i` to the right of the "E" tells us what we are summing. In code:
+Here, `i=1` says to start at `1` and end at the number above the Sigma, `100`. These are the lower and upper bounds, respectively. The `i` to the right of the "E" tells us what we are summing. In code:
 
 ```js
 var n = 100
@@ -125,11 +125,11 @@ var result = Math.abs(x)
 
 For a vector *v*, `| v |` means the [Euclidean norm](https://en.wikipedia.org/wiki/Norm_%28mathematics%29#Euclidean_norm) of *v*. It is also referred to as the "magnitude" or "length" of a vector.
 
-Sometimes this is represented by double-pipes to avoid ambiguity with *absolute* notation. For example:
+Often this is represented by double-pipes to avoid ambiguity with the *absolute* notation. For example:
 
 ![pipes4](img/pipes4.png)
 
-Here is an example using an `[x, y, z]` array to represent a 3D vector.
+Here is an example using an array `[x, y, z]` to represent a 3D vector.
 
 ```js
 var v = [ 0, 4, -3 ]
@@ -140,10 +140,10 @@ length(v)
 The `length` function:
 
 ```js
-function length (a) {
-  var x = a[0],
-      y = a[1],
-      z = a[2]
+function length (vec) {
+  var x = vec[0]
+  var y = vec[1]
+  var z = vec[2]
   return Math.sqrt(x*x + y*y + z*z)
 }
 ```
@@ -184,7 +184,7 @@ In geometry, the "hat" symbol above a character is used to represent a [unit vec
 
 ![hat](img/hat.png)
 
-In cartesian space, a unit vector is typically length 1, in the range of -1.0 to 1.0. Often we refer to this as *normalizing* a vector.
+In cartesian space, a unit vector is typically length 1, in the range of -1.0 to 1.0. Here we *normalize* a 3D vector into a unit vector:
 
 ```js
 var a = [0, 4, -3]
@@ -197,18 +197,19 @@ Notice, since we are working with floating point values and not using numericall
 Here is the `normalize` function, operating on 3D vectors:
 
 ```js
-function normalize(a) {
-    var x = a[0],
-        y = a[1],
-        z = a[2]
-    var len = x*x + y*y + z*z
-    if (len > 0) {
-        len = 1 / Math.sqrt(len)
-        a[0] = a[0] * len
-        a[1] = a[1] * len
-        a[2] = a[2] * len
-    }
-    return a
+function normalize(vec) {
+  var x = vec[0]
+  var y = vec[1]
+  var z = vec[2]
+  var squaredLength = x*x + y*y + z*z
+
+  if (squaredLength > 0) {
+    squaredLength = 1 / Math.sqrt(squaredLength)
+    vec[0] = vec[0] * squaredLength
+    vec[1] = vec[1] * squaredLength
+    vec[2] = vec[2] * squaredLength
+  }
+  return vec
 }
 ```
 
