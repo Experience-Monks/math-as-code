@@ -97,7 +97,7 @@ Where `value` will evaluate to `720`.
 
 ## pipes
 
-Pipes can mean different things depending on the context. Below are three common forms.
+Pipes, or *bars*, can mean different things depending on the context. Below are three common forms.
 
 #### absolute 
 
