@@ -25,7 +25,7 @@ The big Greek "E" (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summa
 
 ![sigma](img/sigma1.png)
 
-Here, `i=1` says to start at `1` (lower bound) and end at `100` (upper bound). The `i` to the right of the "E" tells us what we are summing. In code:
+Here, `i=1` says to start at `1` (lower bound) and end at the number above the Sigma, `100` (upper bound). The `i` to the right of the "E" tells us what we are summing. In code:
 
 ```js
 var n = 100
@@ -51,12 +51,14 @@ Here is another example where the `i`, or the "what to sum", is different:
 In code:
 
 ```js
-var n = 4
+var n = 100
 var sum = 0
 for (var i = 1; i <= n; i++) {
   sum += (2 * i + 1)
 }
 ```
+
+The result of `sum` is `10200`.
 
 The notation can be nested, which is much like nesting a `for` loop. You should evaluate the right-most sigma first, unless the author has enclosed them in parentheses to alter the order. 
 
