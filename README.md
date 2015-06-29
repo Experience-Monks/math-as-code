@@ -1,6 +1,6 @@
 # math-as-code
 
-This can be used as a reference to ease developers into mathematical notation, showing some equations in code.
+This is a reference to ease developers into mathematical notation by showing comparisons with JavaScript code.
 
 Motivation: Academic papers can be intimidating for self-taught graphics programmers. :) 
 
