@@ -2,7 +2,7 @@
 
 This is a reference to ease developers into mathematical notation by showing comparisons with JavaScript code.
 
-Motivation: Academic papers can be intimidating for self-taught graphics programmers. :) 
+Motivation: Academic papers can be intimidating for self-taught game and graphics programmers. :) 
 
 This guide is not yet finished. If you see errors or want to contribute, please [open a ticket](https://github.com/Jam3/math-as-code/issues) or send a PR.
 
