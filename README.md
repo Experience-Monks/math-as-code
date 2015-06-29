@@ -4,9 +4,9 @@ This is a reference to ease developers into mathematical notation by showing com
 
 Motivation: Academic papers can be intimidating for self-taught graphics programmers. :) 
 
-If you see any errors or want to add/request more features, please [open a ticket](https://github.com/Jam3/math-as-code/issues) or send a PR.
+This guide is not yet finished. If you see errors or want to contribute, please [open a ticket](https://github.com/Jam3/math-as-code/issues) or send a PR.
 
-*Note:* For brevity, some code examples make use of [npm packages](https://www.npmjs.com/). You can always refer to their GitHub repos for implementation details.
+> **Note**: For brevity, some code examples make use of [npm packages](https://www.npmjs.com/). You can refer to their GitHub repos for implementation details.
 
 # contents
 
@@ -17,6 +17,7 @@ If you see any errors or want to add/request more features, please [open a ticke
   - [Euclidean norm](#euclidean-norm)
   - [determinant](#determinant)
 - [hat](#hat) - *unit vector*
+- [more...](#more...)
 
 ### sigma
 
@@ -207,6 +208,10 @@ Other implementations:
 
 - [gl-vec3/normalize](https://github.com/stackgl/gl-vec3/blob/507480fa57ba7c5fb70679cf531175a52c48cf53/normalize.js) and [gl-vec2/normalize](https://github.com/stackgl/gl-vec2/blob/21f460a371540258521fd2f720d80f14e87bd400/normalize.js)
 - [vectors/normalize-nd](https://github.com/hughsk/vectors/blob/master/normalize-nd.js) (n-dimensional)
+
+## more...
+
+Like this guide? Suggest some [more features](https://github.com/Jam3/math-as-code/issues/1) or send us a Pull Request!
 
 ## License
 
