@@ -25,7 +25,7 @@ For a more complete list, refer to [Wikipedia - List of Mathematical Symbols](ht
 - [hat](#hat) - *unit vector*
 - [more...](#more)
 
-### sigma
+### sigma 
 
 The big Greek "E" (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summation). In other words: summing up some numbers.
 
@@ -50,7 +50,7 @@ var n = 100
 var sum = (n * (n + 1)) / 2
 ```
 
-Here is another example where the `i`, or the "what to sum", is different:
+Here is another example where the `i`, or the "what to sum," is different:
 
 ![sum2](img/sigma2.png)
 
@@ -105,7 +105,7 @@ Where `value` will evaluate to `720`.
 
 ## pipes
 
-Pipes, or *bars*, can mean different things depending on the context. Below are three common forms.
+Pipe symbols, known as *bars*, can mean different things depending on the context. Below are three common forms.
 
 #### absolute 
 
@@ -180,7 +180,7 @@ Implementations:
 
 #### hat
 
-The "hat" symbol above a character is used to represent a [unit vector](https://en.wikipedia.org/wiki/Unit_vector). For example, here is the unit vector of *a*:
+In geometry, the "hat" symbol above a character is used to represent a [unit vector](https://en.wikipedia.org/wiki/Unit_vector). For example, here is the unit vector of *a*:
 
 ![hat](img/hat.png)
 
