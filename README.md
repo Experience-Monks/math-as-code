@@ -17,7 +17,7 @@ This guide is not yet finished. If you see errors or want to contribute, please 
   - [Euclidean norm](#euclidean-norm)
   - [determinant](#determinant)
 - [hat](#hat) - *unit vector*
-- [more...](#more...)
+- [more...](#more)
 
 ### sigma
 
