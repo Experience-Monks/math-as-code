@@ -8,6 +8,12 @@ This guide is not yet finished. If you see errors or want to contribute, please 
 
 > **Note**: For brevity, some code examples make use of [npm packages](https://www.npmjs.com/). You can refer to their GitHub repos for implementation details.
 
+# foreword
+
+Mathematical symbols can mean different things depending on context and the field of study (linear algebra, set theory, etc). This guide may not cover *all* uses of a symbol, but PRs are welcome.
+
+For a more complete list, refer to [Wikipedia - List of Mathematical Symbols](https://en.wikipedia.org/wiki/List_of_mathematical_symbols). 
+
 # contents
 
 - [sigma](#sigma) - *summation*
