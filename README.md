@@ -562,23 +562,41 @@ For example, if we take a 2D point *(x, y)* and rotate it, you might name the re
 
 In code, we typically just assign the variable a more descriptive name, like `transformedPosition`.
 
-For a mathematical [function](#function), the prime symbol describes the [*derivative*](#derivative) of that function. This will be explained shortly. Let's take our earlier function:
+For a mathematical [function](#function), the prime symbol often describes the [*derivative*](#derivative) of that function. Derivatives will be explained shortly. Let's take our earlier function:
 
 ![function2](img/function2.png)
 
 <!-- f\left (x  \right ) = x^{2} -->
 
-The derivative would be written as:
+Its derivative would be written as:
 
 ![prime1](img/prime1.png)
 
 <!-- f'(x) = 2x -->
 
-Multiple prime symbols can be used to describe the second derivative *f′′(x)*, third derivative *f′′′(x)* and so forth.
+In code:
+
+```js
+function f (x) {
+  return Math.pow(x, 2)
+}
+
+function fPrime (x) {
+  return 2 * x
+}
+```
+
+Multiple prime symbols can be used to describe the second derivative *f′′(x)* and third derivative *f′′′(x)*. After this, authors typically express higher orders with roman numerals *ƒ*<sup>IV</sup> or superscript numbers *ƒ*<sup>(n)</sup>.
 
 ## derivatives
 
 [Derivatives](https://en.wikipedia.org/wiki/Derivative) and *differentiation* is difficult to explain in code, but let's try. For a more detailed beginner's introduction, check out [Calculus: Building Intuition for the Derivative](http://betterexplained.com/articles/calculus-building-intuition-for-the-derivative/).
+
+In simple terms, derivatives can find the slope of a function.
+
+This will be a little long-winded, split roughly into [theory](#theory) and [application](#application). If you already understand the concept, you can skip right to application.
+
+#### theory
 
 First, let's imagine what number comes after zero. Maybe something like this?
 
@@ -654,8 +672,7 @@ Thus, the *derivative* of our *x*<sup>2</sup> function can be succinctly describ
 
 <!-- f'(x) = 2x -->
 
-
-<!-- TODO: need to show solving in symbols here -->
+#### application
 
 ## more...
 
