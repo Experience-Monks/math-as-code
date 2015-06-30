@@ -378,7 +378,7 @@ For a matrix **A**, `|A|` means the [determinant](https://en.wikipedia.org/wiki/
 Here is an example computing the determinant of a 2x2 matrix, represented by a flat array in column-major format.
 
 ```js
-var determinant = require('gl-mat4/determinant')
+var determinant = require('gl-mat2/determinant')
 
 var matrix = [ 1, 0, 0, 1 ]
 var det = determinant(matrix)
