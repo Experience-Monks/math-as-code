@@ -73,7 +73,7 @@ function almostEqual(a, b, epsilon) {
 
 In mathematics, the `:=` `=:` and `=` symbols are used for *definition*. The following defines *x* to be another name for 2*kj*.
 
-![equals1](img/equals1.png)
+![equals1](img/equals1.svg)
 
 <!-- x = 2kj -->
 
@@ -112,17 +112,21 @@ They might seem obvious, but it's important to understand the subtle differences
 
 Both symbols can represent simple multiplication of scalars. The following are equivalent:
 
-![dotcross1](img/dotcross1.png)
+![dotcross1](img/dotcross1.svg)
+
+<!-- 5 \cdot 4 = 5 \times 4 -->
 
 In programming languages we tend to use asterisk for multiplication:
 
 ```js
-var result = 3 * 4
+var result = 5 * 4
 ```
 
 With adjacent letter variables, the multiplication sign is typically omitted.
 
-![dotcross2](img/dotcross2.png)
+![dotcross2](img/dotcross2.svg)
+
+<!-- 3kj -->
 
 If these variables represent scalars, the code would be:
 
@@ -136,7 +140,7 @@ To denote multiplication of one vector with a scalar, or element-wise multiplica
 
 Let's take our earlier example but apply it to vectors. For element-wise vector multiplication, you might often see an open dot `∘` to represent the [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_%28matrices%29).
 
-![dotcross3](img/dotcross3.png)
+![dotcross3](img/dotcross3.svg)
 
 <!-- 3\mathbf{k}\circ\mathbf{j} -->
 
@@ -170,7 +174,7 @@ Similarly, matrix multiplication typically does not use the dot `∙` or cross s
 
 The dot symbol `∙` can be used to denote the [*dot product*](https://en.wikipedia.org/wiki/Dot_product) of two vectors. Sometimes this is called the *scalar product* since it evaluates to a scalar.
 
-![dotcross4](img/dotcross4.png)
+![dotcross4](img/dotcross4.svg)
 
 <!-- \mathbf{k}\cdot \mathbf{j} -->
 
@@ -196,7 +200,7 @@ function dot(a, b) {
 
 The cross symbol `×` can be used to denote the [*cross product*](https://en.wikipedia.org/wiki/Cross_product) of two vectors.
 
-![dotcross5](img/dotcross5.png)
+![dotcross5](img/dotcross5.svg)
 
 <!-- \mathbf{k}\times \mathbf{j} -->
 
@@ -238,6 +242,8 @@ The big Greek "E" (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summa
 
 ![sigma](img/sigma1.png)
 
+<!-- \sum_{i=1}^{100}i -->
+
 Here, `i=1` says to start at `1` and end at the number above the Sigma, `100`. These are the lower and upper bounds, respectively. The *i* to the right of the "E" tells us what we are summing. In code:
 
 ```js
@@ -266,7 +272,7 @@ In code:
 ```js
 var n = 100
 var sum = 0
-for (var i = 1; i <= n; i++) {
+for (var i = 1; i <= 100; i++) {
   sum += (2 * i + 1)
 }
 ```
