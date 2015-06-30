@@ -20,7 +20,7 @@ For simplicity, many of the code examples here operate on floating point values 
 
 - [variable name conventions](#variable-name-conventions)
 - [equals `=` `≈` `≠` `=:`](#equals-symbols)
-- [dot & cross `·` `×`](#dot--cross)
+- [dot & cross `∙` `×` `∘`](#dot--cross)
   - [scalar multiplication](#scalar-multiplication)
   - [vector multiplication](#vector-multiplication)
   - [dot product](#dot-product)
@@ -104,7 +104,7 @@ The `≅` symbol is for [*congruence*](https://en.wikipedia.org/wiki/Congruence_
 
 ## dot & cross
 
-The dot `·` and cross `×` symbols have different uses depending on context.
+The dot `∙` and cross `×` symbols have different uses depending on context.
 
 They might seem obvious, but it's important to understand the subtle differences before we continue into other sections.
 
@@ -132,13 +132,13 @@ var result = 3 * k * j
 
 #### vector multiplication
 
-To denote multiplication of one vector by another, or multiplication of a vector with a scalar, we do not use the dot `·` or cross `×` symbols. These have different meanings in linear algebra, discussed shortly.
+To denote multiplication of one vector with a scalar, or element-wise multiplication of a vector with another vector, we do not use the dot `∙` or cross `×` symbols. These have different meanings in linear algebra, discussed shortly.
 
-Let's take our earlier example but apply it to vectors:
+Let's take our earlier example but apply it to vectors. For element-wise vector multiplication, you might often see an open dot `∘` to represent the [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_%28matrices%29).
 
 ![dotcross3](img/dotcross3.png)
 
-<!-- 3\mathbf{k} \mathbf{j} -->
+<!-- 3\mathbf{k}\circ\mathbf{j} -->
 
 Here is how it would look in code, using arrays `[x, y]` to represent the 2D vectors.
 
@@ -164,11 +164,11 @@ function multiplyScalar(a, scalar) {
 }
 ```
 
-Similarly, matrix multiplication typically does not use a dot or cross symbol. Matrix multiplication will be covered in a later section.
+Similarly, matrix multiplication typically does not use the dot `∙` or cross symbol `×`. Matrix multiplication will be covered in a later section.
 
 #### dot product
 
-The dot symbol `·` can be used to denote the [*dot product*](https://en.wikipedia.org/wiki/Dot_product) of two vectors. Sometimes this is called the *scalar product* since it evaluates to a scalar.
+The dot symbol `∙` can be used to denote the [*dot product*](https://en.wikipedia.org/wiki/Dot_product) of two vectors. Sometimes this is called the *scalar product* since it evaluates to a scalar.
 
 ![dotcross4](img/dotcross4.png)
 
