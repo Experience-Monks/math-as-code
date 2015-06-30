@@ -75,7 +75,7 @@ In mathematics, the `:=` `=:` and `=` symbols are used for *definition*. The fol
 
 <!-- x = 2kj -->
 
-Code:
+In code, we can use `=` to *define* our variables and provide aliases.
 
 ```js
 var x = 2 * k * j
