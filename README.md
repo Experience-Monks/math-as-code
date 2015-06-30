@@ -361,7 +361,7 @@ function length (vec) {
   var x = vec[0]
   var y = vec[1]
   var z = vec[2]
-  return Math.sqrt(x*x + y*y + z*z)
+  return Math.sqrt(x * x + y * y + z * z)
 }
 ```
 
@@ -420,7 +420,7 @@ function normalize(vec) {
   var x = vec[0]
   var y = vec[1]
   var z = vec[2]
-  var squaredLength = x*x + y*y + z*z
+  var squaredLength = x * x + y * y + z * z
 
   if (squaredLength > 0) {
     var length = Math.sqrt(squaredLength)
@@ -497,6 +497,20 @@ Sometimes a function is not named, and instead the output is written.
 ![function3](img/function3.png)
 
 In the above example, *x* is the input, the relationship is *squaring*, and *y* is the output.
+
+Functions can also have multiple parameters, like in a programming language. These are known as *arguments* in mathematics, and the number of arguments a function takes is known as the *arity* of the function.
+
+![function4](img/function4.png)
+
+<!-- f(x,y) = \sqrt{x^2 + y^2} -->
+
+In code:
+
+```js
+function length (x, y) {
+  return Math.sqrt(x * x + y * y)
+}
+```
 
 ## limit
 
