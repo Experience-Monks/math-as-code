@@ -443,7 +443,7 @@ In set theory, the "element of" symbol `∈` and `∋` can be used to describe w
 
 Here we have a set of numbers *A* `{ 3, 9, 14 }` and we are saying `3` is an "element of" that set. 
 
-A simple implementation might look like this:
+A simple implementation in ES5 might look like this:
 
 ```js
 var A = [ 3, 9, 14 ]
