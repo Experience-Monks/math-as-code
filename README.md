@@ -33,6 +33,8 @@ For simplicity, many of the code examples here operate on floating point values 
   - [determinant](#determinant)
 - [hat **`â`**](#hat) - *unit vector*
 - ["element of" `∈` `∉`](#element)
+- [function `ƒ`](#function)
+- [prime `′`](#prime)
 - [more...](#more)
 
 ## variable naming conventions
@@ -192,7 +194,7 @@ The result `0` tells us our vectors are perpendicular. Our `dot` function:
 
 ```js
 function dot(a, b) {
-    return a[0] * b[0] + a[1] * b[1] + a[2] * b[2]
+  return a[0] * b[0] + a[1] * b[1] + a[2] * b[2]
 }
 ```
 
@@ -220,13 +222,13 @@ Our `cross` function:
 
 ```js
 function cross(a, b) {
-    var ax = a[0], ay = a[1], az = a[2],
-        bx = b[0], by = b[1], bz = b[2]
+  var ax = a[0], ay = a[1], az = a[2],
+    bx = b[0], by = b[1], bz = b[2]
 
-    var rx = ay * bz - az * by
-    var ry = az * bx - ax * bz
-    var rz = ax * by - ay * bx
-    return [ rx, ry, rz ]
+  var rx = ay * bz - az * by
+  var ry = az * bx - ax * bz
+  var rz = ax * by - ay * bx
+  return [ rx, ry, rz ]
 }
 ```
 
@@ -247,9 +249,8 @@ The big Greek "E" (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summa
 Here, `i=1` says to start at `1` and end at the number above the Sigma, `100`. These are the lower and upper bounds, respectively. The *i* to the right of the "E" tells us what we are summing. In code:
 
 ```js
-var n = 100
 var sum = 0
-for (var i = 1; i <= n; i++) {
+for (var i = 1; i <= 100; i++) {
   sum += i
 }
 ```
@@ -259,7 +260,7 @@ The result of `sum` is `5050`.
 **Tip:** With whole numbers, this particular pattern can be optimized to the following:
 
 ```js
-var n = 100
+var n = 100 // upper bound
 var sum = (n * (n + 1)) / 2
 ```
 
@@ -270,7 +271,6 @@ Here is another example where the *i*, or the "what to sum," is different:
 In code:
 
 ```js
-var n = 100
 var sum = 0
 for (var i = 1; i <= 100; i++) {
   sum += (2 * i + 1)
@@ -363,7 +363,7 @@ function length (vec) {
   var x = vec[0]
   var y = vec[1]
   var z = vec[2]
-  return Math.sqrt(x*x + y*y + z*z)
+  return Math.sqrt(x * x + y * y + z * z)
 }
 ```
 
@@ -407,7 +407,7 @@ In geometry, the "hat" symbol above a character is used to represent a [unit vec
 
 <!-- \hat{\mathbf{a}} -->
 
-In cartesian space, a unit vector is typically length 1, in the range of -1.0 to 1.0. Here we *normalize* a 3D vector into a unit vector:
+In cartesian space, a unit vector is typically length 1. That means each part of the vector will be in the range of -1.0 to 1.0. Here we *normalize* a 3D vector into a unit vector:
 
 ```js
 var a = [ 0, 4, -3 ]
@@ -422,7 +422,7 @@ function normalize(vec) {
   var x = vec[0]
   var y = vec[1]
   var z = vec[2]
-  var squaredLength = x*x + y*y + z*z
+  var squaredLength = x * x + y * y + z * z
 
   if (squaredLength > 0) {
     var length = Math.sqrt(squaredLength)
@@ -467,6 +467,86 @@ You can also use the "not an element of" symbols `∉` and `∌` like so:
 ![element3](img/element3.png)
 
 <!-- A=\left \{3,9,14}{  \right \}, 6 \notin A -->
+
+## function
+
+[Functions](https://en.wikipedia.org/wiki/Function_%28mathematics%29) are fundamental features of mathematics, and fairly easy to translate into code.
+
+A function relates an input to an output value. For example, the following is a function:
+
+![function1](img/function1.png)
+
+<!-- x^{2} -->
+
+We can give this function a *name*. Commonly, we use `ƒ` to describe a function, but it could be named `A(x)` or anything else.
+
+![function2](img/function2.png)
+
+<!-- f\left (x  \right ) = x^{2} -->
+
+In code, we might name it `square` and write it like this:
+
+```js
+function square (x) {
+  return Math.pow(x, 2)
+}
+```
+
+Sometimes a function is not named, and instead the output is written.
+
+<!-- y = x^{2} -->
+
+![function3](img/function3.png)
+
+In the above example, *x* is the input, the relationship is *squaring*, and *y* is the output.
+
+Functions can also have multiple parameters, like in a programming language. These are known as *arguments* in mathematics, and the number of arguments a function takes is known as the *arity* of the function.
+
+![function4](img/function4.png)
+
+<!-- f(x,y) = \sqrt{x^2 + y^2} -->
+
+In code:
+
+```js
+function length (x, y) {
+  return Math.sqrt(x * x + y * y)
+}
+```
+
+## prime
+
+The prime symbol (`′`) is often used in variable names to describe things which are similar, without giving it a different name altogether. It can describe the "next value" after some transformation.
+
+For example, if we take a 2D point *(x, y)* and rotate it, you might name the result *(x′, y′)*. Or, the *transpose* of matrix **M** might be named **M′**.
+
+In code, we typically just assign the variable a more descriptive name, like `transformedPosition`.
+
+For a mathematical [function](#function), the prime symbol often describes the *derivative* of that function. Derivatives will be explained in a future section. Let's take our earlier function:
+
+![function2](img/function2.png)
+
+<!-- f\left (x  \right ) = x^{2} -->
+
+Its derivative could be written with a prime `′` symbol:
+
+![prime1](img/prime1.png)
+
+<!-- f'(x) = 2x -->
+
+In code:
+
+```js
+function f (x) {
+  return Math.pow(x, 2)
+}
+
+function fPrime (x) {
+  return 2 * x
+}
+```
+
+Multiple prime symbols can be used to describe the second derivative *ƒ′′* and third derivative *ƒ′′′*. After this, authors typically express higher orders with roman numerals *ƒ*<sup>IV</sup> or superscript numbers *ƒ*<sup>(n)</sup>.
 
 ## more...
 
