@@ -48,7 +48,7 @@ This will also be the format of this guide.
 
 ## equals symbols
 
-There are a number of symbols resembling the equals sign `=`. Here is a few common ones and an example of their use:
+There are a number of symbols resembling the equals sign `=`. Here are three common examples:
 
 - `=` is for equality (values are the same)
 - `≠` is for inequality (value are not the same)
