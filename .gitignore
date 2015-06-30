@@ -3,3 +3,4 @@ node_modules
 *.log
 .DS_Store
 bundle.js
+test.js

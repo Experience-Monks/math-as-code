@@ -16,6 +16,12 @@ For a more complete list, refer to [Wikipedia - List of Mathematical Symbols](ht
 
 # contents
 
+- [variable conventions](#variable-conventions)
+- [dot & cross](#dot-cross)
+  - [scalar multiplication](#scalar-multiplication)
+  - [vector multiplication](#vector-multiplication)
+  - [dot product](#dot-product)
+  - [cross product](#cross-product)
 - [sigma](#sigma) - *summation*
 - [capital Pi](#capital-pi) - *products of sequences*
 - [pipes](#pipes)
@@ -25,7 +31,140 @@ For a more complete list, refer to [Wikipedia - List of Mathematical Symbols](ht
 - [hat](#hat) - *unit vector*
 - [more...](#more)
 
-### sigma 
+## variable conventions
+
+There are a variety of conventions depending on the context and field of study, and they are not always consistent. However, in some of the literature you may find variable names to follow a pattern like so:
+
+- *s* - italic lowercase letters for scalars (i.e. a number)
+- **x** - bold lowercase letters for vectors (i.e. a 2D point)
+- **A** - bold uppercase letters for matrices (i.e. a 3D transformation)
+- *θ* - italic lowercase Greek letters for constants and special variables (i.e. [polar angle *θ*, *theta*](https://en.wikipedia.org/wiki/Spherical_coordinate_system))
+
+## dot & cross
+
+The dot `·` and cross `×` symbols have different uses depending on context.
+
+These might seem obvious, but it's important to understand the subtle differences before we continue into other sections.
+
+#### scalar multiplication
+
+Both symbols can represent simple multiplication of scalars. The following are equivalent:
+
+![dotcross1](img/dotcross1.png)
+
+In code we tend to use asterisk:
+
+```js
+var result = 3 * 4
+```
+
+With adjacent letter variables, the multiplication sign is typically omitted.
+
+![dotcross2](img/dotcross2.png)
+
+If these variables represent scalars, the code would be:
+
+```js
+var result = 3 * k * j
+```
+
+#### vector multiplication
+
+To denote multiplication of one vector by another, or multiplication of a vector with a scalar, we do not use the dot `·` or cross `×` symbols. These have different meanings in linear algebra, discussed shortly.
+
+Let's take our earlier example but apply it to vectors:
+
+![dotcross3](img/dotcross3.png)
+
+<!-- 3\mathbf{k}\mathbf{j} -->
+
+Here is how it would look in code, using arrays `[x, y]` to represent the 2D vectors.
+
+```js
+var s = 3
+var k = [ 1, 2 ]
+var j = [ 2, 3 ]
+
+var tmp = multiply(k, j)
+var result = multiplyScalar(tmp, s)
+//=> [ 6, 18 ]
+```
+
+Our `multiply` and `multiplyScalar` functions look like this:
+
+```js
+function multiply(a, b) {
+  return [ a[0] * b[0], a[1] * b[1] ]
+}
+
+function multiplyScalar(a, scalar) {
+  return [ a[0] * scalar, a[1] * scalar ]
+}
+```
+
+Similarly, matrix multiplication typically does not use a dot or cross symbol. Matrix multiplication will be covered in a later section.
+
+#### dot product
+
+The dot symbol `·` can be used to denote the [*dot product*](https://en.wikipedia.org/wiki/Dot_product) of two vectors. Sometimes this is called the *scalar product* since it evaluates to a scalar.
+
+![dotcross4](img/dotcross4.png)
+
+<!-- \mathbf{k}\cdot \mathbf{j} -->
+
+It is a very common feature of linear algebra, and with a 3D vector it might look like this:
+
+```js
+var k = [ 0, 1, 0 ]
+var j = [ 1, 0, 0 ]
+
+var d = dot(k, j)
+//=> 0
+```
+
+The result `0` tells us our vectors are perpendicular. Our `dot` function:
+
+```js
+function dot(a, b) {
+    return a[0] * b[0] + a[1] * b[1] + a[2] * b[2]
+}
+```
+
+#### cross product
+
+The cross symbol `×` can be used to denote the [*cross product*](https://en.wikipedia.org/wiki/Cross_product) of two vectors.
+
+![dotcross5](img/dotcross5.png)
+
+<!-- \mathbf{k}\times \mathbf{j} -->
+
+In code, it would look like this:
+
+```js
+var k = [ 0, 1, 0 ]
+var j = [ 1, 0, 0 ]
+
+var result = cross(k, j)
+//=> [ 0, 0, -1 ]
+```
+
+Here, we get `[ 0, 0, -1 ]`, which is perpendicular to both **k** and **j**.
+
+Our `cross` function:
+
+```js
+function cross(a, b) {
+    var ax = a[0], ay = a[1], az = a[2],
+        bx = b[0], by = b[1], bz = b[2]
+
+    var rx = ay * bz - az * by
+    var ry = az * bx - ax * bz
+    var rz = ax * by - ay * bx
+    return [ rx, ry, rz ]
+}
+```
+
+## sigma 
 
 The big Greek "E" (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summation). In other words: summing up some numbers.
 
@@ -83,7 +222,7 @@ for (var i = 1; i <= 2; i++) {
 
 Here, `sum` will be `135`.
 
-### capital Pi
+## capital Pi
 
 The capital Pi or "Big Pi" is very similar to [Sigma](#sigma), except we are using multiplication to find the "products of sequences." 
 
@@ -105,7 +244,7 @@ Where `value` will evaluate to `720`.
 
 ## pipes
 
-Pipe symbols, known as *bars*, can mean different things depending on the context. Below are three common forms.
+Pipe symbols, known as *bars*, can mean different things depending on the context. Below are three common uses: [absolute](#absolute), [Euclidean norm](#euclidean-norm), and [determinant](#determinant).
 
 #### absolute 
 
@@ -119,7 +258,7 @@ var result = Math.abs(x)
 // => 5
 ```
 
-#### euclidean norm
+#### Euclidean norm
 
 ![pipes2](img/pipes2.png)
 
@@ -178,7 +317,7 @@ Implementations:
 - [robust-determinant](https://www.npmjs.com/package/robust-determinant)
 - [robust-determinant-2](https://www.npmjs.com/package/robust-determinant-2) and [robust-determinant-3](https://www.npmjs.com/package/robust-determinant-3), specifically for 2x2 and 3x3 matrices, respectively
 
-#### hat
+## hat
 
 In geometry, the "hat" symbol above a character is used to represent a [unit vector](https://en.wikipedia.org/wiki/Unit_vector). For example, here is the unit vector of *a*:
 
