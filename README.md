@@ -114,7 +114,7 @@ Both symbols can represent simple multiplication of scalars. The following are e
 
 ![dotcross1](img/dotcross1.png)
 
-In code we tend to use asterisk:
+In programming languages we tend to use asterisk for multiplication:
 
 ```js
 var result = 3 * 4
