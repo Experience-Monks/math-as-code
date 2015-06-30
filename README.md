@@ -556,7 +556,7 @@ Although we cannot express the result of `x=1`, we *can* say that, as we approac
 
 ## prime
 
-The prime symbol (`′`) is often used in variable names to describe things which are similar, without giving it a different name altogether. Sometimes, it is used to describe the "next value" after some transformation.
+The prime symbol (`′`) is often used in variable names to describe things which are similar, without giving it a different name altogether. It often describes the "next value" after some transformation.
 
 For example, if we take a 2D point *(x, y)* and rotate it, you might name the result *(x′, y′)*. Or, the *transpose* of matrix **M** might be named **M′**.
 
