@@ -34,9 +34,7 @@ For simplicity, many of the code examples here operate on floating point values 
 - [hat **`â`**](#hat) - *unit vector*
 - ["element of" `∈` `∉`](#element)
 - [function `ƒ`](#function)
-- [limit <sup>`lim`</sup>](#limit)
 - [prime `′`](#prime)
-- [derivative `∆x`](#derivative)
 - [more...](#more)
 
 ## variable naming conventions
@@ -512,63 +510,21 @@ function length (x, y) {
 }
 ```
 
-## limit
-
-Sometimes we can't figure out a function directly, but instead, we can see what it *should* be as we get closer to a certain value.
-
-For example:
-
-![limit1](img/limit1.png)
-
-<!-- \frac{(x^2 - 1)}{(x -1)} -->
-
-Translating this to code might look like this:
-
-```js
-function f (x) {
-  return (Math.pow(x, 2) - 1) / (x - 1)
-}
-```
-
-Running it, we can see a pattern emerge:
-
-```js
-f(2)     //=> 3
-f(1.75)  //=> 2.75
-f(1.5)   //=> 2.5
-f(1.25)  //=> 2.25
-f(1.1)   //=> 2.1
-```
-
-As we get closer to `x=1`, the output is getting closer to 2. But then:
-
-```js
-f(1) //=> NaN
-```
-
-This is because the expression evaluates to `(0 / 0)`, which is intederminate (in JavaScript, represented as "Not a Number").
-
-Although we cannot express the result of `x=1`, we *can* say that, as we approach 1, the *limit* is 2. This is where the `lim` symbol comes in:
-
-![limit2](img/limit2.png)
-
-<!-- \lim_{x\to1}\frac{(x^2 - 1)}{(x -1)} = 2 -->
-
 ## prime
 
-The prime symbol (`′`) is often used in variable names to describe things which are similar, without giving it a different name altogether. It often describes the "next value" after some transformation.
+The prime symbol (`′`) is often used in variable names to describe things which are similar, without giving it a different name altogether. It can describe the "next value" after some transformation.
 
 For example, if we take a 2D point *(x, y)* and rotate it, you might name the result *(x′, y′)*. Or, the *transpose* of matrix **M** might be named **M′**.
 
 In code, we typically just assign the variable a more descriptive name, like `transformedPosition`.
 
-For a mathematical [function](#function), the prime symbol often describes the [*derivative*](#derivative) of that function. Derivatives will be explained shortly. Let's take our earlier function:
+For a mathematical [function](#function), the prime symbol often describes the [*derivative*](#derivative) of that function. Derivatives will be explained in a future section. Let's take our earlier function:
 
 ![function2](img/function2.png)
 
 <!-- f\left (x  \right ) = x^{2} -->
 
-Its derivative would be written as:
+Its derivative could be written with a prime `′` symbol:
 
 ![prime1](img/prime1.png)
 
@@ -586,93 +542,7 @@ function fPrime (x) {
 }
 ```
 
-Multiple prime symbols can be used to describe the second derivative *f′′(x)* and third derivative *f′′′(x)*. After this, authors typically express higher orders with roman numerals *ƒ*<sup>IV</sup> or superscript numbers *ƒ*<sup>(n)</sup>.
-
-## derivatives
-
-[Derivatives](https://en.wikipedia.org/wiki/Derivative) and *differentiation* is difficult to explain in code, but let's try. For a more detailed beginner's introduction, check out [Calculus: Building Intuition for the Derivative](http://betterexplained.com/articles/calculus-building-intuition-for-the-derivative/).
-
-In simple terms, derivatives can find the slope of a function.
-
-This will be a little long-winded, split roughly into [theory](#theory) and [application](#application). If you already understand the concept, you can skip right to application.
-
-#### theory
-
-First, let's imagine what number comes after zero. Maybe something like this?
-
-```js
-0.000000001
-```
-
-Nope! We can go smaller still. For any small number, we can find something smaller than it. This can go on *infinitely* - we will never know the smallest number.
-
-Let's call this mysterious and infinitely small gap between numbers *dx*. Or, the "jump" to the next number in the *continuum*.
-
-Sometimes you will see this *dx* written as *∆x* (pronounced "delta-x").
-
-![deriv1](img/deriv1.png)
-
-<!-- \Delta x -->
-
-Derivatives can tell us how a [function](#function) like *ƒ(x) = x<sup>2</sup>* can change as the input moves through this continuum. Let's dissect this a bit:
-
-![deriv2](img/deriv2.png)
-
-<!-- f'(x) = \lim_{dx\to0}\frac{f(x + dx) - f(x)}{dx} -->
-
-Again, here we see the [limit](#limit) symbol, which is telling us that the expression holds true as our *dx* interval approaches 0.
-
-In code, determining the *rate of motion* through the continuum might look like this:
-
-```js
-var difference = f(x + dx) - f(x)
-var m = difference / dx
-```
-
-The goal of differentiation is to remove *dx* from the equation, so that we can determine the rate of motion without error.
-
-Say we input whole numbers into the equation, and use a *dx* interval of 1 (a very large interval).
-
-```js
-f(1)  //=> 1
-f(2)  //=> 4
-f(3)  //=> 9
-f(4)  //=> 16
-
-function f (x) {
-  return Math.pow(x, 2)
-}
-```
-
-Using the above, let's determine the rate of motion with `x=2` and `dx=1`, and see how it might look in code.
-
-```js
-var x = 2
-var dx = 1
-var difference = f(x + dx) - f(x)
-var m = difference / dx
-//=> 5
-```
-
-But an interval of 1 is pretty huge, and gives us a very large margin of error. Using `dx=0.001` will give us a smaller margin of error, resulting in:
-
-```js
-4.00099999999
-```
-
-As *dx* approaches 0, we can see that the rate of motion for `x=2` is 4.
-
-From this, we can deduce that **as *dx* approaches zero margin of error, we get 2*x*.** Here is how it might look if we were to solve the equation and remove the *dx* margin of error:
-
-![deriv3](img/deriv3.png)
-
-Thus, the *derivative* of our *x*<sup>2</sup> function can be succinctly described as below. Note the [prime](#prime) in the name.
-
-![prime1](img/prime1.png)
-
-<!-- f'(x) = 2x -->
-
-#### application
+Multiple prime symbols can be used to describe the second derivative *ƒ′′* and third derivative *ƒ′′′*. After this, authors typically express higher orders with roman numerals *ƒ*<sup>IV</sup> or superscript numbers *ƒ*<sup>(n)</sup>.
 
 ## more...
 
