@@ -243,9 +243,8 @@ The big Greek "E" (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summa
 Here, `i=1` says to start at `1` and end at the number above the Sigma, `100`. These are the lower and upper bounds, respectively. The *i* to the right of the "E" tells us what we are summing. In code:
 
 ```js
-var n = 100
 var sum = 0
-for (var i = 1; i <= n; i++) {
+for (var i = 1; i <= 100; i++) {
   sum += i
 }
 ```
@@ -255,7 +254,7 @@ The result of `sum` is `5050`.
 **Tip:** With whole numbers, this particular pattern can be optimized to the following:
 
 ```js
-var n = 100
+var n = 100 // upper bound
 var sum = (n * (n + 1)) / 2
 ```
 
@@ -266,9 +265,8 @@ Here is another example where the *i*, or the "what to sum," is different:
 In code:
 
 ```js
-var n = 100
 var sum = 0
-for (var i = 1; i <= n; i++) {
+for (var i = 1; i <= 100; i++) {
   sum += (2 * i + 1)
 }
 ```
@@ -518,7 +516,7 @@ For example, if we take a 2D point *(x, y)* and rotate it, you might name the re
 
 In code, we typically just assign the variable a more descriptive name, like `transformedPosition`.
 
-For a mathematical [function](#function), the prime symbol often describes the [*derivative*](#derivative) of that function. Derivatives will be explained in a future section. Let's take our earlier function:
+For a mathematical [function](#function), the prime symbol often describes the *derivative* of that function. Derivatives will be explained in a future section. Let's take our earlier function:
 
 ![function2](img/function2.png)
 
