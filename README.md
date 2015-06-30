@@ -79,6 +79,8 @@ Code:
 
 ```js
 var x = 2 * k * j
+var k = x / (2 * j)
+var j = x / (2 * k)
 ```
 
 <!--
