@@ -100,8 +100,6 @@ var j = x / (2 * k)
 
 The `≅` symbol is for [*congruence*](https://en.wikipedia.org/wiki/Congruence_%28geometry%29). For example, here the line segment AB is congruent with the segment CD.
 
-![equals2](img/equals2.png)
-
  \bar{AB} \cong \bar{CD} -->
 
 ## dot & cross
@@ -242,7 +240,7 @@ For other implementations of vector multiplication, cross product, and dot produ
 
 The big Greek "E" (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summation). In other words: summing up some numbers.
 
-![sigma](img/sigma1.png)
+![sigma](img/sigma1.svg)
 
 <!-- \sum_{i=1}^{100}i -->
 
@@ -266,7 +264,9 @@ var sum = (n * (n + 1)) / 2
 
 Here is another example where the *i*, or the "what to sum," is different:
 
-![sum2](img/sigma2.png)
+![sum2](img/sigma2.svg)
+
+<!-- \sum_{i=1}^{100}(2i+1) -->
 
 In code:
 
@@ -281,7 +281,9 @@ The result of `sum` is `10200`.
 
 The notation can be nested, which is much like nesting a `for` loop. You should evaluate the right-most sigma first, unless the author has enclosed them in parentheses to alter the order. 
 
-![sigma3](img/sigma3.png)
+![sigma3](img/sigma3.svg)
+
+<!-- \sum_{i=1}^{2}\sum_{j=4}^{6}(3ij) -->
 
 In code:
 
@@ -302,14 +304,15 @@ The capital Pi or "Big Pi" is very similar to [Sigma](#sigma), except we are usi
 
 Take the following:
 
-![capitalPi](img/capital-pi1.png)
+![capitalPi](img/capital-pi1.svg)
+
+<!-- \prod_{i=1}^{6}i -->
 
 In code, it might look like this:
 
 ```js
-var n = 6
 var value = 1
-for (var i = 1; i <= n; i++) {
+for (var i = 1; i <= 6; i++) {
   value *= i
 }
 ```
@@ -324,7 +327,9 @@ These three features all describe the *length* of an object.
 
 #### absolute 
 
-![pipes1](img/pipes1.png)
+![pipes1](img/pipes1.svg)
+
+<!-- \left | x \right | -->
 
 For a number *x*, `|x|` means the absolute of *x*. In code:
 
@@ -336,7 +341,7 @@ var result = Math.abs(x)
 
 #### Euclidean norm
 
-![pipes4](img/pipes4.png)
+![pipes4](img/pipes4.svg)
 
 <!-- \left \| \mathbf{v} \right \| -->
 
@@ -344,7 +349,7 @@ For a vector **v**, `‖v‖` is the [Euclidean norm](https://en.wikipedia.org/w
 
 Often this is represented by double-bars to avoid ambiguity with the *absolute* notation, but sometimes you may see it with single bars:
 
-![pipes2](img/pipes2.png)
+![pipes2](img/pipes2.svg)
 
 <!-- \left | \mathbf{v} \right | -->
 
@@ -375,7 +380,7 @@ Other implementations:
 
 #### determinant
 
-![pipes3](img/pipes3.png)
+![pipes3](img/pipes3.svg)
 
 <!-- \left |\mathbf{A}  \right | -->
 
@@ -403,7 +408,7 @@ Implementations:
 
 In geometry, the "hat" symbol above a character is used to represent a [unit vector](https://en.wikipedia.org/wiki/Unit_vector). For example, here is the unit vector of **a**:
 
-![hat](img/hat.png)
+![hat](img/hat.svg)
 
 <!-- \hat{\mathbf{a}} -->
 
@@ -443,7 +448,7 @@ Other implementations:
 
 In set theory, the "element of" symbol `∈` and `∋` can be used to describe whether something is an element of a set. For example:
 
-![element1](img/element1.png)
+![element1](img/element1.svg)
 
 <!-- A=\left \{3,9,14}{  \right \}, 3 \in A -->
 
@@ -458,13 +463,13 @@ A.indexOf(3) >= 0
 
 The backwards `∋` is the same, but the order changes:
 
-![element2](img/element2.png)
+![element2](img/element2.svg)
 
 <!-- A=\left \{3,9,14}{  \right \}, A \ni 3 -->
 
 You can also use the "not an element of" symbols `∉` and `∌` like so:
 
-![element3](img/element3.png)
+![element3](img/element3.svg)
 
 <!-- A=\left \{3,9,14}{  \right \}, 6 \notin A -->
 
@@ -474,13 +479,13 @@ You can also use the "not an element of" symbols `∉` and `∌` like so:
 
 A function relates an input to an output value. For example, the following is a function:
 
-![function1](img/function1.png)
+![function1](img/function1.svg)
 
 <!-- x^{2} -->
 
 We can give this function a *name*. Commonly, we use `ƒ` to describe a function, but it could be named `A(x)` or anything else.
 
-![function2](img/function2.png)
+![function2](img/function2.svg)
 
 <!-- f\left (x  \right ) = x^{2} -->
 
@@ -494,15 +499,15 @@ function square (x) {
 
 Sometimes a function is not named, and instead the output is written.
 
-<!-- y = x^{2} -->
+![function3](img/function3.svg)
 
-![function3](img/function3.png)
+<!-- y = x^{2} -->
 
 In the above example, *x* is the input, the relationship is *squaring*, and *y* is the output.
 
 Functions can also have multiple parameters, like in a programming language. These are known as *arguments* in mathematics, and the number of arguments a function takes is known as the *arity* of the function.
 
-![function4](img/function4.png)
+![function4](img/function4.svg)
 
 <!-- f(x,y) = \sqrt{x^2 + y^2} -->
 
@@ -524,13 +529,13 @@ In code, we typically just assign the variable a more descriptive name, like `tr
 
 For a mathematical [function](#function), the prime symbol often describes the *derivative* of that function. Derivatives will be explained in a future section. Let's take our earlier function:
 
-![function2](img/function2.png)
+![function2](img/function2.svg)
 
 <!-- f\left (x  \right ) = x^{2} -->
 
 Its derivative could be written with a prime `′` symbol:
 
-![prime1](img/prime1.png)
+![prime1](img/prime1.svg)
 
 <!-- f'(x) = 2x -->
 
