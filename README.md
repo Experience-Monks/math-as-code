@@ -441,12 +441,23 @@ In set theory, the "element of" symbol `∈` and `∋` can be used to describe w
 
 <!-- A=\left \{3,9,14}{  \right \}, 3 \in A -->
 
-Here we have a set of numbers *A* `[ 3, 9, 14 ]` and we are saying `3` is an "element of" that set. In code:
+Here we have a set of numbers *A* `{ 3, 9, 14 }` and we are saying `3` is an "element of" that set. 
+
+A simple implementation might look like this:
 
 ```js
 var A = [ 3, 9, 14 ]
 
 A.indexOf(3) >= 0
+//=> true
+```
+
+However, it would be more accurate to use a `Set` which only holds unique values. This is a feature of ES6.
+
+```js
+var A = new Set([ 3, 9, 14 ])
+
+A.has(3)
 //=> true
 ```
 
@@ -464,7 +475,7 @@ You can also use the "not an element of" symbols `∉` and `∌` like so:
 
 ## function
 
-[Functions](https://en.wikipedia.org/wiki/Function_%28mathematics%29) are fundamental features of mathematics, and fairly easy to translate into code.
+[Functions](https://en.wikipedia.org/wiki/Function_%28mathematics%29) are fundamental features of mathematics, and the concept is fairly easy to translate into code.
 
 A function relates an input to an output value. For example, the following is a function:
 
