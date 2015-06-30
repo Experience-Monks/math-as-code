@@ -33,6 +33,10 @@ For simplicity, many of the code examples here operate on floating point values 
   - [determinant](#determinant)
 - [hat **`â`**](#hat) - *unit vector*
 - ["element of" `∈` `∉`](#element)
+- [function `ƒ`](#function)
+- [limit <sup>`lim`</sup>](#limit)
+- [prime `′`](#prime)
+- [derivative `∆x`](#derivative)
 - [more...](#more)
 
 ## variable naming conventions
@@ -188,7 +192,7 @@ The result `0` tells us our vectors are perpendicular. Our `dot` function:
 
 ```js
 function dot(a, b) {
-    return a[0] * b[0] + a[1] * b[1] + a[2] * b[2]
+  return a[0] * b[0] + a[1] * b[1] + a[2] * b[2]
 }
 ```
 
@@ -216,13 +220,13 @@ Our `cross` function:
 
 ```js
 function cross(a, b) {
-    var ax = a[0], ay = a[1], az = a[2],
-        bx = b[0], by = b[1], bz = b[2]
+  var ax = a[0], ay = a[1], az = a[2],
+    bx = b[0], by = b[1], bz = b[2]
 
-    var rx = ay * bz - az * by
-    var ry = az * bx - ax * bz
-    var rz = ax * by - ay * bx
-    return [ rx, ry, rz ]
+  var rx = ay * bz - az * by
+  var ry = az * bx - ax * bz
+  var rz = ax * by - ay * bx
+  return [ rx, ry, rz ]
 }
 ```
 
@@ -401,7 +405,7 @@ In geometry, the "hat" symbol above a character is used to represent a [unit vec
 
 <!-- \hat{\mathbf{a}} -->
 
-In cartesian space, a unit vector is typically length 1, in the range of -1.0 to 1.0. Here we *normalize* a 3D vector into a unit vector:
+In cartesian space, a unit vector is typically length 1. That means each part of the vector will be in the range of -1.0 to 1.0. Here we *normalize* a 3D vector into a unit vector:
 
 ```js
 var a = [ 0, 4, -3 ]
@@ -461,6 +465,183 @@ You can also use the "not an element of" symbols `∉` and `∌` like so:
 ![element3](img/element3.png)
 
 <!-- A=\left \{3,9,14}{  \right \}, 6 \notin A -->
+
+## function
+
+[Functions](https://en.wikipedia.org/wiki/Function_%28mathematics%29) are fundamental features of mathematics, and fairly easy to translate into code.
+
+A function relates an input to an output value. For example, the following is a function:
+
+![function1](img/function1.png)
+
+<!-- x^{2} -->
+
+We can give this function a *name*. Commonly, we use `ƒ` to describe a function, but it could be named `A(x)` or anything else.
+
+![function2](img/function2.png)
+
+<!-- f\left (x  \right ) = x^{2} -->
+
+In code, we might name it `square` and write it like this:
+
+```js
+function square (x) {
+  return Math.pow(x, 2)
+}
+```
+
+Sometimes a function is not named, and instead the output is written.
+
+<!-- y = x^{2} -->
+
+![function3](img/function3.png)
+
+In the above example, *x* is the input, the relationship is *squaring*, and *y* is the output.
+
+## limit
+
+Sometimes we can't figure out a function directly, but instead, we can see what it *should* be as we get closer to a certain value.
+
+For example:
+
+![limit1](img/limit1.png)
+
+<!-- \frac{(x^2 - 1)}{(x -1)} -->
+
+Translating this to code might look like this:
+
+```js
+function f (x) {
+  return (Math.pow(x, 2) - 1) / (x - 1)
+}
+```
+
+Running it, we can see a pattern emerge:
+
+```js
+f(2)     //=> 3
+f(1.75)  //=> 2.75
+f(1.5)   //=> 2.5
+f(1.25)  //=> 2.25
+f(1.1)   //=> 2.1
+```
+
+As we get closer to `x=1`, the output is getting closer to 2. But then:
+
+```js
+f(1) //=> NaN
+```
+
+This is because the expression evaluates to `(0 / 0)`, which is intederminate (in JavaScript, represented as "Not a Number").
+
+Although we cannot express the result of `x=1`, we *can* say that, as we approach 1, the *limit* is 2. This is where the `lim` symbol comes in:
+
+![limit2](img/limit2.png)
+
+<!-- \lim_{x\to1}\frac{(x^2 - 1)}{(x -1)} = 2 -->
+
+## prime
+
+The prime symbol (`′`) is often used in variable names to describe things which are similar, without giving it a different name altogether.
+
+For example, if we take a 2D point *(x, y)* and rotate it, you might name the result *(x′, y′)*. Or, the *transpose* of matrix **M** might be named **M′**.
+
+In code, we typically just assign the variable a more descriptive name, like `transformedPosition`.
+
+For a mathematical [function](#function), the prime symbol describes the [*derivative*](#derivative) of that function. Let's take our earlier function:
+
+![function2](img/function2.png)
+
+<!-- f\left (x  \right ) = x^{2} -->
+
+The derivative might be written as:
+
+![prime1](img/prime1.png)
+
+<!-- f'(x) = 2x -->
+
+Multiple prime symbols can be used to describe the second derivative *f′′(x)*, third derivative *f′′′(x)* and so forth.
+
+## derivatives
+
+[Derivatives](https://en.wikipedia.org/wiki/Derivative) and *differentiation* is difficult to explain in code, but let's try. For a more detailed beginner's introduction, check out [Calculus: Building Intuition for the Derivative](http://betterexplained.com/articles/calculus-building-intuition-for-the-derivative/).
+
+First, let's imagine what number comes after zero. Maybe something like this?
+
+```js
+0.000000001
+```
+
+Nope! We can go smaller still. For any small number, we can find something smaller than it. This can go on *infinitely* - we will never know the smallest number.
+
+Let's call this mysterious and infinitely small gap between numbers *dx*. Or, the "jump" to the next number in the *continuum*.
+
+Sometimes you will see this *dx* written as *∆x* (pronounced "delta-x").
+
+![deriv1](img/deriv1.png)
+
+<!-- \Delta x -->
+
+Derivatives can tell us how a [function](#function) like *ƒ(x) = x<sup>2</sup>* can change as the input moves through this continuum. Let's dissect this a bit:
+
+![deriv2](img/deriv2.png)
+
+<!-- f'(x) = \lim_{dx\to0}\frac{f(x + dx) - f(x)}{dx} -->
+
+Again, here we see the [limit](#limit) symbol, which is telling us that the expression holds true as our *dx* interval approaches 0.
+
+In code, determining the *rate of motion* through the continuum might look like this:
+
+```js
+var difference = f(x + dx) - f(x)
+var m = difference / dx
+```
+
+The goal of differentiation is to remove *dx* from the equation, so that we can determine the rate of motion without error.
+
+Say we input whole numbers into the equation, and use a *dx* interval of 1 (a very large interval).
+
+```js
+f(1)  //=> 1
+f(2)  //=> 4
+f(3)  //=> 9
+f(4)  //=> 16
+
+function f (x) {
+  return Math.pow(x, 2)
+}
+```
+
+Using the above, let's determine the rate of motion with `x=2` and `dx=1`, and see how it might look in code.
+
+```js
+var x = 2
+var dx = 1
+var difference = f(x + dx) - f(x)
+var m = difference / dx
+//=> 5
+```
+
+But an interval of 1 is pretty huge, and gives us a very large margin of error. Using `dx=0.001` will give us a smaller margin of error, resulting in:
+
+```js
+4.00099999999
+```
+
+As *dx* approaches 0, we can see that the rate of motion for `x=2` is 4.
+
+From this, we can deduce that **as *dx* approaches zero margin of error, we get 2*x***. Here is how it might look if we were to solve the equation and remove the *dx* margin of error:
+
+![deriv3](img/deriv3.png)
+
+Thus, the *derivative* of our *x*<sup>2</sup> function can be succinctly described as below. Note the [prime](#prime) in the name. 
+
+![prime1](img/prime1.png)
+
+<!-- f'(x) = 2x -->
+
+
+<!-- TODO: need to show solving in symbols here -->
 
 ## more...
 
