@@ -37,10 +37,10 @@ For a more complete list, refer to [Wikipedia - List of Mathematical Symbols](ht
 
 There are a variety of naming conventions depending on the context and field of study, and they are not always consistent. However, in some of the literature you may find variable names to follow a pattern like so:
 
-- *s* - italic lowercase letters for scalars (i.e. a number)
-- **x** - bold lowercase letters for vectors (i.e. a 2D point)
-- **A** - bold uppercase letters for matrices (i.e. a 3D transformation)
-- *θ* - italic lowercase Greek letters for constants and special variables (i.e. [polar angle *θ*, *theta*](https://en.wikipedia.org/wiki/Spherical_coordinate_system))
+- *s* - italic lowercase letters for scalars (e.g. a number)
+- **x** - bold lowercase letters for vectors (e.g. a 2D point)
+- **A** - bold uppercase letters for matrices (e.g. a 3D transformation)
+- *θ* - italic lowercase Greek letters for constants and special variables (e.g. [polar angle *θ*, *theta*](https://en.wikipedia.org/wiki/Spherical_coordinate_system))
 
 This will also be the format of this guide.
 
@@ -311,6 +311,8 @@ Where `value` will evaluate to `720`.
 ## pipes
 
 Pipe symbols, known as *bars*, can mean different things depending on the context. Below are three common uses: [absolute](#absolute), [Euclidean norm](#euclidean-norm), and [determinant](#determinant).
+
+These three features all describe the *length* of an object.
 
 #### absolute 
 
