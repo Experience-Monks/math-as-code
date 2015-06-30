@@ -17,6 +17,7 @@ For a more complete list, refer to [Wikipedia - List of Mathematical Symbols](ht
 # contents
 
 - [variable name conventions](#variable-name-conventions)
+- [equals `=` `≈` `≠` `=:`](#equals-symbols)
 - [dot & cross `×` `·`](#dot--cross)
   - [scalar multiplication](#scalar-multiplication)
   - [vector multiplication](#vector-multiplication)
@@ -29,9 +30,7 @@ For a more complete list, refer to [Wikipedia - List of Mathematical Symbols](ht
   - [Euclidean norm](#euclidean-norm)
   - [determinant](#determinant)
 - [hat **`â`**](#hat) - *unit vector*
-- [equals `=` `≈` `≠` `=:`](#equals-symbols)
-- [element `∈` `∉`](#element)
-  - [such that](#such-that)
+- ["element of" `∈` `∉`](#element)
 - [more...](#more)
 
 ## variable naming conventions
@@ -44,6 +43,54 @@ There are a variety of naming conventions depending on the context and field of 
 - *θ* - italic lowercase Greek letters for constants and special variables (i.e. [polar angle *θ*, *theta*](https://en.wikipedia.org/wiki/Spherical_coordinate_system))
 
 This will also be the format of this guide.
+
+## equals symbols
+
+There are a number of symbols resembling the equals sign `=`. Here is a few common ones and an example of their use:
+
+- `=` is for equality (values are the same)
+- `≠` is for inequality (value are not the same)
+- `≈` is for approximately equal to (`π ≈ 3.14159`)
+
+In JavaScript:
+
+```js
+// equality
+2 === 3
+
+// inequality
+2 !== 3
+
+// approximately equal
+almostEqual(Math.PI, 3.14159, 1e-5)
+
+function almostEqual(a, b, epsilon) {
+  return Math.abs(a - b) <= epsilon
+}
+```
+
+In mathematics, the `:=` `=:` and `=` symbols are used for *definition*. The following defines *x* to be another name for 2*kj*.
+
+![equals1](img/equals1.png)
+
+<!-- x = 2kj -->
+
+Code:
+
+```js
+var x = 2 * k * j
+```
+
+<!--
+
+///// Need a code sample?
+///// Maybe better suited in another place?
+
+The `≅` symbol is for [*congruence*](https://en.wikipedia.org/wiki/Congruence_%28geometry%29). For example, here the line segment AB is congruent with the segment CD.
+
+![equals2](img/equals2.png)
+
+ \bar{AB} \cong \bar{CD} -->
 
 ## dot & cross
 
@@ -375,53 +422,6 @@ Other implementations:
 
 - [gl-vec3/normalize](https://github.com/stackgl/gl-vec3/blob/507480fa57ba7c5fb70679cf531175a52c48cf53/normalize.js) and [gl-vec2/normalize](https://github.com/stackgl/gl-vec2/blob/21f460a371540258521fd2f720d80f14e87bd400/normalize.js)
 - [vectors/normalize-nd](https://github.com/hughsk/vectors/blob/master/normalize-nd.js) (n-dimensional)
-
-## equals symbols
-
-There are a number of symbols resembling the equals sign `=`. Here is a few common ones and an example of their use:
-
-- `=` is for equality (values are the same)
-- `≠` is for inequality (value are not the same)
-- `≈` is for approximately equal to (`π ≈ 3.14159`)
-
-In JavaScript:
-
-```js
-// equality
-2 === 3
-
-// inequality
-2 !== 3
-
-// approximately equal
-almostEqual(Math.PI, 3.14159, 1e-5)
-
-function almostEqual(a, b, epsilon) {
-  return Math.abs(a - b) <= epsilon
-}
-```
-
-The `:=` `=:` and `=` symbols can be used for *definition*. The following defines *x* to be another name for 2*kj*.
-
-![equals1](img/equals1.png)
-
-<!-- x = 2kj -->
-
-Code:
-
-```js
-var x = 2 * k * j
-```
-
-<!--
-
-///// Need a code sample?
-
-The `≅` symbol is for [*congruence*](https://en.wikipedia.org/wiki/Congruence_%28geometry%29). For example, here the line segment AB is congruent with the segment CD.
-
-![equals2](img/equals2.png)
-
- \bar{AB} \cong \bar{CD} -->
 
 ## element
 
