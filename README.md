@@ -320,7 +320,7 @@ These three features all describe the *length* of an object.
 
 ![pipes1](img/pipes1.png)
 
-For a number *x*, `| x |` means the absolute of *x*. In code:
+For a number *x*, `|x|` means the absolute of *x*. In code:
 
 ```js
 var x = -5
