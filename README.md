@@ -644,7 +644,7 @@ But an interval of 1 is pretty huge, and gives us a very large margin of error. 
 
 As *dx* approaches 0, we can see that the rate of motion for `x=2` is 4.
 
-From this, we can deduce that **as *dx* approaches zero margin of error, we get 2*x***. Here is how it might look if we were to solve the equation and remove the *dx* margin of error:
+From this, we can deduce that **as *dx* approaches zero margin of error, we get 2*x*.** Here is how it might look if we were to solve the equation and remove the *dx* margin of error:
 
 ![deriv3](img/deriv3.png)
 
