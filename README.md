@@ -18,7 +18,7 @@ For a more complete list, refer to [Wikipedia - List of Mathematical Symbols](ht
 
 - [variable name conventions](#variable-name-conventions)
 - [equals `=` `≈` `≠` `=:`](#equals-symbols)
-- [dot & cross `×` `·`](#dot--cross)
+- [dot & cross `·` `×`](#dot--cross)
   - [scalar multiplication](#scalar-multiplication)
   - [vector multiplication](#vector-multiplication)
   - [dot product](#dot-product)
