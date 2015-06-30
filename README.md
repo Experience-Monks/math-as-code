@@ -17,18 +17,18 @@ For a more complete list, refer to [Wikipedia - List of Mathematical Symbols](ht
 # contents
 
 - [variable conventions](#variable-conventions)
-- [dot & cross](#dot-cross)
+- [dot & cross `×` `·`](#dot-cross)
   - [scalar multiplication](#scalar-multiplication)
   - [vector multiplication](#vector-multiplication)
   - [dot product](#dot-product)
   - [cross product](#cross-product)
-- [sigma](#sigma) - *summation*
-- [capital Pi](#capital-pi) - *products of sequences*
-- [pipes](#pipes)
+- [sigma `Σ`](#sigma) - *summation*
+- [capital Pi `Π`](#capital-pi) - *products of sequences*
+- [pipes `||`](#pipes)
   - [absolute](#absolute)
   - [Euclidean norm](#euclidean-norm)
   - [determinant](#determinant)
-- [hat](#hat) - *unit vector*
+- [hat **`â`**](#hat) - *unit vector*
 - [more...](#more)
 
 ## variable conventions
@@ -76,7 +76,7 @@ Let's take our earlier example but apply it to vectors:
 
 ![dotcross3](img/dotcross3.png)
 
-<!-- 3\mathbf{k}\mathbf{j} -->
+<!-- 3\mathbf{k} \mathbf{j} -->
 
 Here is how it would look in code, using arrays `[x, y]` to represent the 2D vectors.
 
@@ -164,13 +164,19 @@ function cross(a, b) {
 }
 ```
 
+For other implementations of vector multiplication, cross product, and dot product:
+
+- [gl-vec3](https://github.com/stackgl/gl-vec3)
+- [gl-vec2](https://github.com/stackgl/gl-vec2)
+- [vectors](https://github.com/hughsk/vectors) - includes n-dimensional
+
 ## sigma 
 
 The big Greek "E" (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summation). In other words: summing up some numbers.
 
 ![sigma](img/sigma1.png)
 
-Here, `i=1` says to start at `1` and end at the number above the Sigma, `100`. These are the lower and upper bounds, respectively. The `i` to the right of the "E" tells us what we are summing. In code:
+Here, `i=1` says to start at `1` and end at the number above the Sigma, `100`. These are the lower and upper bounds, respectively. The *i* to the right of the "E" tells us what we are summing. In code:
 
 ```js
 var n = 100
@@ -189,7 +195,7 @@ var n = 100
 var sum = (n * (n + 1)) / 2
 ```
 
-Here is another example where the `i`, or the "what to sum," is different:
+Here is another example where the *i*, or the "what to sum," is different:
 
 ![sum2](img/sigma2.png)
 
@@ -260,13 +266,17 @@ var result = Math.abs(x)
 
 #### Euclidean norm
 
+![pipes4](img/pipes4.png)
+
+<!-- \left \| \mathbf{v} \right \| -->
+
+For a vector **v**, `‖v‖` is the [Euclidean norm](https://en.wikipedia.org/wiki/Norm_%28mathematics%29#Euclidean_norm) of **v**. It is also referred to as the "magnitude" or "length" of a vector.
+
+Often this is represented by double-bars to avoid ambiguity with the *absolute* notation, but sometimes you may see it with single bars:
+
 ![pipes2](img/pipes2.png)
 
-For a vector *v*, `| v |` means the [Euclidean norm](https://en.wikipedia.org/wiki/Norm_%28mathematics%29#Euclidean_norm) of *v*. It is also referred to as the "magnitude" or "length" of a vector.
-
-Often this is represented by double-pipes to avoid ambiguity with the *absolute* notation. For example:
-
-![pipes4](img/pipes4.png)
+<!-- \left | \mathbf{v} \right | -->
 
 Here is an example using an array `[x, y, z]` to represent a 3D vector.
 
@@ -297,14 +307,16 @@ Other implementations:
 
 ![pipes3](img/pipes3.png)
 
-For a matrix *A*, `| A |` means the [determinant](https://en.wikipedia.org/wiki/Determinant) of matrix *A*.
+<!-- \left |\mathbf{A}  \right | -->
+
+For a matrix **A**, `|A|` means the [determinant](https://en.wikipedia.org/wiki/Determinant) of matrix **A**.
 
 Here is an example computing the determinant of a 2x2 matrix, represented by a flat array in column-major format.
 
 ```js
 var determinant = require('gl-mat4/determinant')
 
-var matrix = [1, 0, 0, 1]
+var matrix = [ 1, 0, 0, 1 ]
 var det = determinant(matrix)
 //=> 1
 ```
@@ -319,14 +331,16 @@ Implementations:
 
 ## hat
 
-In geometry, the "hat" symbol above a character is used to represent a [unit vector](https://en.wikipedia.org/wiki/Unit_vector). For example, here is the unit vector of *a*:
+In geometry, the "hat" symbol above a character is used to represent a [unit vector](https://en.wikipedia.org/wiki/Unit_vector). For example, here is the unit vector of **a**:
 
 ![hat](img/hat.png)
+
+<!-- \hat{\mathbf{a}} -->
 
 In cartesian space, a unit vector is typically length 1, in the range of -1.0 to 1.0. Here we *normalize* a 3D vector into a unit vector:
 
 ```js
-var a = [0, 4, -3]
+var a = [ 0, 4, -3 ]
 normalize(a)
 //=> [ 0, 0.8, -0.6000000000000001 ]
 ```
