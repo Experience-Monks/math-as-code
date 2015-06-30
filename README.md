@@ -14,6 +14,8 @@ Mathematical symbols can mean different things depending on context and the fiel
 
 For a more complete list, refer to [Wikipedia - List of Mathematical Symbols](https://en.wikipedia.org/wiki/List_of_mathematical_symbols). 
 
+For simplicity, many of the code examples here operate on floating point values and are not numerically robust. For more details on why this may be a problem, see [Robust Arithmetic Notes](https://github.com/mikolalysenko/robust-arithmetic-notes) by Mikola Lysenko.
+
 # contents
 
 - [variable name conventions](#variable-name-conventions)
@@ -404,10 +406,8 @@ In cartesian space, a unit vector is typically length 1, in the range of -1.0 to
 ```js
 var a = [ 0, 4, -3 ]
 normalize(a)
-//=> [ 0, 0.8, -0.6000000000000001 ]
+//=> [ 0, 0.8, -0.6 ]
 ```
-
-Notice, since we are working with floating point values and not using numerically robust operations, we do not get a perfect `-(3/5)` value for the Z component.
 
 Here is the `normalize` function, operating on 3D vectors:
 
@@ -419,10 +419,10 @@ function normalize(vec) {
   var squaredLength = x*x + y*y + z*z
 
   if (squaredLength > 0) {
-    squaredLength = 1 / Math.sqrt(squaredLength)
-    vec[0] = vec[0] * squaredLength
-    vec[1] = vec[1] * squaredLength
-    vec[2] = vec[2] * squaredLength
+    var length = Math.sqrt(squaredLength)
+    vec[0] = vec[0] / length
+    vec[1] = vec[1] / length
+    vec[2] = vec[2] / length
   }
   return vec
 }

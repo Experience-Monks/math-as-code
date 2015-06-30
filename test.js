@@ -1,14 +1,19 @@
-var k = [ 0, 1, 0 ]
-var j = [ 1, 0, 0 ]
+function normalize(vec) {
+  var x = vec[0]
+  var y = vec[1]
+  var z = vec[2]
+  var squaredLength = x*x + y*y + z*z
 
-var d = cross(k, j)
-console.log(d)
-function cross(a, b) {
-    var ax = a[0], ay = a[1], az = a[2],
-        bx = b[0], by = b[1], bz = b[2]
-
-    var rx = ay * bz - az * by
-    var ry = az * bx - ax * bz
-    var rz = ax * by - ay * bx
-    return [ rx, ry, rz ]
+  if (squaredLength > 0) {
+    var length = Math.sqrt(squaredLength)
+    vec[0] = vec[0] / length
+    vec[1] = vec[1] / length
+    vec[2] = vec[2] / length
+  }
+  return vec
 }
+
+var a = [ 0, 4, -3 ]
+normalize(a)
+//=> [ 0, 0.8, -0.6000000000000001 ]
+console.log(normalize(a), a)
