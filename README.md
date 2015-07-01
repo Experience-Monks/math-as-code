@@ -34,7 +34,7 @@ For simplicity, many of the code examples here operate on floating point values 
 - [hat **`â`**](#hat) - *unit vector*
 - ["element of" `∈` `∉`](#element)
 - [function `ƒ`](#function)
-  - [piecewise function `"if"`](#piecewise-function)
+  - [piecewise function](#piecewise-function)
 - [prime `′`](#prime)
 - [more...](#more)
 
@@ -534,9 +534,9 @@ The following function *ƒ* chooses between two "sub functions" depending on the
     0, & \text{otherwise}
 \end{cases} -->
 
-This is very similar to `if` / `else` in code. The rightside conditions are often written as *"for *x* < 0"* or *"if x = 0"*. If the condition is true, the function to the left is used.
+This is very similar to `if` / `else` in code. The rightside conditions are often written as **"for x < 0"** or **"if x = 0"**. If the condition is true, the function to the left is used.
 
-In piecewise functions, *"otherwise"* and *"elsewhere"* are analogous to the `else` statement in code.
+In piecewise functions, **"otherwise"** and **"elsewhere"** are analogous to the `else` statement in code.
 
 ```js
 function f (x) {
