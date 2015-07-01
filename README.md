@@ -594,6 +594,10 @@ Multiple prime symbols can be used to describe the second derivative *ƒ′′* 
 
 Like this guide? Suggest some [more features](https://github.com/Jam3/math-as-code/issues/1) or send us a Pull Request!
 
+## Contributing
+
+For details on how to contribute, see [CONTRIBUTING.md](./CONTRIBUTING.md).
+
 ## License
 
 MIT, see [LICENSE.md](http://github.com/Jam3/math-as-code/blob/master/LICENSE.md) for details.
