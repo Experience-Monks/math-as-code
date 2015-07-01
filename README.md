@@ -80,7 +80,7 @@ In mathematics, the `:=` `=:` and `=` symbols are used for *definition*. The fol
 
 <!-- x = 2kj -->
 
-In code, we can use `=` to *define* our variables and provide aliases. The above defines the following:
+In JavaScript, we might use `=` to *define* our variables and provide aliases. The above equation defines the following:
 
 ```js
 var x = 2 * k * j
@@ -92,6 +92,14 @@ var k = x / (2 * j)
 
 ```js
 var j = x / (2 * k)
+```
+
+However, this is mutable, and only takes a snapshot of the values at that time. Some languages have pre-processor `#define` statements, which are closer to a mathematical *define*. 
+
+A more accurate representation in JavaScript (ES6) might look a bit like this:
+
+```js
+const f = (k, j) => 2 * k * j
 ```
 
 <!--
