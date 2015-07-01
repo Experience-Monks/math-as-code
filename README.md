@@ -145,7 +145,7 @@ var result = 3 * k * j
 
 To denote multiplication of one vector with a scalar, or element-wise multiplication of a vector with another vector, we do not use the dot `∙` or cross `×` symbols. These have different meanings in linear algebra, discussed shortly.
 
-Let's take our earlier example but apply it to vectors. For element-wise vector multiplication, you might often see an open dot `∘` to represent the [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_%28matrices%29).
+Let's take our earlier example but apply it to vectors. For element-wise vector multiplication, you might see an open dot `∘` to represent the [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_%28matrices%29).
 
 ![dotcross3](img/dotcross3.png)
 
