@@ -76,9 +76,7 @@ function almostEqual(a, b, epsilon) {
 
 In mathematics, the `:=` `=:` and `=` symbols are used for *definition*. The following defines *x* to be another name for 2*kj*.
 
-![equals1](img/equals1.png)
-
-<!-- x = 2kj -->
+𝑥 = 2𝑘𝑗
 
 In JavaScript, we might use `=` to *define* our variables and provide aliases. The above equation defines the following:
 
