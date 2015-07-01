@@ -536,7 +536,7 @@ The following function *ƒ* chooses between two "sub functions" depending on the
 
 This is very similar to `if` / `else` in code. The rightside conditions are often written as *"for *x* < 0"* or *"if x = 0"*. If the condition is true, the function to the left is used.
 
-In piecewise functions, *"otherwise"* and *"elsewhere"* are anologous to the `else` statement in code.
+In piecewise functions, *"otherwise"* and *"elsewhere"* are analogous to the `else` statement in code.
 
 ```js
 function f (x) {
