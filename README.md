@@ -583,7 +583,7 @@ function fPrime (x) {
 
 Multiple prime symbols can be used to describe the second derivative *ƒ′′* and third derivative *ƒ′′′*. After this, authors typically express higher orders with roman numerals *ƒ*<sup>IV</sup> or superscript numbers *ƒ*<sup>(n)</sup>.
 
-## quantifers
+## quantifiers
 
 Quantifiers are symbols used in mathematical logic statements, such as theorems and proofs. You'll see them all the time in advanced mathematics. They stand in place of "human" or natural language phrases.
 
