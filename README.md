@@ -410,7 +410,7 @@ In geometry, the "hat" symbol above a character is used to represent a [unit vec
 
 <!-- \hat{\mathbf{a}} -->
 
-In cartesian space, a unit vector is typically length 1. That means each part of the vector will be in the range of -1.0 to 1.0. Here we *normalize* a 3D vector into a unit vector:
+In Cartesian space, a unit vector is typically length 1. That means each part of the vector will be in the range of -1.0 to 1.0. Here we *normalize* a 3D vector into a unit vector:
 
 ```js
 var a = [ 0, 4, -3 ]
@@ -542,7 +542,7 @@ The following function *ƒ* chooses between two "sub functions" depending on the
     0, & \text{otherwise}
 \end{cases} -->
 
-This is very similar to `if` / `else` in code. The rightside conditions are often written as **"for x < 0"** or **"if x = 0"**. If the condition is true, the function to the left is used.
+This is very similar to `if` / `else` in code. The right-side conditions are often written as **"for x < 0"** or **"if x = 0"**. If the condition is true, the function to the left is used.
 
 In piecewise functions, **"otherwise"** and **"elsewhere"** are analogous to the `else` statement in code.
 
