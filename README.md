@@ -51,11 +51,12 @@ This will also be the format of this guide.
 
 ## equals symbols
 
-There are a number of symbols resembling the equals sign `=`. Here are three common examples:
+There are a number of symbols resembling the equals sign `=`. Here are a few common examples:
 
 - `=` is for equality (values are the same)
 - `≠` is for inequality (value are not the same)
 - `≈` is for approximately equal to (`π ≈ 3.14159`)
+- `≡` is for definition (value A is defined as B)
 
 In JavaScript:
 
@@ -74,44 +75,39 @@ function almostEqual(a, b, epsilon) {
 }
 ```
 
-In mathematics, the `:=` `=:` and `=` symbols are used for *definition*. The following defines *x* to be another name for 2*kj*.
+In mathematics, the `:=` `=:` and `≡` symbols are used for *definition*. In some literature, `≡` is used to mean *equality*.
 
-![equals1](img/equals1.png)
+The following defines *x* to be another name for 2*kj*.
 
-<!-- x = 2kj -->
+![equals1](http://latex.codecogs.com/svg.latex?x%20%5Cequiv%202kj)
 
-In JavaScript, we might use `=` to *define* our variables and provide aliases. The above equation defines the following:
+<!-- x \equiv 2kj -->
+
+In JavaScript, we might use `=` to *define* our variables and provide aliases:
 
 ```js
 var x = 2 * k * j
 ```
 
-```js
-var k = x / (2 * j)
-```
-
-```js
-var j = x / (2 * k)
-```
-
 However, this is mutable, and only takes a snapshot of the values at that time. Some languages have pre-processor `#define` statements, which are closer to a mathematical *define*. 
 
-A more accurate representation in JavaScript (ES6) might look a bit like this:
+A more accurate *define* in JavaScript (ES6) might look a bit like this:
 
 ```js
 const f = (k, j) => 2 * k * j
 ```
 
-<!--
+The following, on the other hand, represents equality:
 
-///// Need a code sample?
-///// Maybe better suited in another place?
+![equals2](http://latex.codecogs.com/svg.latex?x%20%3D%202kj)
 
-The `≅` symbol is for [*congruence*](https://en.wikipedia.org/wiki/Congruence_%28geometry%29). For example, here the line segment AB is congruent with the segment CD.
+<!-- x = 2kj -->
 
-![equals2](img/equals2.png)
+The above equation might be interpreted in code as an [assertion](https://developer.mozilla.org/en-US/docs/Web/API/console/assert):
 
- \bar{AB} \cong \bar{CD} -->
+```js
+console.assert(x === (2 * k * j))
+```
 
 ## dot & cross
 
