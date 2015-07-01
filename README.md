@@ -28,7 +28,7 @@ For simplicity, many of the code examples here operate on floating point values 
 - [sigma `Σ`](#sigma) - *summation*
 - [capital Pi `Π`](#capital-pi) - *products of sequences*
 - [pipes `||`](#pipes)
-  - [absolute](#absolute)
+  - [absolute value](#absolute-value)
   - [Euclidean norm](#euclidean-norm)
   - [determinant](#determinant)
 - [hat **`â`**](#hat) - *unit vector*
@@ -321,15 +321,15 @@ Where `value` will evaluate to `720`.
 
 ## pipes
 
-Pipe symbols, known as *bars*, can mean different things depending on the context. Below are three common uses: [absolute](#absolute), [Euclidean norm](#euclidean-norm), and [determinant](#determinant).
+Pipe symbols, known as *bars*, can mean different things depending on the context. Below are three common uses: [absolute value](#absolute-value), [Euclidean norm](#euclidean-norm), and [determinant](#determinant).
 
 These three features all describe the *length* of an object.
 
-#### absolute 
+#### absolute value 
 
 ![pipes1](img/pipes1.png)
 
-For a number *x*, `|x|` means the absolute of *x*. In code:
+For a number *x*, `|x|` means the absolute value of *x*. In code:
 
 ```js
 var x = -5
@@ -345,7 +345,7 @@ var result = Math.abs(x)
 
 For a vector **v**, `‖v‖` is the [Euclidean norm](https://en.wikipedia.org/wiki/Norm_%28mathematics%29#Euclidean_norm) of **v**. It is also referred to as the "magnitude" or "length" of a vector.
 
-Often this is represented by double-bars to avoid ambiguity with the *absolute* notation, but sometimes you may see it with single bars:
+Often this is represented by double-bars to avoid ambiguity with the *absolute value* notation, but sometimes you may see it with single bars:
 
 ![pipes2](img/pipes2.png)
 
