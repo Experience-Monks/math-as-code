@@ -36,6 +36,7 @@ For simplicity, many of the code examples here operate on floating point values 
 - [function `ƒ`](#function)
   - [piecewise function](#piecewise-function)
 - [prime `′`](#prime)
+- [quantifiers `∀` `∃` `¬`](#quantifiers)
 - [more...](#more)
 
 ## variable naming conventions
@@ -581,6 +582,53 @@ function fPrime (x) {
 ```
 
 Multiple prime symbols can be used to describe the second derivative *ƒ′′* and third derivative *ƒ′′′*. After this, authors typically express higher orders with roman numerals *ƒ*<sup>IV</sup> or superscript numbers *ƒ*<sup>(n)</sup>.
+
+## quantifers
+
+Quantifiers are symbols used in mathematical logic statements, such as theorems and proofs. You'll see them all the time in advanced mathematics. They stand in place of "human" or natural language phrases.
+
+Quantifiers are usually chained together to create these complicated mathematical statements.
+
+They usually follow the form: `<quantifier> <variable> in <set>, <predicate>`.
+
+In plain English, the variable is just some element in the set. It can be whatever you like. A predicate is a `function` that takes input(s) and returns a Boolean (`true` or `false`). Take a college-level math course or talk to a mathematician if you want to know more.
+
+For example: `∀ planets in Our Solar System, ∃ a planet called "Earth" `
+
+Here's a run down of what they mean in plain English:
+
+* `∀`: For __a__ll
+* `∃`: For some, there __e__xists,
+* `¬`: Not, it is false that ...
+
+Now for the code (using ES6/Harmony):
+
+```js
+//For all
+function forAll(setOfThings, predicate) {
+  return Array.from(setOfThings).every(predicate);
+}
+
+//Or more explicitly...
+function forAllParentalAdvisory(setOfThings, predicate) {
+  for (let element of setOfThings) {
+    if (predicate(element) === false) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+//For some
+function forSome(setOfThings, predicate) {
+  return Array.from(setOfThings).some(predicate);
+}
+
+//Negation -> just use good old '!'
+```
+
+If you are interested in learning more, be sure to look up De Morgan's Laws!
 
 ## more...
 
