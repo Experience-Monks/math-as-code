@@ -34,6 +34,7 @@ For simplicity, many of the code examples here operate on floating point values 
 - [hat **`â`**](#hat) - *unit vector*
 - ["element of" `∈` `∉`](#element)
 - [function `ƒ`](#function)
+  - [piecewise function `"if"`](#piecewise-function)
 - [prime `′`](#prime)
 - [more...](#more)
 
@@ -516,6 +517,34 @@ In code:
 ```js
 function length (x, y) {
   return Math.sqrt(x * x + y * y)
+}
+```
+
+### piecewise function
+
+Some functions will use different relationships depending on the input value, *x*.
+
+The following function *ƒ* chooses between two "sub functions" depending on the input value.
+
+![piecewise1](http://latex.codecogs.com/svg.latex?f%28x%29%3D%20%5Cbegin%7Bcases%7D%20%5Cfrac%7Bx%5E2-x%7D%7Bx%7D%2C%26%20%5Ctext%7Bif%20%7D%20x%5Cgeq%201%5C%5C%200%2C%20%26%20%5Ctext%7Botherwise%7D%20%5Cend%7Bcases%7D)
+
+<!--    f(x)= 
+\begin{cases}
+    \frac{x^2-x}{x},& \text{if } x\geq 1\\
+    0, & \text{otherwise}
+\end{cases} -->
+
+This is very similar to `if` / `else` in code. The rightside conditions are often written as *"for *x* < 0"* or *"if x = 0"*. If the condition is true, the function to the left is used.
+
+In piecewise functions, *"otherwise"* and *"elsewhere"* are anologous to the `else` statement in code.
+
+```js
+function f (x) {
+  if (x >= 1) {
+    return (Math.pow(x, 2) - x) / x
+  } else {
+    return 0
+  }
 }
 ```
 
