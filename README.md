@@ -597,14 +597,14 @@ For example: `∀ planets in Our Solar System, ∃ a planet called "Earth" `
 
 Here's a run down of what they mean in plain English:
 
-* `∀`: For __a__ll
-* `∃`: For some, there __e__xists,
+* `∀`: For All
+* `∃`: For some, there Exists,
 * `¬`: Not, it is false that ...
 
 Now for the code (using ES6/Harmony):
 
 ```js
-//For all
+//"For all"
 function forAll(setOfThings, predicate) {
   return Array.from(setOfThings).every(predicate);
 }
@@ -620,15 +620,13 @@ function forAllParentalAdvisory(setOfThings, predicate) {
   return true;
 }
 
-//For some
+//"For some" or "there exists"
 function forSome(setOfThings, predicate) {
   return Array.from(setOfThings).some(predicate);
 }
 
-//Negation -> just use good old '!'
+//Negation -> just use good old `!`
 ```
-
-If you are interested in learning more, be sure to look up De Morgan's Laws!
 
 ## more...
 
