@@ -36,8 +36,8 @@ For simplicity, many of the code examples here operate on floating point values 
 - [common sets `ℝ` `ℤ` `ℚ` `ℕ`](#common-sets)
 - [function `ƒ`](#function)
   - [piecewise function](#piecewise-function)
-  - [function notation](#function-notation)
   - [special functions](#special-functions)
+  - [function notation](#function-notation)
 - [prime `′`](#prime)
 - [equality arrows `<` `>` `≪` `≫`](#equality-arrows)
 - [more...](#more)
@@ -145,11 +145,13 @@ var result = 3 * k * j
 
 To denote multiplication of one vector with a scalar, or element-wise multiplication of a vector with another vector, we typically do not use the dot `·` or cross `×` symbols. These have different meanings in linear algebra, discussed shortly.
 
-Let's take our earlier example but apply it to vectors. For element-wise vector multiplication, you might see an open dot `∘` to represent the [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_%28matrices%29).<sup>[2]</sup> Or, the author might explicitly define a different symbol, such as a circle with a dot, or a large filled dot.<sup>[3]</sup>
+Let's take our earlier example but apply it to vectors. For element-wise vector multiplication, you might see an open dot `∘` to represent the [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_%28matrices%29).<sup>[2]</sup>
 
 ![dotcross3](img/dotcross3.png)
 
 <!-- 3\mathbf{k}\circ\mathbf{j} -->
+
+In other instances, the author might explicitly define a different notation, such as a circled dot `⊙` or a filled circle `●`.<sup>[3]</sup>
 
 Here is how it would look in code, using arrays `[x, y]` to represent the 2D vectors.
 
@@ -520,7 +522,7 @@ function isInteger (n) {
 
 ##### `ℕ` natural numbers
 
-A natural number, a positive and non-negative integer. The set looks like either of these, depending on the context and field of study:
+A natural number, a positive and non-negative integer. Depending on the context and field of study, the set may or may not include zero, so it could look like either of these:
 
 ```js
 { 0, 1, 2, 3, ... }
@@ -530,14 +532,14 @@ A natural number, a positive and non-negative integer. The set looks like either
 The latter is more common in computer science, for example:
 
 ```js
-function isNatural (n) {
+function isNaturalNumber (n) {
   return isInteger(n) && n >= 0
 }
 ```
 
 ##### `ℂ` complex numbers
 
-A complex number is a combination of a real number and an imaginary number. For more info, see [A Visual Intuitive Guide to Imaginary Numbers](http://betterexplained.com/articles/a-visual-intuitive-guide-to-imaginary-numbers/).
+A complex number is a combination of a real number and an imaginary number. For more info, see [A Visual, Intuitive Guide to Imaginary Numbers](http://betterexplained.com/articles/a-visual-intuitive-guide-to-imaginary-numbers/).
 
 ## function
 
@@ -617,7 +619,7 @@ function f (x) {
 
 There are some "special" functions that are commonplace in mathematics. For a programmer, these might be analogous to "built-in" functions.
 
-One such example is the *sgn* function. This is the *signum* or *sign* function. Let's use some earlier notation to describe it:
+One such example is the *sgn* function. This is the *signum* or *sign* function. Let's use [piecewise function](#piecewise-function) notation to describe it:
 
 ![sgn](http://latex.codecogs.com/svg.latex?sgn%28x%29%20%3A%3D%20%5Cbegin%7Bcases%7D%20-1%26%20%5Ctext%7Bif%20%7D%20x%20%3C%200%5C%5C%200%2C%20%26%20%5Ctext%7Bif%20%7D%20%7Bx%20%3D%200%7D%5C%5C%201%2C%20%26%20%5Ctext%7Bif%20%7D%20x%20%3E%200%5C%5C%20%5Cend%7Bcases%7D)
 
@@ -658,13 +660,15 @@ It might also be written in the following form:
 
 The arrow here with a tail typically means "maps to," as in *x maps to x<sup>2</sup>*. 
 
-Sometimes, when it isn't obvious, the notation will also describe the *domain* and *codomain* of the function. 
+Sometimes, when it isn't obvious, the notation will also describe the *domain* and *codomain* of the function. A more formal definition of *ƒ* might be written as:
 
-The above function *ƒ* might have a domain specified like so:
+![funcnot](http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D)
 
-![domain](http://latex.codecogs.com/svg.latex?f%20%3A%20%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D)
-
-<!-- f : \mathbb{R} \rightarrow \mathbb{R} -->
+<!-- \begin{align*}
+f :&\mathbb{R} \rightarrow \mathbb{R}\\
+&x \mapsto x^2 
+\end{align*}
+ -->
 
 In programming, the *domain* and *codomain* might be seen as the *input* and *output* types of a function. Another example, using our earlier *sgn* function, which outputs an integer:
 
@@ -690,17 +694,7 @@ function square (a) {
 
 Some tools like [flowtype](http://flowtype.org/) attempt to bring static typing into JavaScript.
 
-Other languages, like Java, allow for true method overloading based on the static types of a function's input/output. This is closer to mathematics, since two functions are not the same if they operate in a different *domain*.
-
-So, with all of this together, a formal definition of our earlier *ƒ* function could look like this:
-
-![funcnot](http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D)
-
-<!-- \begin{align*}
-f :&\mathbb{R} \rightarrow \mathbb{R}\\
-&x \mapsto x^2 
-\end{align*}
- -->
+Other languages, like Java, allow for true method overloading based on the static types of a function's input/output. This is closer to mathematics, since two functions are not the same if they use a different *domain*.
 
 ## prime
 
@@ -738,7 +732,7 @@ Multiple prime symbols can be used to describe the second derivative *ƒ′′* 
 
 ## equality arrows
 
-In math, the `<` `>` `≤` and `≥` are typically used in the same way we use them in code:
+In math, the `<` `>` `≤` and `≥` are typically used in the same way we use them in code: *less than*, *greater than*, *less than or equal to* and *greater than or equal to*, respectively.
 
 ```js
 50 > 2 === true
