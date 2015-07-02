@@ -9,7 +9,9 @@
     "email": "dave.des@gmail.com",
     "url": "https://github.com/mattdesl"
   },
-  "dependencies": {},
+  "dependencies": {
+    "math-trunc": "^1.0.0"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "node test.js"
