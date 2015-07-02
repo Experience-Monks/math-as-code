@@ -606,9 +606,9 @@ For example: `∀ planets in Our Solar System, ∃ a planet called "Earth" `
 
 Here's a run down of what they mean in plain English:
 
-* `∀`: For All
-* `∃`: For some, there Exists,
-* `¬`: Not, it is false that ...
+* `∀`: For __All__
+* `∃`: For some, there __Exists__
+* `¬`: __Not__, it is false that ...
 
 Now for the code (using ES6/Harmony):
 
@@ -634,7 +634,7 @@ function forSome(setOfThings, predicate) {
   return Array.from(setOfThings).some(predicate)
 }
 
-//Negation -> just use good old `!`
+//"Not" or "negation" -> just use good old `!`
 ```
 
 ## more...
