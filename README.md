@@ -33,12 +33,13 @@ For simplicity, many of the code examples here operate on floating point values 
   - [determinant](#determinant)
 - [hat **`â`**](#hat) - *unit vector*
 - ["element of" `∈` `∉`](#element)
+- [common sets `ℝ` `ℤ` `ℚ` `ℕ`](#common-sets)
 - [function `ƒ`](#function)
   - [piecewise function](#piecewise-function)
   - [function notation](#function-notation)
+  - [special functions](#special-functions)
 - [prime `′`](#prime)
-- [arrows `⇒` `⇔` `≪` `≫`](#arrows)
-  - [equality](#equality)
+- [equality arrows `<` `>` `≪` `≫`](#equality-arrows)
 - [more...](#more)
 
 ## variable name conventions
@@ -497,15 +498,25 @@ JavaScript treats floats and integers as the same type, so the following would b
 typeof k === 'number'
 ```
 
-Other common sets to be aware of:
+Aside form `ℝ` for real numbers, here are a few common sets to be aware of:
 
 ##### `ℚ` rational numbers
 
-A real number that can be written as a fraction or *ratio* (like `⅗`).
+A real number that can be written as a fraction or *ratio* (like `⅗`). The denominator cannot be zero.
+
+This also means that all integers are rational numbers, since the denominator can be expressed as 1.
 
 ##### `ℤ` integers
 
 An integer, i.e. a real number that has no fractional part. These can be positive or negative.
+
+A simple test in JavaScript might look like this:
+
+```js
+function isInteger (n) {
+  return typeof n === 'number' && n % 1 === 0
+}
+```
 
 ##### `ℕ` natural numbers
 
@@ -516,7 +527,13 @@ A natural number, a positive and non-negative integer. The set looks like either
 { 1, 2, 3, 4, ... }
 ```
 
-The latter is more common in computer science.
+The latter is more common in computer science, for example:
+
+```js
+function isNatural (n) {
+  return isInteger(n) && n >= 0
+}
+```
 
 ##### `ℂ` complex numbers
 
@@ -534,7 +551,7 @@ A function relates an input to an output value. For example, the following is a 
 
 We can give this function a *name*. Commonly, we use `ƒ` to describe a function, but it could be named `A(x)` or anything else.
 
-![function2](img/function2.png)
+![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
 
 <!-- f\left (x  \right ) = x^{2} -->
 
@@ -621,13 +638,69 @@ function sgn (x) {
 }
 ```
 
-Others examples: *sin*, *cos*, *tan*.
+See [signum](https://github.com/scijs/signum) for this as a module.
+
+Other examples of special functions: *sin*, *cos*, *tan*.
 
 ### function notation
 
-In some literature, you will see more explicitly defined functions. 
+In some literature, functions may be defined with more explicit notation. For example, let's go back to the `square` function we mentioned earlier:
 
+![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
 
+<!-- f\left (x  \right ) = x^{2} -->
+
+It might also be written in the following form:
+
+![mapsto](http://latex.codecogs.com/svg.latex?f%20%3A%20x%20%5Cmapsto%20x%5E2)
+
+<!-- f : x \mapsto x^2 -->
+
+The arrow here with a tail typically means "maps to," as in *x maps to x<sup>2</sup>*. 
+
+Sometimes, when it isn't obvious, the notation will also describe the *domain* and *codomain* of the function. 
+
+The above function *ƒ* might have a domain specified like so:
+
+![domain](http://latex.codecogs.com/svg.latex?f%20%3A%20%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D)
+
+<!-- f : \mathbb{R} \rightarrow \mathbb{R} -->
+
+In programming, the *domain* and *codomain* might be seen as the *input* and *output* types of a function. Another example, using our earlier *sgn* function, which outputs an integer:
+
+![domain2](http://latex.codecogs.com/svg.latex?sgn%20%3A%20%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BZ%7D)
+
+<!-- sgn : \mathbb{R} \rightarrow \mathbb{Z} -->
+
+In JavaScript and other dynamically typed languages, you might use documentation and/or runtime checks to explain and validate the input/output.
+
+```js
+/**
+ * Squares a number.
+ * @param  {Number} a real number
+ * @return {Number} a real number
+ */
+function square (a) {
+  if (typeof a !== 'number') {
+    throw new TypeError('expected a number')
+  }
+  return Math.pow(a, 2)
+}
+```
+
+Some tools like [flowtype](http://flowtype.org/) attempt to bring static typing into JavaScript.
+
+Other languages, like Java, allow for true method overloading based on the static types of a function's input/output. This is closer to mathematics, since two functions are not the same if they operate in a different *domain*.
+
+So, with all of this together, a formal definition of our earlier *ƒ* function could look like this:
+
+![funcnot](http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D)
+
+<!-- \begin{align*}
+f :&\mathbb{R} \rightarrow \mathbb{R}\\
+&x \mapsto x^2 
+\end{align*}
+ -->
 
 ## prime
 
@@ -639,7 +712,7 @@ In code, we typically just assign the variable a more descriptive name, like `tr
 
 For a mathematical [function](#function), the prime symbol often describes the *derivative* of that function. Derivatives will be explained in a future section. Let's take our earlier function:
 
-![function2](img/function2.png)
+![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
 
 <!-- f\left (x  \right ) = x^{2} -->
 
@@ -663,9 +736,7 @@ function fPrime (x) {
 
 Multiple prime symbols can be used to describe the second derivative *ƒ′′* and third derivative *ƒ′′′*. After this, authors typically express higher orders with roman numerals *ƒ*<sup>IV</sup> or superscript numbers *ƒ*<sup>(n)</sup>.
 
-## arrows
-
-#### equality
+## equality arrows
 
 In math, the `<` `>` `≤` and `≥` are typically used in the same way we use them in code:
 
