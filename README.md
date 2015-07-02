@@ -742,6 +742,24 @@ Multiple prime symbols can be used to describe the second derivative *ƒ′′* 
 
 We have already seen some arrows in the [function notation](#function-notation) section. Here are a few other variations.
 
+#### material implication
+
+Arrows like `⇒` and `→` are sometimes used in logic for *material implication.* That is, if A is true, then B is also true.
+
+![material1](http://latex.codecogs.com/svg.latex?A%20%5CRightarrow%20B)
+
+<!-- A \Rightarrow B -->
+
+Interpreting this as code might look like this:
+
+```js
+if (A === true) {
+  console.assert(B === true)
+}
+```
+
+The arrows go in both directions.
+
 #### equality
 
 In math, the `<` `>` `≤` and `≥` are typically used in the same way we use them in code: *less than*, *greater than*, *less than or equal to* and *greater than or equal to*, respectively.
