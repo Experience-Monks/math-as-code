@@ -585,9 +585,9 @@ Multiple prime symbols can be used to describe the second derivative *ƒ′′* 
 
 ## quantifiers
 
-Quantifiers are symbols used in mathematical logic statements, such as theorems and proofs. You'll see them all the time in advanced mathematics. They stand in place of "human" or natural language phrases.
+Quantifiers are symbols used in mathematical logic statements, such as theorems and proofs. They show up all the time in mathematics. They stand in place of natural, or "human", language phrases.
 
-Quantifiers are usually chained together to create these complicated mathematical statements.
+Quantifiers are usually chained together to create powerful mathematical statements.
 
 They usually look like this:
 
@@ -602,9 +602,30 @@ z \in S, \neg p(z)
 
 In plain English, the variable is just some element in the set. It can be whatever you like. A predicate is a `function` that takes input(s) and returns a Boolean (`true` or `false`). Take a college-level math course or talk to a mathematician if you want to know more.
 
-For example: `∀ planets in Our Solar System, ∃ a planet called "Earth" `
+For example:
 
-Here's a run down of what they mean in plain English:
+![quantifiers example](http://latex.codecogs.com/svg.latex?%5Cforall%20x%20%5Cin%20%5Ctext%7B%20range%20%7D%20R%20%28%3D%20%280%2C1%29%20%5Csubset%20%5Cmathbb%7BR%7D%29%3A%20%5Cneg%20%5Cexists%20y%20%5Cin%20R%3A%20x%20*%20y%20%3E%201)
+
+This basically states that:
+* Let `R` be a range of real numbers from 0 to 1 (non-inclusive)
+* Pick any number in `R`, and call it `x`
+* It is impossible to find any number `y` in `R` such that `x * y > 1`
+
+If I were to write this as (pseudo-)code it would look like the following:
+
+```js
+let claim = forAll(R, function(x) {
+  let subclaim = forSome(R, function(y) {
+    return x * y > 1
+  })
+
+  return !subclaim
+})
+
+assert(claim)
+```
+
+Here's a run-down of what they mean in plain English:
 
 * `∀`: For __All__
 * `∃`: For some, there __Exists__
