@@ -589,7 +589,16 @@ Quantifiers are symbols used in mathematical logic statements, such as theorems 
 
 Quantifiers are usually chained together to create these complicated mathematical statements.
 
-They usually follow the form: `<quantifier> <variable> in <set>, <predicate>`.
+They usually look like this:
+
+![quantifiers](http://latex.codecogs.com/svg.latex?\\&space;\forall&space;x&space;\in&space;S:&space;p(x)\\&space;\exists&space;y&space;\in&space;S:&space;p(y)\\&space;z&space;\in&space;S,&space;\neg&space;p(z))
+
+<!--
+\\
+\forall x \in S: p(x)\\
+\exists y \in S: p(y)\\
+z \in S, \neg p(z)
+-->
 
 In plain English, the variable is just some element in the set. It can be whatever you like. A predicate is a `function` that takes input(s) and returns a Boolean (`true` or `false`). Take a college-level math course or talk to a mathematician if you want to know more.
 
