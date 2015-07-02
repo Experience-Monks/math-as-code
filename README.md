@@ -19,7 +19,7 @@ For simplicity, many of the code examples here operate on floating point values 
 # contents
 
 - [variable name conventions](#variable-name-conventions)
-- [equals `=` `≈` `≠` `=:`](#equals-symbols)
+- [equals `=` `≈` `≠` `:=`](#equals-symbols)
 - [dot & cross `∙` `×` `∘`](#dot--cross)
   - [scalar multiplication](#scalar-multiplication)
   - [vector multiplication](#vector-multiplication)
