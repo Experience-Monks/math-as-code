@@ -56,7 +56,7 @@ There are a number of symbols resembling the equals sign `=`. Here are a few com
 - `=` is for equality (values are the same)
 - `≠` is for inequality (value are not the same)
 - `≈` is for approximately equal to (`π ≈ 3.14159`)
-- `≡` is for definition (value A is defined as B)
+- `:=` is for definition (A is defined as B)
 
 In JavaScript:
 
@@ -75,15 +75,15 @@ function almostEqual(a, b, epsilon) {
 }
 ```
 
-In mathematics, the `:=` `=:` and `≡` symbols are used for *definition*. In some literature, `≡` is used to mean *equality*.
+You might see the `:=`, `=:` and `=` symbols being used for *definition*.
 
-The following defines *x* to be another name for 2*kj*.
+For example, the following defines *x* to be another name for 2*kj*.
 
-![equals1](http://latex.codecogs.com/svg.latex?x%20%5Cequiv%202kj)
+![equals1](http://latex.codecogs.com/svg.latex?x%20%3A%3D%202kj)
 
-<!-- x \equiv 2kj -->
+<!-- x := 2kj -->
 
-In JavaScript, we might use `=` to *define* our variables and provide aliases:
+In JavaScript, we might use `var` to *define* our variables and provide aliases:
 
 ```js
 var x = 2 * k * j
