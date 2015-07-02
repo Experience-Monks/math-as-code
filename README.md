@@ -606,23 +606,23 @@ Now for the code (using ES6/Harmony):
 ```js
 //"For all"
 function forAll(setOfThings, predicate) {
-  return Array.from(setOfThings).every(predicate);
+  return Array.from(setOfThings).every(predicate)
 }
 
 //Or more explicitly...
 function forAllParentalAdvisory(setOfThings, predicate) {
   for (let element of setOfThings) {
     if (predicate(element) === false) {
-      return false;
+      return false
     }
   }
 
-  return true;
+  return true
 }
 
 //"For some" or "there exists"
 function forSome(setOfThings, predicate) {
-  return Array.from(setOfThings).some(predicate);
+  return Array.from(setOfThings).some(predicate)
 }
 
 //Negation -> just use good old `!`
