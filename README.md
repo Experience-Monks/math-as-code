@@ -591,7 +591,7 @@ Quantifiers are usually chained together to create these complicated mathematica
 
 They usually look like this:
 
-![quantifiers](http://latex.codecogs.com/svg.latex?\\&space;\forall&space;x&space;\in&space;S:&space;p(x)\\&space;\exists&space;y&space;\in&space;S:&space;p(y)\\&space;z&space;\in&space;S,&space;\neg&space;p(z))
+![quantifiers](http://latex.codecogs.com/svg.latex?%5C%5C%20%5Cforall%20x%20%5Cin%20S%3A%20p%28x%29%5C%5C%20%5Cexists%20y%20%5Cin%20S%3A%20p%28y%29%5C%5C%20z%20%5Cin%20S%2C%20%5Cneg%20p%28z%29)
 
 <!--
 \\
