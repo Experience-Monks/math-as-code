@@ -38,7 +38,7 @@ For simplicity, many of the code examples here operate on floating point values 
 - [prime `′`](#prime)
 - [more...](#more)
 
-## variable naming conventions
+## variable name conventions
 
 There are a variety of naming conventions depending on the context and field of study, and they are not always consistent. However, in some of the literature you may find variable names to follow a pattern like so:
 
