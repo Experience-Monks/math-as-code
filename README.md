@@ -446,7 +446,7 @@ Other implementations:
 
 ## element
 
-In set theory, the "element of" symbol `∈` and `∋` can be used to describe whether something is an element of a set. For example:
+In set theory, the "element of" symbol `∈` and `∋` can be used to describe whether something is an element of a *set*. For example:
 
 ![element1](img/element1.png)
 
@@ -486,29 +486,35 @@ You can also use the "not an element of" symbols `∉` and `∌` like so:
 
 ## common sets
 
-You may see some some large letters among equations. These are commonly used to describe "sets."
+You may see some some large stylized letters among equations. These are commonly used to describe sets.
 
-For example, the following uses `ℝ` to describe *k* as an [element of](#element) the set of *real numbers*.
+For example, we might describe *k* to be an [element of](#element) the set `ℝ`. 
 
 ![real](http://latex.codecogs.com/svg.latex?k%20%5Cin%20%5Cmathbb%7BR%7D)
 
 <!-- k \in \mathbb{R} -->
 
-JavaScript treats floats and integers as the same type, so the following would be a simple test for a real number:
+Listed below are a few common sets and their symbols.
+
+#### `ℝ` real numbers
+
+The large `ℝ` describes the set of *real numbers*. These include integers, as well as rational and irrational numbers.
+
+JavaScript treats floats and integers as the same type, so the following would be a simple example of our *k* ∈ ℝ example:
 
 ```js
 typeof k === 'number'
 ```
 
-Aside form `ℝ` for real numbers, here are a few common sets to be aware of:
+#### `ℚ` rational numbers
 
-##### `ℚ` rational numbers
-
-A real number that can be written as a fraction or *ratio* (like `⅗`). The denominator cannot be zero.
+Rational numbers are real numbers that can be expressed as a fraction, or *ratio* (like `⅗`). Rational numbers cannot have a denominator of zero.
 
 This also means that all integers are rational numbers, since the denominator can be expressed as 1.
 
-##### `ℤ` integers
+An irrational number, on the other hand, is one that cannot be expressed as a ratio, like π (PI). 
+
+#### `ℤ` integers
 
 An integer, i.e. a real number that has no fractional part. These can be positive or negative.
 
@@ -520,7 +526,7 @@ function isInteger (n) {
 }
 ```
 
-##### `ℕ` natural numbers
+#### `ℕ` natural numbers
 
 A natural number, a positive and non-negative integer. Depending on the context and field of study, the set may or may not include zero, so it could look like either of these:
 
@@ -537,7 +543,7 @@ function isNaturalNumber (n) {
 }
 ```
 
-##### `ℂ` complex numbers
+#### `ℂ` complex numbers
 
 A complex number is a combination of a real number and an imaginary number. For more info, see [A Visual, Intuitive Guide to Imaginary Numbers](http://betterexplained.com/articles/a-visual-intuitive-guide-to-imaginary-numbers/).
 
@@ -640,7 +646,7 @@ function sgn (x) {
 }
 ```
 
-See [signum](https://github.com/scijs/signum) for this as a module.
+See [signum](https://github.com/scijs/signum) for this function as a module.
 
 Other examples of special functions: *sin*, *cos*, *tan*.
 
@@ -676,6 +682,8 @@ In programming, the *domain* and *codomain* might be seen as the *input* and *ou
 
 <!-- sgn : \mathbb{R} \rightarrow \mathbb{Z} -->
 
+The arrow here, without a tail, is used to map one *set* to another.
+
 In JavaScript and other dynamically typed languages, you might use documentation and/or runtime checks to explain and validate the input/output.
 
 ```js
@@ -694,7 +702,7 @@ function square (a) {
 
 Some tools like [flowtype](http://flowtype.org/) attempt to bring static typing into JavaScript.
 
-Other languages, like Java, allow for true method overloading based on the static types of a function's input/output. This is closer to mathematics, since two functions are not the same if they use a different *domain*.
+Other languages, like Java, allow for true method overloading based on the static types of a function's input/output. This is closer to mathematics: two functions are not the same if they use a different *domain*.
 
 ## prime
 
@@ -730,7 +738,11 @@ function fPrime (x) {
 
 Multiple prime symbols can be used to describe the second derivative *ƒ′′* and third derivative *ƒ′′′*. After this, authors typically express higher orders with roman numerals *ƒ*<sup>IV</sup> or superscript numbers *ƒ*<sup>(n)</sup>.
 
-## equality arrows
+## lines & arrows
+
+We have already seen some arrows in the [function notation](#function-notation) section. Here are a few other variations.
+
+#### equality
 
 In math, the `<` `>` `≤` and `≥` are typically used in the same way we use them in code: *less than*, *greater than*, *less than or equal to* and *greater than or equal to*, respectively.
 
