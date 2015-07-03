@@ -241,7 +241,7 @@ For other implementations of vector multiplication, cross product, and dot produ
 
 ## sigma 
 
-The big Greek "E" (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summation). In other words: summing up some numbers.
+The big Greek `Σ` (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summation). In other words: summing up some numbers.
 
 ![sigma](img/sigma1.png)
 
