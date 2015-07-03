@@ -33,7 +33,7 @@ For simplicity, many of the code examples here operate on floating point values 
   - [determinant](#determinant)
 - [hat **`â`**](#hat) - *unit vector*
 - ["element of" `∈` `∉`](#element)
-- [common sets `ℝ` `ℤ` `ℚ` `ℕ`](#common-sets)
+- [common number sets `ℝ` `ℤ` `ℚ` `ℕ`](#common-number-sets)
 - [function `ƒ`](#function)
   - [piecewise function](#piecewise-function)
   - [common functions](#common-functions)
@@ -42,7 +42,7 @@ For simplicity, many of the code examples here operate on floating point values 
 - [arrows](#arrows)
   - [material implication `⇒` `→`](#material-implication)
   - [equality `<` `≥` `≫`](#equality)
-  - [conjunction & disjunction](#conjunction---disjunction)
+  - [conjunction & disjunction](#conjunction--disjunction)
 - [more...](#more)
 
 ## variable name conventions
@@ -487,7 +487,7 @@ You can also use the "not an element of" symbols `∉` and `∌` like so:
 
 <!-- A=\left \{3,9,14}{  \right \}, 6 \notin A -->
 
-## common sets
+## common number sets
 
 You may see some some large [Blackboard](https://en.wikipedia.org/wiki/Blackboard_bold) letters among equations. Often, these are used to describe sets.
 
