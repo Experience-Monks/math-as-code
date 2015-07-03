@@ -34,6 +34,7 @@ For simplicity, many of the code examples here operate on floating point values 
 - [hat **`â`**](#hat) - *unit vector*
 - ["element of" `∈` `∉`](#element)
 - [function `ƒ`](#function)
+  - [function composition](#function-composition)  
   - [piecewise function](#piecewise-function)
 - [prime `′`](#prime)
 - [more...](#more)
@@ -523,6 +524,38 @@ function length (x, y) {
   return Math.sqrt(x * x + y * y)
 }
 ```
+
+### function composition
+
+Functions take certain inputs and produce exactly one output. Function composition is when a function's input is a function as well.
+
+For example, suppose we have these functions
+
+![fncs](http://latex.codecogs.com/svg.latex?f%28x%29%20%3D%20x%5E2%2C%5C%3A%20%5C%3A%20g%28x%29%3Dx&plus;1)
+
+We can compose f with g, denoted `(f o g)(x)` by placing `g(x)` inside `f(x)` 
+
+![fog](http://latex.codecogs.com/svg.latex?%28f%5Ccirc%20g%29%28x%29%20%3D%20f%28g%28x%29%29%20%3Df%28x&plus;1%29%20%3D%20%28x&plus;1%29%5E2)
+
+In code this would look like
+```js
+function f(x) {
+  return Math.pow(x, 2);
+}
+
+function g(x) {
+  return x + 1;
+}
+
+function fComposedWithg(f, g) {
+  return function(x) {
+      return f(g(x));
+  }
+}
+```
+The order of composition matters as g composed with f would produce a different function
+
+![gof](http://latex.codecogs.com/svg.latex?%28g%5Ccirc%20f%29%28x%29%20%3D%20g%28f%28x%29%29%20%3Dg%28x%5E2%29%20%3D%20x%5E2&plus;1)
 
 ### piecewise function
 
