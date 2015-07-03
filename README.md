@@ -2,7 +2,7 @@
 
 This is a reference to ease developers into mathematical notation by showing comparisons with JavaScript code.
 
-Motivation: Academic papers can be intimidating for self-taught game and graphics programmers. :) 
+Motivation: Academic papers can be intimidating for self-taught game and graphics programmers. :)
 
 This guide is not yet finished. If you see errors or want to contribute, please [open a ticket](https://github.com/Jam3/math-as-code/issues) or send a PR.
 
@@ -12,7 +12,7 @@ This guide is not yet finished. If you see errors or want to contribute, please 
 
 Mathematical symbols can mean different things depending on context and the field of study (linear algebra, set theory, etc). This guide may not cover *all* uses of a symbol, but PRs are welcome. In some cases, real-world references (blog posts, publications, etc) will be cited to demonstrate how a symbol might appear in the wild.
 
-For a more complete list, refer to [Wikipedia - List of Mathematical Symbols](https://en.wikipedia.org/wiki/List_of_mathematical_symbols). 
+For a more complete list, refer to [Wikipedia - List of Mathematical Symbols](https://en.wikipedia.org/wiki/List_of_mathematical_symbols).
 
 For simplicity, many of the code examples here operate on floating point values and are not numerically robust. For more details on why this may be a problem, see [Robust Arithmetic Notes](https://github.com/mikolalysenko/robust-arithmetic-notes) by Mikola Lysenko.
 
@@ -36,6 +36,7 @@ For simplicity, many of the code examples here operate on floating point values 
 - [function `ƒ`](#function)
   - [piecewise function](#piecewise-function)
 - [prime `′`](#prime)
+- [vector field `′`](#vector-field)
 - [more...](#more)
 
 ## variable name conventions
@@ -89,7 +90,7 @@ In JavaScript, we might use `var` to *define* our variables and provide aliases:
 var x = 2 * k * j
 ```
 
-However, this is mutable, and only takes a snapshot of the values at that time. Some languages have pre-processor `#define` statements, which are closer to a mathematical *define*. 
+However, this is mutable, and only takes a snapshot of the values at that time. Some languages have pre-processor `#define` statements, which are closer to a mathematical *define*.
 
 A more accurate *define* in JavaScript (ES6) might look a bit like this:
 
@@ -239,7 +240,7 @@ For other implementations of vector multiplication, cross product, and dot produ
 - [gl-vec2](https://github.com/stackgl/gl-vec2)
 - [vectors](https://github.com/hughsk/vectors) - includes n-dimensional
 
-## sigma 
+## sigma
 
 The big Greek `Σ` (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summation). In other words: summing up some numbers.
 
@@ -278,7 +279,7 @@ for (var i = 1; i <= 100; i++) {
 
 The result of `sum` is `10200`.
 
-The notation can be nested, which is much like nesting a `for` loop. You should evaluate the right-most sigma first, unless the author has enclosed them in parentheses to alter the order. 
+The notation can be nested, which is much like nesting a `for` loop. You should evaluate the right-most sigma first, unless the author has enclosed them in parentheses to alter the order.
 
 ![sigma3](img/sigma3.png)
 
@@ -297,7 +298,7 @@ Here, `sum` will be `135`.
 
 ## capital Pi
 
-The capital Pi or "Big Pi" is very similar to [Sigma](#sigma), except we are using multiplication to find the "products of sequences." 
+The capital Pi or "Big Pi" is very similar to [Sigma](#sigma), except we are using multiplication to find the "products of sequences."
 
 Take the following:
 
@@ -321,7 +322,7 @@ Pipe symbols, known as *bars*, can mean different things depending on the contex
 
 These three features all describe the *length* of an object.
 
-#### absolute value 
+#### absolute value
 
 ![pipes1](img/pipes1.png)
 
@@ -446,7 +447,7 @@ In set theory, the "element of" symbol `∈` and `∋` can be used to describe w
 
 <!-- A=\left \{3,9,14}{  \right \}, 3 \in A -->
 
-Here we have a set of numbers *A* `{ 3, 9, 14 }` and we are saying `3` is an "element of" that set. 
+Here we have a set of numbers *A* `{ 3, 9, 14 }` and we are saying `3` is an "element of" that set.
 
 A simple implementation in ES5 might look like this:
 
@@ -532,7 +533,7 @@ The following function *ƒ* chooses between two "sub functions" depending on the
 
 ![piecewise1](http://latex.codecogs.com/svg.latex?f%28x%29%3D%20%5Cbegin%7Bcases%7D%20%5Cfrac%7Bx%5E2-x%7D%7Bx%7D%2C%26%20%5Ctext%7Bif%20%7D%20x%5Cgeq%201%5C%5C%200%2C%20%26%20%5Ctext%7Botherwise%7D%20%5Cend%7Bcases%7D)
 
-<!--    f(x)= 
+<!--    f(x)=
 \begin{cases}
     \frac{x^2-x}{x},& \text{if } x\geq 1\\
     0, & \text{otherwise}
@@ -585,6 +586,28 @@ function fPrime (x) {
 ```
 
 Multiple prime symbols can be used to describe the second derivative *ƒ′′* and third derivative *ƒ′′′*. After this, authors typically express higher orders with roman numerals *ƒ*<sup>IV</sup> or superscript numbers *ƒ*<sup>(n)</sup>.
+
+## vector field
+
+A vector field in 2D space is a function `F` that assigns to each point `(x,y)` a 2D vector given by `F(x, y)`. The standard notation for `F` is:
+
+```
+F(x, y) = P(x, y)î + Q(x, y)ĵ
+```
+
+For example, `F(x,y) = [y-x, -x-y]` generates a spiral that converges at the origin `(0, 0)`.
+
+<img src="img/vector-field.png" alt="vector field" width="478" height="480" />
+
+In code:
+
+```js
+function f (x, y) {
+  return [y-x, -x-y];
+}
+```
+
+The same idea extends to three dimensional space.
 
 ## more...
 
