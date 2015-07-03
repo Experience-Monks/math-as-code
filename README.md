@@ -738,7 +738,7 @@ function fPrime (x) {
 
 Multiple prime symbols can be used to describe the second derivative *ƒ′′* and third derivative *ƒ′′′*. After this, authors typically express higher orders with roman numerals *ƒ*<sup>IV</sup> or superscript numbers *ƒ*<sup>(n)</sup>.
 
-## lines & arrows
+## arrows
 
 We have already seen some arrows in the [function notation](#function-notation) section. Here are a few other variations.
 
