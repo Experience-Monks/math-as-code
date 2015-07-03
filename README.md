@@ -36,10 +36,13 @@ For simplicity, many of the code examples here operate on floating point values 
 - [common sets `ℝ` `ℤ` `ℚ` `ℕ`](#common-sets)
 - [function `ƒ`](#function)
   - [piecewise function](#piecewise-function)
-  - [special functions](#special-functions)
-  - [function notation](#function-notation)
+  - [common functions](#common-functions)
+  - [function notation `↦` `→`](#function-notation)
 - [prime `′`](#prime)
-- [equality arrows `<` `>` `≪` `≫`](#equality-arrows)
+- [arrows](#arrows)
+  - [material implication `⇒` `→`](#material-implication)
+  - [equality `<` `≥` `≫`](#equality)
+  - [conjunction & disjunction](#conjunction---disjunction)
 - [more...](#more)
 
 ## variable name conventions
@@ -486,7 +489,7 @@ You can also use the "not an element of" symbols `∉` and `∌` like so:
 
 ## common sets
 
-You may see some some large stylized letters among equations. These are commonly used to describe sets.
+You may see some some large [Blackboard](https://en.wikipedia.org/wiki/Blackboard_bold) letters among equations. Often, these are used to describe sets.
 
 For example, we might describe *k* to be an [element of](#element) the set `ℝ`. 
 
@@ -621,9 +624,9 @@ function f (x) {
 }
 ```
 
-### special functions
+### common functions
 
-There are some "special" functions that are commonplace in mathematics. For a programmer, these might be analogous to "built-in" functions.
+There are some function names that are ubiquitous in mathematics. For a programmer, these might be analogous to functions "built-in" to the language (like `parseInt` in JavaScript).
 
 One such example is the *sgn* function. This is the *signum* or *sign* function. Let's use [piecewise function](#piecewise-function) notation to describe it:
 
@@ -648,7 +651,7 @@ function sgn (x) {
 
 See [signum](https://github.com/scijs/signum) for this function as a module.
 
-Other examples of special functions: *sin*, *cos*, *tan*.
+Other examples of such functions: *sin*, *cos*, *tan*.
 
 ### function notation
 
@@ -676,15 +679,15 @@ f :&\mathbb{R} \rightarrow \mathbb{R}\\
 \end{align*}
  -->
 
-In programming, the *domain* and *codomain* might be seen as the *input* and *output* types of a function. Another example, using our earlier *sgn* function, which outputs an integer:
+A function's *domain* and *codomain* is a bit like its *input* and *output* types, respectively. Here's another example, using our earlier *sgn* function, which outputs an integer:
 
 ![domain2](http://latex.codecogs.com/svg.latex?sgn%20%3A%20%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BZ%7D)
 
 <!-- sgn : \mathbb{R} \rightarrow \mathbb{Z} -->
 
-The arrow here, without a tail, is used to map one *set* to another.
+The arrow here (without a tail) is used to map one *set* to another.
 
-In JavaScript and other dynamically typed languages, you might use documentation and/or runtime checks to explain and validate the input/output.
+In JavaScript and other dynamically typed languages, you might use documentation and/or runtime checks to explain and validate a function's input/output. Example:
 
 ```js
 /**
@@ -740,7 +743,7 @@ Multiple prime symbols can be used to describe the second derivative *ƒ′′* 
 
 ## arrows
 
-We have already seen some arrows in the [function notation](#function-notation) section. Here are a few other variations.
+Arrows are sometimes used in [function notation](#function-notation). Here are a few other variations.
 
 #### material implication
 
@@ -758,7 +761,7 @@ if (A === true) {
 }
 ```
 
-The arrows go in both directions.
+The arrows can go in either direction `⇐` `⇒`, or both `⇔`. When *A ⇒ B* and *B ⇒ A*, they are said to be equivalent: *A ⇔ B*.
 
 #### equality
 
@@ -805,6 +808,44 @@ function orderOfMagnitude (n) {
 <sup>*Note:* This is not numerically robust.</sup>
 
 See [math-trunc](https://www.npmjs.com/package/math-trunc) for a ponyfill in ES5.
+
+#### conjunction & disjunction
+
+Another use of arrows in logic is conjunction `∧` and disjunction `∨`. They are analogous to a programmer's `AND` and `OR` operators, respectively.
+
+The following shows conjunction `∧`, the logical `AND`.
+
+<img src="http://latex.codecogs.com/svg.latex?k%20%3E%202%20%5Cland%20k%20%3C%204%20%5CLeftrightarrow%20k%20%3D%203" />
+
+<!-- k > 2 \land k <  4 \Leftrightarrow k = 3   -->
+
+In JavaScript, we use `&&`. Assuming *k* is a natural number, the logic implies that *k* is 3:
+
+```js
+if (k > 2 && k < 4) {
+  console.assert(k === 3)
+}
+```
+
+Since both sides are equivalent `⇔`, it also implies the following:
+
+```js
+if (k === 3) {
+  console.assert(k > 2 && k < 4)
+}
+```
+
+The down arrow `∨` is logical disjunction, like the OR operator.
+
+![logic-or](http://latex.codecogs.com/svg.latex?A%20%5Clor%20B)
+
+<!-- A \lor B -->
+
+In code:
+
+```js
+A || B
+```
 
 ## more...
 
