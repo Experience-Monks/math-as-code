@@ -10,7 +10,7 @@ This guide is not yet finished. If you see errors or want to contribute, please 
 
 # foreword
 
-Mathematical symbols can mean different things depending on context and the field of study (linear algebra, set theory, etc). This guide may not cover *all* uses of a symbol, but PRs are welcome. In some cases, real-world references (blog posts, publications, etc) will be cited to demonstrate how a symbol might appear in the wild.
+Mathematical symbols can mean different things depending on the author, context and the field of study (linear algebra, set theory, etc). This guide may not cover *all* uses of a symbol. In some cases, real-world references (blog posts, publications, etc) will be cited to demonstrate how a symbol might appear in the wild.
 
 For a more complete list, refer to [Wikipedia - List of Mathematical Symbols](https://en.wikipedia.org/wiki/List_of_mathematical_symbols). 
 
@@ -20,7 +20,7 @@ For simplicity, many of the code examples here operate on floating point values 
 
 - [variable name conventions](#variable-name-conventions)
 - [equals `=` `≈` `≠` `:=`](#equals-symbols)
-- [dot & cross `∙` `×` `∘`](#dot--cross)
+- [dot & cross `·` `×` `∘`](#dot--cross)
   - [scalar multiplication](#scalar-multiplication)
   - [vector multiplication](#vector-multiplication)
   - [dot product](#dot-product)
@@ -33,9 +33,18 @@ For simplicity, many of the code examples here operate on floating point values 
   - [determinant](#determinant)
 - [hat **`â`**](#hat) - *unit vector*
 - ["element of" `∈` `∉`](#element)
+- [common number sets `ℝ` `ℤ` `ℚ` `ℕ`](#common-number-sets)
 - [function `ƒ`](#function)
   - [piecewise function](#piecewise-function)
+  - [common functions](#common-functions)
+  - [function notation `↦` `→`](#function-notation)
 - [prime `′`](#prime)
+- [floor & ceiling `⌊` `⌉`](#floor--ceiling)
+- [arrows](#arrows)
+  - [material implication `⇒` `→`](#material-implication)
+  - [equality `<` `≥` `≫`](#equality)
+  - [conjunction & disjunction `∧` `∨`](#conjunction--disjunction)
+- [logical negation `¬` `~` `!`](#logical-negation)
 - [more...](#more)
 
 ## variable name conventions
@@ -75,7 +84,7 @@ function almostEqual(a, b, epsilon) {
 }
 ```
 
-You might see the `:=`, `=:` and `=` symbols being used for *definition*.
+You might see the `:=`, `=:` and `=` symbols being used for *definition*.<sup>[1]</sup>
 
 For example, the following defines *x* to be another name for 2*kj*.
 
@@ -111,7 +120,7 @@ console.assert(x === (2 * k * j))
 
 ## dot & cross
 
-The dot `∙` and cross `×` symbols have different uses depending on context.
+The dot `·` and cross `×` symbols have different uses depending on context.
 
 They might seem obvious, but it's important to understand the subtle differences before we continue into other sections.
 
@@ -127,7 +136,7 @@ In programming languages we tend to use asterisk for multiplication:
 var result = 3 * 4
 ```
 
-With adjacent letter variables, the multiplication sign is typically omitted.
+Often, the multiplication sign is only used to avoid ambiguity (e.g. between two numbers). Here, we can omit it entirely:
 
 ![dotcross2](img/dotcross2.png)
 
@@ -139,13 +148,15 @@ var result = 3 * k * j
 
 #### vector multiplication
 
-To denote multiplication of one vector with a scalar, or element-wise multiplication of a vector with another vector, we do not use the dot `∙` or cross `×` symbols. These have different meanings in linear algebra, discussed shortly.
+To denote multiplication of one vector with a scalar, or element-wise multiplication of a vector with another vector, we typically do not use the dot `·` or cross `×` symbols. These have different meanings in linear algebra, discussed shortly.
 
-Let's take our earlier example but apply it to vectors. For element-wise vector multiplication, you might see an open dot `∘` to represent the [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_%28matrices%29).
+Let's take our earlier example but apply it to vectors. For element-wise vector multiplication, you might see an open dot `∘` to represent the [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_%28matrices%29).<sup>[2]</sup>
 
 ![dotcross3](img/dotcross3.png)
 
 <!-- 3\mathbf{k}\circ\mathbf{j} -->
+
+In other instances, the author might explicitly define a different notation, such as a circled dot `⊙` or a filled circle `●`.<sup>[3]</sup>
 
 Here is how it would look in code, using arrays `[x, y]` to represent the 2D vectors.
 
@@ -171,11 +182,11 @@ function multiplyScalar(a, scalar) {
 }
 ```
 
-Similarly, matrix multiplication typically does not use the dot `∙` or cross symbol `×`. Matrix multiplication will be covered in a later section.
+Similarly, matrix multiplication typically does not use the dot `·` or cross symbol `×`. Matrix multiplication will be covered in a later section.
 
 #### dot product
 
-The dot symbol `∙` can be used to denote the [*dot product*](https://en.wikipedia.org/wiki/Dot_product) of two vectors. Sometimes this is called the *scalar product* since it evaluates to a scalar.
+The dot symbol `·` can be used to denote the [*dot product*](https://en.wikipedia.org/wiki/Dot_product) of two vectors. Sometimes this is called the *scalar product* since it evaluates to a scalar.
 
 ![dotcross4](img/dotcross4.png)
 
@@ -191,7 +202,7 @@ var d = dot(k, j)
 //=> 0
 ```
 
-The result `0` tells us our vectors are perpendicular. Our `dot` function:
+The result `0` tells us our vectors are perpendicular. Here is a `dot` function for 3-component vectors:
 
 ```js
 function dot(a, b) {
@@ -439,7 +450,7 @@ Other implementations:
 
 ## element
 
-In set theory, the "element of" symbol `∈` and `∋` can be used to describe whether something is an element of a set. For example:
+In set theory, the "element of" symbol `∈` and `∋` can be used to describe whether something is an element of a *set*. For example:
 
 ![element1](img/element1.png)
 
@@ -477,6 +488,69 @@ You can also use the "not an element of" symbols `∉` and `∌` like so:
 
 <!-- A=\left \{3,9,14}{  \right \}, 6 \notin A -->
 
+## common number sets
+
+You may see some some large [Blackboard](https://en.wikipedia.org/wiki/Blackboard_bold) letters among equations. Often, these are used to describe sets.
+
+For example, we might describe *k* to be an [element of](#element) the set `ℝ`. 
+
+![real](http://latex.codecogs.com/svg.latex?k%20%5Cin%20%5Cmathbb%7BR%7D)
+
+<!-- k \in \mathbb{R} -->
+
+Listed below are a few common sets and their symbols.
+
+#### `ℝ` real numbers
+
+The large `ℝ` describes the set of *real numbers*. These include integers, as well as rational and irrational numbers.
+
+JavaScript treats floats and integers as the same type, so the following would be a simple example of our *k* ∈ ℝ example:
+
+```js
+typeof k === 'number'
+```
+
+#### `ℚ` rational numbers
+
+Rational numbers are real numbers that can be expressed as a fraction, or *ratio* (like `⅗`). Rational numbers cannot have a denominator of zero.
+
+This also means that all integers are rational numbers, since the denominator can be expressed as 1.
+
+An irrational number, on the other hand, is one that cannot be expressed as a ratio, like π (PI). 
+
+#### `ℤ` integers
+
+An integer, i.e. a real number that has no fractional part. These can be positive or negative.
+
+A simple test in JavaScript might look like this:
+
+```js
+function isInteger (n) {
+  return typeof n === 'number' && n % 1 === 0
+}
+```
+
+#### `ℕ` natural numbers
+
+A natural number, a positive and non-negative integer. Depending on the context and field of study, the set may or may not include zero, so it could look like either of these:
+
+```js
+{ 0, 1, 2, 3, ... }
+{ 1, 2, 3, 4, ... }
+```
+
+The latter is more common in computer science, for example:
+
+```js
+function isNaturalNumber (n) {
+  return isInteger(n) && n >= 0
+}
+```
+
+#### `ℂ` complex numbers
+
+A complex number is a combination of a real number and an imaginary number. For more info, see [A Visual, Intuitive Guide to Imaginary Numbers](http://betterexplained.com/articles/a-visual-intuitive-guide-to-imaginary-numbers/).
+
 ## function
 
 [Functions](https://en.wikipedia.org/wiki/Function_%28mathematics%29) are fundamental features of mathematics, and the concept is fairly easy to translate into code.
@@ -489,7 +563,7 @@ A function relates an input to an output value. For example, the following is a 
 
 We can give this function a *name*. Commonly, we use `ƒ` to describe a function, but it could be named `A(x)` or anything else.
 
-![function2](img/function2.png)
+![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
 
 <!-- f\left (x  \right ) = x^{2} -->
 
@@ -551,6 +625,89 @@ function f (x) {
 }
 ```
 
+### common functions
+
+There are some function names that are ubiquitous in mathematics. For a programmer, these might be analogous to functions "built-in" to the language (like `parseInt` in JavaScript).
+
+One such example is the *sgn* function. This is the *signum* or *sign* function. Let's use [piecewise function](#piecewise-function) notation to describe it:
+
+![sgn](http://latex.codecogs.com/svg.latex?sgn%28x%29%20%3A%3D%20%5Cbegin%7Bcases%7D%20-1%26%20%5Ctext%7Bif%20%7D%20x%20%3C%200%5C%5C%200%2C%20%26%20%5Ctext%7Bif%20%7D%20%7Bx%20%3D%200%7D%5C%5C%201%2C%20%26%20%5Ctext%7Bif%20%7D%20x%20%3E%200%5C%5C%20%5Cend%7Bcases%7D)
+
+<!-- sgn(x) := 
+\begin{cases}
+    -1& \text{if } x < 0\\
+    0, & \text{if } {x = 0}\\
+    1, & \text{if } x > 0\\
+\end{cases} -->
+
+In code, it might look like this:
+
+```js
+function sgn (x) {
+  if (x < 0) return -1
+  if (x > 0) return 1
+  return 0
+}
+```
+
+See [signum](https://github.com/scijs/signum) for this function as a module.
+
+Other examples of such functions: *sin*, *cos*, *tan*.
+
+### function notation
+
+In some literature, functions may be defined with more explicit notation. For example, let's go back to the `square` function we mentioned earlier:
+
+![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
+
+<!-- f\left (x  \right ) = x^{2} -->
+
+It might also be written in the following form:
+
+![mapsto](http://latex.codecogs.com/svg.latex?f%20%3A%20x%20%5Cmapsto%20x%5E2)
+
+<!-- f : x \mapsto x^2 -->
+
+The arrow here with a tail typically means "maps to," as in *x maps to x<sup>2</sup>*. 
+
+Sometimes, when it isn't obvious, the notation will also describe the *domain* and *codomain* of the function. A more formal definition of *ƒ* might be written as:
+
+![funcnot](http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D)
+
+<!-- \begin{align*}
+f :&\mathbb{R} \rightarrow \mathbb{R}\\
+&x \mapsto x^2 
+\end{align*}
+ -->
+
+A function's *domain* and *codomain* is a bit like its *input* and *output* types, respectively. Here's another example, using our earlier *sgn* function, which outputs an integer:
+
+![domain2](http://latex.codecogs.com/svg.latex?sgn%20%3A%20%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BZ%7D)
+
+<!-- sgn : \mathbb{R} \rightarrow \mathbb{Z} -->
+
+The arrow here (without a tail) is used to map one *set* to another.
+
+In JavaScript and other dynamically typed languages, you might use documentation and/or runtime checks to explain and validate a function's input/output. Example:
+
+```js
+/**
+ * Squares a number.
+ * @param  {Number} a real number
+ * @return {Number} a real number
+ */
+function square (a) {
+  if (typeof a !== 'number') {
+    throw new TypeError('expected a number')
+  }
+  return Math.pow(a, 2)
+}
+```
+
+Some tools like [flowtype](http://flowtype.org/) attempt to bring static typing into JavaScript.
+
+Other languages, like Java, allow for true method overloading based on the static types of a function's input/output. This is closer to mathematics: two functions are not the same if they use a different *domain*.
+
 ## prime
 
 The prime symbol (`′`) is often used in variable names to describe things which are similar, without giving it a different name altogether. It can describe the "next value" after some transformation.
@@ -561,7 +718,7 @@ In code, we typically just assign the variable a more descriptive name, like `tr
 
 For a mathematical [function](#function), the prime symbol often describes the *derivative* of that function. Derivatives will be explained in a future section. Let's take our earlier function:
 
-![function2](img/function2.png)
+![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
 
 <!-- f\left (x  \right ) = x^{2} -->
 
@@ -585,6 +742,167 @@ function fPrime (x) {
 
 Multiple prime symbols can be used to describe the second derivative *ƒ′′* and third derivative *ƒ′′′*. After this, authors typically express higher orders with roman numerals *ƒ*<sup>IV</sup> or superscript numbers *ƒ*<sup>(n)</sup>.
 
+## floor & ceiling
+
+The special brackets `⌊x⌋` and `⌈x⌉` represent the *floor* and *ceil* functions, respectively.
+
+![floor](http://latex.codecogs.com/svg.latex?floor%28x%29%20%3D%20%5Clfloor%20x%20%5Crfloor)
+
+<!-- floor(x) =  \lfloor x \rfloor -->
+
+![ceil](http://latex.codecogs.com/svg.latex?ceil%28x%29%20%3D%20%5Clceil%20x%20%5Crceil)
+
+<!-- ceil(x) =  \lceil x \rceil -->
+
+In code:
+
+```js
+Math.floor(x)
+Math.ceil(x)
+```
+
+When the two symbols are mixed `⌊x⌉`, it typically represents a function that rounds to the nearest integer:
+
+![round](http://latex.codecogs.com/svg.latex?round%28x%29%20%3D%20%5Clfloor%20x%20%5Crceil)
+
+<!-- round(x) =  \lfloor x \rceil -->
+
+In code:
+
+```js
+Math.round(x)
+```
+
+## arrows
+
+Arrows are often used in [function notation](#function-notation). Here are a few other areas you might see them.
+
+#### material implication
+
+Arrows like `⇒` and `→` are sometimes used in logic for *material implication.* That is, if A is true, then B is also true.
+
+![material1](http://latex.codecogs.com/svg.latex?A%20%5CRightarrow%20B)
+
+<!-- A \Rightarrow B -->
+
+Interpreting this as code might look like this:
+
+```js
+if (A === true) {
+  console.assert(B === true)
+}
+```
+
+The arrows can go in either direction `⇐` `⇒`, or both `⇔`. When *A ⇒ B* and *B ⇒ A*, they are said to be equivalent:
+
+![material-equiv](http://latex.codecogs.com/svg.latex?A%20%5CLeftrightarrow%20B)
+
+<!-- A \Leftrightarrow B -->
+
+#### equality
+
+In math, the `<` `>` `≤` and `≥` are typically used in the same way we use them in code: *less than*, *greater than*, *less than or equal to* and *greater than or equal to*, respectively.
+
+```js
+50 > 2 === true
+2 < 10 === true
+3 <= 4 === true
+4 >= 4 === true
+```
+
+On rare occasions you might see a slash through these symbols, to describe *not*. As in, *k* is "not greater than" *j*.
+
+![ngt](http://latex.codecogs.com/svg.latex?k%20%5Cngtr%20j)
+
+<!-- k \ngtr j -->
+
+The `≪` and `≫` are sometimes used to represent *significant* inequality. That is, *k* is an [order of magnitude](https://en.wikipedia.org/wiki/Order_of_magnitude) larger than *j*.
+
+![orderofmag](http://latex.codecogs.com/svg.latex?k%20%5Cgg%20j)
+
+<!-- k \gg j -->
+
+In mathematics, *order of magnitude* is rather specific; it is not just a "really big difference." A simple example of the above:
+
+```js
+orderOfMagnitude(k) > orderOfMagnitude(j)
+```
+
+And below is our `orderOfMagnitude` function, using [Math.trunc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc) (ES6).
+
+```js
+function log10(n) {
+  // logarithm in base 10
+  return Math.log(n) / Math.LN10
+}
+
+function orderOfMagnitude (n) {
+  return Math.trunc(log10(n))
+}
+```
+
+<sup>*Note:* This is not numerically robust.</sup>
+
+See [math-trunc](https://www.npmjs.com/package/math-trunc) for a ponyfill in ES5.
+
+#### conjunction & disjunction
+
+Another use of arrows in logic is conjunction `∧` and disjunction `∨`. They are analogous to a programmer's `AND` and `OR` operators, respectively.
+
+The following shows conjunction `∧`, the logical `AND`.
+
+<img src="http://latex.codecogs.com/svg.latex?k%20%3E%202%20%5Cland%20k%20%3C%204%20%5CLeftrightarrow%20k%20%3D%203" />
+
+<!-- k > 2 \land k <  4 \Leftrightarrow k = 3   -->
+
+In JavaScript, we use `&&`. Assuming *k* is a natural number, the logic implies that *k* is 3:
+
+```js
+if (k > 2 && k < 4) {
+  console.assert(k === 3)
+}
+```
+
+Since both sides are equivalent `⇔`, it also implies the following:
+
+```js
+if (k === 3) {
+  console.assert(k > 2 && k < 4)
+}
+```
+
+The down arrow `∨` is logical disjunction, like the OR operator.
+
+![logic-or](http://latex.codecogs.com/svg.latex?A%20%5Clor%20B)
+
+<!-- A \lor B -->
+
+In code:
+
+```js
+A || B
+```
+
+## logical negation
+
+Occasionally, the `¬`, `~` and `!` symbols are used to represent logical `NOT`. For example, *¬A* is only true if A is false.
+
+Here is a simple example using the *not* symbol:
+
+![negation](http://latex.codecogs.com/svg.latex?x%20%5Cneq%20y%20%5CLeftrightarrow%20%5Clnot%28x%20%3D%20y%29)
+
+<!-- x \neq y \Leftrightarrow \lnot(x = y) -->
+
+An example of how we might interpret this in code:
+
+```js
+if (x !== y) {
+  console.assert(!(x === y))
+}
+```
+
+*Note:* The tilde `~` has many different meanings depending on context. For example, *row equivalence* (matrix theory) or *same order of magnitude* (discussed in [equality](#equality)).
+
 ## more...
 
 Like this guide? Suggest some [more features](https://github.com/Jam3/math-as-code/issues/1) or send us a Pull Request!
@@ -596,3 +914,7 @@ For details on how to contribute, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 ## License
 
 MIT, see [LICENSE.md](http://github.com/Jam3/math-as-code/blob/master/LICENSE.md) for details.
+
+[1]: http://mimosa-pudica.net/improved-oren-nayar.html#images
+[2]: http://buzzard.ups.edu/courses/2007spring/projects/million-paper.pdf
+[3]: https://www.math.washington.edu/~morrow/464_12/fft.pdf
