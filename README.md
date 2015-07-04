@@ -252,7 +252,7 @@ For other implementations of vector multiplication, cross product, and dot produ
 
 ## sigma 
 
-The big Greek "E" (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summation). In other words: summing up some numbers.
+The big Greek `Σ` (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summation). In other words: summing up some numbers.
 
 ![sigma](img/sigma1.png)
 
@@ -317,9 +317,8 @@ Take the following:
 In code, it might look like this:
 
 ```js
-var n = 6
 var value = 1
-for (var i = 1; i <= n; i++) {
+for (var i = 1; i <= 6; i++) {
   value *= i
 }
 ```
