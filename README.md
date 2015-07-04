@@ -865,7 +865,7 @@ Another use of arrows in logic is conjunction `∧` and disjunction `∨`. They 
 
 The following shows conjunction `∧`, the logical `AND`.
 
-<img src="http://latex.codecogs.com/svg.latex?k%20%3E%202%20%5Cland%20k%20%3C%204%20%5CLeftrightarrow%20k%20%3D%203" />
+![and](http://latex.codecogs.com/svg.latex?k%20%3E%202%20%5Cland%20k%20%3C%204%20%5CLeftrightarrow%20k%20%3D%203)
 
 <!-- k > 2 \land k <  4 \Leftrightarrow k = 3   -->
 
