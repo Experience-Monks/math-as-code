@@ -306,9 +306,8 @@ Take the following:
 In code, it might look like this:
 
 ```js
-var n = 6
 var value = 1
-for (var i = 1; i <= n; i++) {
+for (var i = 1; i <= 6; i++) {
   value *= i
 }
 ```
