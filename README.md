@@ -794,7 +794,11 @@ if (A === true) {
 }
 ```
 
-The arrows can go in either direction `⇐` `⇒`, or both `⇔`. When *A ⇒ B* and *B ⇒ A*, they are said to be equivalent: *A ⇔ B*.
+The arrows can go in either direction `⇐` `⇒`, or both `⇔`. When *A ⇒ B* and *B ⇒ A*, they are said to be equivalent:
+
+![material-equiv](http://latex.codecogs.com/svg.latex?A%20%5CLeftrightarrow%20B)
+
+<!-- A \Leftrightarrow B -->
 
 #### equality
 
