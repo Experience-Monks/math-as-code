@@ -128,17 +128,21 @@ They might seem obvious, but it's important to understand the subtle differences
 
 Both symbols can represent simple multiplication of scalars. The following are equivalent:
 
-![dotcross1](img/dotcross1.png)
+![dotcross1](http://latex.codecogs.com/svg.latex?5%20%5Ccdot%204%20%3D%205%20%5Ctimes%204)
+
+<!-- 5 \cdot 4 = 5 \times 4 -->
 
 In programming languages we tend to use asterisk for multiplication:
 
 ```js
-var result = 3 * 4
+var result = 5 * 4
 ```
 
 Often, the multiplication sign is only used to avoid ambiguity (e.g. between two numbers). Here, we can omit it entirely:
 
-![dotcross2](img/dotcross2.png)
+![dotcross2](http://latex.codecogs.com/svg.latex?3kj)
+
+<!-- 3kj -->
 
 If these variables represent scalars, the code would be:
 
@@ -152,7 +156,7 @@ To denote multiplication of one vector with a scalar, or element-wise multiplica
 
 Let's take our earlier example but apply it to vectors. For element-wise vector multiplication, you might see an open dot `∘` to represent the [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_%28matrices%29).<sup>[2]</sup>
 
-![dotcross3](img/dotcross3.png)
+![dotcross3](http://latex.codecogs.com/svg.latex?3%5Cmathbf%7Bk%7D%5Ccirc%5Cmathbf%7Bj%7D)
 
 <!-- 3\mathbf{k}\circ\mathbf{j} -->
 
@@ -188,7 +192,7 @@ Similarly, matrix multiplication typically does not use the dot `·` or cross sy
 
 The dot symbol `·` can be used to denote the [*dot product*](https://en.wikipedia.org/wiki/Dot_product) of two vectors. Sometimes this is called the *scalar product* since it evaluates to a scalar.
 
-![dotcross4](img/dotcross4.png)
+![dotcross4](http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ccdot%20%5Cmathbf%7Bj%7D)
 
 <!-- \mathbf{k}\cdot \mathbf{j} -->
 
@@ -214,7 +218,7 @@ function dot(a, b) {
 
 The cross symbol `×` can be used to denote the [*cross product*](https://en.wikipedia.org/wiki/Cross_product) of two vectors.
 
-![dotcross5](img/dotcross5.png)
+![dotcross5](http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ctimes%20%5Cmathbf%7Bj%7D)
 
 <!-- \mathbf{k}\times \mathbf{j} -->
 
@@ -254,7 +258,9 @@ For other implementations of vector multiplication, cross product, and dot produ
 
 The big Greek `Σ` (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summation). In other words: summing up some numbers.
 
-![sigma](img/sigma1.png)
+![sigma](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B100%7Di)
+
+<!-- \sum_{i=1}^{100}i -->
 
 Here, `i=1` says to start at `1` and end at the number above the Sigma, `100`. These are the lower and upper bounds, respectively. The *i* to the right of the "E" tells us what we are summing. In code:
 
@@ -276,7 +282,9 @@ var sum = (n * (n + 1)) / 2
 
 Here is another example where the *i*, or the "what to sum," is different:
 
-![sum2](img/sigma2.png)
+![sum2](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B100%7D%282i&plus;1%29)
+
+<!-- \sum_{i=1}^{100}(2i+1) -->
 
 In code:
 
@@ -289,9 +297,11 @@ for (var i = 1; i <= 100; i++) {
 
 The result of `sum` is `10200`.
 
-The notation can be nested, which is much like nesting a `for` loop. You should evaluate the right-most sigma first, unless the author has enclosed them in parentheses to alter the order. 
+The notation can be nested, which is much like nesting a `for` loop. You should evaluate the right-most sigma first, unless the author has enclosed them in parentheses to alter the order. However, in the following case, since we are dealing with finite sums, the order does not matter.
 
-![sigma3](img/sigma3.png)
+![sigma3](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B2%7D%5Csum_%7Bj%3D4%7D%5E%7B6%7D%283ij%29)
+
+<!-- \sum_{i=1}^{2}\sum_{j=4}^{6}(3ij) -->
 
 In code:
 
@@ -312,7 +322,9 @@ The capital Pi or "Big Pi" is very similar to [Sigma](#sigma), except we are usi
 
 Take the following:
 
-![capitalPi](img/capital-pi1.png)
+![capitalPi](http://latex.codecogs.com/svg.latex?%5Cprod_%7Bi%3D1%7D%5E%7B6%7Di)
+
+<!-- \prod_{i=1}^{6}i -->
 
 In code, it might look like this:
 
@@ -333,7 +345,9 @@ These three features all describe the *length* of an object.
 
 #### absolute value 
 
-![pipes1](img/pipes1.png)
+![pipes1](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%20x%20%5Cright%20%7C)
+
+<!-- \left | x \right | -->
 
 For a number *x*, `|x|` means the absolute value of *x*. In code:
 
@@ -345,7 +359,7 @@ var result = Math.abs(x)
 
 #### Euclidean norm
 
-![pipes4](img/pipes4.png)
+![pipes4](http://latex.codecogs.com/svg.latex?%5Cleft%20%5C%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%5C%7C)
 
 <!-- \left \| \mathbf{v} \right \| -->
 
@@ -353,7 +367,7 @@ For a vector **v**, `‖v‖` is the [Euclidean norm](https://en.wikipedia.org/w
 
 Often this is represented by double-bars to avoid ambiguity with the *absolute value* notation, but sometimes you may see it with single bars:
 
-![pipes2](img/pipes2.png)
+![pipes2](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%7C)
 
 <!-- \left | \mathbf{v} \right | -->
 
@@ -384,7 +398,7 @@ Other implementations:
 
 #### determinant
 
-![pipes3](img/pipes3.png)
+![pipes3](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%5Cmathbf%7BA%7D%20%5Cright%20%7C)
 
 <!-- \left |\mathbf{A}  \right | -->
 
@@ -412,7 +426,7 @@ Implementations:
 
 In geometry, the "hat" symbol above a character is used to represent a [unit vector](https://en.wikipedia.org/wiki/Unit_vector). For example, here is the unit vector of **a**:
 
-![hat](img/hat.png)
+![hat](http://latex.codecogs.com/svg.latex?%5Chat%7B%5Cmathbf%7Ba%7D%7D)
 
 <!-- \hat{\mathbf{a}} -->
 
@@ -452,7 +466,7 @@ Other implementations:
 
 In set theory, the "element of" symbol `∈` and `∋` can be used to describe whether something is an element of a *set*. For example:
 
-![element1](img/element1.png)
+![element1](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%203%20%5Cin%20A)
 
 <!-- A=\left \{3,9,14}{  \right \}, 3 \in A -->
 
@@ -478,13 +492,13 @@ A.has(3)
 
 The backwards `∋` is the same, but the order changes:
 
-![element2](img/element2.png)
+![element2](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%20A%20%5Cni%203)
 
 <!-- A=\left \{3,9,14}{  \right \}, A \ni 3 -->
 
 You can also use the "not an element of" symbols `∉` and `∌` like so:
 
-![element3](img/element3.png)
+![element3](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%206%20%5Cnotin%20A)
 
 <!-- A=\left \{3,9,14}{  \right \}, 6 \notin A -->
 
@@ -557,7 +571,7 @@ A complex number is a combination of a real number and an imaginary number. For 
 
 A function relates an input to an output value. For example, the following is a function:
 
-![function1](img/function1.png)
+![function1](http://latex.codecogs.com/svg.latex?x%5E%7B2%7D)
 
 <!-- x^{2} -->
 
@@ -577,15 +591,15 @@ function square (x) {
 
 Sometimes a function is not named, and instead the output is written.
 
-<!-- y = x^{2} -->
+![function3](http://latex.codecogs.com/svg.latex?y%20%3D%20x%5E%7B2%7D)
 
-![function3](img/function3.png)
+<!-- y = x^{2} -->
 
 In the above example, *x* is the input, the relationship is *squaring*, and *y* is the output.
 
 Functions can also have multiple parameters, like in a programming language. These are known as *arguments* in mathematics, and the number of arguments a function takes is known as the *arity* of the function.
 
-![function4](img/function4.png)
+![function4](http://latex.codecogs.com/svg.latex?f%28x%2Cy%29%20%3D%20%5Csqrt%7Bx%5E2%20&plus;%20y%5E2%7D)
 
 <!-- f(x,y) = \sqrt{x^2 + y^2} -->
 
@@ -724,7 +738,7 @@ For a mathematical [function](#function), the prime symbol often describes the *
 
 Its derivative could be written with a prime `′` symbol:
 
-![prime1](img/prime1.png)
+![prime1](http://latex.codecogs.com/svg.latex?f%27%28x%29%20%3D%202x)
 
 <!-- f'(x) = 2x -->
 
@@ -851,7 +865,7 @@ Another use of arrows in logic is conjunction `∧` and disjunction `∨`. They 
 
 The following shows conjunction `∧`, the logical `AND`.
 
-<img src="http://latex.codecogs.com/svg.latex?k%20%3E%202%20%5Cland%20k%20%3C%204%20%5CLeftrightarrow%20k%20%3D%203" />
+![and](http://latex.codecogs.com/svg.latex?k%20%3E%202%20%5Cland%20k%20%3C%204%20%5CLeftrightarrow%20k%20%3D%203)
 
 <!-- k > 2 \land k <  4 \Leftrightarrow k = 3   -->
 
