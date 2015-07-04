@@ -39,10 +39,12 @@ For simplicity, many of the code examples here operate on floating point values 
   - [common functions](#common-functions)
   - [function notation `↦` `→`](#function-notation)
 - [prime `′`](#prime)
+- [floor & ceiling `⌊` `⌉`](#floor--ceiling)
 - [arrows](#arrows)
   - [material implication `⇒` `→`](#material-implication)
   - [equality `<` `≥` `≫`](#equality)
   - [conjunction & disjunction `∧` `∨`](#conjunction--disjunction)
+- [logical negation `¬` `~` `!`](#logical-negation)
 - [more...](#more)
 
 ## variable name conventions
@@ -741,6 +743,37 @@ function fPrime (x) {
 
 Multiple prime symbols can be used to describe the second derivative *ƒ′′* and third derivative *ƒ′′′*. After this, authors typically express higher orders with roman numerals *ƒ*<sup>IV</sup> or superscript numbers *ƒ*<sup>(n)</sup>.
 
+## floor & ceiling
+
+The special brackets `⌊x⌋` and `⌈x⌉` represent the *floor* and *ceil* functions, respectively.
+
+![floor](http://latex.codecogs.com/svg.latex?floor%28x%29%20%3D%20%5Clfloor%20x%20%5Crfloor)
+
+<!-- floor(x) =  \lfloor x \rfloor -->
+
+![ceil](http://latex.codecogs.com/svg.latex?ceil%28x%29%20%3D%20%5Clceil%20x%20%5Crceil)
+
+<!-- ceil(x) =  \lceil x \rceil -->
+
+In code:
+
+```js
+Math.floor(x)
+Math.ceil(x)
+```
+
+When the two symbols are mixed `⌊x⌉`, it typically represents a function that rounds to the nearest integer:
+
+![round](http://latex.codecogs.com/svg.latex?round%28x%29%20%3D%20%5Clfloor%20x%20%5Crceil)
+
+<!-- round(x) =  \lfloor x \rceil -->
+
+In code:
+
+```js
+Math.round(x)
+```
+
 ## arrows
 
 Arrows are often used in [function notation](#function-notation). Here are a few other areas you might see them.
@@ -846,6 +879,26 @@ In code:
 ```js
 A || B
 ```
+
+## logical negation
+
+Occasionally, the `¬`, `~` and `!` symbols are used to represent logical `NOT`. For example, *¬A* is only true if A is false.
+
+Here is a simple example using the *not* symbol:
+
+![negation](http://latex.codecogs.com/svg.latex?x%20%5Cneq%20y%20%5CLeftrightarrow%20%5Clnot%28x%20%3D%20y%29)
+
+<!-- x \neq y \Leftrightarrow \lnot(x = y) -->
+
+An example of how we might interpret this in code:
+
+```js
+if (x !== y) {
+  console.assert(!(x === y))
+}
+```
+
+*Note:* The tilde `~` has many different meanings depending on context. For example, *row equivalence* (matrix theory) or *same order of magnitude* (discussed in [equality](#equality)).
 
 ## more...
 
