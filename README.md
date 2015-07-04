@@ -42,7 +42,7 @@ For simplicity, many of the code examples here operate on floating point values 
 - [arrows](#arrows)
   - [material implication `⇒` `→`](#material-implication)
   - [equality `<` `≥` `≫`](#equality)
-  - [conjunction & disjunction](#conjunction--disjunction)
+  - [conjunction & disjunction `∧` `∨`](#conjunction--disjunction)
 - [more...](#more)
 
 ## variable name conventions
@@ -743,7 +743,7 @@ Multiple prime symbols can be used to describe the second derivative *ƒ′′* 
 
 ## arrows
 
-Arrows are sometimes used in [function notation](#function-notation). Here are a few other variations.
+Arrows are often used in [function notation](#function-notation). Here are a few other areas you might see them.
 
 #### material implication
 
