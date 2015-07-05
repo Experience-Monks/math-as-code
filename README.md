@@ -38,6 +38,7 @@ For simplicity, many of the code examples here operate on floating point values 
   - [piecewise function](#piecewise-function)
   - [common functions](#common-functions)
   - [function notation `↦` `→`](#function-notation)
+  - [inverse functions](#inverse-functions)
 - [prime `′`](#prime)
 - [floor & ceiling `⌊` `⌉`](#floor--ceiling)
 - [arrows](#arrows)
