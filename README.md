@@ -732,9 +732,15 @@ In mathematics, we have the formal concept of inverse function saying that for a
 Or, in s simplified way,
 
 ![function2](http://latex.codecogs.com/svg.latex?y%3Df%5E%7B-1%7D%28x%29) is equivalent to 
-![function2](http://latex.codecogs.com/svg.latex?x%20%3D%20f%28y%29)
+![function2](http://latex.codecogs.com/svg.latex?x%20%3D%20f%28y%29).
 <!-- y=f^{-1}(x) -->
 <!-- x = f(y) -->
+
+Inverse functions are not restricted to polynomials, the concept also can be applied to transcendental functions (logarithms and trigonometric functions, for example).
+
+The algorithm to find an inverse function basically consists in changing substituting *x* with *y* and the opposite, *y* with *x*.
+
+The implementation, however, may vary. You usually do not see a single *function inverse*. Instead libraries tend to separate it by case, once the input varies a lot. Examples, we have a separate set for trigonometric inverse functions on [math.js](http://mathjs.org/) - *tan()* and *atan()*, *sin()* and *asin()*, etc.
 
 ## prime
 
