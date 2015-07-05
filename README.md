@@ -722,6 +722,20 @@ Some tools like [flowtype](http://flowtype.org/) attempt to bring static typing 
 
 Other languages, like Java, allow for true method overloading based on the static types of a function's input/output. This is closer to mathematics: two functions are not the same if they use a different *domain*.
 
+### inverse function
+
+In mathematics, we have the formal concept of inverse function saying that for a function *f(x)*, it's inverse function, denoted as 
+![function2](http://latex.codecogs.com/svg.latex?f%5E%7B-1%7D%28x%29), where for each *x* belonging to the range of *f*, *f<sup>-1</sup>(x)* is defined to be the unique value of *y* in the domain of *f* satisfying *x = f(y)* 
+
+<!-- f^{-1}(x) -->
+
+Or, in s simplified way,
+
+![function2](http://latex.codecogs.com/svg.latex?y%3Df%5E%7B-1%7D%28x%29) is equivalent to 
+![function2](http://latex.codecogs.com/svg.latex?x%20%3D%20f%28y%29)
+<!-- y=f^{-1}(x) -->
+<!-- x = f(y) -->
+
 ## prime
 
 The prime symbol (`′`) is often used in variable names to describe things which are similar, without giving it a different name altogether. It can describe the "next value" after some transformation.
