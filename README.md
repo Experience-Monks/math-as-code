@@ -526,6 +526,8 @@ function isReal (k) {
 }
 ```
 
+*Note:* Real numbers are also *finite*, as in, *not infinite.*
+
 #### `ℚ` rational numbers
 
 Rational numbers are real numbers that can be expressed as a fraction, or *ratio* (like `⅗`). Rational numbers cannot have a denominator of zero.
