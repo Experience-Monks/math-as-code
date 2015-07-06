@@ -518,10 +518,12 @@ Listed below are a few common sets and their symbols.
 
 The large `ℝ` describes the set of *real numbers*. These include integers, as well as rational and irrational numbers.
 
-JavaScript treats floats and integers as the same type, so the following would be a simple example of our *k* ∈ ℝ example:
+JavaScript treats floats and integers as the same type, so the following would be a simple test of our *k* ∈ ℝ example:
 
 ```js
-typeof k === 'number'
+function isReal (k) {
+  return typeof k === 'number' && isFinite(k);
+}
 ```
 
 #### `ℚ` rational numbers
