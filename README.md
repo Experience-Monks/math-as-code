@@ -153,6 +153,13 @@ console.log(math.multiply(a, b).toString())
 //=> '1 + 3i'
 ```
 
+The library also supports evaluating a string expression, so the above could be re-written as:
+
+```js
+console.log(math.eval('(3 - i) * i').toString())
+//=> '1 + 3i'
+```
+
 Other implementations:
 
 - [immutable-complex](https://www.npmjs.com/package/immutable-complex)
