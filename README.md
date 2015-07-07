@@ -20,7 +20,7 @@ For simplicity, many of the code examples here operate on floating point values 
 
 - [variable name conventions](#variable-name-conventions)
 - [equals `=` `≈` `≠` `:=`](#equals-symbols)
-- [square root `√` and imaginary 'i'](#square-root-and-complex-numbers)
+- [square root and complex numbers `√` *`i`*](#square-root-and-complex-numbers)
 - [dot & cross `·` `×` `∘`](#dot--cross)
   - [scalar multiplication](#scalar-multiplication)
   - [vector multiplication](#vector-multiplication)
@@ -119,13 +119,13 @@ The above equation might be interpreted in code as an [assertion](https://develo
 console.assert(x === (2 * k * j))
 ```
 
-## Square Root and Complex Numbers
+## square root and complex numbers
 
 A square root operation is of the form:
 
 ![squareroot](http://latex.codecogs.com/svg.latex?%5Csqrt%7Bx%5E2%7D%3Dx)
 
-Every modern programming language has a built-in implementation of a square root function. In JavaScript, it is located in the Math package:
+In programming we use a `sqrt` function, like so: 
 
 ```js
 var x = 9;
@@ -138,17 +138,26 @@ Complex numbers are expressions of the form ![complex](http://latex.codecogs.com
 ![imaginary](http://latex.codecogs.com/svg.latex?i%3D%5Csqrt%7B-1%7D).
 <!-- i=\sqrt{-1} -->
 
-In JavaScript, there is no built-in functionality for complex numbers, but the opensource [Math.js](http://mathjs.org/index.html) library provides it. Examples of its functionality are as follows:
+In JavaScript, there is no built-in functionality for complex numbers, but there are some libraries that support complex number arithmetic. For example, using [mathjs](https://www.npmjs.com/package/mathjs):
 
 ```js
-var a = Math.complex(2, 3);
-var b = Math.complex('4 - i');
-console.log(a+b);                            
-//=> 6 + 2i
+var math = require('mathjs')
 
-console.log(Math.sqrt(-1)*Math.sqrt(-1));
-//=> -1
+var a = math.complex(3, -1)
+//=> { re: 3, im: -1 }
+
+var b = math.sqrt(-1)
+//=> { re: 0, im: -1 }
+
+console.log(math.multiply(a, b).toString())
+//=> '1 + 3i'
 ```
+
+Other implementations:
+
+- [immutable-complex](https://www.npmjs.com/package/immutable-complex)
+- [complex-js](https://www.npmjs.com/package/complex-js)
+- [Numeric-js](http://www.numericjs.com/)
 
 ## dot & cross
 
