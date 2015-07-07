@@ -20,6 +20,7 @@ For simplicity, many of the code examples here operate on floating point values 
 
 - [variable name conventions](#variable-name-conventions)
 - [equals `=` `≈` `≠` `:=`](#equals-symbols)
+- [square root `√` and imaginary 'i'](#square-root)
 - [dot & cross `·` `×` `∘`](#dot--cross)
   - [scalar multiplication](#scalar-multiplication)
   - [vector multiplication](#vector-multiplication)
@@ -116,6 +117,37 @@ The above equation might be interpreted in code as an [assertion](https://develo
 
 ```js
 console.assert(x === (2 * k * j))
+```
+
+## Square Root and Complex Numbers
+
+A square root operation is of the form:
+
+![squareroot](http://latex.codecogs.com/svg.latex?%5Csqrt%7Bx%5E2%7D%3Dx)
+
+Every modern programming language has a built-in implementation of a square root function. In JavaScript, it is located in the Math package:
+
+```js
+var x = 9;
+console.log(Math.sqrt(x));
+//=> 3
+```
+
+Complex numbers are expressions of the form ![complex](http://latex.codecogs.com/svg.latex?a&space;&plus;&space;ib), where ![a](http://latex.codecogs.com/svg.latex?a) is the real part and ![b](http://latex.codecogs.com/svg.latex?b) is the imaginary part. The imaginary number ![i](http://latex.codecogs.com/svg.latex?i) is defined as:
+
+![imaginary](http://latex.codecogs.com/svg.latex?i%3D%5Csqrt%7B-1%7D).
+<!-- i=\sqrt{-1} -->
+
+In JavaScript, there is no built-in functionality for complex numbers, but the opensource [Math.js](http://mathjs.org/index.html) library provides it. Examples of its functionality are as follows:
+
+```js
+var a = Math.complex(2, 3);
+var b = Math.complex('4 - i');
+console.log(a+b);                            
+//=> 6 + 2i
+
+console.log(Math.sqrt(-1)*Math.sqrt(-1));
+//=> -1
 ```
 
 ## dot & cross
