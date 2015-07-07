@@ -20,7 +20,7 @@ For simplicity, many of the code examples here operate on floating point values 
 
 - [variable name conventions](#variable-name-conventions)
 - [equals `=` `≈` `≠` `:=`](#equals-symbols)
-- [square root `√` and imaginary 'i'](#square-root)
+- [square root `√` and imaginary 'i'](#square-root-and-complex-numbers)
 - [dot & cross `·` `×` `∘`](#dot--cross)
   - [scalar multiplication](#scalar-multiplication)
   - [vector multiplication](#vector-multiplication)
