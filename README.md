@@ -366,7 +366,7 @@ Here, `sum` will be `135`.
 
 ## capital Pi
 
-The capital Pi or "Big Pi" is very similar to [Sigma](#sigma), except we are using multiplication to find the "products of sequences." 
+The capital Pi or "Big Pi" is very similar to [Sigma](#sigma), except we are using multiplication to find the product of a sequence of values. 
 
 Take the following:
 
@@ -578,7 +578,7 @@ function isReal (k) {
 
 #### `ℚ` rational numbers
 
-Rational numbers are real numbers that can be expressed as a fraction, or *ratio* (like `⅗`). Rational numbers cannot have a denominator of zero.
+Rational numbers are real numbers that can be expressed as a fraction, or *ratio* (like `⅗`). Rational numbers cannot have zero as a denominator.
 
 This also means that all integers are rational numbers, since the denominator can be expressed as 1.
 
@@ -615,7 +615,7 @@ function isNaturalNumber (n) {
 
 #### `ℂ` complex numbers
 
-A complex number is a combination of a real number and an imaginary number. For more info, see [A Visual, Intuitive Guide to Imaginary Numbers](http://betterexplained.com/articles/a-visual-intuitive-guide-to-imaginary-numbers/).
+A complex number is a combination of a real and imaginary number, viewed as a co-ordinate in the 2D plane. For more info, see [A Visual, Intuitive Guide to Imaginary Numbers](http://betterexplained.com/articles/a-visual-intuitive-guide-to-imaginary-numbers/).
 
 ## function
 
