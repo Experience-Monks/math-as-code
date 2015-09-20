@@ -123,7 +123,7 @@ console.assert(x === (2 * k * j))
 
 A square root operation is of the form:
 
-![squareroot](http://latex.codecogs.com/svg.latex?%5Csqrt%7Bx%5E2%7D%3Dx)
+![squareroot](http://latex.codecogs.com/svg.latex?%5Csqrt%7Bx%5E2%7D%3D%C2%B1x)
 
 In programming we use a `sqrt` function, like so: 
 
