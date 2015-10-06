@@ -46,6 +46,7 @@ For simplicity, many of the code examples here operate on floating point values 
   - [equality `<` `≥` `≫`](#equality)
   - [conjunction & disjunction `∧` `∨`](#conjunction--disjunction)
 - [logical negation `¬` `~` `!`](#logical-negation)
+- [intervals](#intervals)
 - [more...](#more)
 
 ## variable name conventions
@@ -968,6 +969,87 @@ if (x !== y) {
 ```
 
 *Note:* The tilde `~` has many different meanings depending on context. For example, *row equivalence* (matrix theory) or *same order of magnitude* (discussed in [equality](#equality)).
+
+## intervals
+
+Sometimes a function deals with real numbers restricted to some range of values, such a constraint can be represented using an *interval*
+
+For example we can represent the numbers between zero and one including/not including zero and/or one as:
+
+- Not including zero or one: ![interval-opened-left-opened-right](http://latex.codecogs.com/svg.latex?%280%2C%201%29)
+
+<!-- (0, 1) -->
+
+- Including zero or but not one: ![interval-closed-left-opened-right](http://latex.codecogs.com/svg.latex?%5B0%2C%201%29)
+
+<!-- [0, 1) -->
+
+- Not including zero but including one: ![interval-opened-left-closed-right](http://latex.codecogs.com/svg.latex?%280%2C%201%5D)
+
+<!-- (0, 1] -->
+
+- Including zero and one: ![interval-closed-left-closed-right](http://latex.codecogs.com/svg.latex?%5B0%2C%201%5D)
+
+<!-- [0, 1] -->
+
+For example we to indicate that a point `x` is in the unit cube in 3D we say:
+
+![interval-unit-cube](http://latex.codecogs.com/svg.latex?x%20%5Cin%20%5B0%2C%201%5D%5E3)
+
+<!-- x \in [0, 1]^3 -->
+
+In code we can represent an interval using a two element 1d array:
+
+```js
+var nextafter = require('nextafter')
+
+var a = [nextafter(0, Infinity), nextafter(1, -Infinity)]     // open interval
+var b = [nextafter(0, Infinity), 1]                           // interval closed on the left 
+var c = [0, nextafter(1, -Infinity)]                          // interval closed on the right
+var d = [0, 1]                                                // closed interval
+```
+
+Intervals are used in conjunction with set operations:
+
+- *intersection* e.g. ![interval-intersection](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20%5Ccap%20%5B4%2C%206%5D%20%3D%20%5B4%2C%205%29)
+
+<!-- [3, 5) \cap [4, 6] = [4, 5) -->
+
+- *union* e.g. ![interval-union](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20%5Ccup%20%5B4%2C%206%5D%20%3D%20%5B3%2C%206%5D)
+
+<!-- [3, 5) \cup [4, 6] = [3, 6] -->
+
+- *difference* e.g. ![interval-difference-1](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20-%20%5B4%2C%206%5D%20%3D%20%5B3%2C%204%29) and ![interval-difference-2](http://latex.codecogs.com/svg.latex?%5B4%2C%206%5D%20-%20%5B3%2C%205%29%20%3D%20%5B5%2C%206%5D)
+
+<!-- [3, 5) - [4, 6] = [3, 4) -->
+<!-- [4, 6] - [3, 5)  = [5, 6] -->
+
+In code:
+
+```js
+var Interval = require('interval-arithmetic')
+var nexafter = require('nextafter')
+
+var a = Interval(3, nexafter(5, -Infinity))
+var b = Interval(4, 6)
+
+Interval.intersection(a, b)
+// {lo: 4, hi: 4.999999999999999}
+
+Interval.union(a, b)
+// {lo: 3, hi: 6}
+
+Interval.difference(a, b)
+// {lo: 3, hi: 3.9999999999999996}
+
+Interval.difference(b, a)
+// {lo: 5, hi: 6}
+```
+
+See:
+
+- [next-after](https://github.com/scijs/nextafter) 
+- [interval-arithmetic](https://github.com/maurizzzio/interval-arithmetic)
 
 ## more...
 
