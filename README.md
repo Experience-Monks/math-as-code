@@ -124,7 +124,9 @@ console.assert(x === (2 * k * j))
 
 A square root operation is of the form:
 
-![squareroot](http://latex.codecogs.com/svg.latex?%5Csqrt%7Bx%5E2%7D%3Dx)
+![squareroot](http://latex.codecogs.com/svg.latex?%5Cleft%28%5Csqrt%7Bx%7D%5Cright%29%5E2%20%3D%20x)
+
+<!-- \left(\sqrt{x}\right)^2 = x -->
 
 In programming we use a `sqrt` function, like so: 
 
