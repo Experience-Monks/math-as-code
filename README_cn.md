@@ -22,21 +22,21 @@
 
 - [变量名惯例](#variable-name-conventions)
 - [等号 `=` `≈` `≠` `:=`](#equals-symbols)
-- [square root and complex numbers `√` *`i`*](#square-root-and-complex-numbers)
-- [dot & cross `·` `×` `∘`](#dot--cross)
-  - [scalar multiplication](#scalar-multiplication)
-  - [vector multiplication](#vector-multiplication)
-  - [dot product](#dot-product)
-  - [cross product](#cross-product)
+- [平方根与复数 `√` *`i`*](#square-root-and-complex-numbers)
+- [点 & 叉 `·` `×` `∘`](#dot--cross)
+  - [标量乘法](#scalar-multiplication)
+  - [向量乘法](#vector-multiplication)
+  - [点乘](#dot-product)
+  - [叉乘](#cross-product)
 - [sigma `Σ`](#sigma) - *summation*
-- [capital Pi `Π`](#capital-pi) - *products of sequences*
-- [pipes `||`](#pipes)
-  - [absolute value](#absolute-value)
-  - [Euclidean norm](#euclidean-norm)
-  - [determinant](#determinant)
-- [hat **`â`**](#hat) - *unit vector*
-- ["element of" `∈` `∉`](#element)
-- [common number sets `ℝ` `ℤ` `ℚ` `ℕ`](#common-number-sets)
+- [大写 Pi `Π`](#capital-pi) - *products of sequences*
+- [管道 `||`](#pipes)
+  - [绝对值](#absolute-value)
+  - [取模](#euclidean-norm)
+  - [行列式](#determinant)
+- [帽子 **`â`**](#hat) - *unit vector*
+- ["属于" `∈` `∉`](#element)
+- [常见数字集 `ℝ` `ℤ` `ℚ` `ℕ`](#common-number-sets)
 - [function `ƒ`](#function)
   - [piecewise function](#piecewise-function)
   - [common functions](#common-functions)
@@ -210,16 +210,13 @@ var result = 3 * k * j
 
 让我们用之前的例子，但用在向量上。对于向量的元素积（element-wise vector multiplication）来说，你可能会看到用一个空心点来表示[Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_%28matrices%29).<sup>[2]</sup>
 
-
----- 未完待续 ----
-
 ![dotcross3](http://latex.codecogs.com/svg.latex?3%5Cmathbf%7Bk%7D%5Ccirc%5Cmathbf%7Bj%7D)
 
 <!-- 3\mathbf{k}\circ\mathbf{j} -->
 
-In other instances, the author might explicitly define a different notation, such as a circled dot `⊙` or a filled circle `●`.<sup>[3]</sup>
+某些时候作者会定义个不同的符号，例如圆心点 `⊙` 或实心圈 `●` 。<sup>[3]</sup>
 
-Here is how it would look in code, using arrays `[x, y]` to represent the 2D vectors.
+这是对应的代码，使用数组`[x, y]`来表示2D向量。
 
 ```js
 var s = 3
@@ -231,7 +228,7 @@ var result = multiplyScalar(tmp, s)
 //=> [ 6, 18 ]
 ```
 
-Our `multiply` and `multiplyScalar` functions look like this:
+`multiply` 和 `multiplyScalar` 函数应该这样:
 
 ```js
 function multiply(a, b) {
@@ -243,17 +240,17 @@ function multiplyScalar(a, scalar) {
 }
 ```
 
-Similarly, matrix multiplication typically does not use the dot `·` or cross symbol `×`. Matrix multiplication will be covered in a later section.
+同样的，矩阵相乘也不用 `·` 或 `×` 符号。 矩阵乘法会在后边章节提到.
 
-#### dot product
+#### 点乘
 
-The dot symbol `·` can be used to denote the [*dot product*](https://en.wikipedia.org/wiki/Dot_product) of two vectors. Sometimes this is called the *scalar product* since it evaluates to a scalar.
+点符号 `·` 可用来表示两向量之间的 [*点乘*](https://en.wikipedia.org/wiki/Dot_product) 。 由于其值是一个标量，通常被叫做*标量积（scalar product）*。
 
 ![dotcross4](http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ccdot%20%5Cmathbf%7Bj%7D)
 
 <!-- \mathbf{k}\cdot \mathbf{j} -->
 
-It is a very common feature of linear algebra, and with a 3D vector it might look like this:
+这在线性代数和3D向量中是非常常见的，代码类似这样：
 
 ```js
 var k = [ 0, 1, 0 ]
@@ -263,7 +260,7 @@ var d = dot(k, j)
 //=> 0
 ```
 
-The result `0` tells us our vectors are perpendicular. Here is a `dot` function for 3-component vectors:
+结果为 `0` 告诉我们两向量互相垂直. 这是3元素向量的点乘函数:
 
 ```js
 function dot(a, b) {
@@ -271,15 +268,15 @@ function dot(a, b) {
 }
 ```
 
-#### cross product
+#### 叉乘
 
-The cross symbol `×` can be used to denote the [*cross product*](https://en.wikipedia.org/wiki/Cross_product) of two vectors.
+`×`符号可以用来表示两向量的 [*叉乘*](https://en.wikipedia.org/wiki/Cross_product)。
 
 ![dotcross5](http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ctimes%20%5Cmathbf%7Bj%7D)
 
 <!-- \mathbf{k}\times \mathbf{j} -->
 
-In code, it would look like this:
+在代码中，应该是这样:
 
 ```js
 var k = [ 0, 1, 0 ]
@@ -289,9 +286,9 @@ var result = cross(k, j)
 //=> [ 0, 0, -1 ]
 ```
 
-Here, we get `[ 0, 0, -1 ]`, which is perpendicular to both **k** and **j**.
+这里得到结果为 `[ 0, 0, -1 ]`，这个向量既垂直于 **k** 也垂直于 **j**。
 
-Our `cross` function:
+叉乘`cross` 函数：
 
 ```js
 function cross(a, b) {
@@ -305,7 +302,7 @@ function cross(a, b) {
 }
 ```
 
-For other implementations of vector multiplication, cross product, and dot product:
+其他向量乘法，叉乘，点乘的实现：
 
 - [gl-vec3](https://github.com/stackgl/gl-vec3)
 - [gl-vec2](https://github.com/stackgl/gl-vec2)
@@ -313,13 +310,13 @@ For other implementations of vector multiplication, cross product, and dot produ
 
 ## sigma 
 
-The big Greek `Σ` (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summation). In other words: summing up some numbers.
+大写希腊字母 `Σ` (Sigma) 用来表示 [总和 Summation](https://en.wikipedia.org/wiki/Summation)。 换句话说就是对一些数字求和。
 
 ![sigma](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B100%7Di)
 
 <!-- \sum_{i=1}^{100}i -->
 
-Here, `i=1` says to start at `1` and end at the number above the Sigma, `100`. These are the lower and upper bounds, respectively. The *i* to the right of the "E" tells us what we are summing. In code:
+这里, `i=1` 是说从`1`开始一直到Sigma上边的数字`100`为止。这些分别为上下边界。 "E"右边的 *i* 告诉我们是在求和。代码：
 
 ```js
 var sum = 0
@@ -328,22 +325,22 @@ for (var i = 1; i <= 100; i++) {
 }
 ```
 
-The result of `sum` is `5050`.
+`sum`的结果为`5050`.
 
-**Tip:** With whole numbers, this particular pattern can be optimized to the following:
+**提示：** 对于整数， 这个特殊形式可以优化为：
 
 ```js
 var n = 100 // upper bound
 var sum = (n * (n + 1)) / 2
 ```
 
-Here is another example where the *i*, or the "what to sum," is different:
+这里有另一个例子，这里的*i*，或“想要求和的”是不同的:
 
 ![sum2](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B100%7D%282i&plus;1%29)
 
 <!-- \sum_{i=1}^{100}(2i+1) -->
 
-In code:
+代码：
 
 ```js
 var sum = 0
@@ -352,15 +349,15 @@ for (var i = 1; i <= 100; i++) {
 }
 ```
 
-The result of `sum` is `10200`.
+结果 `sum` 为 `10200`.
 
-The notation can be nested, which is much like nesting a `for` loop. You should evaluate the right-most sigma first, unless the author has enclosed them in parentheses to alter the order. However, in the following case, since we are dealing with finite sums, the order does not matter.
+符号可被嵌套，非常像嵌套一个`for` 循环。 你应该先求和最右边的 sigma ， 除非作者加入了括号。然而下边的例子，由于我们处理有限的和，顺序就不重要了。
 
 ![sigma3](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B2%7D%5Csum_%7Bj%3D4%7D%5E%7B6%7D%283ij%29)
 
 <!-- \sum_{i=1}^{2}\sum_{j=4}^{6}(3ij) -->
 
-In code:
+代码：
 
 ```js
 var sum = 0
@@ -371,19 +368,19 @@ for (var i = 1; i <= 2; i++) {
 }
 ```
 
-Here, `sum` will be `135`.
+这里，`sum` 值为 `135`。
 
-## capital Pi
+## 大写 Pi
 
-The capital Pi or "Big Pi" is very similar to [Sigma](#sigma), except we are using multiplication to find the product of a sequence of values. 
+大写 Pi 或 "大 Pi" 与 [Sigma](#sigma) 非常接近， 不同的是我们用乘法取得一系列数字的乘积。 
 
-Take the following:
+看下边:
 
 ![capitalPi](http://latex.codecogs.com/svg.latex?%5Cprod_%7Bi%3D1%7D%5E%7B6%7Di)
 
 <!-- \prod_{i=1}^{6}i -->
 
-In code, it might look like this:
+代码应该类似这样：
 
 ```js
 var value = 1
@@ -392,21 +389,21 @@ for (var i = 1; i <= 6; i++) {
 }
 ```
 
-Where `value` will evaluate to `720`.
+`value` 结果应得到 `720`.
 
-## pipes
+## 管道（pipes）
 
-Pipe symbols, known as *bars*, can mean different things depending on the context. Below are three common uses: [absolute value](#absolute-value), [Euclidean norm](#euclidean-norm), and [determinant](#determinant).
+管道符号，就是*竖条（bars）*，根据上下文不同，可以表示不同意思。下边的是3种常见用途[绝对值](#absolute-value), [取模](#euclidean-norm), 和 [行列式](#determinant)。
 
-These three features all describe the *length* of an object.
+这3种特性都是描述对象的 *长度（length）* 。
 
-#### absolute value 
+#### 绝对值
 
 ![pipes1](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%20x%20%5Cright%20%7C)
 
 <!-- \left | x \right | -->
 
-For a number *x*, `|x|` means the absolute value of *x*. In code:
+对于数字 *x*, `|x|` 表示 *x* 的绝对值。代码为：
 
 ```js
 var x = -5
@@ -414,21 +411,21 @@ var result = Math.abs(x)
 // => 5
 ```
 
-#### Euclidean norm
+#### 取模（Euclidean norm）
 
 ![pipes4](http://latex.codecogs.com/svg.latex?%5Cleft%20%5C%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%5C%7C)
 
 <!-- \left \| \mathbf{v} \right \| -->
 
-For a vector **v**, `‖v‖` is the [Euclidean norm](https://en.wikipedia.org/wiki/Norm_%28mathematics%29#Euclidean_norm) of **v**. It is also referred to as the "magnitude" or "length" of a vector.
+对于向量 **v**， `‖v‖` 是 **v** 的[取模（Euclidean norm）](https://en.wikipedia.org/wiki/Norm_%28mathematics%29#Euclidean_norm) 。也叫做向量的 "量级（magnitude）" 或 "长度（length）" 。
 
-Often this is represented by double-bars to avoid ambiguity with the *absolute value* notation, but sometimes you may see it with single bars:
+通常用双竖线来避免与*绝对值*符号混淆，但有些时候也会看见单竖线。
 
 ![pipes2](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%7C)
 
 <!-- \left | \mathbf{v} \right | -->
 
-Here is an example using an array `[x, y, z]` to represent a 3D vector.
+这里的例子用数组 `[x, y, z]` 来表示一个3D向量。
 
 ```js
 var v = [ 0, 4, -3 ]
@@ -436,7 +433,7 @@ length(v)
 //=> 5
 ```
 
-The `length` function:
+`length`函数：
 
 ```js
 function length (vec) {
@@ -447,21 +444,21 @@ function length (vec) {
 }
 ```
 
-Other implementations:
+其他实现：
 
 - [magnitude](https://github.com/mattdesl/magnitude/blob/864ff5a7eb763d34bf154ac5f5332d7601192b70/index.js) - n-dimensional
 - [gl-vec2/length](https://github.com/stackgl/gl-vec2/blob/21f460a371540258521fd2f720d80f14e87bd400/length.js) - 2D vector
 - [gl-vec3/length](https://github.com/stackgl/gl-vec3/blob/507480fa57ba7c5fb70679cf531175a52c48cf53/length.js) - 3D vector
 
-#### determinant
+#### 行列式
 
 ![pipes3](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%5Cmathbf%7BA%7D%20%5Cright%20%7C)
 
 <!-- \left |\mathbf{A}  \right | -->
 
-For a matrix **A**, `|A|` means the [determinant](https://en.wikipedia.org/wiki/Determinant) of matrix **A**.
+对于一个矩阵 **A**, `|A|` 表示矩阵 **A** 的[行列式（determinant）](https://en.wikipedia.org/wiki/Determinant)。
 
-Here is an example computing the determinant of a 2x2 matrix, represented by a flat array in column-major format.
+这是一个计算2x2矩阵行列式的粒子，矩阵用一个column-major格式的浮点数数组表示。
 
 ```js
 var determinant = require('gl-mat2/determinant')
@@ -471,7 +468,7 @@ var det = determinant(matrix)
 //=> 1
 ```
 
-Implementations:
+实现：
 
 - [gl-mat4/determinant](https://github.com/stackgl/gl-mat4/blob/c2e2de728fe7eba592f74cd02266100cc21ec89a/determinant.js) - also see [gl-mat3](https://github.com/stackgl/gl-mat3) and [gl-mat2](https://github.com/stackgl/gl-mat2)
 - [ndarray-determinant](https://www.npmjs.com/package/ndarray-determinant)
@@ -479,15 +476,15 @@ Implementations:
 - [robust-determinant](https://www.npmjs.com/package/robust-determinant)
 - [robust-determinant-2](https://www.npmjs.com/package/robust-determinant-2) and [robust-determinant-3](https://www.npmjs.com/package/robust-determinant-3), specifically for 2x2 and 3x3 matrices, respectively
 
-## hat
+## 帽子
 
-In geometry, the "hat" symbol above a character is used to represent a [unit vector](https://en.wikipedia.org/wiki/Unit_vector). For example, here is the unit vector of **a**:
+在几何里，字母上的“帽子”符号用来表示一个[单位向量](https://en.wikipedia.org/wiki/Unit_vector)。例如，这是向量 **a** 的单位向量。
 
 ![hat](http://latex.codecogs.com/svg.latex?%5Chat%7B%5Cmathbf%7Ba%7D%7D)
 
 <!-- \hat{\mathbf{a}} -->
 
-In Cartesian space, a unit vector is typically length 1. That means each part of the vector will be in the range of -1.0 to 1.0. Here we *normalize* a 3D vector into a unit vector:
+在笛卡尔空间中，单位向量的长度为1。意思是向量的每个部分都在-1.0 到 1.0之间。这里我们 *归一化（normalize）* 一个3D向量为单位向量。
 
 ```js
 var a = [ 0, 4, -3 ]
@@ -495,7 +492,7 @@ normalize(a)
 //=> [ 0, 0.8, -0.6 ]
 ```
 
-Here is the `normalize` function, operating on 3D vectors:
+这是`归一化（normalize）` 函数，接收一个3D向量参数：
 
 ```js
 function normalize(vec) {
@@ -514,22 +511,22 @@ function normalize(vec) {
 }
 ```
 
-Other implementations:
+其他实现：
 
 - [gl-vec3/normalize](https://github.com/stackgl/gl-vec3/blob/507480fa57ba7c5fb70679cf531175a52c48cf53/normalize.js) and [gl-vec2/normalize](https://github.com/stackgl/gl-vec2/blob/21f460a371540258521fd2f720d80f14e87bd400/normalize.js)
 - [vectors/normalize-nd](https://github.com/hughsk/vectors/blob/master/normalize-nd.js) (n-dimensional)
 
-## element
+## 属于
 
-In set theory, the "element of" symbol `∈` and `∋` can be used to describe whether something is an element of a *set*. For example:
+集合理论中，“属于”符号 `∈` 和 `∋` 可以被用来描述某物是否为集合中的一个元素。例如：
 
 ![element1](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%203%20%5Cin%20A)
 
 <!-- A=\left \{3,9,14}{  \right \}, 3 \in A -->
 
-Here we have a set of numbers *A* `{ 3, 9, 14 }` and we are saying `3` is an "element of" that set. 
+这里我们有一个数字集 *A* `{ 3, 9, 14 }` 而且我们说 `3` 是“属于”这个集合的。 
 
-A simple implementation in ES5 might look like this:
+在ES5种一个简单的实现应该这样：
 
 ```js
 var A = [ 3, 9, 14 ]
@@ -538,7 +535,7 @@ A.indexOf(3) >= 0
 //=> true
 ```
 
-However, it would be more accurate to use a `Set` which only holds unique values. This is a feature of ES6.
+然而，可以用只能保存唯一值的`Set`，这样更精确。这是ES6的一个特性。
 
 ```js
 var A = new Set([ 3, 9, 14 ])
@@ -547,35 +544,35 @@ A.has(3)
 //=> true
 ```
 
-The backwards `∋` is the same, but the order changes:
+反向的 `∋` 意义相同，只是顺序改变：
 
 ![element2](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%20A%20%5Cni%203)
 
 <!-- A=\left \{3,9,14}{  \right \}, A \ni 3 -->
 
-You can also use the "not an element of" symbols `∉` and `∌` like so:
+你可以使用 "不属于" 符号 `∉` 和 `∌` 例如：
 
 ![element3](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%206%20%5Cnotin%20A)
 
 <!-- A=\left \{3,9,14}{  \right \}, 6 \notin A -->
 
-## common number sets
+## 常见数字集
 
-You may see some some large [Blackboard](https://en.wikipedia.org/wiki/Blackboard_bold) letters among equations. Often, these are used to describe sets.
+你可能在一些公式中看见一些大[黑板粗体字](https://en.wikipedia.org/wiki/Blackboard_bold)。他们一般是用来描述集合的。
 
-For example, we might describe *k* to be an [element of](#element) the set `ℝ`. 
+例如，我们可以描述 *k* 是[属于](#element) `ℝ`集中的一个元素。
 
 ![real](http://latex.codecogs.com/svg.latex?k%20%5Cin%20%5Cmathbb%7BR%7D)
 
 <!-- k \in \mathbb{R} -->
 
-Listed below are a few common sets and their symbols.
+下边列出一些常见集和他们的符号。
 
-#### `ℝ` real numbers
+#### `ℝ` 实数（real numbers）
 
-The large `ℝ` describes the set of *real numbers*. These include integers, as well as rational and irrational numbers.
+大 `ℝ` 描述 *实数（real numbers）* 的集合。他们包括整数，有理数，无理数。
 
-JavaScript treats floats and integers as the same type, so the following would be a simple test of our *k* ∈ ℝ example:
+JavaScript认为整数和浮点数为相同类型，所以下边将是一个*k* ∈ ℝ 的简单测试：
 
 ```js
 function isReal (k) {
@@ -583,9 +580,9 @@ function isReal (k) {
 }
 ```
 
-*Note:* Real numbers are also *finite*, as in, *not infinite.*
+*注意：* 实数也是 *有限数（finite）*，*非无限的（not infinite）*
 
-#### `ℚ` rational numbers
+#### `ℚ` 有理数（rational numbers）
 
 Rational numbers are real numbers that can be expressed as a fraction, or *ratio* (like `⅗`). Rational numbers cannot have zero as a denominator.
 
@@ -593,7 +590,7 @@ This also means that all integers are rational numbers, since the denominator ca
 
 An irrational number, on the other hand, is one that cannot be expressed as a ratio, like π (PI). 
 
-#### `ℤ` integers
+#### `ℤ` 整数（integers）
 
 An integer, i.e. a real number that has no fractional part. These can be positive or negative.
 
@@ -605,7 +602,7 @@ function isInteger (n) {
 }
 ```
 
-#### `ℕ` natural numbers
+#### `ℕ` 自然数（natural numbers）
 
 A natural number, a positive and non-negative integer. Depending on the context and field of study, the set may or may not include zero, so it could look like either of these:
 
