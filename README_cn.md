@@ -37,9 +37,9 @@
 - [帽子 **`â`**](#hat) - *unit vector*
 - ["属于" `∈` `∉`](#element)
 - [常见数字集 `ℝ` `ℤ` `ℚ` `ℕ`](#common-number-sets)
-- [function `ƒ`](#function)
-  - [piecewise function](#piecewise-function)
-  - [common functions](#common-functions)
+- [函数 `ƒ`](#function)
+  - [分段函数](#piecewise-function)
+  - [通用函数](#common-functions)
   - [function notation `↦` `→`](#function-notation)
 - [prime `′`](#prime)
 - [floor & ceiling `⌊` `⌉`](#floor--ceiling)
@@ -584,17 +584,17 @@ function isReal (k) {
 
 #### `ℚ` 有理数（rational numbers）
 
-Rational numbers are real numbers that can be expressed as a fraction, or *ratio* (like `⅗`). Rational numbers cannot have zero as a denominator.
+有理数是可以被表示为分数，或*比率*（类似`⅗`）的实数。有理数不能以0作分母。
 
-This also means that all integers are rational numbers, since the denominator can be expressed as 1.
+这意味着所有的整数都是有理数，因为可以看成分母为1。
 
-An irrational number, on the other hand, is one that cannot be expressed as a ratio, like π (PI). 
+换句话说无理数就是不能表示为比率的数，例如 π (PI)。
 
 #### `ℤ` 整数（integers）
 
-An integer, i.e. a real number that has no fractional part. These can be positive or negative.
+一个整数，是没有小数部分的实数。可为正业可以为负。
 
-A simple test in JavaScript might look like this:
+在JavaScript中的简单测试应该这样：
 
 ```js
 function isInteger (n) {
@@ -604,14 +604,14 @@ function isInteger (n) {
 
 #### `ℕ` 自然数（natural numbers）
 
-A natural number, a positive and non-negative integer. Depending on the context and field of study, the set may or may not include zero, so it could look like either of these:
+自然数是正整数或非负整数。取决于所学领域和上下文，集合中可能包含也可能不包含0，所以可以是下边任意一种集合。
 
 ```js
 { 0, 1, 2, 3, ... }
 { 1, 2, 3, 4, ... }
 ```
 
-The latter is more common in computer science, for example:
+前者在计算机科学中更常见，例如：
 
 ```js
 function isNaturalNumber (n) {
@@ -619,27 +619,27 @@ function isNaturalNumber (n) {
 }
 ```
 
-#### `ℂ` complex numbers
+#### `ℂ` 复数
 
-A complex number is a combination of a real and imaginary number, viewed as a co-ordinate in the 2D plane. For more info, see [A Visual, Intuitive Guide to Imaginary Numbers](http://betterexplained.com/articles/a-visual-intuitive-guide-to-imaginary-numbers/).
+复数是实数域虚数的组合，被视为2D平面上的一个坐标。更详细的信息请看[A Visual, Intuitive Guide to Imaginary Numbers](http://betterexplained.com/articles/a-visual-intuitive-guide-to-imaginary-numbers/)。
 
-## function
+## 函数
 
-[Functions](https://en.wikipedia.org/wiki/Function_%28mathematics%29) are fundamental features of mathematics, and the concept is fairly easy to translate into code.
+[函数](https://en.wikipedia.org/wiki/Function_%28mathematics%29) 是数学的基本特性，其概念很容易转换成代码。
 
-A function relates an input to an output value. For example, the following is a function:
+函数把输入输出值联系起来。例如下边是一个函数：
 
 ![function1](http://latex.codecogs.com/svg.latex?x%5E%7B2%7D)
 
 <!-- x^{2} -->
 
-We can give this function a *name*. Commonly, we use `ƒ` to describe a function, but it could be named `A(x)` or anything else.
+我们可以给函数一个 *名字*。一般来说我们用 `ƒ` 来描述一个函数，但也可以命名为 `A(x)` 或其他什么。
 
 ![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
 
 <!-- f\left (x  \right ) = x^{2} -->
 
-In code, we might name it `square` and write it like this:
+在代码中我们可以给函数命名为`square` 写出来应该类似这样：
 
 ```js
 function square (x) {
@@ -647,21 +647,21 @@ function square (x) {
 }
 ```
 
-Sometimes a function is not named, and instead the output is written.
+有时函数没有名字，而是直接写出输出值。
 
 ![function3](http://latex.codecogs.com/svg.latex?y%20%3D%20x%5E%7B2%7D)
 
 <!-- y = x^{2} -->
 
-In the above example, *x* is the input, the relationship is *squaring*, and *y* is the output.
+在上边的例子中，*x* 是输入值，*y*是输出值，他们是平方的关系。
 
-Functions can also have multiple parameters, like in a programming language. These are known as *arguments* in mathematics, and the number of arguments a function takes is known as the *arity* of the function.
+像编程语言一样，函数也可以有多个参数。他们在数学中被称为*arguments*，并且函数接受的参数数量被称为函数的*arity*。
 
 ![function4](http://latex.codecogs.com/svg.latex?f%28x%2Cy%29%20%3D%20%5Csqrt%7Bx%5E2%20&plus;%20y%5E2%7D)
 
 <!-- f(x,y) = \sqrt{x^2 + y^2} -->
 
-In code:
+代码：
 
 ```js
 function length (x, y) {
@@ -669,11 +669,11 @@ function length (x, y) {
 }
 ```
 
-### piecewise function
+### 分段函数
 
-Some functions will use different relationships depending on the input value, *x*.
+有些函数根据输入值*x*的不同会有不同的关系。
 
-The following function *ƒ* chooses between two "sub functions" depending on the input value.
+下边的函数 *f* 根据不同的输入值选择两个不同的“子函数”。
 
 ![piecewise1](http://latex.codecogs.com/svg.latex?f%28x%29%3D%20%5Cbegin%7Bcases%7D%20%5Cfrac%7Bx%5E2-x%7D%7Bx%7D%2C%26%20%5Ctext%7Bif%20%7D%20x%5Cgeq%201%5C%5C%200%2C%20%26%20%5Ctext%7Botherwise%7D%20%5Cend%7Bcases%7D)
 
@@ -683,9 +683,9 @@ The following function *ƒ* chooses between two "sub functions" depending on the
     0, & \text{otherwise}
 \end{cases} -->
 
-This is very similar to `if` / `else` in code. The right-side conditions are often written as **"for x < 0"** or **"if x = 0"**. If the condition is true, the function to the left is used.
+这非常接近于代码中的`if` / `else`。右边的条件经常被写为**"for x < 0"** 或 **"if x = 0"**。如果条件为true，就使用其左边的函数。
 
-In piecewise functions, **"otherwise"** and **"elsewhere"** are analogous to the `else` statement in code.
+在分段函数中，**"otherwise"** 和 **"elsewhere"** 类似于代码中的 `else` 。
 
 ```js
 function f (x) {
@@ -697,11 +697,11 @@ function f (x) {
 }
 ```
 
-### common functions
+### 通用函数
 
-There are some function names that are ubiquitous in mathematics. For a programmer, these might be analogous to functions "built-in" to the language (like `parseInt` in JavaScript).
+有些函数名在数学中是普遍存在的。在一个程序员的角度看，这些应该类似于编程语言中的“内置”函数（就像JavaScript中的`parseInt`）。
 
-One such example is the *sgn* function. This is the *signum* or *sign* function. Let's use [piecewise function](#piecewise-function) notation to describe it:
+一个例子就是 *sgn* 函数。这是*正负号* 函数，或者叫*符号*函数。让我们用[分段函数](#piecewise-function)来描述它：
 
 ![sgn](http://latex.codecogs.com/svg.latex?sgn%28x%29%20%3A%3D%20%5Cbegin%7Bcases%7D%20-1%26%20%5Ctext%7Bif%20%7D%20x%20%3C%200%5C%5C%200%2C%20%26%20%5Ctext%7Bif%20%7D%20%7Bx%20%3D%200%7D%5C%5C%201%2C%20%26%20%5Ctext%7Bif%20%7D%20x%20%3E%200%5C%5C%20%5Cend%7Bcases%7D)
 
@@ -712,7 +712,7 @@ One such example is the *sgn* function. This is the *signum* or *sign* function.
     1, & \text{if } x > 0\\
 \end{cases} -->
 
-In code, it might look like this:
+代码中，应该这样：
 
 ```js
 function sgn (x) {
@@ -722,27 +722,28 @@ function sgn (x) {
 }
 ```
 
-See [signum](https://github.com/scijs/signum) for this function as a module.
+此函数作为独立module看这里[signum](https://github.com/scijs/signum)。
 
-Other examples of such functions: *sin*, *cos*, *tan*.
+其他类似函数的例子还有: *sin*， *cos*， *tan*。
 
-### function notation
+### 函数符号
 
-In some literature, functions may be defined with more explicit notation. For example, let's go back to the `square` function we mentioned earlier:
+在某些著作中，函数可以被更明确的符号定义。例如，让我们回到之前提到的 `square` 函数。
 
 ![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
 
 <!-- f\left (x  \right ) = x^{2} -->
 
-It might also be written in the following form:
+也可以写为以下形式：
 
 ![mapsto](http://latex.codecogs.com/svg.latex?f%20%3A%20x%20%5Cmapsto%20x%5E2)
 
 <!-- f : x \mapsto x^2 -->
 
-The arrow here with a tail typically means "maps to," as in *x maps to x<sup>2</sup>*. 
+带尾巴的箭头通常意思为“映射到”，如，*将x映射到x<sup>2</sup>*
 
 Sometimes, when it isn't obvious, the notation will also describe the *domain* and *codomain* of the function. A more formal definition of *ƒ* might be written as:
+有时，不是很常见，这个符号也用来描述*域* 和函数的值域。对 *ƒ* 更正式的定义可以写为：
 
 ![funcnot](http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D)
 
