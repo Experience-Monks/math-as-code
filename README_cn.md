@@ -1,6 +1,6 @@
 # math-as-code
 
-> 译注：英文不好尝试翻译，如有错误请指正。
+> 译注：译者英文与数学水平都非常有限，尝试翻译，如有错误请指正。
 
 这是一份通过对比数学符号和JavaScript代码来帮助开发者了解数学符号的参考。
 
@@ -8,7 +8,8 @@
 
 这个指南还没有完成。如果你发现错误或者想提交贡献，请[open a ticket](https://github.com/Jam3/math-as-code/issues)或发一个 PR。
 
-> **Note**: For brevity, some code examples make use of [npm packages](https://www.npmjs.com/). You can refer to their GitHub repos for implementation details.
+
+> **注意**： 简单起见，有些代码示例使用了[npm 包](https://www.npmjs.com/)。你可以到他们的GitHub repos来查看实现的详细情况。
 
 # 前言
 
@@ -16,7 +17,7 @@
 
 更完整的列表，请看[Wikipedia - List of Mathematical Symbols](https://en.wikipedia.org/wiki/List_of_mathematical_symbols). 
 
-简单起见，这里许多的代码示例都操作浮点数值，并不是数字健壮的(numerically robust)。为什么这会是一个问题的更详细信息请看[Robust Arithmetic Notes](https://github.com/mikolalysenko/robust-arithmetic-notes) by Mikola Lysenko.
+简单起见，这里许多的代码示例都操作浮点数值，并不是数字健壮的(numerically robust)。为什么这会是一个问题的更详细信息请看[Robust Arithmetic Notes](https://github.com/mikolalysenko/robust-arithmetic-notes) 作者 Mikola Lysenko.
 
 # 目录
 
@@ -28,13 +29,13 @@
   - [向量乘法](#vector-multiplication)
   - [点乘](#dot-product)
   - [叉乘](#cross-product)
-- [sigma `Σ`](#sigma) - *summation*
-- [大写 Pi `Π`](#capital-pi) - *products of sequences*
+- [sigma `Σ`](#sigma) - *求和*
+- [大写 Pi `Π`](#capital-pi) - *序列的积*
 - [管道 `||`](#pipes)
   - [绝对值](#absolute-value)
   - [取模](#euclidean-norm)
   - [行列式](#determinant)
-- [帽子 **`â`**](#hat) - *unit vector*
+- [帽子 **`â`**](#hat) - *单位向量*
 - ["属于" `∈` `∉`](#element)
 - [常见数字集 `ℝ` `ℤ` `ℚ` `ℕ`](#common-number-sets)
 - [函数 `ƒ`](#function)
@@ -44,12 +45,12 @@
 - [撇号 `′`](#prime)
 - [向下取整和向上取整（floor & ceiling） `⌊` `⌉`](#floor--ceiling)
 - [箭头](#arrows)
-  - [material implication `⇒` `→`](#material-implication)
-  - [equality `<` `≥` `≫`](#equality)
-  - [conjunction & disjunction `∧` `∨`](#conjunction--disjunction)
-- [logical negation `¬` `~` `!`](#logical-negation)
-- [intervals](#intervals)
-- [more...](#more)
+  - [实质蕴含（material implication） `⇒` `→`](#material-implication)
+  - [等式 `<` `≥` `≫`](#equality)
+  - [与 & 或 `∧` `∨`](#conjunction--disjunction)
+- [逻辑非 `¬` `~` `!`](#logical-negation)
+- [区间（intervals）](#intervals)
+- [更多...](#more)
 
 ## 变量名惯例
 
@@ -957,15 +958,15 @@ A || B
 
 ## 逻辑非（logical negation）
 
-有时候，`¬`, `~` 和 `!` 符号都用来表示逻辑`NOT`。例如，只有在A为false的时候，*¬A* 为true。
+有时候，`¬`, `~` 和 `!` 符号都用来表示逻辑 `NOT`。例如，只有在A为false的时候，*¬A* 为true。
 
-这里是一个使用 *not*符号简单的例子：
+这里是一个使用 *not* 符号简单的例子：
 
 ![negation](http://latex.codecogs.com/svg.latex?x%20%5Cneq%20y%20%5CLeftrightarrow%20%5Clnot%28x%20%3D%20y%29)
 
 <!-- x \neq y \Leftrightarrow \lnot(x = y) -->
 
-翻译成代码：
+翻译成代码的例子：
 
 ```js
 if (x !== y) {
@@ -973,63 +974,64 @@ if (x !== y) {
 }
 ```
 
-*Note:* The tilde `~` has many different meanings depending on context. For example, *row equivalence* (matrix theory) or *same order of magnitude* (discussed in [equality](#equality)).
+*注意：* 根据上下文的不同，波浪线 `~` 可以有很多种不同的意思。例如，*行等价（row equivalence）*（矩阵理论）或*相同数量级（same order of magnitude）* （在[等式（equality）](#equality)章节讨论过）。
 
-## intervals
+## 区间（intervals）
 
-Sometimes a function deals with real numbers restricted to some range of values, such a constraint can be represented using an *interval*
+有时函数会处理被一些值限定范围的实数，这样的约束可以用*区间（interval）*来表示。
 
 For example we can represent the numbers between zero and one including/not including zero and/or one as:
+例如我们可以表示0和1之间的数，让他们包含或不包含0和1。
 
-- Not including zero or one: ![interval-opened-left-opened-right](http://latex.codecogs.com/svg.latex?%280%2C%201%29)
+- 不包含0或1： ![interval-opened-left-opened-right](http://latex.codecogs.com/svg.latex?%280%2C%201%29)
 
 <!-- (0, 1) -->
 
-- Including zero or but not one: ![interval-closed-left-opened-right](http://latex.codecogs.com/svg.latex?%5B0%2C%201%29)
+- 包含0但不包含1： ![interval-closed-left-opened-right](http://latex.codecogs.com/svg.latex?%5B0%2C%201%29)
 
 <!-- [0, 1) -->
 
-- Not including zero but including one: ![interval-opened-left-closed-right](http://latex.codecogs.com/svg.latex?%280%2C%201%5D)
+- 不包含0但包含1： ![interval-opened-left-closed-right](http://latex.codecogs.com/svg.latex?%280%2C%201%5D)
 
 <!-- (0, 1] -->
 
-- Including zero and one: ![interval-closed-left-closed-right](http://latex.codecogs.com/svg.latex?%5B0%2C%201%5D)
+- 包含0和1： ![interval-closed-left-closed-right](http://latex.codecogs.com/svg.latex?%5B0%2C%201%5D)
 
 <!-- [0, 1] -->
 
-For example we to indicate that a point `x` is in the unit cube in 3D we say:
+例如我们指出一个点 `x` 在3D单位立方体中，我们可以说：
 
 ![interval-unit-cube](http://latex.codecogs.com/svg.latex?x%20%5Cin%20%5B0%2C%201%5D%5E3)
 
 <!-- x \in [0, 1]^3 -->
 
-In code we can represent an interval using a two element 1d array:
+在代码中我们可以用两个元素大小的一维数组表示区间：
 
 ```js
 var nextafter = require('nextafter')
 
-var a = [nextafter(0, Infinity), nextafter(1, -Infinity)]     // open interval
-var b = [nextafter(0, Infinity), 1]                           // interval closed on the left 
-var c = [0, nextafter(1, -Infinity)]                          // interval closed on the right
-var d = [0, 1]                                                // closed interval
+var a = [nextafter(0, Infinity), nextafter(1, -Infinity)]     // 开区间
+var b = [nextafter(0, Infinity), 1]                           // 左闭右开区间
+var c = [0, nextafter(1, -Infinity)]                          // 左开右闭区间
+var d = [0, 1]                                                // 闭区间
 ```
 
-Intervals are used in conjunction with set operations:
+区间与集合运算结合符使用：
 
-- *intersection* e.g. ![interval-intersection](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20%5Ccap%20%5B4%2C%206%5D%20%3D%20%5B4%2C%205%29)
+- *交集（intersection）* e.g. ![interval-intersection](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20%5Ccap%20%5B4%2C%206%5D%20%3D%20%5B4%2C%205%29)
 
 <!-- [3, 5) \cap [4, 6] = [4, 5) -->
 
-- *union* e.g. ![interval-union](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20%5Ccup%20%5B4%2C%206%5D%20%3D%20%5B3%2C%206%5D)
+- *并集（union）* e.g. ![interval-union](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20%5Ccup%20%5B4%2C%206%5D%20%3D%20%5B3%2C%206%5D)
 
 <!-- [3, 5) \cup [4, 6] = [3, 6] -->
 
-- *difference* e.g. ![interval-difference-1](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20-%20%5B4%2C%206%5D%20%3D%20%5B3%2C%204%29) and ![interval-difference-2](http://latex.codecogs.com/svg.latex?%5B4%2C%206%5D%20-%20%5B3%2C%205%29%20%3D%20%5B5%2C%206%5D)
+- *差集（difference）* e.g. ![interval-difference-1](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20-%20%5B4%2C%206%5D%20%3D%20%5B3%2C%204%29) 还有 ![interval-difference-2](http://latex.codecogs.com/svg.latex?%5B4%2C%206%5D%20-%20%5B3%2C%205%29%20%3D%20%5B5%2C%206%5D)
 
 <!-- [3, 5) - [4, 6] = [3, 4) -->
 <!-- [4, 6] - [3, 5)  = [5, 6] -->
 
-In code:
+代码:
 
 ```js
 var Interval = require('interval-arithmetic')
@@ -1051,22 +1053,22 @@ Interval.difference(b, a)
 // {lo: 5, hi: 6}
 ```
 
-See:
+见：
 
 - [next-after](https://github.com/scijs/nextafter) 
 - [interval-arithmetic](https://github.com/maurizzzio/interval-arithmetic)
 
-## more...
+## 更多...
 
-Like this guide? Suggest some [more features](https://github.com/Jam3/math-as-code/issues/1) or send us a Pull Request!
+喜欢这份指南？提出[更多的特性](https://github.com/Jam3/math-as-code/issues/1)的建议或给我们发Pull Request！
 
-## Contributing
+## 贡献
 
-For details on how to contribute, see [CONTRIBUTING.md](./CONTRIBUTING.md).
+关于怎样贡献详见 [CONTRIBUTING.md](./CONTRIBUTING.md)。
 
 ## License
 
-MIT, see [LICENSE.md](http://github.com/Jam3/math-as-code/blob/master/LICENSE.md) for details.
+MIT, 详见 [LICENSE.md](http://github.com/Jam3/math-as-code/blob/master/LICENSE.md)。
 
 [1]: http://mimosa-pudica.net/improved-oren-nayar.html#images
 [2]: http://buzzard.ups.edu/courses/2007spring/projects/million-paper.pdf
