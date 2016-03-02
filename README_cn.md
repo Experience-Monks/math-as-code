@@ -40,10 +40,10 @@
 - [函数 `ƒ`](#function)
   - [分段函数](#piecewise-function)
   - [通用函数](#common-functions)
-  - [function notation `↦` `→`](#function-notation)
-- [prime `′`](#prime)
-- [floor & ceiling `⌊` `⌉`](#floor--ceiling)
-- [arrows](#arrows)
+  - [函数符号 `↦` `→`](#function-notation)
+- [撇号 `′`](#prime)
+- [向下取整和向上取整（floor & ceiling） `⌊` `⌉`](#floor--ceiling)
+- [箭头](#arrows)
   - [material implication `⇒` `→`](#material-implication)
   - [equality `<` `≥` `≫`](#equality)
   - [conjunction & disjunction `∧` `∨`](#conjunction--disjunction)
@@ -742,8 +742,7 @@ function sgn (x) {
 
 带尾巴的箭头通常意思为“映射到”，如，*将x映射到x<sup>2</sup>*
 
-Sometimes, when it isn't obvious, the notation will also describe the *domain* and *codomain* of the function. A more formal definition of *ƒ* might be written as:
-有时，不是很常见，这个符号也用来描述*域* 和函数的值域。对 *ƒ* 更正式的定义可以写为：
+有时，不是很常见，这个符号也用来描述函数的 *domain* 和 *codomain*。对 *ƒ* 更正式的定义可以写为：
 
 ![funcnot](http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D)
 
@@ -753,15 +752,15 @@ f :&\mathbb{R} \rightarrow \mathbb{R}\\
 \end{align*}
  -->
 
-A function's *domain* and *codomain* is a bit like its *input* and *output* types, respectively. Here's another example, using our earlier *sgn* function, which outputs an integer:
+函数的 *domain* 和 *codomain* 分别跟他的 *input* 和 *output* 类型有点像。这里有另一个例子，使用了我们之前输出整数的 *sgn* 函数。
 
 ![domain2](http://latex.codecogs.com/svg.latex?sgn%20%3A%20%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BZ%7D)
 
 <!-- sgn : \mathbb{R} \rightarrow \mathbb{Z} -->
 
-The arrow here (without a tail) is used to map one *set* to another.
+这里的箭头（没有尾巴）用来映射一个 *集合* 到另一个。
 
-In JavaScript and other dynamically typed languages, you might use documentation and/or runtime checks to explain and validate a function's input/output. Example:
+在JavaScript和其他动态类型语言中，你也许会用文档 和/或 运行时检查来解释和验证函数的输入/输出。例子：
 
 ```js
 /**
@@ -777,31 +776,31 @@ function square (a) {
 }
 ```
 
-Some tools like [flowtype](http://flowtype.org/) attempt to bring static typing into JavaScript.
+有些工具例如[flowtype](http://flowtype.org/)尝试将静态类型带入到JavaScript中。
 
-Other languages, like Java, allow for true method overloading based on the static types of a function's input/output. This is closer to mathematics: two functions are not the same if they use a different *domain*.
+其他语言，例如Java，允许真正的方法重载（overloading），它们基于函数输入输出的静态类型。这更接近于数学领域：使用不同 *domain* 的两个函数是不同的。
 
-## prime
+## 撇号（prime）
 
-The prime symbol (`′`) is often used in variable names to describe things which are similar, without giving it a different name altogether. It can describe the "next value" after some transformation.
+撇号 (`′`) 通常用在变量名上，用来描述某物很类似，而不用另起个名来描述它。也可以描述经过一些变换后的“下一个值”。
 
-For example, if we take a 2D point *(x, y)* and rotate it, you might name the result *(x′, y′)*. Or, the *transpose* of matrix **M** might be named **M′**.
+例如，如果我们有一个2D点 *(x, y)* ,然后旋转它,你会把旋转后的点命名为*(x′, y′)*。 或者将矩阵 **M** 的 *转置矩阵* 命名为 **M′**。
 
-In code, we typically just assign the variable a more descriptive name, like `transformedPosition`.
+在代码中，我们通常的分配一个描述更详细的变量名，例如`transformedPosition`。
 
-For a mathematical [function](#function), the prime symbol often describes the *derivative* of that function. Derivatives will be explained in a future section. Let's take our earlier function:
+作为数学[函数](#function)，撇号通常描述为函数的*衍生（derivative）*函数。衍生物会在未来的章节解释。我们来看一个之前的函数：
 
 ![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
 
 <!-- f\left (x  \right ) = x^{2} -->
 
-Its derivative could be written with a prime `′` symbol:
+它的衍生物函数（derivative）可以写为一个带撇号`′`的函数：
 
 ![prime1](http://latex.codecogs.com/svg.latex?f%27%28x%29%20%3D%202x)
 
 <!-- f'(x) = 2x -->
 
-In code:
+代码：
 
 ```js
 function f (x) {
@@ -813,11 +812,11 @@ function fPrime (x) {
 }
 ```
 
-Multiple prime symbols can be used to describe the second derivative *ƒ′′* and third derivative *ƒ′′′*. After this, authors typically express higher orders with roman numerals *ƒ*<sup>IV</sup> or superscript numbers *ƒ*<sup>(n)</sup>.
+多个撇号可以用来表示第二个衍生函数（derivative） *ƒ′′* 或 第三个衍生函数（derivative）*ƒ′′′* ，之后更高的数字，一般作者会用罗马数字 *ƒ*<sup>IV</sup> 或上标数字 *ƒ*<sup>(n)</sup> 表示。
 
-## floor & ceiling
+## 向下取整和向上取整（floor & ceiling）
 
-The special brackets `⌊x⌋` and `⌈x⌉` represent the *floor* and *ceil* functions, respectively.
+`⌊x⌋` 和 `⌈x⌉` 这种特殊的括号分别用来表示*floor* 和 *ceil* 函数。 
 
 ![floor](http://latex.codecogs.com/svg.latex?floor%28x%29%20%3D%20%5Clfloor%20x%20%5Crfloor)
 
@@ -827,38 +826,38 @@ The special brackets `⌊x⌋` and `⌈x⌉` represent the *floor* and *ceil* fu
 
 <!-- ceil(x) =  \lceil x \rceil -->
 
-In code:
+代码：
 
 ```js
 Math.floor(x)
 Math.ceil(x)
 ```
 
-When the two symbols are mixed `⌊x⌉`, it typically represents a function that rounds to the nearest integer:
+当这两个符号混合`⌊x⌉`，它通常表示一个取整到最近的整数的函数。
 
 ![round](http://latex.codecogs.com/svg.latex?round%28x%29%20%3D%20%5Clfloor%20x%20%5Crceil)
 
 <!-- round(x) =  \lfloor x \rceil -->
 
-In code:
+代码：
 
 ```js
 Math.round(x)
 ```
 
-## arrows
+## 箭头
 
-Arrows are often used in [function notation](#function-notation). Here are a few other areas you might see them.
+箭头通常用来表示[函数符号](#function-notation)。这里还有一些在其他领域中的用法可以看看。
 
-#### material implication
+#### 实质蕴含（material implication）
 
-Arrows like `⇒` and `→` are sometimes used in logic for *material implication.* That is, if A is true, then B is also true.
+`⇒` 和 `→` 优势被用作表示实质蕴涵（material implication）的逻辑。意思是如果A是true，那么B也是true。
 
 ![material1](http://latex.codecogs.com/svg.latex?A%20%5CRightarrow%20B)
 
 <!-- A \Rightarrow B -->
 
-Interpreting this as code might look like this:
+解释为代码应该为：
 
 ```js
 if (A === true) {
@@ -866,15 +865,15 @@ if (A === true) {
 }
 ```
 
-The arrows can go in either direction `⇐` `⇒`, or both `⇔`. When *A ⇒ B* and *B ⇒ A*, they are said to be equivalent:
+箭头可以是左右任何方向 `⇐` `⇒`，也可以双向`⇔`。当 *A ⇒ B* 并且 *B ⇒ A*，就是他们是相等的：
 
 ![material-equiv](http://latex.codecogs.com/svg.latex?A%20%5CLeftrightarrow%20B)
 
 <!-- A \Leftrightarrow B -->
 
-#### equality
+#### 等式（equality）
 
-In math, the `<` `>` `≤` and `≥` are typically used in the same way we use them in code: *less than*, *greater than*, *less than or equal to* and *greater than or equal to*, respectively.
+在数学中， `<` `>` `≤` 和 `≥` 与代码中的使用方法一样：分别为*小于*, *大于*, *小于等于* 和 *大于等于*。
 
 ```js
 50 > 2 === true
@@ -883,25 +882,25 @@ In math, the `<` `>` `≤` and `≥` are typically used in the same way we use t
 4 >= 4 === true
 ```
 
-On rare occasions you might see a slash through these symbols, to describe *not*. As in, *k* is "not greater than" *j*.
+偶尔会看到在这些符号上加了一条斜线，来表示*不*，比如， *k* 不 "大于" *j*.
 
 ![ngt](http://latex.codecogs.com/svg.latex?k%20%5Cngtr%20j)
 
 <!-- k \ngtr j -->
 
-The `≪` and `≫` are sometimes used to represent *significant* inequality. That is, *k* is an [order of magnitude](https://en.wikipedia.org/wiki/Order_of_magnitude) larger than *j*.
+ `≪` 和 `≫`通常用来表示 *明显（significant）* 不相等。这是说 *k* 是有[数量级（order of magnitude）](https://en.wikipedia.org/wiki/Order_of_magnitude)的大于 *j*。
 
 ![orderofmag](http://latex.codecogs.com/svg.latex?k%20%5Cgg%20j)
 
 <!-- k \gg j -->
 
-In mathematics, *order of magnitude* is rather specific; it is not just a "really big difference." A simple example of the above:
+在数学中，*数量级（order of magnitude）* 是相当明确的；不只是“相当大的不同”而已。上边的一个简单例子：
 
 ```js
 orderOfMagnitude(k) > orderOfMagnitude(j)
 ```
 
-And below is our `orderOfMagnitude` function, using [Math.trunc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc) (ES6).
+下边是我们的 `orderOfMagnitude` 函数，使用了[Math.trunc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc) (ES6)。
 
 ```js
 function log10(n) {
@@ -916,19 +915,19 @@ function orderOfMagnitude (n) {
 
 <sup>*Note:* This is not numerically robust.</sup>
 
-See [math-trunc](https://www.npmjs.com/package/math-trunc) for a ponyfill in ES5.
+这里是在ES5下使用[math-trunc](https://www.npmjs.com/package/math-trunc) 的polyfill。
 
-#### conjunction & disjunction
+#### 与（conjunction） & 或（disjunction）
 
-Another use of arrows in logic is conjunction `∧` and disjunction `∨`. They are analogous to a programmer's `AND` and `OR` operators, respectively.
+另一种箭头在逻辑中的使用是与（conjunction）`∧` 和 或（disjunction） `∨`。他们分别类似于程序员的 `AND` 和 `OR`操作。
 
-The following shows conjunction `∧`, the logical `AND`.
+下边展示了与（conjunction）`∧`， 逻辑中的`AND`.
 
 ![and](http://latex.codecogs.com/svg.latex?k%20%3E%202%20%5Cland%20k%20%3C%204%20%5CLeftrightarrow%20k%20%3D%203)
 
 <!-- k > 2 \land k <  4 \Leftrightarrow k = 3   -->
 
-In JavaScript, we use `&&`. Assuming *k* is a natural number, the logic implies that *k* is 3:
+在JavaScript中，我们使用 `&&` 假设 *k* 是一个自然数，那么这个逻辑意味着k等于3：
 
 ```js
 if (k > 2 && k < 4) {
@@ -936,7 +935,7 @@ if (k > 2 && k < 4) {
 }
 ```
 
-Since both sides are equivalent `⇔`, it also implies the following:
+由于双边都相等 `⇔`，所以也说明下边成立：
 
 ```js
 if (k === 3) {
@@ -944,29 +943,29 @@ if (k === 3) {
 }
 ```
 
-The down arrow `∨` is logical disjunction, like the OR operator.
+下箭头 `∨`是逻辑或（disjunction），就像 OR 操作符一样。
 
 ![logic-or](http://latex.codecogs.com/svg.latex?A%20%5Clor%20B)
 
 <!-- A \lor B -->
 
-In code:
+代码：
 
 ```js
 A || B
 ```
 
-## logical negation
+## 逻辑非（logical negation）
 
-Occasionally, the `¬`, `~` and `!` symbols are used to represent logical `NOT`. For example, *¬A* is only true if A is false.
+有时候，`¬`, `~` 和 `!` 符号都用来表示逻辑`NOT`。例如，只有在A为false的时候，*¬A* 为true。
 
-Here is a simple example using the *not* symbol:
+这里是一个使用 *not*符号简单的例子：
 
 ![negation](http://latex.codecogs.com/svg.latex?x%20%5Cneq%20y%20%5CLeftrightarrow%20%5Clnot%28x%20%3D%20y%29)
 
 <!-- x \neq y \Leftrightarrow \lnot(x = y) -->
 
-An example of how we might interpret this in code:
+翻译成代码：
 
 ```js
 if (x !== y) {
