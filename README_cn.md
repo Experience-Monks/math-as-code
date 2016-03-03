@@ -17,11 +17,11 @@
 
 更完整的列表，请看[Wikipedia - List of Mathematical Symbols](https://en.wikipedia.org/wiki/List_of_mathematical_symbols)。
 
-简单起见，这里许多的代码示例都操作浮点数值，并不是数字健壮的（numerically robust）。为什么这会是一个问题的更详细信息请看[Robust Arithmetic Notes](https://github.com/mikolalysenko/robust-arithmetic-notes) 作者 Mikola Lysenko。
+简单起见，这里许多的代码示例都操作浮点数值，并不是数字健壮的（numerically robust）。为什么这会是一个问题的更多细节请看[Robust Arithmetic Notes](https://github.com/mikolalysenko/robust-arithmetic-notes) 作者是 Mikola Lysenko。
 
 # 目录
 
-- [变量名惯例](#variable-name-conventions)
+- [变量名约定](#variable-name-conventions)
 - [等号 `=` `≈` `≠` `:=`](#equals-symbols)
 - [平方根与复数 `√` *`i`*](#square-root-and-complex-numbers)
 - [点 & 叉 `·` `×` `∘`](#dot--cross)
@@ -33,7 +33,7 @@
 - [大写 Pi `Π`](#capital-pi) - *序列的积*
 - [管道 `||`](#pipes)
   - [绝对值](#absolute-value)
-  - [取模](#euclidean-norm)
+  - [欧几里得模](#euclidean-norm)
   - [行列式](#determinant)
 - [帽子 **`â`**](#hat) - *单位向量*
 - ["属于" `∈` `∉`](#element)
@@ -52,9 +52,9 @@
 - [区间（intervals）](#intervals)
 - [更多...](#more)
 
-## 变量名惯例
+## 变量名约定
 
-有很多命名惯例取决于上下文和所学领域，他们并不太一致。然而在一些文献中你会发现变量名遵循一些模式，例如：
+有很多命名约定取决于上下文和所学领域，他们并不太一致。然而在一些文献中你会发现变量名遵循一些模式，例如：
 
 - *s* - 斜体小写字母用做标量 （例如一个数字）
 - **x** - 粗体小写字母用做向量 （例如一个2D点）
@@ -65,14 +65,14 @@
 
 ## 等号
 
-有很多符号很像等号，常见的如：
+有很多符号很像等号 `=` 。这里有些常见的例子：
 
-- `=` 用做相等 （值相同）
+- `=` 表示相等 （值相同）
 - `≠` 表示不相等 （值不同）
 - `≈` 表示约等于 （`π ≈ 3.14159`）
 - `:=` 表示定义 （A 被定义为 B）
 
-在 JavaScript中:
+在 JavaScript 中:
 
 ```js
 // 相等
@@ -91,21 +91,21 @@ function almostEqual(a, b, epsilon) {
 
 你也许看过 `:=`， `=:` 和 `=` 符号用来表示 *定义*。<sup>[1]</sup>
 
-例如，下边定义 *x* 为 2*kj*。
+例如，下边定义 *x* 为 2*kj* 的别名。
 
 ![equals1](http://latex.codecogs.com/svg.latex?x%20%3A%3D%202kj)
 
 <!-- x := 2kj -->
 
-在JavaScript中，我们用`var`来 *定义* 变量和提供别名：
+在 JavaScript 中，我们用 `var` 来 *定义* 变量和提供别名：
 
 ```js
 var x = 2 * k * j
 ```
 
-然而，这里的x值是可变的，仅是当时的一个快照。在某些有预处理器语言中的`#define`语句才比较接近于数学中的 *定义*。
+然而，这里的x值是可变的，仅是当时的一个快照。在某些有预处理器语言中的 `#define` 语句才比较接近于数学中的 *定义*。
 
-在JavaScript (ES6)中，更精确的 *定义* ，应该有点类似这样：
+在JavaScript (ES6) 中，更精确的 *定义* ，应该有点类似这样：
 
 ```js
 const f = (k, j) => 2 * k * j
@@ -123,7 +123,6 @@ const f = (k, j) => 2 * k * j
 console.assert(x === (2 * k * j))
 ```
 
-
 ## 平方根与复数
 
 一个平方根运算是这种形式:
@@ -132,7 +131,7 @@ console.assert(x === (2 * k * j))
 
 <!-- \left(\sqrt{x}\right)^2 = x -->
 
-在编程语言中我们使用`sqrt` 函数， 例如： 
+在编程语言中我们使用 `sqrt` 函数， 像这样：
 
 ```js
 var x = 9;
@@ -140,12 +139,12 @@ console.log(Math.sqrt(x));
 //=> 3
 ```
 
-复数是表达式 ![complex](http://latex.codecogs.com/svg.latex?a&space;&plus;&space;ib) 的形式， 其中 ![a](http://latex.codecogs.com/svg.latex?a) 是实数部分， ![b](http://latex.codecogs.com/svg.latex?b) 是虚数部分。 虚数 ![i](http://latex.codecogs.com/svg.latex?i) 的定义为：
+复数是 ![complex](http://latex.codecogs.com/svg.latex?a&space;&plus;&space;ib) 形式的表达式， 其中 ![a](http://latex.codecogs.com/svg.latex?a) 是实数部分， ![b](http://latex.codecogs.com/svg.latex?b) 是虚数部分。 虚数 ![i](http://latex.codecogs.com/svg.latex?i) 的定义为：
 
 ![imaginary](http://latex.codecogs.com/svg.latex?i%3D%5Csqrt%7B-1%7D).
 <!-- i=\sqrt{-1} -->
 
-JavaScript没有内置复数的功能，但有一些库支持复数算法。例如 [mathjs](https://www.npmjs.com/package/mathjs):
+JavaScript没有内置复数的功能，但有一些库支持复数算法。例如， [mathjs](https://www.npmjs.com/package/mathjs):
 
 ```js
 var math = require('mathjs')
@@ -167,7 +166,7 @@ console.log(math.eval('(3 - i) * i').toString())
 //=> '1 + 3i'
 ```
 
-其他实现:
+其他实现：
 
 - [immutable-complex](https://www.npmjs.com/package/immutable-complex)
 - [complex-js](https://www.npmjs.com/package/complex-js)
@@ -175,9 +174,9 @@ console.log(math.eval('(3 - i) * i').toString())
 
 ## 点 & 叉
 
-点 `·` 和叉 `×` 符号有些不同，这取决于上下文。
+点 `·` 和叉 `×` 符号根据上下文的不同有不同的用法。
 
-虽然看上去很明显，但在进入下一部分之前，理解他们之间微妙的不同是非常重要的。
+他们可能看上去很明显，但在进入下一部分之前，理解他们之间微妙的不同是非常重要的。
 
 #### 标量乘法
 
@@ -193,7 +192,7 @@ console.log(math.eval('(3 - i) * i').toString())
 var result = 5 * 4
 ```
 
-通常，乘法符号只是为了避免意义模糊（例如两个数字之间的）。这里，我们可以完全省略：
+通常，使用乘法符号只是为了避免意义模糊（例如两个数字之间的）。这里，我们可以完全省略：
 
 ![dotcross2](http://latex.codecogs.com/svg.latex?3kj)
 
@@ -207,17 +206,17 @@ var result = 3 * k * j
 
 #### 向量乘法
 
-表示向量和标量之间相乘，或两向量的元素积（element-wise multiplication），我们不用点 `·` 或叉 `×` 符号。 这些符号在线性代数中有不同的意思，后边讨论。
+表示向量和标量之间相乘，或两向量的逐元素相乘（element-wise multiplication），我们不用点 `·` 或叉 `×` 符号。 这些符号在线性代数中有不同的意思，后边讨论。
 
-让我们用之前的例子，但用在向量上。对于向量的元素积（element-wise vector multiplication）来说，你可能会看到用一个空心点来表示[Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_%28matrices%29).<sup>[2]</sup>
+让我们用之前的例子，但用在向量上。对于向量的逐元素相乘（element-wise vector multiplication）来说，你可能会看到用一个空心点来表示 [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_%28matrices%29)。<sup>[2]</sup>
 
 ![dotcross3](http://latex.codecogs.com/svg.latex?3%5Cmathbf%7Bk%7D%5Ccirc%5Cmathbf%7Bj%7D)
 
 <!-- 3\mathbf{k}\circ\mathbf{j} -->
 
-某些时候作者会定义个不同的符号，例如圆心点 `⊙` 或实心圈 `●` 。<sup>[3]</sup>
+某些时候，作者可能会显式定义一个不同的符号，例如圆中点 `⊙` 或实心圈 `●` 。<sup>[3]</sup>
 
-这是对应的代码，使用数组`[x, y]`来表示2D向量。
+这是对应的代码，使用数组 `[x, y]` 来表示2D向量。
 
 ```js
 var s = 3
@@ -245,7 +244,7 @@ function multiplyScalar(a, scalar) {
 
 #### 点乘
 
-点符号 `·` 可用来表示两向量之间的 [*点乘*](https://en.wikipedia.org/wiki/Dot_product) 。 由于其值是一个标量，通常被叫做*标量积（scalar product）*。
+点符号 `·` 可用来表示两向量之间的 [*点乘*](https://en.wikipedia.org/wiki/Dot_product) 。 由于其值是一个标量，通常被叫做 *标量积（scalar product）* 。
 
 ![dotcross4](http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ccdot%20%5Cmathbf%7Bj%7D)
 
@@ -261,7 +260,7 @@ var d = dot(k, j)
 //=> 0
 ```
 
-结果为 `0` 告诉我们两向量互相垂直. 这是3元素向量的点乘函数:
+结果为 `0` 告诉我们两向量互相垂直. 这是3元素向量的 `点乘` 函数:
 
 ```js
 function dot(a, b) {
@@ -271,7 +270,7 @@ function dot(a, b) {
 
 #### 叉乘
 
-`×`符号可以用来表示两向量的 [*叉乘*](https://en.wikipedia.org/wiki/Cross_product)。
+叉乘符号 `×` 可以用来表示两向量的 [*叉乘*](https://en.wikipedia.org/wiki/Cross_product)。
 
 ![dotcross5](http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ctimes%20%5Cmathbf%7Bj%7D)
 
@@ -287,9 +286,9 @@ var result = cross(k, j)
 //=> [ 0, 0, -1 ]
 ```
 
-这里得到结果为 `[ 0, 0, -1 ]`，这个向量既垂直于 **k** 也垂直于 **j**。
+这里得到结果为 `[ 0, 0, -1 ]`，这个向量同时垂直于 **k** 和 **j** 。
 
-叉乘`cross` 函数：
+我们的叉乘 `cross` 函数：
 
 ```js
 function cross(a, b) {
@@ -303,13 +302,13 @@ function cross(a, b) {
 }
 ```
 
-其他向量乘法，叉乘，点乘的实现：
+向量乘法，叉乘，点乘的其他实现：
 
 - [gl-vec3](https://github.com/stackgl/gl-vec3)
 - [gl-vec2](https://github.com/stackgl/gl-vec2)
-- [vectors](https://github.com/hughsk/vectors) - includes n-dimensional
+- [vectors](https://github.com/hughsk/vectors) - 包含 n维实现
 
-## sigma 
+## 西格玛（sigma） 
 
 大写希腊字母 `Σ` (Sigma) 用来表示 [总和 Summation](https://en.wikipedia.org/wiki/Summation)。 换句话说就是对一些数字求和。
 
@@ -317,7 +316,7 @@ function cross(a, b) {
 
 <!-- \sum_{i=1}^{100}i -->
 
-这里, `i=1` 是说从`1`开始一直到Sigma上边的数字`100`为止。这些分别为上下边界。 "E"右边的 *i* 告诉我们是在求和。代码：
+这里, `i=1` 是说从 `1` 西格玛上边的数字`100`为止。这些分别为上下边界。 "E" 右边的 *i* 告诉我们求和的是什么。代码：
 
 ```js
 var sum = 0
@@ -326,16 +325,16 @@ for (var i = 1; i <= 100; i++) {
 }
 ```
 
-`sum`的结果为`5050`.
+`sum` 的结果为 `5050` 。
 
-**提示：** 对于整数， 这个特殊形式可以优化为：
+**提示：** 对于整数，这个特殊形式可以优化为：
 
 ```js
-var n = 100 // upper bound
+var n = 100 // 上边界
 var sum = (n * (n + 1)) / 2
 ```
 
-这里有另一个例子，这里的*i*，或“想要求和的”是不同的:
+这里有另一个例子，这里的 *i* ，或 “想要求和的东西” 是不同的：
 
 ![sum2](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B100%7D%282i&plus;1%29)
 
@@ -350,9 +349,9 @@ for (var i = 1; i <= 100; i++) {
 }
 ```
 
-结果 `sum` 为 `10200`.
+`sum` 的结果为 `10200` 。
 
-符号可被嵌套，非常像嵌套一个`for` 循环。 你应该先求和最右边的 sigma ， 除非作者加入了括号。然而下边的例子，由于我们处理有限的和，顺序就不重要了。
+这个符号可被嵌套，非常像嵌套一个 `for` 循环。 你应该先求和最右边的西格玛， 除非作者加入括号改变了顺序。然而下边的例子，由于我们处理有限的和，顺序就不重要了。
 
 ![sigma3](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B2%7D%5Csum_%7Bj%3D4%7D%5E%7B6%7D%283ij%29)
 
@@ -373,9 +372,9 @@ for (var i = 1; i <= 2; i++) {
 
 ## 大写 Pi
 
-大写 Pi 或 "大 Pi" 与 [Sigma](#sigma) 非常接近， 不同的是我们用乘法取得一系列数字的乘积。 
+大写 Pi 或 “大Pi” 与 [西格玛](#sigma) 非常接近， 不同的是我们用乘法取得一系列数字的乘积。 
 
-看下边:
+看下边：
 
 ![capitalPi](http://latex.codecogs.com/svg.latex?%5Cprod_%7Bi%3D1%7D%5E%7B6%7Di)
 
@@ -390,11 +389,11 @@ for (var i = 1; i <= 6; i++) {
 }
 ```
 
-`value` 结果应得到 `720`.
+`value` 结果应得到 `720`。
 
 ## 管道（pipes）
 
-管道符号，就是*竖条（bars）*，根据上下文不同，可以表示不同意思。下边的是3种常见用途[绝对值](#absolute-value), [取模](#euclidean-norm), 和 [行列式](#determinant)。
+管道符号，就是 *竖线（bars）*，根据上下文不同，可以表示不同意思。下边的是3种常见用途 [绝对值](#absolute-value), [欧几里得模](#euclidean-norm), 和 [行列式](#determinant)。
 
 这3种特性都是描述对象的 *长度（length）* 。
 
@@ -412,15 +411,15 @@ var result = Math.abs(x)
 // => 5
 ```
 
-#### 取模（Euclidean norm）
+#### 欧几里得模（Euclidean norm）
 
 ![pipes4](http://latex.codecogs.com/svg.latex?%5Cleft%20%5C%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%5C%7C)
 
 <!-- \left \| \mathbf{v} \right \| -->
 
-对于向量 **v**， `‖v‖` 是 **v** 的[取模（Euclidean norm）](https://en.wikipedia.org/wiki/Norm_%28mathematics%29#Euclidean_norm) 。也叫做向量的 "量级（magnitude）" 或 "长度（length）" 。
+对于向量 **v**， `‖v‖` 是 **v** 的[欧几里得模（Euclidean norm）](https://en.wikipedia.org/wiki/Norm_%28mathematics%29#Euclidean_norm) 。也叫做向量的 "量级（magnitude）" 或 "长度（length）" 。
 
-通常用双竖线来避免与*绝对值*符号混淆，但有些时候也会看见单竖线。
+通常用双竖线表示来避免与*绝对值* 符号混淆，但有些时候也会看见单竖线。
 
 ![pipes2](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%7C)
 
@@ -434,7 +433,7 @@ length(v)
 //=> 5
 ```
 
-`length`函数：
+`length` 函数：
 
 ```js
 function length (vec) {
@@ -457,9 +456,9 @@ function length (vec) {
 
 <!-- \left |\mathbf{A}  \right | -->
 
-对于一个矩阵 **A**, `|A|` 表示矩阵 **A** 的[行列式（determinant）](https://en.wikipedia.org/wiki/Determinant)。
+对于一个矩阵 **A**， `|A|` 表示矩阵 **A** 的[行列式（determinant）](https://en.wikipedia.org/wiki/Determinant)。
 
-这是一个计算2x2矩阵行列式的粒子，矩阵用一个column-major格式的浮点数数组表示。
+这是一个计算 2x2 矩阵行列式的例子，矩阵用一个column-major格式的扁平数数组表示。
 
 ```js
 var determinant = require('gl-mat2/determinant')
@@ -471,21 +470,21 @@ var det = determinant(matrix)
 
 实现：
 
-- [gl-mat4/determinant](https://github.com/stackgl/gl-mat4/blob/c2e2de728fe7eba592f74cd02266100cc21ec89a/determinant.js) - also see [gl-mat3](https://github.com/stackgl/gl-mat3) and [gl-mat2](https://github.com/stackgl/gl-mat2)
+- [gl-mat4/determinant](https://github.com/stackgl/gl-mat4/blob/c2e2de728fe7eba592f74cd02266100cc21ec89a/determinant.js) - 也可以看 [gl-mat3](https://github.com/stackgl/gl-mat3) 和 [gl-mat2](https://github.com/stackgl/gl-mat2)
 - [ndarray-determinant](https://www.npmjs.com/package/ndarray-determinant)
 - [glsl-determinant](https://www.npmjs.com/package/glsl-determinant)
 - [robust-determinant](https://www.npmjs.com/package/robust-determinant)
-- [robust-determinant-2](https://www.npmjs.com/package/robust-determinant-2) and [robust-determinant-3](https://www.npmjs.com/package/robust-determinant-3), specifically for 2x2 and 3x3 matrices, respectively
+- [robust-determinant-2](https://www.npmjs.com/package/robust-determinant-2) 和 [robust-determinant-3](https://www.npmjs.com/package/robust-determinant-3)，专门 2x2 和 3x3 的矩阵
 
 ## 帽子
 
-在几何里，字母上的“帽子”符号用来表示一个[单位向量](https://en.wikipedia.org/wiki/Unit_vector)。例如，这是向量 **a** 的单位向量。
+在几何里，字母上的 “帽子” 符号用来表示一个[单位向量](https://en.wikipedia.org/wiki/Unit_vector)。例如，这是向量 **a** 的单位向量。
 
 ![hat](http://latex.codecogs.com/svg.latex?%5Chat%7B%5Cmathbf%7Ba%7D%7D)
 
 <!-- \hat{\mathbf{a}} -->
 
-在笛卡尔空间中，单位向量的长度为1。意思是向量的每个部分都在-1.0 到 1.0之间。这里我们 *归一化（normalize）* 一个3D向量为单位向量。
+在笛卡尔空间中，单位向量的长度为1。意思是向量的每个部分都在 -1.0 到 1.0 之间。这里我们 *归一化（normalize）* 一个3D向量为单位向量。
 
 ```js
 var a = [ 0, 4, -3 ]
@@ -493,7 +492,7 @@ normalize(a)
 //=> [ 0, 0.8, -0.6 ]
 ```
 
-这是`归一化（normalize）` 函数，接收一个3D向量参数：
+这是 `归一化（normalize）` 函数，接收一个3D向量参数：
 
 ```js
 function normalize(vec) {
@@ -514,7 +513,7 @@ function normalize(vec) {
 
 其他实现：
 
-- [gl-vec3/normalize](https://github.com/stackgl/gl-vec3/blob/507480fa57ba7c5fb70679cf531175a52c48cf53/normalize.js) and [gl-vec2/normalize](https://github.com/stackgl/gl-vec2/blob/21f460a371540258521fd2f720d80f14e87bd400/normalize.js)
+- [gl-vec3/normalize](https://github.com/stackgl/gl-vec3/blob/507480fa57ba7c5fb70679cf531175a52c48cf53/normalize.js) 和 [gl-vec2/normalize](https://github.com/stackgl/gl-vec2/blob/21f460a371540258521fd2f720d80f14e87bd400/normalize.js)
 - [vectors/normalize-nd](https://github.com/hughsk/vectors/blob/master/normalize-nd.js) (n-dimensional)
 
 ## 属于
@@ -551,7 +550,7 @@ A.has(3)
 
 <!-- A=\left \{3,9,14}{  \right \}, A \ni 3 -->
 
-你可以使用 "不属于" 符号 `∉` 和 `∌` 例如：
+你可以使用 "不属于" 符号 `∉` 和 `∌` 像这样：
 
 ![element3](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%206%20%5Cnotin%20A)
 
@@ -561,7 +560,7 @@ A.has(3)
 
 你可能在一些公式中看见一些大[黑板粗体字](https://en.wikipedia.org/wiki/Blackboard_bold)。他们一般是用来描述集合的。
 
-例如，我们可以描述 *k* 是[属于](#element) `ℝ`集中的一个元素。
+例如，我们可以描述 *k* 是[属于](#element) `ℝ` 集的一个元素。
 
 ![real](http://latex.codecogs.com/svg.latex?k%20%5Cin%20%5Cmathbb%7BR%7D)
 
@@ -573,7 +572,7 @@ A.has(3)
 
 大 `ℝ` 描述 *实数（real numbers）* 的集合。他们包括整数，有理数，无理数。
 
-JavaScript认为整数和浮点数为相同类型，所以下边将是一个*k* ∈ ℝ 的简单测试：
+JavaScript认为整数和浮点数为相同类型，所以下边将是一个 *k* ∈ ℝ 的简单测试：
 
 ```js
 function isReal (k) {
@@ -585,7 +584,7 @@ function isReal (k) {
 
 #### `ℚ` 有理数（rational numbers）
 
-有理数是可以被表示为分数，或*比率*（类似`⅗`）的实数。有理数不能以0作分母。
+有理数是可以被表示为分数，或 *比率*（类似`⅗`）的实数。有理数不能以0作分母。
 
 这意味着所有的整数都是有理数，因为可以看成分母为1。
 
@@ -593,7 +592,7 @@ function isReal (k) {
 
 #### `ℤ` 整数（integers）
 
-一个整数，是没有小数部分的实数。可为正业可以为负。
+一个整数，是没有小数部分的实数。可为正也可以为负。
 
 在JavaScript中的简单测试应该这样：
 
