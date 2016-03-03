@@ -2,22 +2,22 @@
 
 > 译注：译者英文与数学水平都非常有限，尝试翻译，如有错误请指正。
 
-这是一份通过对比数学符号和JavaScript代码来帮助开发者了解数学符号的参考。
+这是一份通过对比数学符号和JavaScript代码来帮助开发者更容易了解数学符号的参考。
 
 动机:学术论文可能会吓着自学游戏和图形的程序猿:)
 
-这个指南还没有完成。如果你发现错误或者想提交贡献，请[open a ticket](https://github.com/Jam3/math-as-code/issues)或发一个 PR。
+这个指南还没有完成。如果你发现错误或者想要贡献，请[open a ticket](https://github.com/Jam3/math-as-code/issues)或发一个 PR。
 
 
-> **注意**： 简单起见，有些代码示例使用了[npm 包](https://www.npmjs.com/)。你可以到他们的GitHub repos来查看实现的详细情况。
+> **注意**： 简洁起见，有些代码示例使用了[npm 包](https://www.npmjs.com/)。你可以到他们的GitHub repos来查看实现的详细情况。
 
 # 前言
 
-数学符号可以表示不同的意思，这取决于作者，上下文和所学习的领域（线性代数，集合理论，等等）。这份指南也许不会涵盖符号的*所有*用法。在某些情况，会引用一些真实材料（博客文章,出版物等等）来演示某个符号的用法。
+数学符号可以表示不同的意思，这取决于作者，上下文和所学习的领域（线性代数，集合理论，等等）。这份指南也许不会涵盖符号的*所有*用法。在某些情况，会引用一些真实材料（博客文章,出版物等等）来演示某个符号的实际用法。
 
-更完整的列表，请看[Wikipedia - List of Mathematical Symbols](https://en.wikipedia.org/wiki/List_of_mathematical_symbols). 
+更完整的列表，请看[Wikipedia - List of Mathematical Symbols](https://en.wikipedia.org/wiki/List_of_mathematical_symbols)。
 
-简单起见，这里许多的代码示例都操作浮点数值，并不是数字健壮的(numerically robust)。为什么这会是一个问题的更详细信息请看[Robust Arithmetic Notes](https://github.com/mikolalysenko/robust-arithmetic-notes) 作者 Mikola Lysenko.
+简单起见，这里许多的代码示例都操作浮点数值，并不是数字健壮的（numerically robust）。为什么这会是一个问题的更详细信息请看[Robust Arithmetic Notes](https://github.com/mikolalysenko/robust-arithmetic-notes) 作者 Mikola Lysenko。
 
 # 目录
 
@@ -29,7 +29,7 @@
   - [向量乘法](#vector-multiplication)
   - [点乘](#dot-product)
   - [叉乘](#cross-product)
-- [sigma `Σ`](#sigma) - *求和*
+- [西格玛 `Σ`](#sigma) - *求和*
 - [大写 Pi `Π`](#capital-pi) - *序列的积*
 - [管道 `||`](#pipes)
   - [绝对值](#absolute-value)
