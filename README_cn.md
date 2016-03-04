@@ -633,13 +633,13 @@ function isNaturalNumber (n) {
 
 <!-- x^{2} -->
 
-我们可以给函数一个 *名字*。一般来说我们用 `ƒ` 来描述一个函数，但也可以命名为 `A(x)` 或其他什么。
+我们可以给函数一个 *名字* 。一般来说我们用  `ƒ` 来描述一个函数，但也可以命名为 `A(x)` 或其他什么。
 
 ![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
 
 <!-- f\left (x  \right ) = x^{2} -->
 
-在代码中我们可以给函数命名为`square` 写出来应该类似这样：
+在代码中，我们可以给函数命名为 `square` 写出来应该类似这样：
 
 ```js
 function square (x) {
@@ -653,9 +653,9 @@ function square (x) {
 
 <!-- y = x^{2} -->
 
-在上边的例子中，*x* 是输入值，*y*是输出值，他们是平方的关系。
+在上边的例子中，*x* 是输入值，*y* 是输出值，他们是平方的关系。
 
-像编程语言一样，函数也可以有多个参数。他们在数学中被称为*arguments*，并且函数接受的参数数量被称为函数的*arity*。
+像编程语言一样，函数也可以有多个参数。他们在数学中被称为 *arguments*，并且函数接受的参数数量被称为函数的 *arity* 。
 
 ![function4](http://latex.codecogs.com/svg.latex?f%28x%2Cy%29%20%3D%20%5Csqrt%7Bx%5E2%20&plus;%20y%5E2%7D)
 
@@ -671,7 +671,7 @@ function length (x, y) {
 
 ### 分段函数
 
-有些函数根据输入值*x*的不同会有不同的关系。
+有些函数根据输入值 *x* 的不同会有不同的关系。
 
 下边的函数 *f* 根据不同的输入值选择两个不同的“子函数”。
 
@@ -699,9 +699,9 @@ function f (x) {
 
 ### 通用函数
 
-有些函数名在数学中是普遍存在的。在一个程序员的角度看，这些应该类似于编程语言中的“内置”函数（就像JavaScript中的`parseInt`）。
+有些函数名在数学中是普遍存在的。在一个程序员的角度看，这些应该类似于编程语言中的“内置”函数（就像JavaScript中的 `parseInt` ）。
 
-一个例子就是 *sgn* 函数。这是*正负号* 函数，或者叫*符号*函数。让我们用[分段函数](#piecewise-function)来描述它：
+一个例子就是 *sgn* 函数。这是 *正负号* 函数，或者叫 *符号* 函数。让我们用[分段函数](#piecewise-function)来描述它：
 
 ![sgn](http://latex.codecogs.com/svg.latex?sgn%28x%29%20%3A%3D%20%5Cbegin%7Bcases%7D%20-1%26%20%5Ctext%7Bif%20%7D%20x%20%3C%200%5C%5C%200%2C%20%26%20%5Ctext%7Bif%20%7D%20%7Bx%20%3D%200%7D%5C%5C%201%2C%20%26%20%5Ctext%7Bif%20%7D%20x%20%3E%200%5C%5C%20%5Cend%7Bcases%7D)
 
@@ -722,7 +722,7 @@ function sgn (x) {
 }
 ```
 
-此函数作为独立module看这里[signum](https://github.com/scijs/signum)。
+此函数作为独立的module在这里[signum](https://github.com/scijs/signum)。
 
 其他类似函数的例子还有: *sin*， *cos*， *tan*。
 
@@ -784,11 +784,11 @@ function square (a) {
 
 撇号 (`′`) 通常用在变量名上，用来描述某物很类似，而不用另起个名来描述它。也可以描述经过一些变换后的“下一个值”。
 
-例如，如果我们有一个2D点 *(x, y)* ,然后旋转它,你会把旋转后的点命名为*(x′, y′)*。 或者将矩阵 **M** 的 *转置矩阵* 命名为 **M′**。
+例如，如果我们有一个2D点 *(x, y)* ，然后旋转它，你会把旋转后的点命名为*(x′, y′)*。 或者将矩阵 **M** 的 *转置矩阵* 命名为 **M′**。
 
 在代码中，我们通常的分配一个描述更详细的变量名，例如`transformedPosition`。
 
-作为数学[函数](#function)，撇号通常描述为函数的*衍生（derivative）*函数。衍生物会在未来的章节解释。我们来看一个之前的函数：
+作为数学[函数](#function)，撇号通常描述为函数的 *衍生（derivative）* 函数。衍生物会在未来的章节解释。我们来看一个之前的函数：
 
 ![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
 
@@ -873,7 +873,7 @@ if (A === true) {
 
 #### 等式（equality）
 
-在数学中， `<` `>` `≤` 和 `≥` 与代码中的使用方法一样：分别为*小于*, *大于*, *小于等于* 和 *大于等于*。
+在数学中， `<` `>` `≤` 和 `≥` 与代码中的使用方法一样：分别为 *小于*, *大于*, *小于等于* 和 *大于等于*。
 
 ```js
 50 > 2 === true
@@ -882,7 +882,7 @@ if (A === true) {
 4 >= 4 === true
 ```
 
-偶尔会看到在这些符号上加了一条斜线，来表示*不*，比如， *k* 不 "大于" *j*.
+偶尔会看到在这些符号上加了一条斜线，来表示 *不*，比如， *k* 不 "大于" *j*.
 
 ![ngt](http://latex.codecogs.com/svg.latex?k%20%5Cngtr%20j)
 
@@ -943,7 +943,7 @@ if (k === 3) {
 }
 ```
 
-下箭头 `∨`是逻辑或（disjunction），就像 OR 操作符一样。
+下箭头 `∨` 是逻辑或（disjunction），就像 OR 操作符一样。
 
 ![logic-or](http://latex.codecogs.com/svg.latex?A%20%5Clor%20B)
 
@@ -979,8 +979,7 @@ if (x !== y) {
 
 有时函数会处理被一些值限定范围的实数，这样的约束可以用*区间（interval）*来表示。
 
-For example we can represent the numbers between zero and one including/not including zero and/or one as:
-例如我们可以表示0和1之间的数，让他们包含或不包含0和1。
+例如我们可以表示0和1之间的数，让他们包含或不包含0和1：
 
 - 不包含0或1： ![interval-opened-left-opened-right](http://latex.codecogs.com/svg.latex?%280%2C%201%29)
 
