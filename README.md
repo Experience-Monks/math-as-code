@@ -612,7 +612,7 @@ A natural number, a positive and non-negative integer. Depending on the context 
 { 1, 2, 3, 4, ... }
 ```
 
-The latter is more common in computer science, for example:
+The former is more common in computer science, for example:
 
 ```js
 function isNaturalNumber (n) {
