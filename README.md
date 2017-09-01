@@ -51,6 +51,7 @@ For simplicity, many of the code examples here operate on floating point values 
   - [conjunction & disjunction `∧` `∨`](#conjunction--disjunction)
 - [logical negation `¬` `~` `!`](#logical-negation)
 - [intervals](#intervals)
+- [sigmoid `σ`](#sigmoid)
 - [more...](#more)
 
 ## variable name conventions
@@ -1056,6 +1057,27 @@ See:
 
 - [next-after](https://github.com/scijs/nextafter) 
 - [interval-arithmetic](https://github.com/maurizzzio/interval-arithmetic)
+
+## Sigmoid 
+
+A [sigmoid](https://en.wikipedia.org/wiki/Sigmoid_function) `σ` is a mathematical function having a characteristic "S"-shaped curve or sigmoid curve. defined by the formula.
+
+![sigmoid](http://latex.codecogs.com/svg.latex?%5Csigma%20%28x%29%20%3D%20%5Cfrac%7B1%7D%7B1&plus;e%5E%7B-x%7D%7D)
+
+<!-- \sigma (x) = \frac{1}{1+e^{-x}} -->
+Sigmoid function is real-valued, monotonic, and differentiable having a non-negative first derivative which is bell shaped.
+
+```js
+var y = 1 / (1 + Math.exp(-x)); 
+```
+
+In code:
+
+```js
+var x = 0.45
+var y = 1 / (1 + Math.exp(-x));
+```
+The result of `y` is `0.6125396`.
 
 ## more...
 
