@@ -504,9 +504,9 @@ function normalize(vec) {
 
   if (squaredLength > 0) {
     var length = Math.sqrt(squaredLength)
-    vec[0] = vec[0] / length
-    vec[1] = vec[1] / length
-    vec[2] = vec[2] / length
+    vec[0] = x / length
+    vec[1] = y / length
+    vec[2] = z / length
   }
   return vec
 }
