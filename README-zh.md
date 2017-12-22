@@ -621,7 +621,7 @@ function isNaturalNumber (n) {
 
 #### `ℂ` 复数
 
-复数是实数域虚数的组合，被视为2D平面上的一个坐标。更详细的信息请看[A Visual, Intuitive Guide to Imaginary Numbers](http://betterexplained.com/articles/a-visual-intuitive-guide-to-imaginary-numbers/)。
+复数是实数与虚数的组合，被视为2D平面上的一个坐标。更详细的信息请看[A Visual, Intuitive Guide to Imaginary Numbers](http://betterexplained.com/articles/a-visual-intuitive-guide-to-imaginary-numbers/)。
 
 ## 函数
 
@@ -788,13 +788,13 @@ function square (a) {
 
 在代码中，我们通常的分配一个描述更详细的变量名，例如`transformedPosition`。
 
-作为数学[函数](#function)，撇号通常描述为函数的 *衍生（derivative）* 函数。衍生物会在未来的章节解释。我们来看一个之前的函数：
+对于一个[函数](#function)，撇号通常描述为函数的 *导函数（derivative）* 。导函数会在未来的章节解释。我们来看一个之前的函数：
 
 ![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
 
 <!-- f\left (x  \right ) = x^{2} -->
 
-它的衍生物函数（derivative）可以写为一个带撇号`′`的函数：
+它的导函数（derivative）可以写为一个带撇号`′`的函数：
 
 ![prime1](http://latex.codecogs.com/svg.latex?f%27%28x%29%20%3D%202x)
 
@@ -812,7 +812,7 @@ function fPrime (x) {
 }
 ```
 
-多个撇号可以用来表示第二个衍生函数（derivative） *ƒ′′* 或 第三个衍生函数（derivative）*ƒ′′′* ，之后更高的数字，一般作者会用罗马数字 *ƒ*<sup>IV</sup> 或上标数字 *ƒ*<sup>(n)</sup> 表示。
+使用多个撇号可以用来表示 二阶导函数（derivative） *ƒ′′* 或 二阶导函数（derivative）*ƒ′′′* ，之后更高的数字，一般作者会用罗马数字 *ƒ*<sup>IV</sup> 或上标数字 *ƒ*<sup>(n)</sup> 表示。
 
 ## 向下取整和向上取整（floor & ceiling）
 
