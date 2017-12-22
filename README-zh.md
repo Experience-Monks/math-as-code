@@ -794,7 +794,7 @@ function square (a) {
 
 <!-- f\left (x  \right ) = x^{2} -->
 
-它的衍生物函数（derivative）可以写为一个带撇号`′`的函数：
+它的导数（derivative）可以写为一个带撇号`′`的函数：
 
 ![prime1](http://latex.codecogs.com/svg.latex?f%27%28x%29%20%3D%202x)
 
@@ -812,7 +812,7 @@ function fPrime (x) {
 }
 ```
 
-多个撇号可以用来表示第二个衍生函数（derivative） *ƒ′′* 或 第三个衍生函数（derivative）*ƒ′′′* ，之后更高的数字，一般作者会用罗马数字 *ƒ*<sup>IV</sup> 或上标数字 *ƒ*<sup>(n)</sup> 表示。
+多个撇号可以用来表示二阶导数（derivative） *ƒ′′* 或 三阶导数（derivative）*ƒ′′′* ，之后更高的数字，一般作者会用罗马数字 *ƒ*<sup>IV</sup> 或上标数字 *ƒ*<sup>(n)</sup> 表示。
 
 ## 向下取整和向上取整（floor & ceiling）
 
