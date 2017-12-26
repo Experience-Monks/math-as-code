@@ -21,36 +21,36 @@
 
 # 目录
 
-- [变量名约定](#variable-name-conventions)
-- [等号 `=` `≈` `≠` `:=`](#equals-symbols)
-- [平方根与复数 `√` *`i`*](#square-root-and-complex-numbers)
-- [点 & 叉 `·` `×` `∘`](#dot--cross)
-  - [标量乘法](#scalar-multiplication)
-  - [向量乘法](#vector-multiplication)
-  - [点乘](#dot-product)
-  - [叉乘](#cross-product)
-- [西格玛 `Σ`](#sigma) - *求和*
-- [大写 Pi `Π`](#capital-pi) - *序列的积*
-- [管道 `||`](#pipes)
-  - [绝对值](#absolute-value)
-  - [欧几里得模](#euclidean-norm)
-  - [行列式](#determinant)
-- [帽子 **`â`**](#hat) - *单位向量*
-- ["属于" `∈` `∉`](#element)
-- [常见数字集 `ℝ` `ℤ` `ℚ` `ℕ`](#common-number-sets)
-- [函数 `ƒ`](#function)
-  - [分段函数](#piecewise-function)
-  - [通用函数](#common-functions)
-  - [函数符号 `↦` `→`](#function-notation)
-- [撇号 `′`](#prime)
-- [向下取整和向上取整（floor & ceiling） `⌊` `⌉`](#floor--ceiling)
-- [箭头](#arrows)
-  - [实质蕴含（material implication） `⇒` `→`](#material-implication)
-  - [等式 `<` `≥` `≫`](#equality)
-  - [与 & 或 `∧` `∨`](#conjunction--disjunction)
-- [逻辑非 `¬` `~` `!`](#logical-negation)
-- [区间（intervals）](#intervals)
-- [更多...](#more)
+- [变量名约定](#变量名约定)
+- [等号 `=` `≈` `≠` `:=`](#等号)
+- [平方根与复数 `√` *`i`*](#平方根与复数)
+- [点 & 叉 `·` `×` `∘`](#点--叉)
+  - [标量乘法](#标量乘法)
+  - [向量乘法](#向量乘法)
+  - [点乘](#点乘)
+  - [叉乘](#叉乘)
+- [西格玛 `Σ`](#西格玛sigma) - *求和*
+- [大写 Pi `Π`](#大写-pi) - *序列的积*
+- [管道 `||`](#管道pipes)
+  - [绝对值](#绝对值)
+  - [欧几里得模](#欧几里得模)
+  - [行列式](#行列式)
+- [帽子 **`â`**](#帽子) - *单位向量*
+- ["属于" `∈` `∉`](#属于)
+- [常见数字集 `ℝ` `ℤ` `ℚ` `ℕ`](#常见数字集)
+- [函数 `ƒ`](#函数)
+  - [分段函数](#分段函数)
+  - [通用函数](#通用函数)
+  - [函数符号 `↦` `→`](#函数符号)
+- [撇号 `′`](#撇号prime)
+- [向下取整和向上取整（floor & ceiling） `⌊` `⌉`](#向下取整和向上取整floor--ceiling)
+- [箭头](#箭头)
+  - [实质蕴含（material implication） `⇒` `→`](#实质蕴含material-implication)
+  - [等式 `<` `≥` `≫`](#等式equality)
+  - [与 & 或 `∧` `∨`](#与conjunction--或disjunction)
+- [逻辑非 `¬` `~` `!`](#逻辑非logical-negation)
+- [区间（intervals）](#区间intervals)
+- [更多...](#更多)
 
 ## 变量名约定
 
