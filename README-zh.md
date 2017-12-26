@@ -21,16 +21,16 @@
 
 # 目录
 
-- [变量名约定](#variable-name-conventions)
-- [等号 `=` `≈` `≠` `:=`](#equals-symbols)
-- [平方根与复数 `√` *`i`*](#square-root-and-complex-numbers)
-- [点 & 叉 `·` `×` `∘`](#dot--cross)
-  - [标量乘法](#scalar-multiplication)
-  - [向量乘法](#vector-multiplication)
-  - [点乘](#dot-product)
-  - [叉乘](#cross-product)
-- [西格玛 `Σ`](#sigma) - *求和*
-- [大写 Pi `Π`](#capital-pi) - *序列的积*
+- [变量名约定](#变量名约定)
+- [等号 `=` `≈` `≠` `:=`](#等号)
+- [平方根与复数 `√` *`i`*](#平方根与复数)
+- [点 & 叉 `·` `×` `∘`](#点 & 叉)
+  - [标量乘法](#标量乘法)
+  - [向量乘法](#向量乘法)
+  - [点乘](#点乘)
+  - [叉乘](#叉乘)
+- [西格玛 `Σ`](#西格玛sigma) - *求和*
+- [大写 Pi `Π`](#大写-pi) - *序列的积*
 - [管道 `||`](#pipes)
   - [绝对值](#absolute-value)
   - [欧几里得模](#euclidean-norm)
