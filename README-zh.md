@@ -21,36 +21,36 @@
 
 # 目录
 
-- [变量名约定](#variable-name-conventions)
-- [等号 `=` `≈` `≠` `:=`](#equals-symbols)
-- [平方根与复数 `√` *`i`*](#square-root-and-complex-numbers)
-- [点 & 叉 `·` `×` `∘`](#dot--cross)
-  - [标量乘法](#scalar-multiplication)
-  - [向量乘法](#vector-multiplication)
-  - [点乘](#dot-product)
-  - [叉乘](#cross-product)
-- [西格玛 `Σ`](#sigma) - *求和*
-- [大写 Pi `Π`](#capital-pi) - *序列的积*
-- [管道 `||`](#pipes)
-  - [绝对值](#absolute-value)
-  - [欧几里得模](#euclidean-norm)
-  - [行列式](#determinant)
-- [帽子 **`â`**](#hat) - *单位向量*
-- ["属于" `∈` `∉`](#element)
-- [常见数字集 `ℝ` `ℤ` `ℚ` `ℕ`](#common-number-sets)
-- [函数 `ƒ`](#function)
-  - [分段函数](#piecewise-function)
-  - [通用函数](#common-functions)
-  - [函数符号 `↦` `→`](#function-notation)
-- [撇号 `′`](#prime)
-- [向下取整和向上取整（floor & ceiling） `⌊` `⌉`](#floor--ceiling)
-- [箭头](#arrows)
-  - [实质蕴含（material implication） `⇒` `→`](#material-implication)
-  - [等式 `<` `≥` `≫`](#equality)
-  - [与 & 或 `∧` `∨`](#conjunction--disjunction)
-- [逻辑非 `¬` `~` `!`](#logical-negation)
-- [区间（intervals）](#intervals)
-- [更多...](#more)
+- [变量名约定](#变量名约定)
+- [等号 `=` `≈` `≠` `:=`](#等号)
+- [平方根与复数 `√` *`i`*](#平方根与复数)
+- [点 & 叉 `·` `×` `∘`](#点--叉)
+  - [标量乘法](#标量乘法)
+  - [向量乘法](#向量乘法)
+  - [点乘](#点乘)
+  - [叉乘](#叉乘)
+- [西格玛 `Σ`](#西格玛sigma) - *求和*
+- [大写 Pi `Π`](#大写-pi) - *序列的积*
+- [管道 `||`](#管道pipes)
+  - [绝对值](#绝对值)
+  - [欧几里得模](#欧几里得模)
+  - [行列式](#行列式)
+- [帽子 **`â`**](#帽子) - *单位向量*
+- ["属于" `∈` `∉`](#属于)
+- [常见数字集 `ℝ` `ℤ` `ℚ` `ℕ`](#常见数字集)
+- [函数 `ƒ`](#函数)
+  - [分段函数](#分段函数)
+  - [通用函数](#通用函数)
+  - [函数符号 `↦` `→`](#函数符号)
+- [撇号 `′`](#撇号prime)
+- [向下取整和向上取整（floor & ceiling） `⌊` `⌉`](#向下取整和向上取整floor--ceiling)
+- [箭头](#箭头)
+  - [实质蕴含（material implication） `⇒` `→`](#实质蕴含material-implication)
+  - [等式 `<` `≥` `≫`](#等式equality)
+  - [与 & 或 `∧` `∨`](#与conjunction--或disjunction)
+- [逻辑非 `¬` `~` `!`](#逻辑非logical-negation)
+- [区间（intervals）](#区间intervals)
+- [更多...](#更多)
 
 ## 变量名约定
 
@@ -372,7 +372,7 @@ for (var i = 1; i <= 2; i++) {
 
 ## 大写 Pi
 
-大写 Pi 或 “大Pi” 与 [西格玛](#sigma) 非常接近， 不同的是我们用乘法取得一系列数字的乘积。 
+大写 Pi 或 “大Pi” 与 [西格玛](#西格玛sigma) 非常接近， 不同的是我们用乘法取得一系列数字的乘积。 
 
 看下边：
 
@@ -393,7 +393,7 @@ for (var i = 1; i <= 6; i++) {
 
 ## 管道（pipes）
 
-管道符号，就是 *竖线（bars）*，根据上下文不同，可以表示不同意思。下边的是3种常见用途 [绝对值](#absolute-value), [欧几里得模](#euclidean-norm), 和 [行列式](#determinant)。
+管道符号，就是 *竖线（bars）*，根据上下文不同，可以表示不同意思。下边的是3种常见用途 [绝对值](#绝对值), [欧几里得模](#欧几里得模), 和 [行列式](#行列式)。
 
 这3种特性都是描述对象的 *长度（length）* 。
 
@@ -560,7 +560,7 @@ A.has(3)
 
 你可能在一些公式中看见一些大[黑板粗体字](https://en.wikipedia.org/wiki/Blackboard_bold)。他们一般是用来描述集合的。
 
-例如，我们可以描述 *k* 是[属于](#element) `ℝ` 集的一个元素。
+例如，我们可以描述 *k* 是[属于](#属于) `ℝ` 集的一个元素。
 
 ![real](http://latex.codecogs.com/svg.latex?k%20%5Cin%20%5Cmathbb%7BR%7D)
 
@@ -701,7 +701,7 @@ function f (x) {
 
 有些函数名在数学中是普遍存在的。在一个程序员的角度看，这些应该类似于编程语言中的“内置”函数（就像JavaScript中的 `parseInt` ）。
 
-一个例子就是 *sgn* 函数。这是 *正负号* 函数，或者叫 *符号* 函数。让我们用[分段函数](#piecewise-function)来描述它：
+一个例子就是 *sgn* 函数。这是 *正负号* 函数，或者叫 *符号* 函数。让我们用[分段函数](#分段函数)来描述它：
 
 ![sgn](http://latex.codecogs.com/svg.latex?sgn%28x%29%20%3A%3D%20%5Cbegin%7Bcases%7D%20-1%26%20%5Ctext%7Bif%20%7D%20x%20%3C%200%5C%5C%200%2C%20%26%20%5Ctext%7Bif%20%7D%20%7Bx%20%3D%200%7D%5C%5C%201%2C%20%26%20%5Ctext%7Bif%20%7D%20x%20%3E%200%5C%5C%20%5Cend%7Bcases%7D)
 
@@ -788,7 +788,7 @@ function square (a) {
 
 在代码中，我们通常的分配一个描述更详细的变量名，例如`transformedPosition`。
 
-对于一个[函数](#function)，撇号通常描述为函数的 *导函数（derivative）* 。导函数会在未来的章节解释。我们来看一个之前的函数：
+对于一个[函数](#函数)，撇号通常描述为函数的 *导函数（derivative）* 。导函数会在未来的章节解释。我们来看一个之前的函数：
 
 ![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
 
@@ -847,7 +847,7 @@ Math.round(x)
 
 ## 箭头
 
-箭头通常用来表示[函数符号](#function-notation)。这里还有一些在其他领域中的用法可以看看。
+箭头通常用来表示[函数符号](#函数符号)。这里还有一些在其他领域中的用法可以看看。
 
 #### 实质蕴含（material implication）
 
@@ -973,7 +973,7 @@ if (x !== y) {
 }
 ```
 
-*注意：* 根据上下文的不同，波浪线 `~` 可以有很多种不同的意思。例如，*行等价（row equivalence）*（矩阵理论）或*相同数量级（same order of magnitude）* （在[等式（equality）](#equality)章节讨论过）。
+*注意：* 根据上下文的不同，波浪线 `~` 可以有很多种不同的意思。例如，*行等价（row equivalence）*（矩阵理论）或*相同数量级（same order of magnitude）* （在[等式（equality）](#等式equality)章节讨论过）。
 
 ## 区间（intervals）
 
