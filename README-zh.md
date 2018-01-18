@@ -812,7 +812,7 @@ function fPrime (x) {
 }
 ```
 
-使用多个撇号可以用来表示 二阶导函数（derivative） *ƒ′′* 或 二阶导函数（derivative）*ƒ′′′* ，之后更高的数字，一般作者会用罗马数字 *ƒ*<sup>IV</sup> 或上标数字 *ƒ*<sup>(n)</sup> 表示。
+使用多个撇号可以用来表示 二阶导函数（derivative） *ƒ′′* 或 三阶导函数（derivative）*ƒ′′′* ，之后更高的数字，一般作者会用罗马数字 *ƒ*<sup>IV</sup> 或上标数字 *ƒ*<sup>(n)</sup> 表示。
 
 ## 向下取整和向上取整（floor & ceiling）
 
