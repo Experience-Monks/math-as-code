@@ -1033,9 +1033,9 @@ var d = [0, 1]                                                // 闭区间
 
 ```js
 var Interval = require('interval-arithmetic')
-var nexafter = require('nextafter')
+var nextafter = require('nextafter')
 
-var a = Interval(3, nexafter(5, -Infinity))
+var a = Interval(3, nextafter(5, -Infinity))
 var b = Interval(4, 6)
 
 Interval.intersection(a, b)
