@@ -22,36 +22,46 @@ For simplicity, many of the code examples here operate on floating point values 
 
 # contents
 
-- [variable name conventions](#variable-name-conventions)
-- [equals `=` `≈` `≠` `:=`](#equals-symbols)
-- [square root and complex numbers `√` *`i`*](#square-root-and-complex-numbers)
-- [dot & cross `·` `×` `∘`](#dot--cross)
-  - [scalar multiplication](#scalar-multiplication)
-  - [vector multiplication](#vector-multiplication)
-  - [dot product](#dot-product)
-  - [cross product](#cross-product)
-- [sigma `Σ`](#sigma) - *summation*
-- [capital Pi `Π`](#capital-pi) - *products of sequences*
-- [pipes `||`](#pipes)
-  - [absolute value](#absolute-value)
-  - [Euclidean norm](#euclidean-norm)
-  - [determinant](#determinant)
-- [hat **`â`**](#hat) - *unit vector*
-- ["element of" `∈` `∉`](#element)
-- [common number sets `ℝ` `ℤ` `ℚ` `ℕ`](#common-number-sets)
-- [function `ƒ`](#function)
-  - [piecewise function](#piecewise-function)
-  - [common functions](#common-functions)
-  - [function notation `↦` `→`](#function-notation)
-- [prime `′`](#prime)
-- [floor & ceiling `⌊` `⌉`](#floor--ceiling)
-- [arrows](#arrows)
-  - [material implication `⇒` `→`](#material-implication)
-  - [equality `<` `≥` `≫`](#equality)
-  - [conjunction & disjunction `∧` `∨`](#conjunction--disjunction)
-- [logical negation `¬` `~` `!`](#logical-negation)
-- [intervals](#intervals)
-- [more...](#more)
+- [math-as-code](#math-as-code)
+- [foreword](#foreword)
+- [contents](#contents)
+  - [variable name conventions](#variable-name-conventions)
+  - [equals symbols](#equals-symbols)
+  - [square root and complex numbers](#square-root-and-complex-numbers)
+  - [dot & cross](#dot--cross)
+      - [scalar multiplication](#scalar-multiplication)
+      - [vector multiplication](#vector-multiplication)
+      - [dot product](#dot-product)
+      - [cross product](#cross-product)
+  - [sigma](#sigma)
+  - [capital Pi](#capital-pi)
+  - [pipes](#pipes)
+      - [absolute value](#absolute-value)
+      - [Euclidean norm](#euclidean-norm)
+      - [determinant](#determinant)
+  - [hat](#hat)
+  - [element](#element)
+  - [common number sets](#common-number-sets)
+      - [`ℝ` real numbers](#%E2%84%9D-real-numbers)
+      - [`ℚ` rational numbers](#%E2%84%9A-rational-numbers)
+      - [`ℤ` integers](#%E2%84%A4-integers)
+      - [`ℕ` natural numbers](#%E2%84%95-natural-numbers)
+      - [`ℂ` complex numbers](#%E2%84%82-complex-numbers)
+  - [function](#function)
+    - [piecewise function](#piecewise-function)
+    - [common functions](#common-functions)
+    - [function notation](#function-notation)
+  - [prime](#prime)
+  - [floor & ceiling](#floor--ceiling)
+  - [arrows](#arrows)
+      - [material implication](#material-implication)
+      - [equality](#equality)
+      - [conjunction & disjunction](#conjunction--disjunction)
+  - [logical negation](#logical-negation)
+  - [intervals](#intervals)
+  - [more...](#more)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## variable name conventions
 
@@ -324,6 +334,17 @@ var sum = 0
 for (var i = 1; i <= 100; i++) {
   sum += i
 }
+
+//ES6
+const sum = (start, end) =>
+  Array(end - start + 1)
+  .fill()
+  .map((_, index) => start + index)
+  .reduce((accumulator, current) =>
+    accumulator + current
+  );
+
+console.log(sum(1, 100));
 ```
 
 The result of `sum` is `5050`.
@@ -348,6 +369,18 @@ var sum = 0
 for (var i = 1; i <= 100; i++) {
   sum += (2 * i + 1)
 }
+
+//ES6
+const sum = (start, end) =>
+  Array(end - start + 1)
+  .fill()
+  .map((_, index) => start + index)
+  .reduce((accumulator, current) =>
+    accumulator + 2 * current + 1,
+    0
+  );
+
+console.log(sum(1, 100));
 ```
 
 The result of `sum` is `10200`.
@@ -388,6 +421,17 @@ var value = 1
 for (var i = 1; i <= 6; i++) {
   value *= i
 }
+
+//ES6
+const value = (start, end) =>
+  Array(end - start + 1)
+  .fill()
+  .map((_, index) => start + index)
+  .reduce((accumulator, current) =>
+    accumulator * current
+);
+
+console.log(value(1, 6));
 ```
 
 Where `value` will evaluate to `720`.
@@ -443,6 +487,13 @@ function length (vec) {
   var z = vec[2]
   return Math.sqrt(x * x + y * y + z * z)
 }
+
+//ES6
+const length = vec =>
+  Math.sqrt(vec.reduce(
+    (accumulator, current) =>
+    accumulator += current* current)
+  );
 ```
 
 Other implementations:
@@ -509,6 +560,22 @@ function normalize(vec) {
     vec[2] = z / length
   }
   return vec
+}
+
+//ES6
+const normalize = vec => {
+  var squaredLength = vec.reduce(
+    (accumulator, current) =>
+    accumulator + current * current,
+    0
+  );
+
+  if (squaredLength > 0) {
+    var length = Math.sqrt(squaredLength);
+    vec.forEach((_, index) =>
+      vec[index] /= length);
+  }
+  return vec;
 }
 ```
 
@@ -721,6 +788,14 @@ function sgn (x) {
   if (x > 0) return 1
   return 0
 }
+
+//ES6
+const sgn = x =>
+  x < 0
+  ? -1
+  : x > 0
+  ? 1
+  : 0;
 ```
 
 See [signum](https://github.com/scijs/signum) for this function as a module.
