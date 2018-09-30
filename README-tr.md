@@ -1,20 +1,17 @@
 # math-as-code
 
->[Turkish translation (Türkçe)](./README-tr.md)
+Bu, matematiksel ifadelerin JavaScript koduyla karşılaştırmalarını göstererek geliştiricilerin işini kolaylaştırmak için kullanılacak bir referans sayfasıdır.
 
->[Chinese translation (中文版)](./README-zh.md)
+Güdüleme: Akademik makalelerin, kendi kendini eğiten oyun ve grafik programcıları için korkutucu olması. :)
 
-This is a reference to ease developers into mathematical notation by showing comparisons with JavaScript code.
+Bu sayfa henüz tamamlanmamıştır. Eğer hata görür ya da katılmak isterseniz, lütfen
+[bir konu açın](https://github.com/Jam3/math-as-code/issues) veya bir PR gönderin.
 
-Motivation: Academic papers can be intimidating for self-taught game and graphics programmers. :) 
-
-This guide is not yet finished. If you see errors or want to contribute, please [open a ticket](https://github.com/Jam3/math-as-code/issues) or send a PR.
-
-> **Note**: For brevity, some code examples make use of [npm packages](https://www.npmjs.com/). You can refer to their GitHub repos for implementation details.
+> **Not**: Kısalık için, bazı kod örneklerinde [npm paketleri](https://www.npmjs.com/)'den faydalanılmıştır. Tanımlama ayrıntıları için ilgili kodların GitHub repo'larına başvurabilirsiniz.
 
 
 
-# foreword
+# önsöz
 
 Mathematical symbols can mean different things depending on the author, context and the field of study (linear algebra, set theory, etc). This guide may not cover *all* uses of a symbol. In some cases, real-world references (blog posts, publications, etc) will be cited to demonstrate how a symbol might appear in the wild.
 
