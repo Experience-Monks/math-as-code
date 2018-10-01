@@ -52,16 +52,16 @@ For simplicity, many of the code examples here operate on floating point values 
 - [intervals](#intervals)
 - [more...](#more)
 
-## variable name conventions
+## değişken isimlendirme kuralları
 
-There are a variety of naming conventions depending on the context and field of study, and they are not always consistent. However, in some of the literature you may find variable names to follow a pattern like so:
+İçeriğe ve çalışma alanına bağlı olarak çeşitli isimlendirme kuralları bulunur ve bu kurallar her zaman birbirleriyle tutarlı değildir. Yine de, kaynakların bazılarında değişken isimlerinin şu kalıbı izlediği görülür:
 
-- *s* - italic lowercase letters for scalars (e.g. a number)
-- **x** - bold lowercase letters for vectors (e.g. a 2D point)
-- **A** - bold uppercase letters for matrices (e.g. a 3D transformation)
-- *θ* - italic lowercase Greek letters for constants and special variables (e.g. [polar angle *θ*, *theta*](https://en.wikipedia.org/wiki/Spherical_coordinate_system))
+- *s* - italik küçük harfler sayısallar için (örneğin sayı)
+- **x** - dolgun küçük harfler vektörler için (örneğin 2D nokta)
+- **A** - dolgun büyük harfler matrisler için (örneğin 3D dönüşüm)
+- *θ* - italik küçük Yunan harfleri sabitler ve özel değişkenler için(örneğin [kutupsal açı *θ*, *theta*](https://en.wikipedia.org/wiki/Spherical_coordinate_system))
 
-This will also be the format of this guide.
+Bu rehber için de aynı kalıp kullanılacaktır.
 
 ## equals symbols
 
