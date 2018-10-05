@@ -57,8 +57,8 @@ For simplicity, many of the code examples here operate on floating point values 
 İçeriğe ve çalışma alanına bağlı olarak çeşitli isimlendirme kuralları bulunur ve bu kurallar her zaman birbirleriyle tutarlı değildir. Yine de, kaynakların bazılarında değişken isimlerinin şu kalıbı izlediği görülür:
 
 - *s* - italik küçük harfler sayısallar için (örneğin sayı)
-- **x** - dolgun küçük harfler vektörler için (örneğin 2D nokta)
-- **A** - dolgun büyük harfler matrisler için (örneğin 3D dönüşüm)
+- **x** - kalın küçük harfler vektörler için (örneğin 2D nokta)
+- **A** - kalın büyük harfler matrisler için (örneğin 3D dönüşüm)
 - *θ* - italik küçük Yunan harfleri sabitler ve özel değişkenler için(örneğin [kutupsal açı *θ*, *theta*](https://en.wikipedia.org/wiki/Spherical_coordinate_system))
 
 Bu rehber için de aynı kalıp kullanılacaktır.
