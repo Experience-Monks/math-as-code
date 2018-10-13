@@ -1,25 +1,25 @@
 # math-as-code
 
-Bu, matematiksel ifadelerin JavaScript koduyla karşılaştırmalarını göstererek geliştiricilerin işini kolaylaştırmak için kullanılacak bir referans sayfasıdır.
+Bu, matematiksel ifadelerin JavaScript koduyla karşılaştırmalarını göstererek geliştiricilerin işini kolaylaştırmak için kullanılacak bir kılavuz sayfasıdır.
 
 Güdüleme: Akademik makalelerin, kendi kendini eğiten oyun ve grafik programcıları için korkutucu olması. :)
 
 Bu sayfa henüz tamamlanmamıştır. Eğer hata görür ya da katılmak isterseniz, lütfen
 [bir konu açın](https://github.com/Jam3/math-as-code/issues) veya bir PR gönderin.
 
-> **Not**: Kısalık için, bazı kod örneklerinde [npm paketleri](https://www.npmjs.com/)'den faydalanılmıştır. Tanımlama ayrıntıları için ilgili kodların GitHub repo'larına başvurabilirsiniz.
+> **Not**: Dokümanı sade tutabilmek için, bazı kod örneklerinde [npm paketleri](https://www.npmjs.com/)'den faydalanılmıştır. Uygulama ayrıntıları için ilgili kodların GitHub repo'larına başvurabilirsiniz.
 
 
 
 # önsöz
 
-Mathematical symbols can mean different things depending on the author, context and the field of study (linear algebra, set theory, etc). This guide may not cover *all* uses of a symbol. In some cases, real-world references (blog posts, publications, etc) will be cited to demonstrate how a symbol might appear in the wild.
+Matematiksel semboller; yazara, içeriğe ve çalışma alanına (lineer cebir, kümeler vb.) göre değişiklik gösterebiliyor. Bu kılavuz, bir sembolün *tüm* kullanımlarını kapsamayabilir. Bazı durumlarda, gerçek dünyada referansların (blog yazıları, yayınlar, vb.) bir sembolü vahşi ortamda nasıl görünebileceğini göstermesi istenecektir.
 
-For a more complete list, refer to [Wikipedia - List of Mathematical Symbols](https://en.wikipedia.org/wiki/List_of_mathematical_symbols). 
+Daha eksiksiz bir liste için şu bölüme bakınız [Wikipedia - Matematik Sembolleri](https://en.wikipedia.org/wiki/List_of_mathematical_symbols). 
 
-For simplicity, many of the code examples here operate on floating point values and are not numerically robust. For more details on why this may be a problem, see [Robust Arithmetic Notes](https://github.com/mikolalysenko/robust-arithmetic-notes) by Mikola Lysenko.
+Sadelik için, buradaki kod örneklerinin çoğu kayan nokta değerleri üzerinde çalışır ve sayısal olarak sağlam değildir. Bunun neden bir sorun olabileceğine dair daha fazla ayrıntı için, bkz. [Sağlam Aritmetik Notlar](https://github.com/mikolalysenko/robust-arithmetic-notes) Mikola Lysenko.
 
-# contents
+# içindekiler
 
 - [variable name conventions](#variable-name-conventions)
 - [equals `=` `≈` `≠` `:=`](#equals-symbols)
