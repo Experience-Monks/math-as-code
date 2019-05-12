@@ -65,8 +65,15 @@ There are a variety of naming conventions depending on the context and field of 
 
 This will also be the format of this guide.
 
-### numpy
-numpy is a powerful **array programming** library, which in python can be interpreted as a **domain specific language** (DSL). Sometimes it's helpful to think of math in python as two languages sharing a namespace, with special [syntax sugar](https://en.wikipedia.org/wiki/Syntactic_sugar) to access one or the other. This will be important in our vectors and matrices section, because *slightly different python syntax means different speeds at large input*. The convention is `import numpy as np`. 
+### Numpy
+Numpy is a powerful **array programming** library, which in python can be
+interpreted as a **domain specific language** (DSL). Sometimes it's helpful to
+think of math in python as two languages sharing a namespace, with special
+[syntax sugar](https://en.wikipedia.org/wiki/Syntactic_sugar) to access one or
+the other. This will be important in our vectors and matrices section, because
+*slightly different python syntax means different speeds at large input*. The
+convention is `import numpy as np`, so when you see `np.something` you know that
+we're working in numpy.  
 
 ## equals symbols
 
@@ -102,7 +109,7 @@ def almost_equal(x, y, epsilon=7):
 
 ```
 
-**Read more**: programmers got this idea from the [epsilon-delta definition of limit][1]
+> **Read more**: programmers got this idea from the [epsilon-delta definition of limit][1]
 
 **Note**: subclasses of [`unittest.TestCase`](https://docs.python.org/3/library/unittest.html) come with their own `assertAlmostEqual`.
 
@@ -121,9 +128,9 @@ In python, we *define* our variables and provide aliases with `=`.
 ```python
 x = 2 * k * j
 ```
-*assignment* in python is generally *mutable* besides special cases like `Tuple`. 
+*Assignment* in python is generally *mutable* besides special cases like `Tuple`. 
 
-However, this is mutable, and only takes a snapshot of the values at that time. Some languages have pre-processor `#define` statements, which are closer to a mathematical *define*. 
+> **Note**: Some languages have pre-processor `#define` statements, which are closer to a mathematical *define*. 
 
 Notice that `def` is a form of `:=` as well. 
 ```python
@@ -201,6 +208,9 @@ assert cmath.sqrt(complex(-1, 0)) == complex(0,1)
 
 As you can see, it uses `j` to denote the imaginary unit, instead of `i`. 
 
+The **conjugate** of a complex number is flipping the plus in the middle to
+minus. 
+
 Just as complex numbers can be interpreted as a sort of wrapper around tuples of
 reals, a complex number data type wraps two floats. Numpy uses this to implement
 complex numbers of different sizes/precisions. 
@@ -213,9 +223,9 @@ to and from complex.
 observe the following [cube roots of unity](https://www.math-only-math.com/the-cube-roots-of-unity.html)
 ```python
 z1 = 0.5 * np.complex(-1, math.sqrt(3)) # Numpy's constructor is basically the same.  
-z2 = np.conj(z1) 
+z2 = np.conj(z1) # but numpy gives us a conjugation function, while the standard module does not. 
 
-math.isclose(z1**3, z2**3)
+assert math.isclose(z1**3, z2**3)
 # TypeError: can't convert complex to float
 
 np.testing.assert_almost_equal(z1**3, z2**3)
@@ -238,8 +248,8 @@ Both symbols can represent simple multiplication of scalars. The following are e
 
 In programming languages we tend to use asterisk for multiplication:
 
-```js
-var result = 5 * 4
+```python
+result = 5 * 4
 ```
 
 Often, the multiplication sign is only used to avoid ambiguity (e.g. between two numbers). Here, we can omit it entirely:
@@ -250,8 +260,8 @@ Often, the multiplication sign is only used to avoid ambiguity (e.g. between two
 
 If these variables represent scalars, the code would be:
 
-```js
-var result = 3 * k * j
+```python
+result = 3 * k * j
 ```
 
 #### vector multiplication
@@ -268,25 +278,25 @@ In other instances, the author might explicitly define a different notation, suc
 
 Here is how it would look in code, using arrays `[x, y]` to represent the 2D vectors.
 
-```js
-var s = 3
-var k = [ 1, 2 ]
-var j = [ 2, 3 ]
+```python
+s = 3
+k = [1, 2]
+j = [2, 3]
 
-var tmp = multiply(k, j)
-var result = multiplyScalar(tmp, s)
-//=> [ 6, 18 ]
+tmp = multiply(k, j)
+result = multiplyScalar(tmp, s)
+# Out: [6, 18]
 ```
 
 Our `multiply` and `multiplyScalar` functions look like this:
 
-```js
-function multiply(a, b) {
-  return [ a[0] * b[0], a[1] * b[1] ]
-}
+```python
+def multiply(a, b) {
+  return [aa * bb for aa,bb in zip(a,b)
 
-function multiplyScalar(a, scalar) {
-  return [ a[0] * scalar, a[1] * scalar ]
+
+def multiplyScalar(a, scalar) {
+  return [scalar * aa for aa in a]
 }
 ```
 
@@ -302,20 +312,19 @@ The dot symbol `·` can be used to denote the [*dot product*](https://en.wikiped
 
 It is a very common feature of linear algebra, and with a 3D vector it might look like this:
 
-```js
-var k = [ 0, 1, 0 ]
-var j = [ 1, 0, 0 ]
+```python
+k = [0, 1, 0]
+j = [1, 0, 0]
 
-var d = dot(k, j)
-//=> 0
+d = np.dot(k, j)
+# Out: 0
 ```
 
 The result `0` tells us our vectors are perpendicular. Here is a `dot` function for 3-component vectors:
 
-```js
-function dot(a, b) {
+```python
+def dot(a, b):
   return a[0] * b[0] + a[1] * b[1] + a[2] * b[2]
-}
 ```
 
 #### cross product
@@ -328,28 +337,25 @@ The cross symbol `×` can be used to denote the [*cross product*](https://en.wik
 
 In code, it would look like this:
 
-```js
-var k = [ 0, 1, 0 ]
-var j = [ 1, 0, 0 ]
+```python
+k = [0, 1, 0]
+j = [1, 0, 0]
 
-var result = cross(k, j)
-//=> [ 0, 0, -1 ]
+result = cross(k, j)
+# Out: [ 0, 0, -1 ]
 ```
 
-Here, we get `[ 0, 0, -1 ]`, which is perpendicular to both **k** and **j**.
+Here, we get `[0, 0, -1]`, which is perpendicular to both **k** and **j**.
 
 Our `cross` function:
 
-```js
-function cross(a, b) {
-  var ax = a[0], ay = a[1], az = a[2],
-    bx = b[0], by = b[1], bz = b[2]
-
-  var rx = ay * bz - az * by
-  var ry = az * bx - ax * bz
-  var rz = ax * by - ay * bx
-  return [ rx, ry, rz ]
-}
+```python
+def cross(a, b): 
+  ''' take two 3D vectors and return their cross product. '''
+  rx = a[1] * b[2] - a[2] * b[1]
+  ry = a[2] * b[0] - a[0] * b[2]
+  rz = a[0] * b[1] - a[1] * b[0]
+  return rx, ry, rz
 ```
 
 For other implementations of vector multiplication, cross product, and dot product:
@@ -368,20 +374,21 @@ The big Greek `Σ` (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summ
 
 Here, `i=1` says to start at `1` and end at the number above the Sigma, `100`. These are the lower and upper bounds, respectively. The *i* to the right of the "E" tells us what we are summing. In code:
 
-```js
-var sum = 0
-for (var i = 1; i <= 100; i++) {
-  sum += i
-}
+Hence, the big sigma is the `for` keyword. 
+```python
+sum([k for k in range(100)])
+# Out: 5050
 ```
 
-The result of `sum` is `5050`.
+**Tip:** With whole numbers, this particular pattern can be optimized to the
+following (and try to [grok the
+proof](http://mathcentral.uregina.ca/QQ/database/QQ.02.06/jo1.html). The legend
+of how Gauss discovered I can only describe as "typical programmer antics"):
 
-**Tip:** With whole numbers, this particular pattern can be optimized to the following:
-
-```js
-var n = 100 // upper bound
-var sum = (n * (n + 1)) / 2
+```python
+def sum_to_n(n):
+  ''' return the sum of integers from 0 to n'''
+  return 0.5 * n * (n + 1)
 ```
 
 Here is another example where the *i*, or the "what to sum," is different:
@@ -392,16 +399,19 @@ Here is another example where the *i*, or the "what to sum," is different:
 
 In code:
 
-```js
-var sum = 0
-for (var i = 1; i <= 100; i++) {
-  sum += (2 * i + 1)
-}
+```python
+sum([2*k + 1 for k in range(100)])
+# Out: 10000
 ```
 
-The result of `sum` is `10200`.
+**important**: `range` in python has an *inclusive lower bound and exclusive
+upper bound*, meaning that `... for k in range(100)` is equivalent to `the sum of
+... for k=0 to k=n`. 
 
-The notation can be nested, which is much like nesting a `for` loop. You should evaluate the right-most sigma first, unless the author has enclosed them in parentheses to alter the order. However, in the following case, since we are dealing with finite sums, the order does not matter.
+The notation can be nested, which is much like nesting a `for` loop. You should
+evaluate the right-most sigma first, unless the author has enclosed them in
+parentheses to alter the order. However, in the following case, since we are
+dealing with finite sums, the order does not matter.
 
 ![sigma3](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B2%7D%5Csum_%7Bj%3D4%7D%5E%7B6%7D%283ij%29)
 
@@ -409,16 +419,16 @@ The notation can be nested, which is much like nesting a `for` loop. You should 
 
 In code:
 
-```js
-var sum = 0
-for (var i = 1; i <= 2; i++) {
-  for (var j = 4; j <= 6; j++) {
-    sum += (3 * i * j)
-  }
-}
+```python
+sum(
+  [sum([3*i*j 
+        for j 
+        in range(4,7)]) 
+   for i 
+   in range(1,3)])
+# Out: 135
 ```
 
-Here, `sum` will be `135`.
 
 ## capital Pi
 
@@ -432,7 +442,7 @@ Take the following:
 
 In code, it might look like this:
 
-```js
+```python
 var value = 1
 for (var i = 1; i <= 6; i++) {
   value *= i
