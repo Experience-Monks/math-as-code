@@ -284,20 +284,20 @@ k = [1, 2]
 j = [2, 3]
 
 tmp = multiply(k, j)
-result = multiplyScalar(tmp, s)
+result = multiply_scalar(tmp, s)
 # Out: [6, 18]
 ```
 
-Our `multiply` and `multiplyScalar` functions look like this:
+Our `multiply` and `multiply_scalar` functions look like this:
 
 ```python
-def multiply(a, b) {
+def multiply(a, b):
   return [aa * bb for aa,bb in zip(a,b)
 
 
-def multiplyScalar(a, scalar) {
+def multiply_scalar(a, scalar):
   return [scalar * aa for aa in a]
-}
+
 ```
 
 Similarly, matrix multiplication typically does not use the dot `·` or cross symbol `×`. Matrix multiplication will be covered in a later section.
@@ -358,11 +358,8 @@ def cross(a, b):
   return rx, ry, rz
 ```
 
-For other implementations of vector multiplication, cross product, and dot product:
-
-- [gl-vec3](https://github.com/stackgl/gl-vec3)
-- [gl-vec2](https://github.com/stackgl/gl-vec2)
-- [vectors](https://github.com/hughsk/vectors) - includes n-dimensional
+It's good to practice and grok these operations, but in real life you'll use
+Numpy. 
 
 ## sigma 
 
@@ -572,12 +569,12 @@ squished-stretched-rotated**.
 np.linalg.det(np.identity(100)) # the determinant of the 100 x 100 identity matrix is still one, because the identity matrix doesn't squish, stretch, or rotate at all. 
 # Out: 1.0
 
-np.linalg.det(np.array([[x, y], [z, w]])) # look up the 90 degree rotation. 
+np.linalg.det(np.array([[0, -1], [1, 0]])) # 90 degree rotation. 
 # Out: 1.0
-# 
 
 ```
 
+The second matrix was the [**2D rotation**](https://en.wikipedia.org/wiki/Rotation_matrix) at 90 degrees. 
 
 ## hat
 
@@ -655,7 +652,7 @@ A = [ 3, 9, 14 ]
 # Out: True
 ```
 
-Python also has set. You can wrap any iterable or generator with the set keyword to delete
+Python also has `set`. You can wrap any iterable or generator with the `set` keyword to delete
 repeats. 
 
 ```python
@@ -719,11 +716,17 @@ Rational numbers are real numbers that can be expressed as a fraction, or
 Imagine taking `ℝ` and removing radicals (like `np.sqrt`) and logarithms (in a
 family called
 [transcendentals](https://en.wikipedia.org/wiki/Transcendental_function)),
-that's basically what `ℚ` is. 
+that's basically what `ℚ` is, at least enough for a rough first approximation. 
 
 This also means that all integers are rational numbers, since the denominator can be expressed as 1.
 
-An irrational number, on the other hand, is one that cannot be expressed as a ratio, like π (PI). 
+An irrational number, on the other hand, is one that cannot be expressed as a ratio, like π (`math.pi`). 
+
+A reason a programmer might care about the difference between Q and R is in the
+design of unit tests--- *fractions are terminating decimals*, and sometimes when
+you're a 100% sure that a number will be a basic rational (like counting change,
+`0.25, 0.10, 0.05`, etc.), you're allowed to use `==` in unit tests rather than
+`isclose` or `assert_almost_equal`. 
 
 You can work with rationals without dividing them into floatiness with the
 [`fractions` standard module](https://docs.python.org/3.7/library/fractions.html)
@@ -741,14 +744,22 @@ assert isinstance(8/7, int), "GO DIRECTLY TO JAIL"
 
 #### `ℕ` natural numbers
 
-A natural number, a positive and non-negative integer. 
+A natural number, a non-negative integer. 
+
+This is actually the only set invented by the [flying spaghetti monster](https://www.brainyquote.com/quotes/leopold_kronecker_338745): as for the
+others, humans have only themselves to blame. 
 
 Depending on the context and field of study, the set may or **start with zero**.
 
 ...ok but, between you and me, they start with zero. 
 
-`ℕ` is not a datatype in python, we can't use typechecking to disambiguate `int`
-from `non-negative int`, but in a pinch you could easily write up 
+`ℕ` also happens to be the first **inductive construction** in the [study of
+datatypes](https://en.wikipedia.org/wiki/Semantics_(computer_science)), consisting of a single axiom ("Zero is a `ℕ`") and a single
+inference rule ("if `n` is a `ℕ` then `n + 1` is also a `ℕ`")
+
+`ℕ` is not a datatype in python, we can't use *typechecking* to disambiguate `int`
+from `non-negative int`, but in a pinch you could easily write up something that
+combines `x >= 0` judgments with `isinstance(x, int)`.
 
 #### `ℂ` complex numbers
 
@@ -761,10 +772,10 @@ We can say `ℂ = {a + b*i | a,b ∈ ℝ}`, which is a notation called
 
 ## Set builder notation 
 
-Pythoners call **Set builder notation* is just comprehension
+Pythoners have a name for *Set builder notation*; and the name is comprehension
 
 - `{ }`: delimiter around iterable (curlybois for `dict` or `set`, `[` for list)
-- `a + b * i`: an expression (for instance, for a list of odd numbers this
+- `a + b * i`: an expression (for instance, earlier when we made a list of odd numbers this
   expression was `2*k + 1`) to be evaluated for each item in source list. 
 - `|`: `for`
 - `a,b ∈ ℝ`: this just shows that `a,b` are drawn from a particular place, in
@@ -793,7 +804,7 @@ R = np.linspace(-2, 2, 100)
 
 [Functions](https://en.wikipedia.org/wiki/Function_%28mathematics%29) are fundamental features of mathematics, and the concept is fairly easy to translate into code.
 
-A function relates an input to an output value. For example, the following is a function:
+A **function** maps an input to an output value. For example, the following is a function:
 
 ![function1](http://latex.codecogs.com/svg.latex?x%5E%7B2%7D)
 
@@ -808,9 +819,9 @@ We can give this function a *name*. Commonly, we use `ƒ` to describe a function
 In code, we might name it `square` and write it like this:
 
 ```python
-def square(x): {
+def square(x): 
   return math.pow(x, 2)
-}
+
 ```
 
 Sometimes a function is not named, and instead the output is written.
@@ -843,6 +854,23 @@ Functions can also have multiple parameters, like in a programming language. The
 ![function4](http://latex.codecogs.com/svg.latex?f%28x%2Cy%29%20%3D%20%5Csqrt%7Bx%5E2%20&plus;%20y%5E2%7D)
 
 <!-- f(x,y) = \sqrt{x^2 + y^2} -->
+
+### dictionaries are functions
+
+Sometimes mathematicians, like software developers, need to specify *maps* by
+*enumerating each input-output pair** when there is no expression that computes
+output from input.
+
+**Note**: formally, mathematicians require that **functions not be ambiguous***,
+so when you have a function and you have an input, there can be no uncertainty
+as to what the output should be; you mustn't be confused about whether an apple
+is red or purple (in introductory algebra courses this is called
+the "vertical line test", but it applies to all maps). Notice that the
+implementation of hash maps already guarantees this in the case of dictionaries!
+Notice also that we make no such requirement on
+*outputs*, both an apple *and* a banana can land on purple! With caveats like
+these, we can [study the properties of different kinds of functions](https://en.wikipedia.org/wiki/Bijection,_injection_and_surjection)
+into different kinds, important in compression and security engineering.
 
 ### piecewise function
 
@@ -985,7 +1013,7 @@ In code:
 def f(x): 
   return Math.pow(x, 2)
 
-def fPrime(x):
+def f_prime(x):
   return 2 * x
 ```
 
@@ -1091,8 +1119,7 @@ The following shows conjunction `∧`, the logical `AND`.
 In Python, we just say `and`. Assuming *k* is a natural number, the logic implies that *k* is 3:
 
 ```python
-lambda k: if (k > 2 and k < 4): assert k == 3, "Exercise: can this error ever be
-raised?"
+lambda k: if (k > 2 and k < 4): assert k == 3, "Exercise: can this error ever be raised?"
 ```
 
 Since both sides are equivalent `⇔`, it also implies the following:
@@ -1123,8 +1150,7 @@ Here is a simple example using the *not* symbol:
 An example of how we might interpret this in code:
 
 ```python
-lambda x, y: if (x != y): assert not x == y, "arrr, buried treasure lost
-forever. "
+lambda x, y: if (x != y): assert not x == y, "arrr, buried treasure lost forever. "
 ```
 
 *Note:* The tilde `~` has many different meanings depending on context. For example, *row equivalence* (matrix theory) or *same order of magnitude* (discussed in [equality](#equality)).
