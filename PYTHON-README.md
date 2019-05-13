@@ -1,4 +1,4 @@
-# math-as-code
+# math-as-code-python
 
 >[Chinese translation of javascript version (中文版)](./README-zh.md)
 >[Javascript version in english](./README.md)
