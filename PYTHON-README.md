@@ -209,8 +209,10 @@ assert cmath.sqrt(complex(-1, 0)) == complex(0,1)
 
 As you can see, it uses `j` to denote the imaginary unit, instead of `i`. 
 
-The **conjugate** of a complex number is flipping the plus in the middle to
-minus. 
+The **conjugate** of a complex number is **flipping the sign of the imaginary part**. 
+
+If `z` is a python `complex` number, `z.real` gets the real part (exactly as an
+object attribute) and `z.imag` gets the imaginary part. 
 
 Just as complex numbers can be interpreted as a sort of wrapper around tuples of
 reals, a complex number data type wraps two floats. Numpy uses this to implement
