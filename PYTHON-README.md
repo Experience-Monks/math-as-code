@@ -298,12 +298,19 @@ def multiply(a, b):
   return [aa * bb for aa,bb in zip(a,b)
 
 
-def multiply_scalar(a, scalar):
+def multiply_scalar(scalar, a):
   return [scalar * aa for aa in a]
 
 ```
 
-Similarly, matrix multiplication typically does not use the dot `·` or cross symbol `×`. Matrix multiplication will be covered in a later section.
+Similarly, matrix multiplication typically does not use the dot `·` or cross symbol `×`. 
+
+Numpy's broadcasted syntax for scaling looks like this: 
+
+```python
+def multiply_scalar(scalar, a): 
+  return scalar * np.array(a)
+```
 
 #### dot product
 
