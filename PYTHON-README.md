@@ -1178,27 +1178,44 @@ Intervals are used in conjunction with set operations:
 <!-- [3, 5) - [4, 6] = [3, 4) -->
 <!-- [4, 6] - [3, 5)  = [5, 6] -->
 
-In code:
+Integer versions in basic python look like this
 
-```js
-var Interval = require('interval-arithmetic')
-var nextafter = require('nextafter')
+```python
+# intersection of two int intervals
+[x for x in range(3,5) if x in range(4, 6+1)]
+# Out: [4]
 
-var a = Interval(3, nextafter(5, -Infinity))
-var b = Interval(4, 6)
+# Union of two int intervals
+[x for x in range(20) if x in range(3, 5) or x in range(4, 6+1)]
+# Out: [3, 4, 5, 6]
 
-Interval.intersection(a, b)
-// {lo: 4, hi: 4.999999999999999}
+# Set difference
+[x for x in range(3, 5) if x not in range(4, 6+1)]
+# Out: [3]
 
-Interval.union(a, b)
-// {lo: 3, hi: 6}
-
-Interval.difference(a, b)
-// {lo: 3, hi: 3.9999999999999996}
-
-Interval.difference(b, a)
-// {lo: 5, hi: 6}
+[x for x in range(4, 6+1) if x not in range(3, 5)]
+# Out: [5, 6]
 ```
+
+Using `np.linspace`, we can approximate what the real versions would look like. 
+
+```python
+R = np.linspace(-1, 9, 100)
+
+# intersection of two float intervals
+[x for x in R if 3 <= x < 5 and 4 <= x <= 6]
+
+# Union of two float intervals
+[x for x in R if 3 <= x < 5 or 4 <= x <= 6]
+
+# set differences of two float intervals. 
+[x for x in R if 3 <= x < 5 and not (4 <= x <= 6)]
+
+[x for x in R if 4 <= x <= 6 and not (3 <= x < 5)]
+```
+
+You should definitely run these in repl and try to wrap your head around them. 
+
 
 
 ## more...
