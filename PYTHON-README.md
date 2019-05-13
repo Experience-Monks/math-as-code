@@ -440,20 +440,47 @@ Take the following:
 
 <!-- \prod_{i=1}^{6}i -->
 
-In code, it might look like this:
-
+This was removed from vanilla python for python 3, but it's easy to recover with
+a generalization of the list accumulator. 
 ```python
-var value = 1
-for (var i = 1; i <= 6; i++) {
-  value *= i
-}
+def times(x, y): 
+  ''' first, give a name to the multiplication operator '''
+  return x * y
+
+from functools import reduce
+
+reduce(times, range(1,7))
+# Out: 720
 ```
 
-Where `value` will evaluate to `720`.
+With reduce, you can actually repeatedly apply a binary function to items of a
+list and accumulate the value _for any binary operator_. Python gives `and` and
+`or` out of the box like `sum`, but keep `reduce` in mind if you encounter a
+less common binary operator out in the wild. 
+
+Note that in Numpy arrays, the syntax is different (and product is given out of
+the box)
+
+```python
+import numpy as np
+
+xs = np.array([2*k + 1 for k in range(100)])
+ys = np.array(range(1,7))
+
+xs.sum()
+# Out: 10000
+
+ys.prod()
+# Out: 720
+```
+which is better on larger input, but you're always welcome to use functions for
+ordinary lists as you please. 
 
 ## pipes
 
-Pipe symbols, known as *bars*, can mean different things depending on the context. Below are three common uses: [absolute value](#absolute-value), [Euclidean norm](#euclidean-norm), and [determinant](#determinant).
+Pipe symbols, known as *bars*, can mean different things depending on the
+context. Below are three common uses: [absolute value](#absolute-value),
+[Euclidean norm](#euclidean-norm), and [determinant](#determinant).
 
 These three features all describe the *length* of an object.
 
@@ -465,12 +492,11 @@ These three features all describe the *length* of an object.
 
 For a number *x*, `|x|` means the absolute value of *x*. In code:
 
-```js
-var x = -5
-var result = Math.abs(x)
-// => 5
+```python
+x = -5
+abs(x)
+# Out: 5
 ```
-
 #### Euclidean norm
 
 ![pipes4](http://latex.codecogs.com/svg.latex?%5Cleft%20%5C%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%5C%7C)
@@ -487,28 +513,35 @@ Often this is represented by double-bars to avoid ambiguity with the *absolute v
 
 Here is an example using an array `[x, y, z]` to represent a 3D vector.
 
-```js
-var v = [ 0, 4, -3 ]
+```python
+v = [0, 4, -3]
 length(v)
-//=> 5
+# Out: 5.0
+
 ```
 
-The `length` function:
+The `length** function:
 
-```js
-function length (vec) {
-  var x = vec[0]
-  var y = vec[1]
-  var z = vec[2]
-  return Math.sqrt(x * x + y * y + z * z)
-}
+```python
+def length(vec):
+  x = vec[0]
+  y = vec[1]
+  z = vec[2]
+  return math.sqrt(x**2 + y**2 + z**2)
 ```
 
-Other implementations:
+The implementation for arbitrary length'd vectors is left as an exercise for the
+reader. 
 
-- [magnitude](https://github.com/mattdesl/magnitude/blob/864ff5a7eb763d34bf154ac5f5332d7601192b70/index.js) - n-dimensional
-- [gl-vec2/length](https://github.com/stackgl/gl-vec2/blob/21f460a371540258521fd2f720d80f14e87bd400/length.js) - 2D vector
-- [gl-vec3/length](https://github.com/stackgl/gl-vec3/blob/507480fa57ba7c5fb70679cf531175a52c48cf53/length.js) - 3D vector
+In practice, you'll probably use the following numpy call 
+
+```python
+np.linalg.norm([0, 4, -3])
+# Out: 5.0
+```
+
+Resources: 
+- [numpy.linalg docs](get link to numpy.linalg docs)
 
 #### determinant
 
@@ -516,25 +549,35 @@ Other implementations:
 
 <!-- \left |\mathbf{A}  \right | -->
 
-For a matrix **A**, `|A|` means the [determinant](https://en.wikipedia.org/wiki/Determinant) of matrix **A**.
+For a matrix **A**, `|A|` means the
+[determinant](https://en.wikipedia.org/wiki/Determinant) of matrix **A**.
 
-Here is an example computing the determinant of a 2x2 matrix, represented by a flat array in column-major format.
+Here is an example computing the determinant of a 2x2 identity matrix
 
-```js
-var determinant = require('gl-mat2/determinant')
+```python
+ident_2 = [[1, 0], 
+           [0, 1]]
 
-var matrix = [ 1, 0, 0, 1 ]
-var det = determinant(matrix)
-//=> 1
+np.linalg.det(ident_2)
+# Out: 1
 ```
 
-Implementations:
+You should watch [3blue1brown](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab), but in short if a matrix (list of list of numbers)
+is interpreted as hitting a **coordinate system** with a
+*squisher-stretcher-rotater*, the determinant of that matrix is the **measure of
+how much the unit area/volume of the coordinate system got
+squished-stretched-rotated**.
 
-- [gl-mat4/determinant](https://github.com/stackgl/gl-mat4/blob/c2e2de728fe7eba592f74cd02266100cc21ec89a/determinant.js) - also see [gl-mat3](https://github.com/stackgl/gl-mat3) and [gl-mat2](https://github.com/stackgl/gl-mat2)
-- [ndarray-determinant](https://www.npmjs.com/package/ndarray-determinant)
-- [glsl-determinant](https://www.npmjs.com/package/glsl-determinant)
-- [robust-determinant](https://www.npmjs.com/package/robust-determinant)
-- [robust-determinant-2](https://www.npmjs.com/package/robust-determinant-2) and [robust-determinant-3](https://www.npmjs.com/package/robust-determinant-3), specifically for 2x2 and 3x3 matrices, respectively
+```python
+np.linalg.det(np.identity(100)) # the determinant of the 100 x 100 identity matrix is still one, because the identity matrix doesn't squish, stretch, or rotate at all. 
+# Out: 1.0
+
+np.linalg.det(np.array([[x, y], [z, w]])) # look up the 90 degree rotation. 
+# Out: 1.0
+# 
+
+```
+
 
 ## hat
 
@@ -546,35 +589,52 @@ In geometry, the "hat" symbol above a character is used to represent a [unit vec
 
 In Cartesian space, a unit vector is typically length 1. That means each part of the vector will be in the range of -1.0 to 1.0. Here we *normalize* a 3D vector into a unit vector:
 
-```js
-var a = [ 0, 4, -3 ]
+```python
+a = [ 0, 4, -3 ]
 normalize(a)
-//=> [ 0, 0.8, -0.6 ]
+# Out: [ 0, 0.8, -0.6 ]
 ```
+
+If a vector is that which has magnitude and direction, normalization of a vector
+is the operation that deletes magnitude and preserves direction. 
 
 Here is the `normalize` function, operating on 3D vectors:
 
-```js
-function normalize(vec) {
-  var x = vec[0]
-  var y = vec[1]
-  var z = vec[2]
-  var squaredLength = x * x + y * y + z * z
+```python
+def normalize(vec):
+  x = vec[0]
+  y = vec[1]
+  z = vec[2]
+  squaredLength = x * x + y * y + z * z
 
-  if (squaredLength > 0) {
-    var length = Math.sqrt(squaredLength)
+  if (squaredLength > 0):
+    length = math.sqrt(squaredLength)
     vec[0] = x / length
     vec[1] = y / length
     vec[2] = z / length
-  }
+  
   return vec
-}
 ```
 
-Other implementations:
+Which Numpy's **broadcasting** syntax sugar can do in fewer lines
 
-- [gl-vec3/normalize](https://github.com/stackgl/gl-vec3/blob/507480fa57ba7c5fb70679cf531175a52c48cf53/normalize.js) and [gl-vec2/normalize](https://github.com/stackgl/gl-vec2/blob/21f460a371540258521fd2f720d80f14e87bd400/normalize.js)
-- [vectors/normalize-nd](https://github.com/hughsk/vectors/blob/master/normalize-nd.js) (n-dimensional)
+You should try to generalize this to vectors of arbitrary length yourself,
+before reading this...
+
+Go, I mean it! 
+
+```python
+def normalize(vec):
+  vec = np.array(vec) # ensure that input is casted to numpy
+  length = np.linalg.norm(vec)
+  if length > 0:
+    return vec / length
+```
+Notice that **broadcasting** here is just short for `[x / length for x in vec]`.
+But it's actually **faster** on large input, because arrays. 
+
+[*read* the Numpy docs. *Be* the Numpy docs](https://docs.scipy.org/doc/numpy/reference/routines.linalg.html)
+
 
 ## element
 
@@ -584,24 +644,26 @@ In set theory, the "element of" symbol `∈` and `∋` can be used to describe w
 
 <!-- A=\left \{3,9,14}{  \right \}, 3 \in A -->
 
-Here we have a set of numbers *A* `{ 3, 9, 14 }` and we are saying `3` is an "element of" that set. 
+Here we have a set of numbers *A* = `{ 3, 9, 14 }` and we are saying `3` is an "element of" that set. 
 
-A simple implementation in ES5 might look like this:
+The `in` keyword plays the role of the elementhood function, giving a bool. 
 
-```js
-var A = [ 3, 9, 14 ]
+```python
+A = [ 3, 9, 14 ]
 
-A.indexOf(3) >= 0
-//=> true
+3 in A
+# Out: True
 ```
 
-However, it would be more accurate to use a `Set` which only holds unique values. This is a feature of ES6.
+Python also has set. You can wrap any iterable or generator with the set keyword to delete
+repeats. 
 
-```js
-var A = new Set([ 3, 9, 14 ])
+```python
+set([3,3,3,2,4,3,3,3,1,2,4,5,3])
+# Out: {1, 2, 3, 4, 5}
 
-A.has(3)
-//=> true
+3 in set(range(1, 20, 4))
+# Out: False
 ```
 
 The backwards `∋` is the same, but the order changes:
@@ -615,6 +677,8 @@ You can also use the "not an element of" symbols `∉` and `∌` like so:
 ![element3](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%206%20%5Cnotin%20A)
 
 <!-- A=\left \{3,9,14}{  \right \}, 6 \notin A -->
+
+Which you know is represented by the convenient `not` keyword in python. 
 
 ## common number sets
 
@@ -632,56 +696,98 @@ Listed below are a few common sets and their symbols.
 
 The large `ℝ` describes the set of *real numbers*. These include integers, as well as rational and irrational numbers.
 
-JavaScript treats floats and integers as the same type, so the following would be a simple test of our *k* ∈ ℝ example:
+Computers approximate `ℝ` with `float`. 
 
-```js
-function isReal (k) {
-  return typeof k === 'number' && isFinite(k);
-}
+You can use `isinstance` to check "*k* ∈ ℝ", where float and `ℝ` aren't *really*
+the same thing but the intuition is close enough.  
+
+```python
+isinstance(np.pi, float)
+# Out: True
 ```
 
-*Note:* Real numbers are also *finite*, as in, *not infinite.*
+Again, you may elevate that bool to an `assertion` that makes-or-breaks the whole program
+with the `assert` keyword when you see fit. 
+
+[Excellent resource on floats in python](https://youtu.be/zguLmgYWhM0)
 
 #### `ℚ` rational numbers
 
-Rational numbers are real numbers that can be expressed as a fraction, or *ratio* (like `⅗`). Rational numbers cannot have zero as a denominator.
+Rational numbers are real numbers that can be expressed as a fraction, or
+*ratio*. Rational numbers cannot have zero as a denominator.
+
+Imagine taking `ℝ` and removing radicals (like `np.sqrt`) and logarithms (in a
+family called
+[transcendentals](https://en.wikipedia.org/wiki/Transcendental_function)),
+that's basically what `ℚ` is. 
 
 This also means that all integers are rational numbers, since the denominator can be expressed as 1.
 
 An irrational number, on the other hand, is one that cannot be expressed as a ratio, like π (PI). 
 
+You can work with rationals without dividing them into floatiness with the
+[`fractions` standard module](https://docs.python.org/3.7/library/fractions.html)
+
 #### `ℤ` integers
 
-An integer, i.e. a real number that has no fractional part. These can be positive or negative.
+An integer is a whole number. Just imagine starting from zero and one and
+building out an inventory with addition and subtraction. 
 
-A simple test in JavaScript might look like this:
+An integer has no division, no decimals. 
 
-```js
-function isInteger (n) {
-  return typeof n === 'number' && n % 1 === 0
-}
+```python
+assert isinstance(8/7, int), "GO DIRECTLY TO JAIL"
 ```
 
 #### `ℕ` natural numbers
 
-A natural number, a positive and non-negative integer. Depending on the context and field of study, the set may or may not include zero, so it could look like either of these:
+A natural number, a positive and non-negative integer. 
 
-```js
-{ 0, 1, 2, 3, ... }
-{ 1, 2, 3, 4, ... }
-```
+Depending on the context and field of study, the set may or **start with zero**.
 
-The former is more common in computer science, for example:
+...ok but, between you and me, they start with zero. 
 
-```js
-function isNaturalNumber (n) {
-  return isInteger(n) && n >= 0
-}
-```
+`ℕ` is not a datatype in python, we can't use typechecking to disambiguate `int`
+from `non-negative int`, but in a pinch you could easily write up 
 
 #### `ℂ` complex numbers
 
+As we saw earlier, the complex numbers are a particular wrapper around tuples of
+reals. 
+
 A complex number is a combination of a real and imaginary number, viewed as a co-ordinate in the 2D plane. For more info, see [A Visual, Intuitive Guide to Imaginary Numbers](http://betterexplained.com/articles/a-visual-intuitive-guide-to-imaginary-numbers/).
+
+We can say `ℂ = {a + b*i | a,b ∈ ℝ}`, which is a notation called
+
+## Set builder notation 
+
+Pythoners call **Set builder notation* is just comprehension
+
+- `{ }`: delimiter around iterable (curlybois for `dict` or `set`, `[` for list)
+- `a + b * i`: an expression (for instance, for a list of odd numbers this
+  expression was `2*k + 1`) to be evaluated for each item in source list. 
+- `|`: `for`
+- `a,b ∈ ℝ`: this just shows that `a,b` are drawn from a particular place, in
+  this case the real numbers. 
+  
+So if you've been writing Python listcomps, that definition of the complex
+numbers wasn't so bad! Say it with me this time 
+
+`ℂ = {a + b*i | a,b ∈ ℝ}``
+
+**inhaaaaaaless** *unison* "C IS THE SET OF a + b*i FOR REAL NUMBERS a AND b"
+
+If you want, you can draw up a grainy picture of an *interval* of ℂ with `zip`
+and `np.linspace`, and of course list comprehension.  
+
+```python
+j = np.complex(0,1)
+
+R = np.linspace(-2, 2, 100)
+
+{a + b * j for a,b in zip(R, R)}
+# too much to print but try it yourself. 
+```
 
 ## function
 
@@ -693,7 +799,7 @@ A function relates an input to an output value. For example, the following is a 
 
 <!-- x^{2} -->
 
-We can give this function a *name*. Commonly, we use `ƒ` to describe a function, but it could be named `A(x)` or anything else.
+We can give this function a *name*. Commonly, we use `ƒ` to describe a function, but it could be named `A` or anything else.
 
 ![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
 
@@ -701,9 +807,9 @@ We can give this function a *name*. Commonly, we use `ƒ` to describe a function
 
 In code, we might name it `square` and write it like this:
 
-```js
-function square (x) {
-  return Math.pow(x, 2)
+```python
+def square(x): {
+  return math.pow(x, 2)
 }
 ```
 
@@ -713,21 +819,30 @@ Sometimes a function is not named, and instead the output is written.
 
 <!-- y = x^{2} -->
 
-In the above example, *x* is the input, the relationship is *squaring*, and *y* is the output.
+In the above example, *x* is the input, the relationship is *squaring*, and *y*
+is the output. We can express this as an equation because, conventionally, we
+think of *x* as input and *y* as output. 
+
+But we have a stronger idea called **anonymous functions** to generalize this. 
+
+Just as we can name strings `x = "Alonzo"` then call them with their names *or*
+we can just pass string *literals*, we also have **function literals**. 
+
+Math first, then python: 
+
+`x ↦ x^2` is equivalent to the equational description above. 
+
+Nearly identical, but very different to the untrained eye, is `λx.x^2`, hence
+the python keyword 
+```python
+lambda x: x**2
+```
 
 Functions can also have multiple parameters, like in a programming language. These are known as *arguments* in mathematics, and the number of arguments a function takes is known as the *arity* of the function.
 
 ![function4](http://latex.codecogs.com/svg.latex?f%28x%2Cy%29%20%3D%20%5Csqrt%7Bx%5E2%20&plus;%20y%5E2%7D)
 
 <!-- f(x,y) = \sqrt{x^2 + y^2} -->
-
-In code:
-
-```js
-function length (x, y) {
-  return Math.sqrt(x * x + y * y)
-}
-```
 
 ### piecewise function
 
@@ -747,14 +862,13 @@ This is very similar to `if` / `else` in code. The right-side conditions are oft
 
 In piecewise functions, **"otherwise"** and **"elsewhere"** are analogous to the `else` statement in code.
 
-```js
-function f (x) {
-  if (x >= 1) {
-    return (Math.pow(x, 2) - x) / x
-  } else {
+```python
+def f(x):
+  if (x >= 1):
+    return (math.pow(x, 2) - x) / x
+  else:
     return 0
-  }
-}
+
 ```
 
 ### common functions
@@ -774,12 +888,14 @@ One such example is the *sgn* function. This is the *signum* or *sign* function.
 
 In code, it might look like this:
 
-```js
-function sgn (x) {
-  if (x < 0) return -1
-  if (x > 0) return 1
-  return 0
-}
+```python
+def signum(x):
+  if (x < 0):
+    return -1
+  elif (x > 0):
+    return 1
+  else: 
+    return 0
 ```
 
 See [signum](https://github.com/scijs/signum) for this function as a module.
@@ -820,25 +936,28 @@ A function's *domain* and *codomain* is a bit like its *input* and *output* type
 
 The arrow here (without a tail) is used to map one *set* to another.
 
-In JavaScript and other dynamically typed languages, you might use documentation and/or runtime checks to explain and validate a function's input/output. Example:
+In Python and other dynamically typed languages, you might use documentation and/or runtime checks to explain and validate a function's input/output. Example:
 
-```js
-/**
- * Squares a number.
- * @param  {Number} a real number
- * @return {Number} a real number
- */
-function square (a) {
-  if (typeof a !== 'number') {
-    throw new TypeError('expected a number')
-  }
-  return Math.pow(a, 2)
-}
+```python
+def square_ints(k): 
+  ''' FEED ME INTEGER '''
+  try: 
+    assert isinstance(k, int), "I HUNGER FOR AN INTEGER! "
+    return math.pow(k, 2)
+  except AssertionError as e:
+    raise e
 ```
 
-Some tools like [flowtype](http://flowtype.org/) attempt to bring static typing into JavaScript.
+The python of a more glorious future as described in
+[pep484](https://www.python.org/dev/peps/pep-0484/) proposes a static type
+checker for Python, but no one's proposed anything shrewd enough to *prevent
+code with type errors from compiling* for Python yet.
 
-Other languages, like Java, allow for true method overloading based on the static types of a function's input/output. This is closer to mathematics: two functions are not the same if they use a different *domain*.
+Other languages, like Java, allow for true method overloading based on the
+static types of a function's input/output. This is closer to mathematics: two
+functions are not the same if they use a different *domain*. This is also called
+*polymorphism* and it explains why `'literally' + 'alonzo'` concats two strings
+together but `1 + 1` is addition on numbers. 
 
 ## prime
 
@@ -862,14 +981,12 @@ Its derivative could be written with a prime `′` symbol:
 
 In code:
 
-```js
-function f (x) {
+```python
+def f(x): 
   return Math.pow(x, 2)
-}
 
-function fPrime (x) {
+def fPrime(x):
   return 2 * x
-}
 ```
 
 Multiple prime symbols can be used to describe the second derivative *ƒ′′* and third derivative *ƒ′′′*. After this, authors typically express higher orders with roman numerals *ƒ*<sup>IV</sup> or superscript numbers *ƒ*<sup>(n)</sup>.
@@ -888,10 +1005,15 @@ The special brackets `⌊x⌋` and `⌈x⌉` represent the *floor* and *ceil* fu
 
 In code:
 
-```js
-Math.floor(x)
-Math.ceil(x)
+```python
+math.floor(4.8)
+math.ceil(3.1)
+np.floor(4.9)
+np.ceil(3.001)
 ```
+
+> **Note**: the Numpy version returns a float, in the above example `4.0`,
+> rather than the int `4`
 
 When the two symbols are mixed `⌊x⌉`, it typically represents a function that rounds to the nearest integer:
 
@@ -899,11 +1021,7 @@ When the two symbols are mixed `⌊x⌉`, it typically represents a function tha
 
 <!-- round(x) =  \lfloor x \rceil -->
 
-In code:
-
-```js
-Math.round(x)
-```
+Python automatically gives you a keyword `round` to call on a number. 
 
 ## arrows
 
@@ -919,10 +1037,11 @@ Arrows like `⇒` and `→` are sometimes used in logic for *material implicatio
 
 Interpreting this as code might look like this:
 
-```js
-if (A === true) {
-  console.assert(B === true)
-}
+```python
+def if_A_then_B:
+  if A:
+    assert B, "alas, not A!"
+    return B
 ```
 
 The arrows can go in either direction `⇐` `⇒`, or both `⇔`. When *A ⇒ B* and *B ⇒ A*, they are said to be equivalent:
@@ -931,15 +1050,15 @@ The arrows can go in either direction `⇐` `⇒`, or both `⇔`. When *A ⇒ B*
 
 <!-- A \Leftrightarrow B -->
 
-#### equality
+#### inequality
 
 In math, the `<` `>` `≤` and `≥` are typically used in the same way we use them in code: *less than*, *greater than*, *less than or equal to* and *greater than or equal to*, respectively.
 
-```js
-50 > 2 === true
-2 < 10 === true
-3 <= 4 === true
-4 >= 4 === true
+```python
+assert 50 > 2
+assert 2 < 10
+assert 3 <= 4
+assert 4 >= 4
 ```
 
 On rare occasions you might see a slash through these symbols, to describe *not*. As in, *k* is "not greater than" *j*.
@@ -948,34 +1067,16 @@ On rare occasions you might see a slash through these symbols, to describe *not*
 
 <!-- k \ngtr j -->
 
-The `≪` and `≫` are sometimes used to represent *significant* inequality. That is, *k* is an [order of magnitude](https://en.wikipedia.org/wiki/Order_of_magnitude) larger than *j*.
+The `≪` and `≫` are sometimes used to represent *significant* inequality. That
+is, *k* is an [order of
+magnitude](https://en.wikipedia.org/wiki/Order_of_magnitude) larger than *j*.
+Sometimes read "beats", when I say `x^k ≫ log(x)` what I'm really saying is that
+"polynomial functions grow an order of magnitude faster than logarithms; in a
+word, the polynomial *beats* the logarithm."
 
 ![orderofmag](http://latex.codecogs.com/svg.latex?k%20%5Cgg%20j)
 
 <!-- k \gg j -->
-
-In mathematics, *order of magnitude* is rather specific; it is not just a "really big difference." A simple example of the above:
-
-```js
-orderOfMagnitude(k) > orderOfMagnitude(j)
-```
-
-And below is our `orderOfMagnitude` function, using [Math.trunc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc) (ES6).
-
-```js
-function log10(n) {
-  // logarithm in base 10
-  return Math.log(n) / Math.LN10
-}
-
-function orderOfMagnitude (n) {
-  return Math.trunc(log10(n))
-}
-```
-
-<sup>*Note:* This is not numerically robust.</sup>
-
-See [math-trunc](https://www.npmjs.com/package/math-trunc) for a ponyfill in ES5.
 
 #### conjunction & disjunction
 
@@ -987,20 +1088,17 @@ The following shows conjunction `∧`, the logical `AND`.
 
 <!-- k > 2 \land k <  4 \Leftrightarrow k = 3   -->
 
-In JavaScript, we use `&&`. Assuming *k* is a natural number, the logic implies that *k* is 3:
+In Python, we just say `and`. Assuming *k* is a natural number, the logic implies that *k* is 3:
 
-```js
-if (k > 2 && k < 4) {
-  console.assert(k === 3)
-}
+```python
+lambda k: if (k > 2 and k < 4): assert k == 3, "Exercise: can this error ever be
+raised?"
 ```
 
 Since both sides are equivalent `⇔`, it also implies the following:
 
-```js
-if (k === 3) {
-  console.assert(k > 2 && k < 4)
-}
+```python
+lambda k: if (k == 3): assert (k > 2 and k < 4), "I mean it, think through this exercise."
 ```
 
 The down arrow `∨` is logical disjunction, like the OR operator.
@@ -1009,11 +1107,8 @@ The down arrow `∨` is logical disjunction, like the OR operator.
 
 <!-- A \lor B -->
 
-In code:
-
-```js
-A || B
-```
+In Python, we have the `or` keyword. Like and, it is a function that will trade
+you one bool for two bools. 
 
 ## logical negation
 
@@ -1027,10 +1122,9 @@ Here is a simple example using the *not* symbol:
 
 An example of how we might interpret this in code:
 
-```js
-if (x !== y) {
-  console.assert(!(x === y))
-}
+```python
+lambda x, y: if (x != y): assert not x == y, "arrr, buried treasure lost
+forever. "
 ```
 
 *Note:* The tilde `~` has many different meanings depending on context. For example, *row equivalence* (matrix theory) or *same order of magnitude* (discussed in [equality](#equality)).
@@ -1063,16 +1157,11 @@ For example we to indicate that a point `x` is in the unit cube in 3D we say:
 
 <!-- x \in [0, 1]^3 -->
 
-In code we can represent an interval using a two element 1d array:
+In Python, we have to be sensitive about **inclusive vs. exclusive boundaries**
+in generators like `range`, but you already know that. 
 
-```js
-var nextafter = require('nextafter')
+if you want to play with *infinite lists* in Python, learn more about [generators](https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/)
 
-var a = [nextafter(0, Infinity), nextafter(1, -Infinity)]     // open interval
-var b = [nextafter(0, Infinity), 1]                           // interval closed on the left 
-var c = [0, nextafter(1, -Infinity)]                          // interval closed on the right
-var d = [0, 1]                                                // closed interval
-```
 
 Intervals are used in conjunction with set operations:
 
@@ -1111,10 +1200,6 @@ Interval.difference(b, a)
 // {lo: 5, hi: 6}
 ```
 
-See:
-
-- [next-after](https://github.com/scijs/nextafter) 
-- [interval-arithmetic](https://github.com/maurizzzio/interval-arithmetic)
 
 ## more...
 
