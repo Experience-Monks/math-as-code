@@ -1,6 +1,7 @@
 # math-as-code-python
 
 >[Chinese translation of javascript version (中文版)](./README-zh.md)
+
 >[Javascript version in english](./README.md)
 
 This is a reference to ease developers into mathematical notation by showing comparisons with Python code.
@@ -414,6 +415,8 @@ sum([2*k + 1 for k in range(100)])
 **important**: `range` in python has an *inclusive lower bound and exclusive
 upper bound*, meaning that `... for k in range(100)` is equivalent to `the sum of
 ... for k=0 to k=n`. 
+
+If you're still not absolutely fluent in indexing for these applications, spend some time with [Trev Tutor](https://youtu.be/TDpQSa3hJRw) on youtube.
 
 The notation can be nested, which is much like nesting a `for` loop. You should
 evaluate the right-most sigma first, unless the author has enclosed them in
