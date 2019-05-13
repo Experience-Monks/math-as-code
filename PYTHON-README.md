@@ -622,6 +622,7 @@ Go, I mean it!
 
 ```python
 def normalize(vec):
+  ''' *sigh* if you don't do it yourself you'll never learn! '''
   vec = np.array(vec) # ensure that input is casted to numpy
   length = np.linalg.norm(vec)
   if length > 0:
@@ -630,7 +631,7 @@ def normalize(vec):
 Notice that **broadcasting** here is just short for `[x / length for x in vec]`.
 But it's actually **faster** on large input, because arrays. 
 
-[*read* the Numpy docs. *Be* the Numpy docs](https://docs.scipy.org/doc/numpy/reference/routines.linalg.html)
+[*Read* the Numpy docs. *BE* the Numpy docs](https://docs.scipy.org/doc/numpy/reference/routines.linalg.html)
 
 
 ## element
@@ -726,7 +727,8 @@ A reason a programmer might care about the difference between Q and R is in the
 design of unit tests--- *fractions are terminating decimals*, and sometimes when
 you're a 100% sure that a number will be a basic rational (like counting change,
 `0.25, 0.10, 0.05`, etc.), you're allowed to use `==` in unit tests rather than
-`isclose` or `assert_almost_equal`. 
+`isclose` or `assert_almost_equal`. The point is that you know not to use exact
+equality `==` when anything like `sqrt` or `log` is involved!  
 
 You can work with rationals without dividing them into floatiness with the
 [`fractions` standard module](https://docs.python.org/3.7/library/fractions.html)
@@ -747,11 +749,11 @@ assert isinstance(8/7, int), "GO DIRECTLY TO JAIL"
 A natural number, a non-negative integer. 
 
 This is actually the only set invented by the [flying spaghetti monster](https://www.brainyquote.com/quotes/leopold_kronecker_338745): as for the
-others, humans have only themselves to blame. 
+others, humans have themselves to blame. 
 
-Depending on the context and field of study, the set may or **start with zero**.
+Depending on the context and field of study, the set may or may not **start with zero**.
 
-...ok but, between you and me, they start with zero. 
+...ok but, between you and me, **they 200% start with zero**. 
 
 `ℕ` also happens to be the first **inductive construction** in the [study of
 datatypes](https://en.wikipedia.org/wiki/Semantics_(computer_science)), consisting of a single axiom ("Zero is a `ℕ`") and a single
@@ -772,7 +774,7 @@ We can say `ℂ = {a + b*i | a,b ∈ ℝ}`, which is a notation called
 
 ## Set builder notation 
 
-Pythoners have a name for *Set builder notation*; and the name is comprehension
+Pythoners have a name for *set builder notation*; and the name is comprehension
 
 - `{ }`: delimiter around iterable (curlybois for `dict` or `set`, `[` for list)
 - `a + b * i`: an expression (for instance, earlier when we made a list of odd numbers this
@@ -800,11 +802,11 @@ R = np.linspace(-2, 2, 100)
 # too much to print but try it yourself. 
 ```
 
-## function
+## functions
 
 [Functions](https://en.wikipedia.org/wiki/Function_%28mathematics%29) are fundamental features of mathematics, and the concept is fairly easy to translate into code.
 
-A **function** maps an input to an output value. For example, the following is a function:
+A **function** transforms an input into an output value. For example, the following is a function:
 
 ![function1](http://latex.codecogs.com/svg.latex?x%5E%7B2%7D)
 
@@ -830,7 +832,7 @@ Sometimes a function is not named, and instead the output is written.
 
 <!-- y = x^{2} -->
 
-In the above example, *x* is the input, the relationship is *squaring*, and *y*
+In the above example, *x* is the input, the transformation is *squaring*, and *y*
 is the output. We can express this as an equation because, conventionally, we
 think of *x* as input and *y* as output. 
 
@@ -980,6 +982,20 @@ The python of a more glorious future as described in
 [pep484](https://www.python.org/dev/peps/pep-0484/) proposes a static type
 checker for Python, but no one's proposed anything shrewd enough to *prevent
 code with type errors from compiling* for Python yet.
+
+As we will see in the following sample of `pep484` Python, the set
+interpretation of domain and codomain makes way for a *types* interpretation of
+domain and codomain
+
+```python
+def square(x: float) -> float: 
+  ''' a pep484 annotation isn't that different from if i declared in the docstring; 
+  
+  input/domain: a float
+  output/codomain: another float 
+  '''
+  return x**2
+```
 
 Other languages, like Java, allow for true method overloading based on the
 static types of a function's input/output. This is closer to mathematics: two
