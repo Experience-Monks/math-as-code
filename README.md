@@ -1,7 +1,7 @@
 # math-as-code
 
->[Chinese translation (中文版)](./README-zh.md)
->[Python version in english](./PYTHON-README.md)
+>[Chinese translation (中文版)](./README-zh.md)  
+>[Python version (English)](./PYTHON-README.md)
 
 This is a reference to ease developers into mathematical notation by showing comparisons with JavaScript code.
 
