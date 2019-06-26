@@ -44,6 +44,7 @@ For simplicity, many of the code examples here operate on floating point values 
   - [piecewise function](#piecewise-function)
   - [common functions](#common-functions)
   - [function notation `↦` `→`](#function-notation)
+  - [inverse functions](#inverse-functions)
 - [prime `′`](#prime)
 - [floor & ceiling `⌊` `⌉`](#floor--ceiling)
 - [arrows](#arrows)
@@ -781,6 +782,26 @@ function square (a) {
 Some tools like [flowtype](http://flowtype.org/) attempt to bring static typing into JavaScript.
 
 Other languages, like Java, allow for true method overloading based on the static types of a function's input/output. This is closer to mathematics: two functions are not the same if they use a different *domain*.
+
+### inverse function
+
+In mathematics, we have the formal concept of inverse function saying that for a function *f(x)*, it's inverse function, denoted as 
+![function2](http://latex.codecogs.com/svg.latex?f%5E%7B-1%7D%28x%29), where for each *x* belonging to the range of *f*, *f<sup>-1</sup>(x)* is defined to be the unique value of *y* in the domain of *f* satisfying *x = f(y)* 
+
+<!-- f^{-1}(x) -->
+
+Or, in s simplified way,
+
+![function2](http://latex.codecogs.com/svg.latex?y%3Df%5E%7B-1%7D%28x%29) is equivalent to 
+![function2](http://latex.codecogs.com/svg.latex?x%20%3D%20f%28y%29).
+<!-- y=f^{-1}(x) -->
+<!-- x = f(y) -->
+
+Inverse functions are not restricted to polynomials, the concept also can be applied to transcendental functions (logarithms and trigonometric functions, for example).
+
+The algorithm to find an inverse function basically consists in changing substituting *x* with *y* and the opposite, *y* with *x*.
+
+The implementation, however, may vary. You usually do not see a single *function inverse*. Instead libraries tend to separate it by case, once the input varies a lot. Examples, we have a separate set for trigonometric inverse functions on [math.js](http://mathjs.org/) - *tan()* and *atan()*, *sin()* and *asin()*, etc.
 
 ## prime
 
