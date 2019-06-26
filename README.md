@@ -155,7 +155,7 @@ var a = math.complex(3, -1)
 //=> { re: 3, im: -1 }
 
 var b = math.sqrt(-1)
-//=> { re: 0, im: -1 }
+//=> { re: 0, im: 1 }
 
 console.log(math.multiply(a, b).toString())
 //=> '1 + 3i'
