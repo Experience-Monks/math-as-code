@@ -999,7 +999,7 @@ For example we can represent the numbers between zero and one including/not incl
 
 <!-- [0, 1] -->
 
-For example we to indicate that a point `x` is in the unit cube in 3D we say:
+For example to indicate that a point `x` is in the unit cube in 3D we say:
 
 ![interval-unit-cube](http://latex.codecogs.com/svg.latex?x%20%5Cin%20%5B0%2C%201%5D%5E3)
 
