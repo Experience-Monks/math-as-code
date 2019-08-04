@@ -1058,6 +1058,43 @@ See:
 - [next-after](https://github.com/scijs/nextafter) 
 - [interval-arithmetic](https://github.com/maurizzzio/interval-arithmetic)
 
+## Probability 
+
+ | represents a conditional event
+
+P(A|B) means the probability of the event A occurring given that B occurs.
+
+
+```js
+// say you were on a strange planet with dogs who were blue, and green, and may or may not be bloodthirsty
+
+var strangeDogs = [{fur: "blue", bloodthirsty: true},
+                   {fur: "blue", bloodthirsty: false},
+                   {fur: "green", bloodthirsty: false},
+                   {fur: "green", bloodthirsty: false}]   
+
+// this would give you the probability that a trait has a value in a population  
+function returnProb (population, trait, value) {
+  var groupWithTrait = population.filter(x => x[trait] == value);
+  return groupWithTrait.length / population.length;
+}
+// so returnProb(strangeDogs, bloodthirsty, true) = 0.25
+
+// | scopes your result to tell you the probablity of a A when you're picking from a group that all have trait B
+
+function condProb (population, traitA, valueA, traitB, valueB) {
+  var groupWithValB = population.filter(x => x[traitB] == valueB)
+  var resultGroup = groupWithValB.filter(x => x[traitA] == valueA);
+  return resultGroup.length / groupWithValB.length
+}
+
+// condProb(strangeDogs, 'bloodthirsty', true, 'fur', "blue") == 0.5
+// watch out for blue dogs!
+  
+```
+
+
+
 ## more...
 
 Like this guide? Suggest some [more features](https://github.com/Jam3/math-as-code/issues/1) or send us a Pull Request!
