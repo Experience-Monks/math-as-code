@@ -95,7 +95,7 @@ You might see the `:=`, `=:` and `=` symbols being used for *definition*.<sup>[1
 
 For example, the following defines *x* to be another name for 2*kj*.
 
-![equals1](http://latex.codecogs.com/svg.latex?x%20%3A%3D%202kj)
+![equals1](http://latex.codecogs.com/svg.latex?x%20%3A%3D%202kj\pagecolor{white})
 
 <!-- x := 2kj -->
 
@@ -115,7 +115,7 @@ const f = (k, j) => 2 * k * j
 
 The following, on the other hand, represents equality:
 
-![equals2](http://latex.codecogs.com/svg.latex?x%20%3D%202kj)
+![equals2](http://latex.codecogs.com/svg.latex?x%20%3D%202kj\pagecolor{white})
 
 <!-- x = 2kj -->
 
@@ -129,7 +129,7 @@ console.assert(x === (2 * k * j))
 
 A square root operation is of the form:
 
-![squareroot](http://latex.codecogs.com/svg.latex?%5Cleft%28%5Csqrt%7Bx%7D%5Cright%29%5E2%20%3D%20x)
+![squareroot](http://latex.codecogs.com/svg.latex?%5Cleft%28%5Csqrt%7Bx%7D%5Cright%29%5E2%20%3D%20x\pagecolor{white})
 
 <!-- \left(\sqrt{x}\right)^2 = x -->
 
@@ -141,9 +141,9 @@ console.log(Math.sqrt(x));
 //=> 3
 ```
 
-Complex numbers are expressions of the form ![complex](http://latex.codecogs.com/svg.latex?a&space;&plus;&space;ib), where ![a](http://latex.codecogs.com/svg.latex?a) is the real part and ![b](http://latex.codecogs.com/svg.latex?b) is the imaginary part. The imaginary number ![i](http://latex.codecogs.com/svg.latex?i) is defined as:
+Complex numbers are expressions of the form ![complex](http://latex.codecogs.com/svg.latex?a\pagecolor{white}&space;&plus;&space;ib), where ![a](http://latex.codecogs.com/svg.latex?a\pagecolor{white}) is the real part and ![b](http://latex.codecogs.com/svg.latex?b\pagecolor{white}) is the imaginary part. The imaginary number ![i](http://latex.codecogs.com/svg.latex?i\pagecolor{white}) is defined as:
 
-![imaginary](http://latex.codecogs.com/svg.latex?i%3D%5Csqrt%7B-1%7D).
+![imaginary](http://latex.codecogs.com/svg.latex?i%3D%5Csqrt%7B\pagecolor{white}-1%7D).
 <!-- i=\sqrt{-1} -->
 
 In JavaScript, there is no built-in functionality for complex numbers, but there are some libraries that support complex number arithmetic. For example, using [mathjs](https://www.npmjs.com/package/mathjs):
@@ -184,7 +184,7 @@ They might seem obvious, but it's important to understand the subtle differences
 
 Both symbols can represent simple multiplication of scalars. The following are equivalent:
 
-![dotcross1](http://latex.codecogs.com/svg.latex?5%20%5Ccdot%204%20%3D%205%20%5Ctimes%204)
+![dotcross1](http://latex.codecogs.com/svg.latex?5%20%5Ccdot%204%20%3D%205%20%5Ctimes%204\pagecolor{white})
 
 <!-- 5 \cdot 4 = 5 \times 4 -->
 
@@ -196,7 +196,7 @@ var result = 5 * 4
 
 Often, the multiplication sign is only used to avoid ambiguity (e.g. between two numbers). Here, we can omit it entirely:
 
-![dotcross2](http://latex.codecogs.com/svg.latex?3kj)
+![dotcross2](http://latex.codecogs.com/svg.latex?3kj\pagecolor{white})
 
 <!-- 3kj -->
 
@@ -212,7 +212,7 @@ To denote multiplication of one vector with a scalar, or element-wise multiplica
 
 Let's take our earlier example but apply it to vectors. For element-wise vector multiplication, you might see an open dot `∘` to represent the [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_%28matrices%29).<sup>[2]</sup>
 
-![dotcross3](http://latex.codecogs.com/svg.latex?3%5Cmathbf%7Bk%7D%5Ccirc%5Cmathbf%7Bj%7D)
+![dotcross3](http://latex.codecogs.com/svg.latex?3%5Cmathbf%7Bk%7D%5Ccirc%5Cmathbf%7Bj%7D\pagecolor{white})
 
 <!-- 3\mathbf{k}\circ\mathbf{j} -->
 
@@ -248,7 +248,7 @@ Similarly, matrix multiplication typically does not use the dot `·` or cross sy
 
 The dot symbol `·` can be used to denote the [*dot product*](https://en.wikipedia.org/wiki/Dot_product) of two vectors. Sometimes this is called the *scalar product* since it evaluates to a scalar.
 
-![dotcross4](http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ccdot%20%5Cmathbf%7Bj%7D)
+![dotcross4](http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ccdot%20%5Cmathbf%7Bj%7D\pagecolor{white})
 
 <!-- \mathbf{k}\cdot \mathbf{j} -->
 
@@ -274,7 +274,7 @@ function dot(a, b) {
 
 The cross symbol `×` can be used to denote the [*cross product*](https://en.wikipedia.org/wiki/Cross_product) of two vectors.
 
-![dotcross5](http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ctimes%20%5Cmathbf%7Bj%7D)
+![dotcross5](http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ctimes%20%5Cmathbf%7Bj%7D\pagecolor{white})
 
 <!-- \mathbf{k}\times \mathbf{j} -->
 
@@ -314,7 +314,7 @@ For other implementations of vector multiplication, cross product, and dot produ
 
 The big Greek `Σ` (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summation). In other words: summing up some numbers.
 
-![sigma](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B100%7Di)
+![sigma](http://latex.codecogs.com/svg.latex?%5Csum\pagecolor{white}_%7Bi%3D1%7D%5E%7B100%7Di)
 
 <!-- \sum_{i=1}^{100}i -->
 
@@ -338,7 +338,7 @@ var sum = (n * (n + 1)) / 2
 
 Here is another example where the *i*, or the "what to sum," is different:
 
-![sum2](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B100%7D%282i&plus;1%29)
+![sum2](http://latex.codecogs.com/svg.latex?%5Csum\pagecolor{white}_%7Bi%3D1%7D%5E%7B100%7D%282i&plus;1%29)
 
 <!-- \sum_{i=1}^{100}(2i+1) -->
 
@@ -355,7 +355,7 @@ The result of `sum` is `10200`.
 
 The notation can be nested, which is much like nesting a `for` loop. You should evaluate the right-most sigma first, unless the author has enclosed them in parentheses to alter the order. However, in the following case, since we are dealing with finite sums, the order does not matter.
 
-![sigma3](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B2%7D%5Csum_%7Bj%3D4%7D%5E%7B6%7D%283ij%29)
+![sigma3](http://latex.codecogs.com/svg.latex?%5Csum\pagecolor{white}_%7Bi%3D1%7D%5E%7B2%7D%5Csum_%7Bj%3D4%7D%5E%7B6%7D%283ij%29)
 
 <!-- \sum_{i=1}^{2}\sum_{j=4}^{6}(3ij) -->
 
@@ -378,7 +378,7 @@ The capital Pi or "Big Pi" is very similar to [Sigma](#sigma), except we are usi
 
 Take the following:
 
-![capitalPi](http://latex.codecogs.com/svg.latex?%5Cprod_%7Bi%3D1%7D%5E%7B6%7Di)
+![capitalPi](http://latex.codecogs.com/svg.latex?%5Cprod\pagecolor{white}_%7Bi%3D1%7D%5E%7B6%7Di)
 
 <!-- \prod_{i=1}^{6}i -->
 
@@ -401,7 +401,7 @@ These three features all describe the *length* of an object.
 
 #### absolute value 
 
-![pipes1](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%20x%20%5Cright%20%7C)
+![pipes1](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%20x%20%5Cright%20%7C\pagecolor{white})
 
 <!-- \left | x \right | -->
 
@@ -415,7 +415,7 @@ var result = Math.abs(x)
 
 #### Euclidean norm
 
-![pipes4](http://latex.codecogs.com/svg.latex?%5Cleft%20%5C%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%5C%7C)
+![pipes4](http://latex.codecogs.com/svg.latex?%5Cleft%20%5C%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%5C%7C\pagecolor{white})
 
 <!-- \left \| \mathbf{v} \right \| -->
 
@@ -423,7 +423,7 @@ For a vector **v**, `‖v‖` is the [Euclidean norm](https://en.wikipedia.org/w
 
 Often this is represented by double-bars to avoid ambiguity with the *absolute value* notation, but sometimes you may see it with single bars:
 
-![pipes2](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%7C)
+![pipes2](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%7C\pagecolor{white})
 
 <!-- \left | \mathbf{v} \right | -->
 
@@ -454,7 +454,7 @@ Other implementations:
 
 #### determinant
 
-![pipes3](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%5Cmathbf%7BA%7D%20%5Cright%20%7C)
+![pipes3](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%5Cmathbf%7BA%7D%20%5Cright%20%7C\pagecolor{white})
 
 <!-- \left |\mathbf{A}  \right | -->
 
@@ -482,7 +482,7 @@ Implementations:
 
 In geometry, the "hat" symbol above a character is used to represent a [unit vector](https://en.wikipedia.org/wiki/Unit_vector). For example, here is the unit vector of **a**:
 
-![hat](http://latex.codecogs.com/svg.latex?%5Chat%7B%5Cmathbf%7Ba%7D%7D)
+![hat](http://latex.codecogs.com/svg.latex?%5Chat%7B%5Cmathbf%7Ba%7D%7D\pagecolor{white})
 
 <!-- \hat{\mathbf{a}} -->
 
@@ -522,7 +522,7 @@ Other implementations:
 
 In set theory, the "element of" symbol `∈` and `∋` can be used to describe whether something is an element of a *set*. For example:
 
-![element1](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%203%20%5Cin%20A)
+![element1](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%203%20%5Cin%20A\pagecolor{white})
 
 <!-- A=\left \{3,9,14}{  \right \}, 3 \in A -->
 
@@ -548,13 +548,13 @@ A.has(3)
 
 The backwards `∋` is the same, but the order changes:
 
-![element2](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%20A%20%5Cni%203)
+![element2](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%20A%20%5Cni%203\pagecolor{white})
 
 <!-- A=\left \{3,9,14}{  \right \}, A \ni 3 -->
 
 You can also use the "not an element of" symbols `∉` and `∌` like so:
 
-![element3](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%206%20%5Cnotin%20A)
+![element3](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%206%20%5Cnotin%20A\pagecolor{white})
 
 <!-- A=\left \{3,9,14}{  \right \}, 6 \notin A -->
 
@@ -564,7 +564,7 @@ You may see some some large [Blackboard](https://en.wikipedia.org/wiki/Blackboar
 
 For example, we might describe *k* to be an [element of](#element) the set `ℝ`. 
 
-![real](http://latex.codecogs.com/svg.latex?k%20%5Cin%20%5Cmathbb%7BR%7D)
+![real](http://latex.codecogs.com/svg.latex?k%20%5Cin%20%5Cmathbb%7BR%7D\pagecolor{white})
 
 <!-- k \in \mathbb{R} -->
 
@@ -631,13 +631,13 @@ A complex number is a combination of a real and imaginary number, viewed as a co
 
 A function relates an input to an output value. For example, the following is a function:
 
-![function1](http://latex.codecogs.com/svg.latex?x%5E%7B2%7D)
+![function1](http://latex.codecogs.com/svg.latex?x%5E%7B2%7D\pagecolor{white})
 
 <!-- x^{2} -->
 
 We can give this function a *name*. Commonly, we use `ƒ` to describe a function, but it could be named `A(x)` or anything else.
 
-![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
+![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D\pagecolor{white})
 
 <!-- f\left (x  \right ) = x^{2} -->
 
@@ -651,7 +651,7 @@ function square (x) {
 
 Sometimes a function is not named, and instead the output is written.
 
-![function3](http://latex.codecogs.com/svg.latex?y%20%3D%20x%5E%7B2%7D)
+![function3](http://latex.codecogs.com/svg.latex?y%20%3D%20x%5E%7B2%7D\pagecolor{white})
 
 <!-- y = x^{2} -->
 
@@ -659,7 +659,7 @@ In the above example, *x* is the input, the relationship is *squaring*, and *y* 
 
 Functions can also have multiple parameters, like in a programming language. These are known as *arguments* in mathematics, and the number of arguments a function takes is known as the *arity* of the function.
 
-![function4](http://latex.codecogs.com/svg.latex?f%28x%2Cy%29%20%3D%20%5Csqrt%7Bx%5E2%20&plus;%20y%5E2%7D)
+![function4](http://latex.codecogs.com/svg.latex?f%28x%2Cy%29%20%3D%20%5Csqrt%7Bx%5E2%20\pagecolor{white}&plus;%20y%5E2%7D)
 
 <!-- f(x,y) = \sqrt{x^2 + y^2} -->
 
@@ -677,7 +677,7 @@ Some functions will use different relationships depending on the input value, *x
 
 The following function *ƒ* chooses between two "sub functions" depending on the input value.
 
-![piecewise1](http://latex.codecogs.com/svg.latex?f%28x%29%3D%20%5Cbegin%7Bcases%7D%20%5Cfrac%7Bx%5E2-x%7D%7Bx%7D%2C%26%20%5Ctext%7Bif%20%7D%20x%5Cgeq%201%5C%5C%200%2C%20%26%20%5Ctext%7Botherwise%7D%20%5Cend%7Bcases%7D)
+![piecewise1](http://latex.codecogs.com/svg.latex?f%28x%29%3D%20%5Cbegin%7Bcases%7D%20%5Cfrac%7Bx%5E2\pagecolor{white}-x%7D%7Bx%7D%2C%26%20%5Ctext%7Bif%20%7D%20x%5Cgeq%201%5C%5C%200%2C%20%26%20%5Ctext%7Botherwise%7D%20%5Cend%7Bcases%7D)
 
 <!--    f(x)= 
 \begin{cases}
@@ -705,7 +705,7 @@ There are some function names that are ubiquitous in mathematics. For a programm
 
 One such example is the *sgn* function. This is the *signum* or *sign* function. Let's use [piecewise function](#piecewise-function) notation to describe it:
 
-![sgn](http://latex.codecogs.com/svg.latex?sgn%28x%29%20%3A%3D%20%5Cbegin%7Bcases%7D%20-1%26%20%5Ctext%7Bif%20%7D%20x%20%3C%200%5C%5C%200%2C%20%26%20%5Ctext%7Bif%20%7D%20%7Bx%20%3D%200%7D%5C%5C%201%2C%20%26%20%5Ctext%7Bif%20%7D%20x%20%3E%200%5C%5C%20%5Cend%7Bcases%7D)
+![sgn](http://latex.codecogs.com/svg.latex?sgn%28x%29%20%3A%3D%20%5Cbegin%7Bcases%7D%20\pagecolor{white}-1%26%20%5Ctext%7Bif%20%7D%20x%20%3C%200%5C%5C%200%2C%20%26%20%5Ctext%7Bif%20%7D%20%7Bx%20%3D%200%7D%5C%5C%201%2C%20%26%20%5Ctext%7Bif%20%7D%20x%20%3E%200%5C%5C%20%5Cend%7Bcases%7D)
 
 <!-- sgn(x) := 
 \begin{cases}
@@ -732,13 +732,13 @@ Other examples of such functions: *sin*, *cos*, *tan*.
 
 In some literature, functions may be defined with more explicit notation. For example, let's go back to the `square` function we mentioned earlier:
 
-![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
+![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D\pagecolor{white})
 
 <!-- f\left (x  \right ) = x^{2} -->
 
 It might also be written in the following form:
 
-![mapsto](http://latex.codecogs.com/svg.latex?f%20%3A%20x%20%5Cmapsto%20x%5E2)
+![mapsto](http://latex.codecogs.com/svg.latex?f%20%3A%20x%20%5Cmapsto%20x%5E2\pagecolor{white})
 
 <!-- f : x \mapsto x^2 -->
 
@@ -746,7 +746,7 @@ The arrow here with a tail typically means "maps to," as in *x maps to x<sup>2</
 
 Sometimes, when it isn't obvious, the notation will also describe the *domain* and *codomain* of the function. A more formal definition of *ƒ* might be written as:
 
-![funcnot](http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D)
+![funcnot](http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign\pagecolor{white}*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D)
 
 <!-- \begin{align*}
 f :&\mathbb{R} \rightarrow \mathbb{R}\\
@@ -756,7 +756,7 @@ f :&\mathbb{R} \rightarrow \mathbb{R}\\
 
 A function's *domain* and *codomain* is a bit like its *input* and *output* types, respectively. Here's another example, using our earlier *sgn* function, which outputs an integer:
 
-![domain2](http://latex.codecogs.com/svg.latex?sgn%20%3A%20%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BZ%7D)
+![domain2](http://latex.codecogs.com/svg.latex?sgn%20%3A%20%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BZ%7D\pagecolor{white})
 
 <!-- sgn : \mathbb{R} \rightarrow \mathbb{Z} -->
 
@@ -792,13 +792,13 @@ In code, we typically just assign the variable a more descriptive name, like `tr
 
 For a mathematical [function](#function), the prime symbol often describes the *derivative* of that function. Derivatives will be explained in a future section. Let's take our earlier function:
 
-![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
+![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D\pagecolor{white})
 
 <!-- f\left (x  \right ) = x^{2} -->
 
 Its derivative could be written with a prime `′` symbol:
 
-![prime1](http://latex.codecogs.com/svg.latex?f%27%28x%29%20%3D%202x)
+![prime1](http://latex.codecogs.com/svg.latex?f%27%28x%29%20%3D%202x\pagecolor{white})
 
 <!-- f'(x) = 2x -->
 
@@ -820,11 +820,11 @@ Multiple prime symbols can be used to describe the second derivative *ƒ′′* 
 
 The special brackets `⌊x⌋` and `⌈x⌉` represent the *floor* and *ceil* functions, respectively.
 
-![floor](http://latex.codecogs.com/svg.latex?floor%28x%29%20%3D%20%5Clfloor%20x%20%5Crfloor)
+![floor](http://latex.codecogs.com/svg.latex?floor%28x%29%20%3D%20%5Clfloor%20x%20%5Crfloor\pagecolor{white})
 
 <!-- floor(x) =  \lfloor x \rfloor -->
 
-![ceil](http://latex.codecogs.com/svg.latex?ceil%28x%29%20%3D%20%5Clceil%20x%20%5Crceil)
+![ceil](http://latex.codecogs.com/svg.latex?ceil%28x%29%20%3D%20%5Clceil%20x%20%5Crceil\pagecolor{white})
 
 <!-- ceil(x) =  \lceil x \rceil -->
 
@@ -837,7 +837,7 @@ Math.ceil(x)
 
 When the two symbols are mixed `⌊x⌉`, it typically represents a function that rounds to the nearest integer:
 
-![round](http://latex.codecogs.com/svg.latex?round%28x%29%20%3D%20%5Clfloor%20x%20%5Crceil)
+![round](http://latex.codecogs.com/svg.latex?round%28x%29%20%3D%20%5Clfloor%20x%20%5Crceil\pagecolor{white})
 
 <!-- round(x) =  \lfloor x \rceil -->
 
@@ -855,7 +855,7 @@ Arrows are often used in [function notation](#function-notation). Here are a few
 
 Arrows like `⇒` and `→` are sometimes used in logic for *material implication.* That is, if A is true, then B is also true.
 
-![material1](http://latex.codecogs.com/svg.latex?A%20%5CRightarrow%20B)
+![material1](http://latex.codecogs.com/svg.latex?A%20%5CRightarrow%20B\pagecolor{white})
 
 <!-- A \Rightarrow B -->
 
@@ -869,7 +869,7 @@ if (A === true) {
 
 The arrows can go in either direction `⇐` `⇒`, or both `⇔`. When *A ⇒ B* and *B ⇒ A*, they are said to be equivalent:
 
-![material-equiv](http://latex.codecogs.com/svg.latex?A%20%5CLeftrightarrow%20B)
+![material-equiv](http://latex.codecogs.com/svg.latex?A%20%5CLeftrightarrow%20B\pagecolor{white})
 
 <!-- A \Leftrightarrow B -->
 
@@ -886,13 +886,13 @@ In math, the `<` `>` `≤` and `≥` are typically used in the same way we use t
 
 On rare occasions you might see a slash through these symbols, to describe *not*. As in, *k* is "not greater than" *j*.
 
-![ngt](http://latex.codecogs.com/svg.latex?k%20%5Cngtr%20j)
+![ngt](http://latex.codecogs.com/svg.latex?k%20%5Cngtr%20j\pagecolor{white})
 
 <!-- k \ngtr j -->
 
 The `≪` and `≫` are sometimes used to represent *significant* inequality. That is, *k* is an [order of magnitude](https://en.wikipedia.org/wiki/Order_of_magnitude) larger than *j*.
 
-![orderofmag](http://latex.codecogs.com/svg.latex?k%20%5Cgg%20j)
+![orderofmag](http://latex.codecogs.com/svg.latex?k%20%5Cgg%20j\pagecolor{white})
 
 <!-- k \gg j -->
 
@@ -925,7 +925,7 @@ Another use of arrows in logic is conjunction `∧` and disjunction `∨`. They 
 
 The following shows conjunction `∧`, the logical `AND`.
 
-![and](http://latex.codecogs.com/svg.latex?k%20%3E%202%20%5Cland%20k%20%3C%204%20%5CLeftrightarrow%20k%20%3D%203)
+![and](http://latex.codecogs.com/svg.latex?k%20%3E%202%20%5Cland%20k%20%3C%204%20%5CLeftrightarrow%20k%20%3D%203\pagecolor{white})
 
 <!-- k > 2 \land k <  4 \Leftrightarrow k = 3   -->
 
@@ -947,7 +947,7 @@ if (k === 3) {
 
 The down arrow `∨` is logical disjunction, like the OR operator.
 
-![logic-or](http://latex.codecogs.com/svg.latex?A%20%5Clor%20B)
+![logic-or](http://latex.codecogs.com/svg.latex?A%20%5Clor%20B\pagecolor{white})
 
 <!-- A \lor B -->
 
@@ -963,7 +963,7 @@ Occasionally, the `¬`, `~` and `!` symbols are used to represent logical `NOT`.
 
 Here is a simple example using the *not* symbol:
 
-![negation](http://latex.codecogs.com/svg.latex?x%20%5Cneq%20y%20%5CLeftrightarrow%20%5Clnot%28x%20%3D%20y%29)
+![negation](http://latex.codecogs.com/svg.latex?x%20%5Cneq%20y%20%5CLeftrightarrow%20%5Clnot%28x%20%3D%20y%29\pagecolor{white})
 
 <!-- x \neq y \Leftrightarrow \lnot(x = y) -->
 
@@ -983,25 +983,25 @@ Sometimes a function deals with real numbers restricted to some range of values,
 
 For example we can represent the numbers between zero and one including/not including zero and/or one as:
 
-- Not including zero or one: ![interval-opened-left-opened-right](http://latex.codecogs.com/svg.latex?%280%2C%201%29)
+- Not including zero or one: ![interval-opened-left-opened-right](http://latex.codecogs.com/svg.latex?%280%2C%201%29\pagecolor{white})
 
 <!-- (0, 1) -->
 
-- Including zero or but not one: ![interval-closed-left-opened-right](http://latex.codecogs.com/svg.latex?%5B0%2C%201%29)
+- Including zero or but not one: ![interval-closed-left-opened-right](http://latex.codecogs.com/svg.latex?%5B0%2C%201%29\pagecolor{white})
 
 <!-- [0, 1) -->
 
-- Not including zero but including one: ![interval-opened-left-closed-right](http://latex.codecogs.com/svg.latex?%280%2C%201%5D)
+- Not including zero but including one: ![interval-opened-left-closed-right](http://latex.codecogs.com/svg.latex?%280%2C%201%5D\pagecolor{white})
 
 <!-- (0, 1] -->
 
-- Including zero and one: ![interval-closed-left-closed-right](http://latex.codecogs.com/svg.latex?%5B0%2C%201%5D)
+- Including zero and one: ![interval-closed-left-closed-right](http://latex.codecogs.com/svg.latex?%5B0%2C%201%5D\pagecolor{white})
 
 <!-- [0, 1] -->
 
 For example we to indicate that a point `x` is in the unit cube in 3D we say:
 
-![interval-unit-cube](http://latex.codecogs.com/svg.latex?x%20%5Cin%20%5B0%2C%201%5D%5E3)
+![interval-unit-cube](http://latex.codecogs.com/svg.latex?x%20%5Cin%20%5B0%2C%201%5D%5E3\pagecolor{white})
 
 <!-- x \in [0, 1]^3 -->
 
@@ -1018,15 +1018,15 @@ var d = [0, 1]                                                // closed interval
 
 Intervals are used in conjunction with set operations:
 
-- *intersection* e.g. ![interval-intersection](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20%5Ccap%20%5B4%2C%206%5D%20%3D%20%5B4%2C%205%29)
+- *intersection* e.g. ![interval-intersection](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20%5Ccap%20%5B4%2C%206%5D%20%3D%20%5B4%2C%205%29\pagecolor{white})
 
 <!-- [3, 5) \cap [4, 6] = [4, 5) -->
 
-- *union* e.g. ![interval-union](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20%5Ccup%20%5B4%2C%206%5D%20%3D%20%5B3%2C%206%5D)
+- *union* e.g. ![interval-union](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20%5Ccup%20%5B4%2C%206%5D%20%3D%20%5B3%2C%206%5D\pagecolor{white})
 
 <!-- [3, 5) \cup [4, 6] = [3, 6] -->
 
-- *difference* e.g. ![interval-difference-1](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20-%20%5B4%2C%206%5D%20%3D%20%5B3%2C%204%29) and ![interval-difference-2](http://latex.codecogs.com/svg.latex?%5B4%2C%206%5D%20-%20%5B3%2C%205%29%20%3D%20%5B5%2C%206%5D)
+- *difference* e.g. ![interval-difference-1](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20\pagecolor{white}-%20%5B4%2C%206%5D%20%3D%20%5B3%2C%204%29) and ![interval-difference-2](http://latex.codecogs.com/svg.latex?%5B4%2C%206%5D%20\pagecolor{white}-%20%5B3%2C%205%29%20%3D%20%5B5%2C%206%5D)
 
 <!-- [3, 5) - [4, 6] = [3, 4) -->
 <!-- [4, 6] - [3, 5)  = [5, 6] -->

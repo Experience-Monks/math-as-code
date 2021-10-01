@@ -93,7 +93,7 @@ function almostEqual(a, b, epsilon) {
 
 例如，下边定义 *x* 为 2*kj* 的别名。
 
-![equals1](http://latex.codecogs.com/svg.latex?x%20%3A%3D%202kj)
+![equals1](http://latex.codecogs.com/svg.latex?x%20%3A%3D%202kj\pagecolor{white})
 
 <!-- x := 2kj -->
 
@@ -113,7 +113,7 @@ const f = (k, j) => 2 * k * j
 
 与此不同的是，下边这句表示的是相等：
 
-![equals2](http://latex.codecogs.com/svg.latex?x%20%3D%202kj)
+![equals2](http://latex.codecogs.com/svg.latex?x%20%3D%202kj\pagecolor{white})
 
 <!-- x = 2kj -->
 
@@ -127,7 +127,7 @@ console.assert(x === (2 * k * j))
 
 一个平方根运算是这种形式:
 
-![squareroot](http://latex.codecogs.com/svg.latex?%5Cleft%28%5Csqrt%7Bx%7D%5Cright%29%5E2%20%3D%20x)
+![squareroot](http://latex.codecogs.com/svg.latex?%5Cleft%28%5Csqrt%7Bx%7D%5Cright%29%5E2%20%3D%20x\pagecolor{white})
 
 <!-- \left(\sqrt{x}\right)^2 = x -->
 
@@ -139,9 +139,9 @@ console.log(Math.sqrt(x));
 //=> 3
 ```
 
-复数是 ![complex](http://latex.codecogs.com/svg.latex?a&space;&plus;&space;ib) 形式的表达式， 其中 ![a](http://latex.codecogs.com/svg.latex?a) 是实数部分， ![b](http://latex.codecogs.com/svg.latex?b) 是虚数部分。 虚数 ![i](http://latex.codecogs.com/svg.latex?i) 的定义为：
+复数是 ![complex](http://latex.codecogs.com/svg.latex?a\pagecolor{white}&space;&plus;&space;ib) 形式的表达式， 其中 ![a](http://latex.codecogs.com/svg.latex?a\pagecolor{white}) 是实数部分， ![b](http://latex.codecogs.com/svg.latex?b\pagecolor{white}) 是虚数部分。 虚数 ![i](http://latex.codecogs.com/svg.latex?i\pagecolor{white}) 的定义为：
 
-![imaginary](http://latex.codecogs.com/svg.latex?i%3D%5Csqrt%7B-1%7D).
+![imaginary](http://latex.codecogs.com/svg.latex?i%3D%5Csqrt%7B\pagecolor{white}-1%7D).
 <!-- i=\sqrt{-1} -->
 
 JavaScript没有内置复数的功能，但有一些库支持复数算法。例如， [mathjs](https://www.npmjs.com/package/mathjs):
@@ -182,7 +182,7 @@ console.log(math.eval('(3 - i) * i').toString())
 
 两个符号都可以表示简单的标量之间的乘法。下边的写法意思相同：
 
-![dotcross1](http://latex.codecogs.com/svg.latex?5%20%5Ccdot%204%20%3D%205%20%5Ctimes%204)
+![dotcross1](http://latex.codecogs.com/svg.latex?5%20%5Ccdot%204%20%3D%205%20%5Ctimes%204\pagecolor{white})
 
 <!-- 5 \cdot 4 = 5 \times 4 -->
 
@@ -194,7 +194,7 @@ var result = 5 * 4
 
 通常，使用乘法符号只是为了避免意义模糊（例如两个数字之间的）。这里，我们可以完全省略：
 
-![dotcross2](http://latex.codecogs.com/svg.latex?3kj)
+![dotcross2](http://latex.codecogs.com/svg.latex?3kj\pagecolor{white})
 
 <!-- 3kj -->
 
@@ -210,7 +210,7 @@ var result = 3 * k * j
 
 让我们用之前的例子，但用在向量上。对于向量的逐元素相乘（element-wise vector multiplication）来说，你可能会看到用一个空心点来表示 [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_%28matrices%29)。<sup>[2]</sup>
 
-![dotcross3](http://latex.codecogs.com/svg.latex?3%5Cmathbf%7Bk%7D%5Ccirc%5Cmathbf%7Bj%7D)
+![dotcross3](http://latex.codecogs.com/svg.latex?3%5Cmathbf%7Bk%7D%5Ccirc%5Cmathbf%7Bj%7D\pagecolor{white})
 
 <!-- 3\mathbf{k}\circ\mathbf{j} -->
 
@@ -246,7 +246,7 @@ function multiplyScalar(a, scalar) {
 
 点符号 `·` 可用来表示两向量之间的 [*点乘*](https://en.wikipedia.org/wiki/Dot_product) 。 由于其值是一个标量，通常被叫做 *标量积（scalar product）* 。
 
-![dotcross4](http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ccdot%20%5Cmathbf%7Bj%7D)
+![dotcross4](http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ccdot%20%5Cmathbf%7Bj%7D\pagecolor{white})
 
 <!-- \mathbf{k}\cdot \mathbf{j} -->
 
@@ -272,7 +272,7 @@ function dot(a, b) {
 
 叉乘符号 `×` 可以用来表示两向量的 [*叉乘*](https://en.wikipedia.org/wiki/Cross_product)。
 
-![dotcross5](http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ctimes%20%5Cmathbf%7Bj%7D)
+![dotcross5](http://latex.codecogs.com/svg.latex?%5Cmathbf%7Bk%7D%5Ctimes%20%5Cmathbf%7Bj%7D\pagecolor{white})
 
 <!-- \mathbf{k}\times \mathbf{j} -->
 
@@ -312,7 +312,7 @@ function cross(a, b) {
 
 大写希腊字母 `Σ` (Sigma) 用来表示 [总和 Summation](https://en.wikipedia.org/wiki/Summation)。 换句话说就是对一些数字求和。
 
-![sigma](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B100%7Di)
+![sigma](http://latex.codecogs.com/svg.latex?%5Csum\pagecolor{white}_%7Bi%3D1%7D%5E%7B100%7Di)
 
 <!-- \sum_{i=1}^{100}i -->
 
@@ -336,7 +336,7 @@ var sum = (n * (n + 1)) / 2
 
 这里有另一个例子，这里的 *i* ，或 “想要求和的东西” 是不同的：
 
-![sum2](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B100%7D%282i&plus;1%29)
+![sum2](http://latex.codecogs.com/svg.latex?%5Csum\pagecolor{white}_%7Bi%3D1%7D%5E%7B100%7D%282i&plus;1%29)
 
 <!-- \sum_{i=1}^{100}(2i+1) -->
 
@@ -353,7 +353,7 @@ for (var i = 1; i <= 100; i++) {
 
 这个符号可被嵌套，非常像嵌套一个 `for` 循环。 你应该先求和最右边的西格玛， 除非作者加入括号改变了顺序。然而下边的例子，由于我们处理有限的和，顺序就不重要了。
 
-![sigma3](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B2%7D%5Csum_%7Bj%3D4%7D%5E%7B6%7D%283ij%29)
+![sigma3](http://latex.codecogs.com/svg.latex?%5Csum\pagecolor{white}_%7Bi%3D1%7D%5E%7B2%7D%5Csum_%7Bj%3D4%7D%5E%7B6%7D%283ij%29)
 
 <!-- \sum_{i=1}^{2}\sum_{j=4}^{6}(3ij) -->
 
@@ -376,7 +376,7 @@ for (var i = 1; i <= 2; i++) {
 
 看下边：
 
-![capitalPi](http://latex.codecogs.com/svg.latex?%5Cprod_%7Bi%3D1%7D%5E%7B6%7Di)
+![capitalPi](http://latex.codecogs.com/svg.latex?%5Cprod\pagecolor{white}_%7Bi%3D1%7D%5E%7B6%7Di)
 
 <!-- \prod_{i=1}^{6}i -->
 
@@ -399,7 +399,7 @@ for (var i = 1; i <= 6; i++) {
 
 #### 绝对值
 
-![pipes1](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%20x%20%5Cright%20%7C)
+![pipes1](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%20x%20%5Cright%20%7C\pagecolor{white})
 
 <!-- \left | x \right | -->
 
@@ -413,7 +413,7 @@ var result = Math.abs(x)
 
 #### 欧几里得模（Euclidean norm）
 
-![pipes4](http://latex.codecogs.com/svg.latex?%5Cleft%20%5C%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%5C%7C)
+![pipes4](http://latex.codecogs.com/svg.latex?%5Cleft%20%5C%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%5C%7C\pagecolor{white})
 
 <!-- \left \| \mathbf{v} \right \| -->
 
@@ -421,7 +421,7 @@ var result = Math.abs(x)
 
 通常用双竖线表示来避免与*绝对值* 符号混淆，但有些时候也会看见单竖线。
 
-![pipes2](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%7C)
+![pipes2](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%20%5Cmathbf%7Bv%7D%20%5Cright%20%7C\pagecolor{white})
 
 <!-- \left | \mathbf{v} \right | -->
 
@@ -452,7 +452,7 @@ function length (vec) {
 
 #### 行列式
 
-![pipes3](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%5Cmathbf%7BA%7D%20%5Cright%20%7C)
+![pipes3](http://latex.codecogs.com/svg.latex?%5Cleft%20%7C%5Cmathbf%7BA%7D%20%5Cright%20%7C\pagecolor{white})
 
 <!-- \left |\mathbf{A}  \right | -->
 
@@ -480,7 +480,7 @@ var det = determinant(matrix)
 
 在几何里，字母上的 “帽子” 符号用来表示一个[单位向量](https://en.wikipedia.org/wiki/Unit_vector)。例如，这是向量 **a** 的单位向量。
 
-![hat](http://latex.codecogs.com/svg.latex?%5Chat%7B%5Cmathbf%7Ba%7D%7D)
+![hat](http://latex.codecogs.com/svg.latex?%5Chat%7B%5Cmathbf%7Ba%7D%7D\pagecolor{white})
 
 <!-- \hat{\mathbf{a}} -->
 
@@ -520,7 +520,7 @@ function normalize(vec) {
 
 集合理论中，“属于”符号 `∈` 和 `∋` 可以被用来描述某物是否为集合中的一个元素。例如：
 
-![element1](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%203%20%5Cin%20A)
+![element1](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%203%20%5Cin%20A\pagecolor{white})
 
 <!-- A=\left \{3,9,14}{  \right \}, 3 \in A -->
 
@@ -546,13 +546,13 @@ A.has(3)
 
 反向的 `∋` 意义相同，只是顺序改变：
 
-![element2](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%20A%20%5Cni%203)
+![element2](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%20A%20%5Cni%203\pagecolor{white})
 
 <!-- A=\left \{3,9,14}{  \right \}, A \ni 3 -->
 
 你可以使用 "不属于" 符号 `∉` 和 `∌` 像这样：
 
-![element3](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%206%20%5Cnotin%20A)
+![element3](http://latex.codecogs.com/svg.latex?A%3D%5Cleft%20%5C%7B3%2C9%2C14%7D%7B%20%5Cright%20%5C%7D%2C%206%20%5Cnotin%20A\pagecolor{white})
 
 <!-- A=\left \{3,9,14}{  \right \}, 6 \notin A -->
 
@@ -562,7 +562,7 @@ A.has(3)
 
 例如，我们可以描述 *k* 是[属于](#属于) `ℝ` 集的一个元素。
 
-![real](http://latex.codecogs.com/svg.latex?k%20%5Cin%20%5Cmathbb%7BR%7D)
+![real](http://latex.codecogs.com/svg.latex?k%20%5Cin%20%5Cmathbb%7BR%7D\pagecolor{white})
 
 <!-- k \in \mathbb{R} -->
 
@@ -629,13 +629,13 @@ function isNaturalNumber (n) {
 
 函数把输入输出值联系起来。例如下边是一个函数：
 
-![function1](http://latex.codecogs.com/svg.latex?x%5E%7B2%7D)
+![function1](http://latex.codecogs.com/svg.latex?x%5E%7B2%7D\pagecolor{white})
 
 <!-- x^{2} -->
 
 我们可以给函数一个 *名字* 。一般来说我们用  `ƒ` 来描述一个函数，但也可以命名为 `A(x)` 或其他什么。
 
-![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
+![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D\pagecolor{white})
 
 <!-- f\left (x  \right ) = x^{2} -->
 
@@ -649,7 +649,7 @@ function square (x) {
 
 有时函数没有名字，而是直接写出输出值。
 
-![function3](http://latex.codecogs.com/svg.latex?y%20%3D%20x%5E%7B2%7D)
+![function3](http://latex.codecogs.com/svg.latex?y%20%3D%20x%5E%7B2%7D\pagecolor{white})
 
 <!-- y = x^{2} -->
 
@@ -657,7 +657,7 @@ function square (x) {
 
 像编程语言一样，函数也可以有多个参数。他们在数学中被称为 *arguments*，并且函数接受的参数数量被称为函数的 *arity* 。
 
-![function4](http://latex.codecogs.com/svg.latex?f%28x%2Cy%29%20%3D%20%5Csqrt%7Bx%5E2%20&plus;%20y%5E2%7D)
+![function4](http://latex.codecogs.com/svg.latex?f%28x%2Cy%29%20%3D%20%5Csqrt%7Bx%5E2%20\pagecolor{white}&plus;%20y%5E2%7D)
 
 <!-- f(x,y) = \sqrt{x^2 + y^2} -->
 
@@ -675,7 +675,7 @@ function length (x, y) {
 
 下边的函数 *f* 根据不同的输入值选择两个不同的“子函数”。
 
-![piecewise1](http://latex.codecogs.com/svg.latex?f%28x%29%3D%20%5Cbegin%7Bcases%7D%20%5Cfrac%7Bx%5E2-x%7D%7Bx%7D%2C%26%20%5Ctext%7Bif%20%7D%20x%5Cgeq%201%5C%5C%200%2C%20%26%20%5Ctext%7Botherwise%7D%20%5Cend%7Bcases%7D)
+![piecewise1](http://latex.codecogs.com/svg.latex?f%28x%29%3D%20%5Cbegin%7Bcases%7D%20%5Cfrac%7Bx%5E2\pagecolor{white}-x%7D%7Bx%7D%2C%26%20%5Ctext%7Bif%20%7D%20x%5Cgeq%201%5C%5C%200%2C%20%26%20%5Ctext%7Botherwise%7D%20%5Cend%7Bcases%7D)
 
 <!--    f(x)= 
 \begin{cases}
@@ -703,7 +703,7 @@ function f (x) {
 
 一个例子就是 *sgn* 函数。这是 *正负号* 函数，或者叫 *符号* 函数。让我们用[分段函数](#分段函数)来描述它：
 
-![sgn](http://latex.codecogs.com/svg.latex?sgn%28x%29%20%3A%3D%20%5Cbegin%7Bcases%7D%20-1%26%20%5Ctext%7Bif%20%7D%20x%20%3C%200%5C%5C%200%2C%20%26%20%5Ctext%7Bif%20%7D%20%7Bx%20%3D%200%7D%5C%5C%201%2C%20%26%20%5Ctext%7Bif%20%7D%20x%20%3E%200%5C%5C%20%5Cend%7Bcases%7D)
+![sgn](http://latex.codecogs.com/svg.latex?sgn%28x%29%20%3A%3D%20%5Cbegin%7Bcases%7D%20\pagecolor{white}-1%26%20%5Ctext%7Bif%20%7D%20x%20%3C%200%5C%5C%200%2C%20%26%20%5Ctext%7Bif%20%7D%20%7Bx%20%3D%200%7D%5C%5C%201%2C%20%26%20%5Ctext%7Bif%20%7D%20x%20%3E%200%5C%5C%20%5Cend%7Bcases%7D)
 
 <!-- sgn(x) := 
 \begin{cases}
@@ -730,13 +730,13 @@ function sgn (x) {
 
 在某些著作中，函数可以被更明确的符号定义。例如，让我们回到之前提到的 `square` 函数。
 
-![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
+![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D\pagecolor{white})
 
 <!-- f\left (x  \right ) = x^{2} -->
 
 也可以写为以下形式：
 
-![mapsto](http://latex.codecogs.com/svg.latex?f%20%3A%20x%20%5Cmapsto%20x%5E2)
+![mapsto](http://latex.codecogs.com/svg.latex?f%20%3A%20x%20%5Cmapsto%20x%5E2\pagecolor{white})
 
 <!-- f : x \mapsto x^2 -->
 
@@ -744,7 +744,7 @@ function sgn (x) {
 
 有时，不是很常见，这个符号也用来描述函数的 *domain* 和 *codomain*。对 *ƒ* 更正式的定义可以写为：
 
-![funcnot](http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D)
+![funcnot](http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign\pagecolor{white}*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D)
 
 <!-- \begin{align*}
 f :&\mathbb{R} \rightarrow \mathbb{R}\\
@@ -754,7 +754,7 @@ f :&\mathbb{R} \rightarrow \mathbb{R}\\
 
 函数的 *domain* 和 *codomain* 分别跟他的 *input* 和 *output* 类型有点像。这里有另一个例子，使用了我们之前输出整数的 *sgn* 函数。
 
-![domain2](http://latex.codecogs.com/svg.latex?sgn%20%3A%20%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BZ%7D)
+![domain2](http://latex.codecogs.com/svg.latex?sgn%20%3A%20%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BZ%7D\pagecolor{white})
 
 <!-- sgn : \mathbb{R} \rightarrow \mathbb{Z} -->
 
@@ -790,13 +790,13 @@ function square (a) {
 
 对于一个[函数](#函数)，撇号通常描述为函数的 *导函数（derivative）* 。导函数会在未来的章节解释。我们来看一个之前的函数：
 
-![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D)
+![function2](http://latex.codecogs.com/svg.latex?f%5Cleft%20%28x%20%5Cright%20%29%20%3D%20x%5E%7B2%7D\pagecolor{white})
 
 <!-- f\left (x  \right ) = x^{2} -->
 
 它的导函数（derivative）可以写为一个带撇号`′`的函数：
 
-![prime1](http://latex.codecogs.com/svg.latex?f%27%28x%29%20%3D%202x)
+![prime1](http://latex.codecogs.com/svg.latex?f%27%28x%29%20%3D%202x\pagecolor{white})
 
 <!-- f'(x) = 2x -->
 
@@ -818,11 +818,11 @@ function fPrime (x) {
 
 `⌊x⌋` 和 `⌈x⌉` 这种特殊的括号分别用来表示*floor* 和 *ceil* 函数。 
 
-![floor](http://latex.codecogs.com/svg.latex?floor%28x%29%20%3D%20%5Clfloor%20x%20%5Crfloor)
+![floor](http://latex.codecogs.com/svg.latex?floor%28x%29%20%3D%20%5Clfloor%20x%20%5Crfloor\pagecolor{white})
 
 <!-- floor(x) =  \lfloor x \rfloor -->
 
-![ceil](http://latex.codecogs.com/svg.latex?ceil%28x%29%20%3D%20%5Clceil%20x%20%5Crceil)
+![ceil](http://latex.codecogs.com/svg.latex?ceil%28x%29%20%3D%20%5Clceil%20x%20%5Crceil\pagecolor{white})
 
 <!-- ceil(x) =  \lceil x \rceil -->
 
@@ -835,7 +835,7 @@ Math.ceil(x)
 
 当这两个符号混合`⌊x⌉`，它通常表示一个取整到最近的整数的函数。
 
-![round](http://latex.codecogs.com/svg.latex?round%28x%29%20%3D%20%5Clfloor%20x%20%5Crceil)
+![round](http://latex.codecogs.com/svg.latex?round%28x%29%20%3D%20%5Clfloor%20x%20%5Crceil\pagecolor{white})
 
 <!-- round(x) =  \lfloor x \rceil -->
 
@@ -853,7 +853,7 @@ Math.round(x)
 
 `⇒` 和 `→` 优势被用作表示实质蕴涵（material implication）的逻辑。意思是如果A是true，那么B也是true。
 
-![material1](http://latex.codecogs.com/svg.latex?A%20%5CRightarrow%20B)
+![material1](http://latex.codecogs.com/svg.latex?A%20%5CRightarrow%20B\pagecolor{white})
 
 <!-- A \Rightarrow B -->
 
@@ -867,7 +867,7 @@ if (A === true) {
 
 箭头可以是左右任何方向 `⇐` `⇒`，也可以双向`⇔`。当 *A ⇒ B* 并且 *B ⇒ A*，就是他们是相等的：
 
-![material-equiv](http://latex.codecogs.com/svg.latex?A%20%5CLeftrightarrow%20B)
+![material-equiv](http://latex.codecogs.com/svg.latex?A%20%5CLeftrightarrow%20B\pagecolor{white})
 
 <!-- A \Leftrightarrow B -->
 
@@ -884,13 +884,13 @@ if (A === true) {
 
 偶尔会看到在这些符号上加了一条斜线，来表示 *不*，比如， *k* 不 "大于" *j*.
 
-![ngt](http://latex.codecogs.com/svg.latex?k%20%5Cngtr%20j)
+![ngt](http://latex.codecogs.com/svg.latex?k%20%5Cngtr%20j\pagecolor{white})
 
 <!-- k \ngtr j -->
 
  `≪` 和 `≫`通常用来表示 *明显（significant）* 不相等。这是说 *k* 是有[数量级（order of magnitude）](https://en.wikipedia.org/wiki/Order_of_magnitude)的大于 *j*。
 
-![orderofmag](http://latex.codecogs.com/svg.latex?k%20%5Cgg%20j)
+![orderofmag](http://latex.codecogs.com/svg.latex?k%20%5Cgg%20j\pagecolor{white})
 
 <!-- k \gg j -->
 
@@ -923,7 +923,7 @@ function orderOfMagnitude (n) {
 
 下边展示了与（conjunction）`∧`， 逻辑中的`AND`.
 
-![and](http://latex.codecogs.com/svg.latex?k%20%3E%202%20%5Cland%20k%20%3C%204%20%5CLeftrightarrow%20k%20%3D%203)
+![and](http://latex.codecogs.com/svg.latex?k%20%3E%202%20%5Cland%20k%20%3C%204%20%5CLeftrightarrow%20k%20%3D%203\pagecolor{white})
 
 <!-- k > 2 \land k <  4 \Leftrightarrow k = 3   -->
 
@@ -945,7 +945,7 @@ if (k === 3) {
 
 下箭头 `∨` 是逻辑或（disjunction），就像 OR 操作符一样。
 
-![logic-or](http://latex.codecogs.com/svg.latex?A%20%5Clor%20B)
+![logic-or](http://latex.codecogs.com/svg.latex?A%20%5Clor%20B\pagecolor{white})
 
 <!-- A \lor B -->
 
@@ -961,7 +961,7 @@ A || B
 
 这里是一个使用 *not* 符号简单的例子：
 
-![negation](http://latex.codecogs.com/svg.latex?x%20%5Cneq%20y%20%5CLeftrightarrow%20%5Clnot%28x%20%3D%20y%29)
+![negation](http://latex.codecogs.com/svg.latex?x%20%5Cneq%20y%20%5CLeftrightarrow%20%5Clnot%28x%20%3D%20y%29\pagecolor{white})
 
 <!-- x \neq y \Leftrightarrow \lnot(x = y) -->
 
@@ -981,25 +981,25 @@ if (x !== y) {
 
 例如我们可以表示0和1之间的数，让他们包含或不包含0和1：
 
-- 不包含0或1： ![interval-opened-left-opened-right](http://latex.codecogs.com/svg.latex?%280%2C%201%29)
+- 不包含0或1： ![interval-opened-left-opened-right](http://latex.codecogs.com/svg.latex?%280%2C%201%29\pagecolor{white})
 
 <!-- (0, 1) -->
 
-- 包含0但不包含1： ![interval-closed-left-opened-right](http://latex.codecogs.com/svg.latex?%5B0%2C%201%29)
+- 包含0但不包含1： ![interval-closed-left-opened-right](http://latex.codecogs.com/svg.latex?%5B0%2C%201%29\pagecolor{white})
 
 <!-- [0, 1) -->
 
-- 不包含0但包含1： ![interval-opened-left-closed-right](http://latex.codecogs.com/svg.latex?%280%2C%201%5D)
+- 不包含0但包含1： ![interval-opened-left-closed-right](http://latex.codecogs.com/svg.latex?%280%2C%201%5D\pagecolor{white})
 
 <!-- (0, 1] -->
 
-- 包含0和1： ![interval-closed-left-closed-right](http://latex.codecogs.com/svg.latex?%5B0%2C%201%5D)
+- 包含0和1： ![interval-closed-left-closed-right](http://latex.codecogs.com/svg.latex?%5B0%2C%201%5D\pagecolor{white})
 
 <!-- [0, 1] -->
 
 例如我们指出一个点 `x` 在3D单位立方体中，我们可以说：
 
-![interval-unit-cube](http://latex.codecogs.com/svg.latex?x%20%5Cin%20%5B0%2C%201%5D%5E3)
+![interval-unit-cube](http://latex.codecogs.com/svg.latex?x%20%5Cin%20%5B0%2C%201%5D%5E3\pagecolor{white})
 
 <!-- x \in [0, 1]^3 -->
 
@@ -1016,15 +1016,15 @@ var d = [0, 1]                                                // 闭区间
 
 区间与集合运算结合符使用：
 
-- *交集（intersection）* e.g. ![interval-intersection](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20%5Ccap%20%5B4%2C%206%5D%20%3D%20%5B4%2C%205%29)
+- *交集（intersection）* e.g. ![interval-intersection](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20%5Ccap%20%5B4%2C%206%5D%20%3D%20%5B4%2C%205%29\pagecolor{white})
 
 <!-- [3, 5) \cap [4, 6] = [4, 5) -->
 
-- *并集（union）* e.g. ![interval-union](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20%5Ccup%20%5B4%2C%206%5D%20%3D%20%5B3%2C%206%5D)
+- *并集（union）* e.g. ![interval-union](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20%5Ccup%20%5B4%2C%206%5D%20%3D%20%5B3%2C%206%5D\pagecolor{white})
 
 <!-- [3, 5) \cup [4, 6] = [3, 6] -->
 
-- *差集（difference）* e.g. ![interval-difference-1](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20-%20%5B4%2C%206%5D%20%3D%20%5B3%2C%204%29) 还有 ![interval-difference-2](http://latex.codecogs.com/svg.latex?%5B4%2C%206%5D%20-%20%5B3%2C%205%29%20%3D%20%5B5%2C%206%5D)
+- *差集（difference）* e.g. ![interval-difference-1](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20\pagecolor{white}-%20%5B4%2C%206%5D%20%3D%20%5B3%2C%204%29) 还有 ![interval-difference-2](http://latex.codecogs.com/svg.latex?%5B4%2C%206%5D%20\pagecolor{white}-%20%5B3%2C%205%29%20%3D%20%5B5%2C%206%5D)
 
 <!-- [3, 5) - [4, 6] = [3, 4) -->
 <!-- [4, 6] - [3, 5)  = [5, 6] -->
