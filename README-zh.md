@@ -744,7 +744,7 @@ function sgn (x) {
 
 有时，不是很常见，这个符号也用来描述函数的 *domain* 和 *codomain*。对 *ƒ* 更正式的定义可以写为：
 
-![funcnot](http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign\pagecolor{white}*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D)
+![funcnot](http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D\pagecolor{white})
 
 <!-- \begin{align*}
 f :&\mathbb{R} \rightarrow \mathbb{R}\\

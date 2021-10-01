@@ -183,7 +183,7 @@ print(np.sqrt(2))
 
 Complex numbers are expressions of the form ![complex](http://latex.codecogs.com/svg.latex?a\pagecolor{white}&space;&plus;&space;ib), where ![a](http://latex.codecogs.com/svg.latex?a\pagecolor{white}) is the real part and ![b](http://latex.codecogs.com/svg.latex?b\pagecolor{white}) is the imaginary part. The imaginary number ![i](http://latex.codecogs.com/svg.latex?i\pagecolor{white}) is defined as:
 
-![imaginary](http://latex.codecogs.com/svg.latex?i%3D%5Csqrt%7B\pagecolor{white}-1%7D).
+![imaginary](http://latex.codecogs.com/svg.latex?i%3D%5Csqrt%7B-1%7D\pagecolor{white}).
 <!-- i=\sqrt{-1} -->
 
 Vanilla python has a `complex` constructor, and a standard module `cmath` for working with them. 
@@ -375,7 +375,7 @@ Numpy.
 
 The big Greek `Σ` (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summation). In other words: summing up some numbers.
 
-![sigma](http://latex.codecogs.com/svg.latex?%5Csum\pagecolor{white}_%7Bi%3D1%7D%5E%7B100%7Di)
+![sigma](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B100%7Di\pagecolor{white})
 
 <!-- \sum_{i=1}^{100}i -->
 
@@ -400,7 +400,7 @@ def sum_to_n(n):
 
 Here is another example where the *i*, or the "what to sum," is different:
 
-![sum2](http://latex.codecogs.com/svg.latex?%5Csum\pagecolor{white}_%7Bi%3D1%7D%5E%7B100%7D%282i&plus;1%29)
+![sum2](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B100%7D%282i&plus;1%29\pagecolor{white})
 
 <!-- \sum_{i=1}^{100}(2i+1) -->
 
@@ -422,7 +422,7 @@ evaluate the right-most sigma first, unless the author has enclosed them in
 parentheses to alter the order. However, in the following case, since we are
 dealing with finite sums, the order does not matter.
 
-![sigma3](http://latex.codecogs.com/svg.latex?%5Csum\pagecolor{white}_%7Bi%3D1%7D%5E%7B2%7D%5Csum_%7Bj%3D4%7D%5E%7B6%7D%283ij%29)
+![sigma3](http://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7B2%7D%5Csum_%7Bj%3D4%7D%5E%7B6%7D%283ij%29\pagecolor{white})
 
 <!-- \sum_{i=1}^{2}\sum_{j=4}^{6}(3ij) -->
 
@@ -445,7 +445,7 @@ The capital Pi or "Big Pi" is very similar to [Sigma](#sigma), except we are usi
 
 Take the following:
 
-![capitalPi](http://latex.codecogs.com/svg.latex?%5Cprod\pagecolor{white}_%7Bi%3D1%7D%5E%7B6%7Di)
+![capitalPi](http://latex.codecogs.com/svg.latex?%5Cprod_%7Bi%3D1%7D%5E%7B6%7Di\pagecolor{white})
 
 <!-- \prod_{i=1}^{6}i -->
 
@@ -865,7 +865,7 @@ lambda x: x**2
 
 Functions can also have multiple parameters, like in a programming language. These are known as *arguments* in mathematics, and the number of arguments a function takes is known as the *arity* of the function.
 
-![function4](http://latex.codecogs.com/svg.latex?f%28x%2Cy%29%20%3D%20%5Csqrt%7Bx%5E2%20\pagecolor{white}&plus;%20y%5E2%7D)
+![function4](http://latex.codecogs.com/svg.latex?f%28x%2Cy%29%20%3D%20%5Csqrt%7Bx%5E2%20&plus;%20y%5E2%7D\pagecolor{white})
 
 <!-- f(x,y) = \sqrt{x^2 + y^2} -->
 
@@ -892,7 +892,7 @@ Some functions will use different relationships depending on the input value, *x
 
 The following function *ƒ* chooses between two "sub functions" depending on the input value.
 
-![piecewise1](http://latex.codecogs.com/svg.latex?f%28x%29%3D%20%5Cbegin%7Bcases%7D%20%5Cfrac%7Bx%5E2\pagecolor{white}-x%7D%7Bx%7D%2C%26%20%5Ctext%7Bif%20%7D%20x%5Cgeq%201%5C%5C%200%2C%20%26%20%5Ctext%7Botherwise%7D%20%5Cend%7Bcases%7D)
+![piecewise1](http://latex.codecogs.com/svg.latex?f%28x%29%3D%20%5Cbegin%7Bcases%7D%20%5Cfrac%7Bx%5E2-x%7D%7Bx%7D%2C%26%20%5Ctext%7Bif%20%7D%20x%5Cgeq%201%5C%5C%200%2C%20%26%20%5Ctext%7Botherwise%7D%20%5Cend%7Bcases%7D\pagecolor{white})
 
 <!--    f(x)= 
 \begin{cases}
@@ -919,7 +919,7 @@ There are some function names that are ubiquitous in mathematics. For a programm
 
 One such example is the *sgn* function. This is the *signum* or *sign* function. Let's use [piecewise function](#piecewise-function) notation to describe it:
 
-![sgn](http://latex.codecogs.com/svg.latex?sgn%28x%29%20%3A%3D%20%5Cbegin%7Bcases%7D%20\pagecolor{white}-1%26%20%5Ctext%7Bif%20%7D%20x%20%3C%200%5C%5C%200%2C%20%26%20%5Ctext%7Bif%20%7D%20%7Bx%20%3D%200%7D%5C%5C%201%2C%20%26%20%5Ctext%7Bif%20%7D%20x%20%3E%200%5C%5C%20%5Cend%7Bcases%7D)
+![sgn](http://latex.codecogs.com/svg.latex?sgn%28x%29%20%3A%3D%20%5Cbegin%7Bcases%7D%20-1%26%20%5Ctext%7Bif%20%7D%20x%20%3C%200%5C%5C%200%2C%20%26%20%5Ctext%7Bif%20%7D%20%7Bx%20%3D%200%7D%5C%5C%201%2C%20%26%20%5Ctext%7Bif%20%7D%20x%20%3E%200%5C%5C%20%5Cend%7Bcases%7D\pagecolor{white})
 
 <!-- sgn(x) := 
 \begin{cases}
@@ -962,7 +962,7 @@ The arrow here with a tail typically means "maps to," as in *x maps to x<sup>2</
 
 Sometimes, when it isn't obvious, the notation will also describe the *domain* and *codomain* of the function. A more formal definition of *ƒ* might be written as:
 
-![funcnot](http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign\pagecolor{white}*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D)
+![funcnot](http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D\pagecolor{white})
 
 <!-- \begin{align*}
 f :&\mathbb{R} \rightarrow \mathbb{R}\\
@@ -1227,7 +1227,7 @@ Intervals are used in conjunction with set operations:
 
 <!-- [3, 5) \cup [4, 6] = [3, 6] -->
 
-- *difference* e.g. ![interval-difference-1](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20\pagecolor{white}-%20%5B4%2C%206%5D%20%3D%20%5B3%2C%204%29) and ![interval-difference-2](http://latex.codecogs.com/svg.latex?%5B4%2C%206%5D%20\pagecolor{white}-%20%5B3%2C%205%29%20%3D%20%5B5%2C%206%5D)
+- *difference* e.g. ![interval-difference-1](http://latex.codecogs.com/svg.latex?%5B3%2C%205%29%20-%20%5B4%2C%206%5D%20%3D%20%5B3%2C%204%29\pagecolor{white}) and ![interval-difference-2](http://latex.codecogs.com/svg.latex?%5B4%2C%206%5D%20-%20%5B3%2C%205%29%20%3D%20%5B5%2C%206%5D\pagecolor{white})
 
 <!-- [3, 5) - [4, 6] = [3, 4) -->
 <!-- [4, 6] - [3, 5)  = [5, 6] -->

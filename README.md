@@ -746,7 +746,7 @@ The arrow here with a tail typically means "maps to," as in *x maps to x<sup>2</
 
 Sometimes, when it isn't obvious, the notation will also describe the *domain* and *codomain* of the function. A more formal definition of *ƒ* might be written as:
 
-![funcnot](http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign\pagecolor{white}*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D)
+![funcnot](http://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7D%20f%20%3A%26%5Cmathbb%7BR%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D%5C%5C%20%26x%20%5Cmapsto%20x%5E2%20%5Cend%7Balign*%7D\pagecolor{white})
 
 <!-- \begin{align*}
 f :&\mathbb{R} \rightarrow \mathbb{R}\\
