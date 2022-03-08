@@ -164,7 +164,7 @@ console.log(math.multiply(a, b).toString())
 The library also supports evaluating a string expression, so the above could be re-written as:
 
 ```js
-console.log(math.eval('(3 - i) * i').toString())
+console.log(math.evaluate('(3 - i) * i').toString())
 //=> '1 + 3i'
 ```
 
