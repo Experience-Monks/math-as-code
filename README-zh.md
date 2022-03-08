@@ -162,7 +162,7 @@ console.log(math.multiply(a, b).toString())
 这个库还支持字符串表达式求值， 所以上边的可以写为：
 
 ```js
-console.log(math.eval('(3 - i) * i').toString())
+console.log(math.evaluate('(3 - i) * i').toString())
 //=> '1 + 3i'
 ```
 
